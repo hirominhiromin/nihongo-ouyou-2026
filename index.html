@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v6</title>
+<title>2026 日本語教員試験・応用攻略 v8</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -31,16 +31,47 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .feedback{padding:12px;border-radius:12px;margin-top:9px;display:none;line-height:1.55}.ok{display:block;background:#eefaf4;color:#18794e}.ng{display:block;background:#fff1f0;color:#b42318}
 .note{font-size:12px;color:#667085;line-height:1.6}.share{background:#fff;border:1px dashed #b8c1d1;border-radius:14px;padding:13px;margin:14px 0}
 @media(max-width:390px){main{padding:10px}.grid{gap:8px}.card{padding:13px}.title{font-size:14px}.desc{font-size:11px}}
-.diagram{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:8px;margin:10px 0 14px;overflow:hidden}.diagram img{display:block;width:100%;height:auto;border-radius:10px}.mini{font-size:14px}.exam-diagram-wrap{background:#fff;border:1px solid #cfd5df;border-radius:12px;padding:10px;margin:10px 0}.diagram-title{font-weight:800;font-size:15px;margin:0 0 8px}.exam-diagram{width:100%;height:auto;display:block}.diagram-note{font-size:13px;line-height:1.65;margin-top:8px}.diagram-tip{font-size:12px;line-height:1.6;background:#f3f4f6;border-radius:8px;padding:9px;margin-top:8px}.audioGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.audioGrid .primary{margin:0}.exam-diagram{max-width:100%;height:auto;background:#fff;border:1px solid #ddd;border-radius:12px}.sourcebox{font-size:.85em}.choice{display:block;width:100%;text-align:left;margin:7px 0;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff}.feedback{margin-top:8px}.correct{outline:2px solid #4caf50}.wrong{outline:2px solid #f44336}@media(max-width:420px){.audioGrid{grid-template-columns:1fr}}</style>
+.diagram{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:8px;margin:10px 0 14px;overflow:hidden}.diagram img{display:block;width:100%;height:auto;border-radius:10px}.mini{font-size:14px}.exam-diagram-wrap{background:#fff;border:1px solid #cfd5df;border-radius:12px;padding:10px;margin:10px 0}.diagram-title{font-weight:800;font-size:15px;margin:0 0 8px}.exam-diagram{width:100%;height:auto;display:block}.diagram-note{font-size:13px;line-height:1.65;margin-top:8px}.diagram-tip{font-size:12px;line-height:1.6;background:#f3f4f6;border-radius:8px;padding:9px;margin-top:8px}.audioGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.audioGrid .primary{margin:0}.exam-diagram{max-width:100%;height:auto;background:#fff;border:1px solid #ddd;border-radius:12px}.sourcebox{font-size:.85em}.choice{display:block;width:100%;text-align:left;margin:7px 0;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff}.feedback{margin-top:8px}.correct{outline:2px solid #4caf50}.wrong{outline:2px solid #f44336}@media(max-width:420px){.audioGrid{grid-template-columns:1fr}}
+.quick{background:#fff;border:1px solid #e5e7eb;border-radius:17px;padding:14px;margin:0 0 12px}
+.quick h3{margin:0 0 9px;font-size:16px}
+.quickgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.quickbtn{border:1px solid #dfe3ea;background:#f8fafc;border-radius:11px;padding:10px 6px;font-weight:750;font-size:12px}
+.vowelbox{background:#fff;border:1px solid #d9dee8;border-radius:14px;padding:10px;margin:10px 0}
+.vowelgrid{position:relative;height:245px;border-left:2px solid #222;border-bottom:2px solid #222;margin:14px 28px 8px 42px}
+.vowelgrid:before{content:"舌の高さ（高→低）";position:absolute;left:-42px;top:0;font-size:10px;writing-mode:vertical-rl}
+.vowelgrid:after{content:"前 ← 舌の位置 → 後";position:absolute;bottom:-27px;left:20%;font-size:10px}
+.vowel{position:absolute;transform:translate(-50%,-50%);font-size:22px;font-weight:850}
+.vowel.i{left:18%;top:15%}.vowel.e{left:27%;top:43%}.vowel.a{left:45%;top:82%}.vowel.o{left:68%;top:63%}.vowel.u{left:78%;top:35%}
+.vowel button{border:0;background:#eef2ff;border-radius:50%;width:44px;height:44px;font-size:20px;font-weight:800}
+.once{background:#172033!important}
+.typebox{background:#f8fafc;border-radius:12px;padding:11px;line-height:1.7;font-size:13px}
+.mastergrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.term{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:11px;line-height:1.5}
+.term b{display:block;margin-bottom:3px}
+</style>
 </head>
 <body>
-<header><h1>🎓 2026 日本語教員試験・応用攻略</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
+<header><h1>🎓 2026 日本語教員試験・応用攻略 v8</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
 <main>
+
+<div class="quick">
+<h3>⚡ スキマ時間で今すぐ</h3>
+<div class="quickgrid">
+<button class="quickbtn" onclick="quickQuiz(1)">1分<br>🎯 1問</button>
+<button class="quickbtn" onclick="quickQuiz(3)">3分<br>🧠 3問</button>
+<button class="quickbtn" onclick="quickQuiz(5)">5分<br>📝 5問</button>
+<button class="quickbtn" onclick="quickQuiz(10)">10分<br>🔥 10問</button>
+<button class="quickbtn" onclick="openP('wrong')">❌ 苦手だけ</button>
+<button class="quickbtn" onclick="openP('master')">🧠 用語</button>
+</div>
+<div class="note" style="margin-top:8px">仕事の合間・バス・実習の移動時間に。途中で閉じてもOK。</div>
+</div>
 <div id="home" class="grid">
 <div class="card" onclick="openP('reading')"><div class="icon">📖</div><div class="title">読解</div><div class="desc">授業場面・教材・評価を根拠から読む</div></div>
 <div class="card" onclick="openP('listening')"><div class="icon">🎧</div><div class="title">聴解</div><div class="desc">聞く→分類→用語→選択肢＋フィードバック</div></div>
 <div class="card" onclick="openP('oral')"><div class="icon">👄</div><div class="title">口腔断面図・音声</div><div class="desc">口腔断面図・調音点・調音法・音声</div></div>
 <div class="card" onclick="openP('practice')"><div class="icon">📚</div><div class="title">日本語教育実践（科目11〜13）</div><div class="desc">教材・読解・タスク・作文・評価・ICT</div></div>
+<div class="card" onclick="openP('master')"><div class="icon">🧠</div><div class="title">必須用語マスター</div><div class="desc">50項目を背骨に重要用語を横断整理</div></div>
 <div class="card" onclick="openP('boost')"><div class="icon">🎯</div><div class="title">80点突破トレーニング</div><div class="desc">場面判断・本番型・弱点診断・模試</div></div>
 <div class="card" onclick="openP('fifty')"><div class="icon">📚</div><div class="title">必須の教育内容50</div><div class="desc">公式50項目を確認</div></div>
 <div class="card" onclick="openP('grammar')"><div class="icon">🔤</div><div class="title">動詞のグループ・活用</div><div class="desc">て形・ない形・た形・辞書形</div></div>
@@ -51,7 +82,14 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="card" onclick="openP('wrong')"><div class="icon">❌</div><div class="title">苦手・復習</div><div class="desc">間違えた問題を保存</div></div>
 </div>
 
-<div class="share"><b>👥 学習仲間と共有</b><br><span class="note">公開URLにしたら、このページをLINEで送るだけ。iPhone・Android・PCから同じものを使えます。</span><button class="primary" onclick="shareApp()">📤 共有する</button></div>
+<div class="share"><b>👥 学習仲間と共有</b><br><span class="note">公開URLにしたら、このページをLINEで送るだけ。問題・用語・音声練習を同じページで共有できます。iPhone・Android・PCから同じものを使えます。</span><button class="primary" onclick="shareApp()">📤 共有する</button></div>
+
+
+<section id="quick" class="panel"><button class="back" onclick="home()">← メニュー</button>
+<h2>⚡ スキマ時間トレーニング</h2>
+<div class="notice"><b>1問だけでも前進。</b> 正解率より、毎日の積み上げを重視。間違えた問題は復習リストに保存。</div>
+<div id="quickQuiz"></div>
+</section>
 
 <section id="reading" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📖 読解・完全攻略</h2>
 <div class="notice"><b>応用試験の読解は「本文の意味」＋「教育場面での判断」を読む。</b><br>設問→条件→本文の根拠→選択肢、の順で処理。文章全部を同じ濃さで読まない。</div>
@@ -131,10 +169,25 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <section id="oral" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声 完全版</h2>
 <div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
 <div class="audioGrid">
-<button class="primary" onclick="speak('おばさん')">🔊 おばさん</button><button class="primary" onclick="speak('おばあさん')">🔊 おばあさん</button>
-<button class="primary" onclick="speak('きてください')">🔊 きてください</button><button class="primary" onclick="speak('きってください')">🔊 きってください</button>
-<button class="primary" onclick="speak('はし')">🔊 はし</button><button class="primary" onclick="speak('あめ')">🔊 あめ</button>
+<button class="primary" onclick="speakOnce('おばさん',this)">🔊 1回：おばさん</button><button class="primary" onclick="speakOnce('おばあさん',this)">🔊 1回：おばあさん</button>
+<button class="primary" onclick="speakOnce('きてください',this)">🔊 1回：きてください</button><button class="primary" onclick="speakOnce('きってください',this)">🔊 1回：きってください</button>
+<button class="primary" onclick="speakOnce('はし',this)">🔊 1回：はし</button><button class="primary" onclick="speakOnce('あめ',this)">🔊 1回：あめ</button>
 </div>
+
+<h3>🔺 日本語の5母音：逆三角形で位置をつかむ</h3>
+<div class="vowelbox">
+<div class="note">上＝舌が高い／下＝舌が低い、左＝前舌／右＝後舌。ボタンを押して音を確認。</div>
+<div class="vowelgrid">
+<div class="vowel i"><button onclick="speakOnce('い',this)">い</button></div>
+<div class="vowel e"><button onclick="speakOnce('え',this)">え</button></div>
+<div class="vowel a"><button onclick="speakOnce('あ',this)">あ</button></div>
+<div class="vowel o"><button onclick="speakOnce('お',this)">お</button></div>
+<div class="vowel u"><button onclick="speakOnce('う',this)">う</button></div>
+</div>
+<div class="diagram-tip"><b>試験の見方：</b>「舌の高さ」「舌の前後」「唇の丸め」を手掛かりにする。日本語の「う」は英語の /u/ と完全に同じではなく、唇の丸め・舌の位置にも注意。</div>
+</div>
+<h3>🎧 本番風：音声はまず1回だけ</h3>
+<div class="notice"><b>① 音源を1回聞く → ② すぐ答える → ③ 解説を見る。</b><br>「もう一度聞く」は答えを考えた後に使う。試験での聞き取り負荷に近づける。</div>
 <h3>🫁 音声の基本：3段階で考える</h3>
 <div class="item"><b>① 音声学</b>：実際に発せられる音の物理・生理的側面。<br><b>② 音韻論</b>：言語の中で意味の区別に関わる音の体系。<br><b>③ 調音</b>：どこで・どうやって音を作るか。</div>
 <h3>👄 調音点 × 調音法</h3>
@@ -294,6 +347,13 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h3>🧠 法令問題の覚え方</h3>
 <div class="item"><b>推進法</b>＝日本語教育を社会全体で推進する基本的枠組み<br><b>認定法</b>＝日本語教育機関の認定＋日本語教員の資格制度<br><b>登録日本語教員</b>＝国家資格としての教員<br><b>認定日本語教育機関</b>＝文部科学大臣の認定を受けた教育機関</div>
 <div class="sourcebox">出典・最新確認：文部科学省「日本語教育」／「日本語教育機関認定法ポータル」</div>
+
+<h3>©️ 著作権：日本語教師が迷いやすいところ</h3>
+<div class="item"><b>著作権＝「授業だから何でも自由」ではない。</b><br>教材・画像・動画・Webページ・市販問題集などは、利用目的・方法・共有範囲・制度上の条件を確認する。</div>
+<div class="item"><b>引用</b>：単に出典を書けば成立するわけではない。引用としての必要性や主従関係、明瞭な区別、出所の明示など、要件を確認する。</div>
+<div class="item"><b>授業目的公衆送信</b>：オンライン授業等で著作物を送信する場合に関係する制度。授業目的公衆送信補償金制度など、最新の制度・条件を確認する。</div>
+<div class="item"><b>典型的な誤解</b>：「ネットにある＝自由に使える」「出典を書けば何でもOK」「授業なら市販教材を丸ごと配布OK」など。試験ではこの思い込みを狙う選択肢に注意。</div>
+<div class="notice"><b>本番型の問い方</b><br>「最も適切なもの」だけでなく、<b>「不適切なもの」「誤っているもの」「最も適当でないもの」</b>を必ず混ぜて判断する。</div>
 </section>
 
 <section id="boost" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🎯 80点突破トレーニング</h2>
@@ -307,7 +367,25 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <button class="primary" onclick="runBoost()">🎯 5問チャレンジ</button>
 </section>
 
-<section id="strategy" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div></section>
+
+<section id="master" class="panel"><button class="back" onclick="home()">← メニュー</button>
+<h2>🧠 日本語教師 必須用語マスター</h2>
+<div class="notice"><b>「公式の全必須用語リスト」ではありません。</b><br>文科省の「必須の教育内容50項目」を背骨に、日本語教師養成・試験対策で重要な用語を横断整理。覚えるだけでなく、類似語との違い・授業場面での判断につなげる。</div>
+<div class="typebox"><b>覚え方：</b> 用語 → 一言定義 → 似た用語 → 具体例 → 本番型問題。<br><b>重要：</b> 「正しいもの」だけでなく「不適切なもの」「誤っているもの」「最も適当でないもの」も出題する。</div>
+<h3>🔑 重要用語</h3><div class="mastergrid"><div class="term"><b>ZPD（発達の最近接領域）</b>一人では難しいが支援があればできる領域。足場かけと関連。</div><div class="term"><b>MKO（より有能な他者）</b>学習者の学習を支援できる他者。教師や熟達した学習者など。</div><div class="term"><b>足場かけ</b>学習者が自力でできるようになるまで、必要な支援を一時的に与える。</div><div class="term"><b>中間言語</b>第二言語学習者が形成する、目標言語へ向かう体系的な言語体系。</div><div class="term"><b>化石化</b>誤用などが学習過程で固定化し、修正されにくくなる現象。</div><div class="term"><b>転移</b>既に知っている言語・知識・経験が新しい学習に影響すること。</div><div class="term"><b>リキャスト</b>誤りを直接指摘せず、正しい形に言い換えて返す訂正フィードバック。</div><div class="term"><b>明示的訂正</b>誤りを明確に指摘し、正しい表現を示すフィードバック。</div><div class="term"><b>形成的評価</b>学習途中で学習状況を把握し、次の学習・指導の改善につなげる評価。</div><div class="term"><b>総括的評価</b>学習のまとまりの最後に到達度や成果を判断する評価。</div><div class="term"><b>診断的評価</b>学習開始前などに、既有知識や課題を把握するための評価。</div><div class="term"><b>妥当性</b>測りたいものを適切に測れている程度。</div><div class="term"><b>信頼性</b>同じ条件なら安定した結果が得られる程度。</div><div class="term"><b>客観性</b>評価者が変わっても判断が大きくぶれにくい程度。</div><div class="term"><b>波及効果（washback）</b>テストが学習・指導の内容や方法に与える影響。</div><div class="term"><b>ルーブリック</b>複数の評価観点と段階的な基準を表にした評価ツール。</div><div class="term"><b>Can-do</b>学習者が何を「できる」かを能力記述で表す考え方。</div><div class="term"><b>スキミング</b>文章全体の大意・要点を素早くつかむ読み方。</div><div class="term"><b>スキャニング</b>日時・名前・数字など特定の情報を探す読み方。</div><div class="term"><b>生教材</b>現実社会で実際に使われている素材を学習に利用するもの。</div><div class="term"><b>トップダウン</b>背景知識・目的・予測などから本文を解釈する処理。</div><div class="term"><b>ボトムアップ</b>文字・語・文など小さな単位から全体を組み立てる処理。</div><div class="term"><b>アフォーダンス</b>環境や道具が、利用者に特定の行為を促す可能性。</div><div class="term"><b>自律学習</b>学習者自身が目標・方法・進み具合などを主体的に調整する学習。</div><div class="term"><b>協働学習</b>他者と相互作用しながら課題や学習目標に取り組む学習。</div><div class="term"><b>タンデム学習</b>異なる言語を学ぶ学習者同士が互いに支援し合う学習。</div><div class="term"><b>PBL</b>問題・課題の解決を中心に、学習者が主体的に学ぶ学習方法。</div><div class="term"><b>反転授業</b>講義的内容を授業外で学び、授業時間を活動・協働・応用に使う方法。</div><div class="term"><b>コーパス</b>大量の実際の言語資料を集め、検索・分析できるデータベース。</div><div class="term"><b>コロケーション</b>特定の語と語が結びつきやすい慣用的な共起関係。</div><div class="term"><b>テンス</b>出来事を時間軸上のいつとして捉える文法カテゴリー。</div><div class="term"><b>アスペクト</b>動作・出来事を開始・継続・完了などの捉え方で表すカテゴリー。</div><div class="term"><b>ヴォイス</b>出来事の参与者と、主語などの文法的関係を表すカテゴリー。</div><div class="term"><b>モダリティ</b>話し手の判断・意志・推量・義務などの捉え方を表すカテゴリー。</div><div class="term"><b>待遇表現</b>相手・場面・関係性に応じて敬意や配慮を表す表現。</div><div class="term"><b>ポライトネス</b>対人関係を調整し、相手への配慮を示す言語的・非言語的方略。</div><div class="term"><b>発話行為</b>発話によって依頼・謝罪・約束などの行為を行うこと。</div><div class="term"><b>含意</b>文字通り明示されていないが、文脈から推論される意味。</div><div class="term"><b>前提</b>ある発話が成立する前から共有・想定されている情報。</div><div class="term"><b>モーラ</b>日本語のリズムを数える基本単位。長音・促音・撥音なども1拍として数える。</div><div class="term"><b>調音点</b>音を作るときに主に使われる場所。両唇・歯茎・硬口蓋・軟口蓋など。</div><div class="term"><b>調音法</b>閉鎖・摩擦・鼻音など、音をどのように作るか。</div><div class="term"><b>無声化</b>特定の音環境で母音などの声帯振動が弱くなったりなくなったりする現象。</div><div class="term"><b>同化</b>隣接音の影響を受けて、ある音が別の音に似た性質になる現象。</div><div class="term"><b>平均</b>得点などの合計をデータ数で割った値。</div><div class="term"><b>中央値</b>データを順に並べたとき中央に位置する値。</div><div class="term"><b>標準偏差</b>データが平均からどの程度ばらついているかを示す指標。</div><div class="term"><b>難易度</b>項目がどの程度解きやすい／難しいかを示す指標。正答率などで捉える。</div><div class="term"><b>識別力</b>その問題が、能力の高い受験者と低い受験者をどの程度区別できるか。</div><div class="term"><b>引用</b>自分の著作物の中で、他人の著作物を一定の条件のもとで利用すること。出典等の要件確認が必要。</div><div class="term"><b>著作者人格権</b>公表権・氏名表示権・同一性保持権など、著作者の人格的利益を守る権利。</div><div class="term"><b>公衆送信</b>放送・有線放送・インターネット送信など、公衆に向けて著作物を送信すること。</div><div class="term"><b>授業目的公衆送信補償金制度</b>教育機関で授業のために公衆送信する際の著作物利用に関係する制度。</div><div class="term"><b>登録日本語教員</b>認定日本語教育機関等で日本語教育を担う、国の登録を受けた日本語教員。</div><div class="term"><b>認定日本語教育機関</b>日本語教育機関認定法に基づき、文部科学大臣の認定を受けた日本語教育機関。</div></div>
+</section>
+
+<section id="strategy" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div>
+<h3>⚠️ 設問の向きを間違えない</h3>
+<div class="typebox">
+<b>正しいもの</b>＝適切な選択肢を探す。<br>
+<b>不適切なもの</b>＝間違い・場面に合わない選択肢を探す。<br>
+<b>誤っているもの</b>＝誤りを1つ探す。<br>
+<b>最も適当でないもの</b>＝最も不適切なものを探す。<br>
+<b>すべて選べ</b>＝複数正解の可能性を考える。
+</div>
+<div class="notice"><b>回答前の3秒チェック：</b>①何を選ぶ？ ②何個選ぶ？ ③「最も」がある？ ④「不」がある？</div>
+</section>
 
 <section id="wrong" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div></section>
 </main>
@@ -331,6 +409,11 @@ function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";
 function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function renderWrong(){const e=document.getElementById("wrongList");if(!wrong.length){e.innerHTML='<p class="note">まだありません。問題を解いてみよう！</p>';return}e.innerHTML=`<p class="note">${wrong.length}問が保存されています。</p>`+wrong.map(x=>`<div class="item"><span class="badge">${x.type}</span>${x.q}</div>`).join("")+`<button class="secondary" onclick="wrong=[];localStorage.removeItem('ntWrong');renderWrong()">復習リストを消去</button>`}
 const boostQ=[
+{q:'【不適切なもの】実際の駅の時刻表を使った授業について、最も不適切なものは？',a:['必要な時刻を探す活動にする','スキャニングを使わせる','現実の目的と結び付ける','生教材なら必ず全文を暗記させる'],c:3,e:'生教材でも目的に応じた情報探索を行う。全文暗記が必須という考え方は不適切。'},
+{q:'【不適切なもの】設問を読むとき最初に確認するものは？',a:['何を選ぶか','選択肢の長さ','正しい／不適切の向き','選択数'],c:1,e:'選択肢の長さは基本的な設問条件ではない。'},
+{q:'【不適切なもの】教師の誤用訂正について、最も不適切なのは？',a:['学習者の目標や段階を考える','リキャストを用いる','必要なら明示的訂正を用いる','すべての誤りを必ずその場で訂正する'],c:3,e:'すべての誤りを常に即時訂正するとは限らない。目標・活動・学習者への影響を考える。'},
+{q:'【不適切なもの】著作権について最も不適切な説明は？',a:['Web上にある画像は自由に再配布できる','利用条件を確認する','引用の要件を確認する','オンライン共有では公衆送信等の論点を確認する'],c:0,e:'Webに公開されていることだけで自由利用・再配布が認められるわけではない。'},
+{q:'【正しいもの】妥当性とは？',a:['測りたいものを適切に測れている程度','結果が毎回同じ程度','評価者による差がない程度','テストが学習に与える影響'],c:0,e:'妥当性＝測定対象を適切に測れているか。'},
 {q:'実際の駅の時刻表から「東京駅に何時に着くか」を探させる。中心となる読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'特定の必要情報を探すのでスキャニング。'},
 {q:'学習者「昨日、映画を見ます。」教師が正しい形を示すが、誤りを直接指摘しない。この対応に最も近いものは？',a:['リキャスト','明示的訂正','翻訳','自己評価'],c:0,e:'正しい形への言い換えを返すのがリキャスト。'},
 {q:'学習者に「店で返品を申し出る」という現実的な目的を達成させる活動。最も適切なのは？',a:['目的のない文型暗記','タスク中心の活動','漢字書き取りだけ','教師講義だけ'],c:1,e:'意味のある目的達成を中心にするのでタスク中心。'},
@@ -339,6 +422,43 @@ const boostQ=[
 function runBoost(){const el=document.getElementById('boostQuiz');el.innerHTML=boostQ.map((x,i)=>`<div class="item"><span class="badge">80点 ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="boostAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}<div id="bfb${i}" class="feedback"></div></div>`).join('');}
 function boostAns(btn,i,j){const x=boostQ[i],box=document.getElementById('bfb'+i);document.querySelectorAll('#bfb'+i+' ~ .choice').forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:'80点',q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}}
 function speak(text){if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=.85;u.pitch=1;speechSynthesis.speak(u)}
+
+const allQuickQ = [
+ {q:'「昨日、映画を見ます。」の主な問題は？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'「昨日」と「見ます」の時間関係なのでテンス。'},
+ {q:'特定の日時・数字・名前を文章から探す読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'特定情報を探す＝スキャニング。'},
+ {q:'測りたい能力を本当に適切に測れているかは？',a:['信頼性','妥当性','客観性','波及効果'],c:1,e:'測りたいものを測れているか＝妥当性。'},
+ {q:'「する／される」の関係を表すカテゴリーは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'参与者関係・受け身などに関わる＝ヴォイス。'},
+ {q:'授業途中で学習状況を確認し、次の指導に生かす評価は？',a:['総括的評価','形成的評価','診断的評価','相対評価'],c:1,e:'学習途中の改善に生かす＝形成的評価。'},
+ {q:'「ネットにある画像なら自由に再配布できる」という説明は？',a:['適切','不適切','必ず引用になる','著作権とは無関係'],c:1,e:'公開されていることと自由利用できることは別。'},
+ {q:'日本語のリズムを数える基本単位は？',a:['音素','モーラ','形態素','文節'],c:1,e:'日本語の拍を数える基本単位＝モーラ。'},
+ {q:'誤りを直接指摘せず、正しい形に言い換えて返すのは？',a:['リキャスト','明示的訂正','翻訳','自己評価'],c:0,e:'正しい形を返して気づきを促す＝リキャスト。'},
+ {q:'「う」が日本語の5母音の中で最も低い母音である。',a:['正しい','誤り'],c:1,e:'「あ」が最も低い。日本語の「う」は高母音。'},
+ {q:'上位群・中位群・下位群の正答率を比較して問題の識別力を見る方法は？',a:['3群法','中央値法','多読法','ポートフォリオ法'],c:0,e:'上位・中位・下位の3群で正答率を比較する＝3群法。'}
+];
+function quickQuiz(n){
+  const data=[...allQuickQ].sort(()=>Math.random()-.5).slice(0,n);
+  document.getElementById('home').style.display='none';
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  const p=document.getElementById('quick');
+  p.classList.add('active');
+  const q=document.getElementById('quickQuiz');
+  q.innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">スキマ ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}<div id="qfb${i}" class="feedback"></div></div>`).join('');
+  window.quickData=data; scrollTo(0,0);
+}
+function quickAns(btn,i,j){
+ const x=window.quickData[i],box=document.getElementById('qfb'+i);
+ document.querySelectorAll('#qfb'+i+' ~ .choice').forEach(b=>b.disabled=true);
+ if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}
+ else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:'スキマ',q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}
+}
+function speakOnce(text,btn){
+ if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=.82;u.pitch=1;
+ speechSynthesis.speak(u);
+ if(btn){btn.disabled=true;btn.textContent='🔊 再生済み（1回）';}
+}
+
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 </script>
