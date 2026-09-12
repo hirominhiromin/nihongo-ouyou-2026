@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v21</title>
+<title>2026 日本語教員試験・応用攻略 v22</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -691,22 +691,33 @@ let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
 document.getElementById("fiftyList").innerHTML=fifty.map(x=>`<div class="fiftyrow" onclick="showFifty(${x.n})"><div class="fiftynum">${x.n}</div><div class="fiftyname">${x.name}</div><div class="fiftyarrow">›</div></div>`).join("");
 function showFifty(n){const x=fifty.find(v=>v.n===n),d=document.getElementById("fiftyDetail");d.style.display="block";d.innerHTML=`<button class="secondary" onclick="document.getElementById('fiftyDetail').style.display='none'">一覧に戻る</button><h3>${x.n}. ${x.name}</h3><h4>📌 何を学ぶ？</h4><div>${x.summary}</div><h4>🔑 キーワード</h4><div>${x.keywords}</div><h4>⭐ 応用試験での見方</h4><div class="exam">${x.exam}</div>`;d.scrollIntoView({behavior:"smooth",block:"start"})}
 function openP(id){
-  const homeEl=document.getElementById("home");
-  const panels=document.querySelectorAll(".panel");
-  panels.forEach(p=>{p.classList.remove("active");p.style.display="none";});
+  document.querySelectorAll('section.panel').forEach(function(p){
+    p.classList.remove('active');
+    p.style.display='none';
+  });
   const target=document.getElementById(id);
   if(!target)return;
-  homeEl.style.display="none";
-  target.classList.add("active");
-  target.style.display="block";
-  if(id==="wrong" && typeof renderWrong==="function")renderWrong();
+  const homeEl=document.getElementById('home');
+  if(homeEl)homeEl.style.display='none';
+  target.classList.add('active');
+  target.style.display='block';
+  if(id==='wrong' && typeof renderWrong==='function')renderWrong();
   window.scrollTo(0,0);
 }
+
 function home(){
-  document.querySelectorAll(".panel").forEach(p=>{p.classList.remove("active");p.style.display="none";});
-  document.getElementById("home").style.display="grid";
+  document.querySelectorAll('section.panel').forEach(function(p){
+    p.classList.remove('active');
+    p.style.display='none';
+  });
+  const homeEl=document.getElementById('home');
+  if(homeEl){
+    homeEl.classList.add('active');
+    homeEl.style.display='block';
+  }
   window.scrollTo(0,0);
 }
+
 function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
 function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function audioAns(btn, answer, correct, explanation){
