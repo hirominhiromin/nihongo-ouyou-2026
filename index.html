@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v13</title>
+<title>2026 日本語教員試験・応用攻略 v16</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -72,9 +72,9 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .smallgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
 .smallcard{position:relative;min-height:78px;padding:15px 48px 12px 60px;border:1px solid #e3e8f0;border-radius:16px;background:#fff;box-shadow:0 2px 7px rgba(20,35,65,.05);cursor:pointer;color:#17284a}
 .smallcard>span{position:absolute;left:18px;top:18px;font-size:34px}.smallcard>b{font-size:18px}.smallcard>i{position:absolute;right:16px;top:20px;font-style:normal;font-size:28px;font-weight:400}.smallcard>small{display:block;margin-top:5px;color:#6c7890;font-size:12px}
-.goalbar{margin-top:18px;padding:14px 18px;border-radius:16px;background:#eaf4ff;color:#16315e;display:flex;align-items:center;gap:12px}.goalbar span{font-size:30px}.goalbar b{font-size:17px}.goalbar small{margin-left:auto;color:#9aa4b5}.credit{font-weight:700;color:#8f98aa}
+.goalbar{margin-top:18px;padding:14px 18px;border-radius:16px;background:#eaf4ff;color:#16315e;display:flex;align-items:center;gap:12px}.goalbar span{font-size:30px}.goalbar b{font-size:17px}.goalbar small{margin-left:auto;color:#b0b7c2;font-size:10px;font-weight:400}.credit{font-weight:400;color:#b8bec8;font-size:.72em;letter-spacing:.2px}
 @media(max-width:850px){.homegrid{grid-template-columns:repeat(2,1fr)}.bigcard{min-height:230px}.hero h1{font-size:27px}}
-@media(max-width:560px){.top-home{padding:4px 10px 18px}.hero{gap:9px}.hero-icon{font-size:42px}.hero h1{font-size:21px}.tagline{font-size:12px}.settings{font-size:27px}.homegrid,.smallgrid{grid-template-columns:1fr;gap:11px}.bigcard{min-height:auto;padding:14px}.ctitle span{font-size:35px}.ctitle b{font-size:20px}.bigcard ul{font-size:12px}.goalbar b{font-size:13px}.goalbar small{display:none}}
+@media(max-width:560px){.top-home{padding:4px 10px 18px}.hero{gap:8px}.hero-icon{font-size:38px}.hero h1{font-size:20px;line-height:1.2}.tagline{font-size:11px}.settings{font-size:26px}.homegrid{grid-template-columns:repeat(2,1fr);gap:9px}.smallgrid{grid-template-columns:1fr;gap:9px}.bigcard{min-height:235px;padding:12px}.ctitle{gap:6px}.ctitle span{font-size:31px}.ctitle b{font-size:17px}.ctitle i{font-size:28px}.catch{font-size:12px;margin:8px 0}.bigcard ul{font-size:10.5px;line-height:1.55;padding:8px 8px 7px 20px}.goalbar b{font-size:12px}.goalbar small{display:block;font-size:8px}.quick{margin:12px 0 0}.quickgrid{grid-template-columns:repeat(3,1fr)}}
 
 .settings{border:0;background:transparent;padding:0;cursor:pointer;color:#33415c}
 .modal{position:fixed;inset:0;background:rgba(15,25,45,.42);z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px}
@@ -96,21 +96,8 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 </style>
 </head>
 <body>
-<header><h1>🎓 2026 日本語教員試験・応用攻略 v13</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
 <main>
 
-<div class="quick">
-<h3>⚡ スキマ時間で今すぐ</h3>
-<div class="quickgrid">
-<button class="quickbtn" onclick="quickQuiz(1)">1分<br>🎯 1問</button>
-<button class="quickbtn" onclick="quickQuiz(3)">3分<br>🧠 3問</button>
-<button class="quickbtn" onclick="quickQuiz(5)">5分<br>📝 5問</button>
-<button class="quickbtn" onclick="quickQuiz(10)">10分<br>🔥 10問</button>
-<button class="quickbtn" onclick="openP('wrong')">❌ 苦手だけ</button>
-<button class="quickbtn" onclick="openP('master')">🧠 用語</button>
-</div>
-<div class="note" style="margin-top:8px">仕事の合間・バス・実習の移動時間に。途中で閉じてもOK。</div>
-</div>
 <div id="home" class="top-home">
   <div class="hero">
     <div class="hero-icon">📖</div>
@@ -184,6 +171,18 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
   </div>
 
   <div class="goalbar"><span>🎯</span><b>合格は、正しい理解と、くり返しの練習から</b><small>2026 日本語教員試験・応用攻略　<span class="credit">from ひろみん</span></small></div>
+<div class="quick">
+<h3>⚡ スキマ時間で今すぐ</h3>
+<div class="quickgrid">
+<button class="quickbtn" onclick="quickQuiz(1)">1分<br>🎯 1問</button>
+<button class="quickbtn" onclick="quickQuiz(3)">3分<br>🧠 3問</button>
+<button class="quickbtn" onclick="quickQuiz(5)">5分<br>📝 5問</button>
+<button class="quickbtn" onclick="quickQuiz(10)">10分<br>🔥 10問</button>
+<button class="quickbtn" onclick="openP('wrong')">❌ 苦手だけ</button>
+<button class="quickbtn" onclick="openP('master')">🧠 用語</button>
+</div>
+<div class="note" style="margin-top:8px">仕事の合間・バス・実習の移動時間に。途中で閉じてもOK。</div>
+
 </div></div>
 
 
