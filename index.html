@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v18</title>
+<title>2026 日本語教員試験・応用攻略 v19</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -276,32 +276,50 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>Pre-reading</b>：題名・写真・キーワードから予測、背景知識を活性化。<br><b>While-reading</b>：必要情報を探す、要点を確認、推論する。<br><b>Post-reading</b>：要約、意見交換、内容を別の課題へ活用。</div>
 <button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div></section>
 <section id="listening" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🎧 聴解・完全攻略</h2>
-<div class="notice"><b>聞く→違いを発見→領域分類→専門用語→選択肢。</b><br>「何となく変」を「日本語教育の言葉」に変換する練習をする。</div>
-<h3>⏱ 5秒分類</h3>
-<div class="item"><b>テンス</b>＝「いつ？」。過去・現在・未来など時間との関係。<br>例：「昨日、映画を<b>見ます</b>」→ 過去の出来事に現在形 → テンス。</div>
-<div class="item"><b>アスペクト</b>＝「動作・出来事はどう進んでいる？」。開始・継続・完了など。<br>例：「もう宿題を<b>しています</b>」と「もう宿題を<b>しました</b>」では、完了・継続の捉え方が異なる。</div>
-<div class="item"><b>ヴォイス</b>＝「誰が行為者？誰が影響を受ける？」。受身・使役・可能などの関係に注目。</div>
-<div class="item"><b>モダリティ</b>＝「話し手はどう判断・態度を示す？」。推量・意志・義務・当然・許可など。例：でしょう／かもしれない／はずだ。</div>
-<div class="item"><b>格・格助詞</b>＝「誰が・誰に・何を・どこへ？」。名詞と述語の関係を見る。例：「学校<b>を</b>行きます」→格助詞の問題。</div>
-<div class="item"><b>待遇・語用</b>＝「その相手・関係・場面に合う？」。文法的に成立していても、依頼・断り・謝罪などで不適切なことがある。</div>
-<div class="item"><b>音声・音韻</b>＝「音そのもの？」。長音・促音・撥音・拗音・アクセント・イントネーション・清濁・無声化・調音点・調音法など。</div>
-<div class="item"><b>語彙・意味</b>＝「語の意味・使い方・結び付き？」。類義語・多義語・コロケーション・メタファー・メトニミーなど。</div>
-<h3>🧠 「聞こえたらこう考える」</h3>
-<div class="item"><b>昨日なのに「行きます」</b>→ テンス。<br><b>「先生を褒められました」</b>→ ヴォイス。<br><b>「学校を行きます」</b>→ 格・格助詞。<br><b>「明日は雨が降るでしょう」</b>→ モダリティ。<br><b>「きて／きって」</b>→ 促音・モーラ。<br><b>「おばさん／おばあさん」</b>→ 長音・モーラ。<br><b>「この薬を飲む」vs「薬を服用する」</b>→ 語彙・語用・レジスターなどを文脈から判断。</div>
-<h3>👂 聞き取りの手順</h3>
-<div class="item"><b>STEP 1</b> 発話をそのまま聞く → <b>STEP 2</b> 正しい形を頭の中で言い直す → <b>STEP 3</b> 差を1点に絞る → <b>STEP 4</b> 文法／音声／語彙／語用に分類 → <b>STEP 5</b> 専門用語を選択肢と照合。</div>
+<div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br>音声・発音の識別は「音声・発音」へ。聴解では、話の要点・意図・条件・教師の対応を聞き取る。</div>
+
+<h3>📝 本番で狙われる聞き取り</h3>
+<div class="item"><b>① 要点・主旨</b>＝話し手が一番伝えたいこと。細部より「結局何を言っているか」を取る。</div>
+<div class="item"><b>② 必要情報</b>＝日時・人数・条件・順序など、設問に必要な情報を拾う。<b>スキャニング</b>的に聞く。</div>
+<div class="item"><b>③ 話し手の意図</b>＝依頼・断り・提案・確認・不満・許可など。「何と言ったか」だけでなく「何のために言ったか」を考える。</div>
+<div class="item"><b>④ 教師―学習者のやりとり</b>＝教師の発話から、訂正・誘導・リキャスト・明確化要求などの指導意図を判断する。</div>
+<div class="item"><b>⑤ 条件の聞き落とし</b>＝「ただし」「一方で」「〜とは限らない」「まず〜、その後〜」などの限定・対比・順序に注意。</div>
+
 <h3>🗣️ フィードバックを聞き分ける</h3>
-<div class="item"><b>明示的訂正</b>：「そこは『〜です』ではなく『〜でした』です」のように誤りを直接示す。<br><b>リキャスト</b>：学習者の誤りを正しい形に言い換えて返す。<br><b>明確化要求</b>：「え？」「もう一度お願いします」など、発話が理解できない・伝達に問題があることを示す。<br><b>誘導・プロンプト</b>：教師が答えを言わず、学習者自身の修正を促す。<br><b>メタ言語的フィードバック</b>：誤りそのものを正解で置き換えるのではなく、文法・形式についてヒントを与える。</div>
-<h3>🔊 音声・音韻の頻出整理</h3>
-<div class="item"><b>モーラ（拍）</b>＝日本語のリズムを捉える基本単位。長音・促音・撥音も原則1拍として数える。<br><b>長音</b>：母音を長く保つ。「おばさん／おばあさん」。<br><b>促音</b>：「っ」に代表される1拍。「きて／きって」。<br><b>撥音</b>：「ん」に代表される1拍。「しんぶん」。<br><b>拗音</b>：「きゃ・しゅ・ちょ」など。表記上の小書き仮名を含む音節構造に注意。</div>
-<div class="item"><b>アクセント</b>＝音の高低の配置。日本語では「強く読む」だけではなく、高低のパターンを見る。<br><b>イントネーション</b>＝文全体の高さの変化。疑問・感情・話題など、発話全体の意味・機能に関わる。</div>
-<div class="item"><b>無声化</b>＝母音などの声帯振動が弱く／なくなる現象。環境と話者によって生じるため、「いつでも起こる」と固定しない。</div>
-<div class="item"><b>調音点</b>＝どこで狭める・閉鎖するか。<b>調音法</b>＝どうやって気流を妨げるか。<br>例：/p/＝両唇＋破裂音、/m/＝両唇＋鼻音。</div>
-<div class="notice"><b>国試型のコツ</b><br>「音が違う」だけで終わらず、<b>①どの音？②どこで？③どう作る？④何拍？⑤高低は？</b>まで言えるようにする。</div>
-<button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題を解く</button><div id="listeningQuiz"></div></section>
+<div class="item"><b>明示的訂正</b>：「そこは『〜でした』です」→誤りと正しい形を直接示す。<br>
+<b>リキャスト</b>：学習者の誤りを正しい形に言い換えて返す。<br>
+<b>明確化要求</b>：「え？」「もう一度お願いします」→理解・伝達に問題があることを示す。<br>
+<b>誘導・プロンプト</b>：答えを言わず、学習者自身の修正を促す。<br>
+<b>メタ言語的フィードバック</b>：文法・形式についてヒントを与える。</div>
+
+<h3>⏱ 聞くときの5ステップ</h3>
+<div class="item"><b>STEP 1</b> 誰が？　<b>STEP 2</b> 何の場面？　<b>STEP 3</b> 何が問題・目的？　<b>STEP 4</b> 条件・対比・結論は？　<b>STEP 5</b> 設問に必要な根拠はどこ？</div>
+
+<h3>🎯 聴解ミニ問題</h3>
+<div class="exam"><h3>第1問　教師の意図</h3>
+<p>学習者「先生、昨日映画を見ます。」<br>教師「昨日……？　じゃあ、もう一度言ってみましょう。」<br>この教師の対応として最も適切なものは？</p>
+<div class="choices"><button class="choice" onclick="ans(this,'①')">① 明示的訂正</button><button class="choice" onclick="ans(this,'②')">② リキャスト</button><button class="choice" onclick="ans(this,'③')">③ 誘導・プロンプト</button><button class="choice" onclick="ans(this,'④')">④ 答えを先に提示</button></div>
+<div class="feedback" data-answer="③">正解：③　教師は「見ました」と答えを言わず、学習者自身の修正を促している。これは誘導・プロンプト。</div></div>
+
+<div class="exam"><h3>第2問　要点</h3>
+<p>「今日はグループで発表します。ただ、時間が限られているので、一人3分以内にしてください。」この発話で、聞き取るべき中心的な条件は？</p>
+<div class="choices"><button class="choice" onclick="ans(this,'①')">① 発表はグループで行う</button><button class="choice" onclick="ans(this,'②')">② 一人3分以内</button><button class="choice" onclick="ans(this,'③')">③ 今日は授業がある</button><button class="choice" onclick="ans(this,'④')">④ 発表をする</button></div>
+<div class="feedback" data-answer="②">正解：②　「ただ」「ので」に続く具体的な制限条件がポイント。数字・時間・条件は聞き取り問題で狙われやすい。</div></div>
+
+<div class="exam"><h3>第3問　明確化要求</h3>
+<p>学習者「駅で先生を……えっと……」<br>教師「すみません、もう一度お願いします。」<br>教師の発話は何か。</p>
+<div class="choices"><button class="choice" onclick="ans(this,'①')">① リキャスト</button><button class="choice" onclick="ans(this,'②')">② 明示的訂正</button><button class="choice" onclick="ans(this,'③')">③ 明確化要求</button><button class="choice" onclick="ans(this,'④')">④ メタ言語的フィードバック</button></div>
+<div class="feedback" data-answer="③">正解：③　理解できなかったことを示し、もう一度の発話を求めているので明確化要求。</div></div>
+
+<div class="exam"><h3>第4問　対比・限定</h3>
+<p>「この教材は初級には使いやすいです。一方、中級では内容が簡単すぎるかもしれません。」最も適切な聞き取りは？</p>
+<div class="choices"><button class="choice" onclick="ans(this,'①')">① どのレベルでも使いやすい</button><button class="choice" onclick="ans(this,'②')">② 初級には使いやすいが、中級には課題がある</button><button class="choice" onclick="ans(this,'③')">③ 中級だけに適している</button><button class="choice" onclick="ans(this,'④')">④ 初級には使えない</button></div>
+<div class="feedback" data-answer="②">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
+
+<button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div></section>
 
 <section id="audioPlus" class="detail">
-<h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
+<button class="back" onclick="home()">← メニュー</button><h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
 <div class="notice"><b>本番モード：</b>まず音声を1回だけ聞く → すぐ答える → 解説を見る。解答後は必要ならもう一度。</div>
 
 <div class="exam"><h3>第1問　長音・短音</h3>
