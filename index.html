@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v8</title>
+<title>2026 日本語教員試験・応用攻略 v11</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -48,10 +48,46 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .mastergrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .term{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:11px;line-height:1.5}
 .term b{display:block;margin-bottom:3px}
+
+/* v9 top page: study-dashboard style */
+.top-home{max-width:1180px;margin:0 auto;padding:8px 18px 24px}
+.hero{display:flex;align-items:center;gap:14px;padding:8px 4px 16px}
+.hero-icon{font-size:54px;line-height:1}
+.hero h1{font-size:34px;margin:0;color:#14213d;letter-spacing:.2px}
+.tagline{font-size:17px;color:#17233f;margin-top:5px}
+.settings{margin-left:auto;text-align:center;font-size:35px;color:#33415c}
+.settings small{display:block;font-size:12px;margin-top:-4px}
+.homegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bigcard{border-radius:18px;padding:18px 18px 16px;min-height:260px;border:1px solid rgba(30,50,90,.08);box-shadow:0 2px 7px rgba(20,35,65,.06);cursor:pointer}
+.bigcard:hover{transform:translateY(-1px)}
+.bigcard.pink{background:#fff0f3}.bigcard.blue{background:#eef7ff}.bigcard.green{background:#effcf2}
+.bigcard.lavender{background:#f6efff}.bigcard.yellow{background:#fff8e7}.bigcard.blue2{background:#edf5ff}
+.bigcard.mint{background:#eefcf5}.bigcard.lavender2{background:#f5f0ff}.bigcard.pink2{background:#fff0f3}
+.ctitle{display:flex;align-items:center;gap:10px;color:#10234b}
+.ctitle span{font-size:43px;line-height:1}
+.ctitle b{font-size:23px;line-height:1.25}
+.ctitle i{font-style:normal;font-size:34px;margin-left:auto;font-weight:400}
+.catch{font-size:15px;line-height:1.55;margin:12px 0;color:#243452}
+.bigcard ul{margin:10px 0 0;padding:10px 12px 8px 25px;background:rgba(255,255,255,.68);border-radius:12px;color:#263755;font-size:13px;line-height:1.75}
+.smallgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.smallcard{position:relative;min-height:78px;padding:15px 48px 12px 60px;border:1px solid #e3e8f0;border-radius:16px;background:#fff;box-shadow:0 2px 7px rgba(20,35,65,.05);cursor:pointer;color:#17284a}
+.smallcard>span{position:absolute;left:18px;top:18px;font-size:34px}.smallcard>b{font-size:18px}.smallcard>i{position:absolute;right:16px;top:20px;font-style:normal;font-size:28px;font-weight:400}.smallcard>small{display:block;margin-top:5px;color:#6c7890;font-size:12px}
+.goalbar{margin-top:18px;padding:14px 18px;border-radius:16px;background:#eaf4ff;color:#16315e;display:flex;align-items:center;gap:12px}.goalbar span{font-size:30px}.goalbar b{font-size:17px}.goalbar small{margin-left:auto;color:#9aa4b5}.credit{font-weight:700;color:#8f98aa}
+@media(max-width:850px){.homegrid{grid-template-columns:repeat(2,1fr)}.bigcard{min-height:230px}.hero h1{font-size:27px}}
+@media(max-width:560px){.top-home{padding:4px 10px 18px}.hero{gap:9px}.hero-icon{font-size:42px}.hero h1{font-size:21px}.tagline{font-size:12px}.settings{font-size:27px}.homegrid,.smallgrid{grid-template-columns:1fr;gap:11px}.bigcard{min-height:auto;padding:14px}.ctitle span{font-size:35px}.ctitle b{font-size:20px}.bigcard ul{font-size:12px}.goalbar b{font-size:13px}.goalbar small{display:none}}
+
+.settings{border:0;background:transparent;padding:0;cursor:pointer;color:#33415c}
+.modal{position:fixed;inset:0;background:rgba(15,25,45,.42);z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px}
+.modalbox{position:relative;width:min(520px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:22px;padding:24px;box-shadow:0 15px 45px rgba(0,0,0,.2)}
+.modalclose{position:absolute;right:14px;top:10px;border:0;background:#f1f3f6;border-radius:50%;width:38px;height:38px;font-size:27px}
+.settingrow{border-top:1px solid #e6e9ef;padding:16px 0}.settingrow:first-of-type{border-top:0}
+.seg{display:flex;gap:7px;margin-top:9px}.seg button{flex:1;border:1px solid #d8dee8;background:#f7f9fc;border-radius:10px;padding:10px;font-weight:750}
+.seg button.active{background:#e7f0ff;border-color:#8bb7ff}
+#rateRange{width:80%;vertical-align:middle;margin-top:10px}#rateValue{display:inline-block;margin-left:7px;font-weight:700}
 </style>
 </head>
 <body>
-<header><h1>🎓 2026 日本語教員試験・応用攻略 v8</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
+<header><h1>🎓 2026 日本語教員試験・応用攻略 v11</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
 <main>
 
 <div class="quick">
@@ -66,24 +102,113 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 </div>
 <div class="note" style="margin-top:8px">仕事の合間・バス・実習の移動時間に。途中で閉じてもOK。</div>
 </div>
-<div id="home" class="grid">
-<div class="card" onclick="openP('reading')"><div class="icon">📖</div><div class="title">読解</div><div class="desc">授業場面・教材・評価を根拠から読む</div></div>
-<div class="card" onclick="openP('listening')"><div class="icon">🎧</div><div class="title">聴解</div><div class="desc">聞く→分類→用語→選択肢＋フィードバック</div></div>
-<div class="card" onclick="openP('oral')"><div class="icon">👄</div><div class="title">口腔断面図・音声</div><div class="desc">口腔断面図・調音点・調音法・音声</div></div>
-<div class="card" onclick="openP('practice')"><div class="icon">📚</div><div class="title">日本語教育実践（科目11〜13）</div><div class="desc">教材・読解・タスク・作文・評価・ICT</div></div>
-<div class="card" onclick="openP('master')"><div class="icon">🧠</div><div class="title">必須用語マスター</div><div class="desc">50項目を背骨に重要用語を横断整理</div></div>
-<div class="card" onclick="openP('boost')"><div class="icon">🎯</div><div class="title">80点突破トレーニング</div><div class="desc">場面判断・本番型・弱点診断・模試</div></div>
-<div class="card" onclick="openP('fifty')"><div class="icon">📚</div><div class="title">必須の教育内容50</div><div class="desc">公式50項目を確認</div></div>
-<div class="card" onclick="openP('grammar')"><div class="icon">🔤</div><div class="title">動詞のグループ・活用</div><div class="desc">て形・ない形・た形・辞書形</div></div>
-<div class="card" onclick="openP('eval')"><div class="icon">📊</div><div class="title">評価・統計・計算</div><div class="desc">平均・中央値・得点率</div></div>
-<div class="card" onclick="openP('cefr')"><div class="icon">🌏</div><div class="title">CEFR・JLPT</div><div class="desc">レベルを整理</div></div>
-<div class="card" onclick="openP('law')"><div class="icon">⚖️</div><div class="title">法令・制度</div><div class="desc">法律・認定・登録・経過措置</div></div>
-<div class="card" onclick="openP('strategy')"><div class="icon">⭐</div><div class="title">応用問題の解き方</div><div class="desc">選択肢に結び付ける</div></div>
-<div class="card" onclick="openP('wrong')"><div class="icon">❌</div><div class="title">苦手・復習</div><div class="desc">間違えた問題を保存</div></div>
+<div id="home" class="top-home">
+  <div class="hero">
+    <div class="hero-icon">📖</div>
+    <div>
+      <h1>2026 日本語教員試験・応用攻略</h1>
+      <div class="tagline">読む・聞く・考える・使える　― 合格へ一歩ずつ</div>
+    </div>
+    <button class="settings" onclick="openSettings()" aria-label="設定">⚙️<small>設定</small></button>
+  </div>
+
+  <div class="homegrid">
+    <div class="bigcard pink" onclick="openP('reading')">
+      <div class="ctitle"><span>📖</span><b>読解</b><i>›</i></div>
+      <div class="catch">文章を正確に読み取り<br>設問を解く力をつける</div>
+      <ul><li>設問パターン別攻略</li><li>文章の構造・論理展開</li><li>キーワード・指示語</li><li>グラフ・表・資料の読み取り</li><li>過去問演習</li></ul>
+    </div>
+
+    <div class="bigcard blue" onclick="openP('listening')">
+      <div class="ctitle"><span>🎧</span><b>聴解</b><i>›</i></div>
+      <div class="catch">聞いて理解し<br>正しく判断する力をつける</div>
+      <ul><li>会話・講義の聞き取り</li><li>選択肢のポイント</li><li>メモの取り方</li><li>よく出る場面・トピック</li><li>本番風音声問題</li></ul>
+    </div>
+
+    <div class="bigcard green" onclick="openP('oral')">
+      <div class="ctitle"><span>👄</span><b>音声・発音</b><i>›</i></div>
+      <div class="catch">音の仕組みを理解し<br>聞き取る・区別する力をつける</div>
+      <ul><li>口腔断面図（試験形式対応）</li><li>母音・子音の調音点と調音法</li><li>長音・促音・撥音・拗音</li><li>アクセント・イントネーション</li><li>音声変化（連音・同化・脱落など）</li><li>声調・リズム・聞き分け練習</li></ul>
+    </div>
+
+    <div class="bigcard lavender" onclick="openP('practice')">
+      <div class="ctitle"><span>📚</span><b>日本語教育実践<br>（科目11〜13）</b><i>›</i></div>
+      <div class="catch">教える力・授業をデザインする力</div>
+      <ul><li>授業設計・指導法</li><li>生教材・教材分析・教材開発</li><li>スキミング／スキャニング</li><li>精読／多読・読解指導</li><li>タスク・ロールプレイ</li><li>フィードバック（リキャスト・訂正・誘導）</li><li>評価法・学習者自己評価・Can-do</li><li>ICT活用・協働学習</li></ul>
+    </div>
+
+    <div class="bigcard yellow" onclick="openP('fifty')">
+      <div class="ctitle"><span>📋</span><b>必須の教育内容50</b><i>›</i></div>
+      <div class="catch">試験で問われる重要テーマを<br>効率よく確認</div>
+      <ul><li>50項目一覧・解説</li><li>関連用語・キーワード</li><li>ミニ問題で理解度チェック</li></ul>
+    </div>
+
+    <div class="bigcard blue2" onclick="openP('grammar')">
+      <div class="ctitle"><span>🔤</span><b>動詞のグループ・活用</b><i>›</i></div>
+      <div class="catch">文法の基礎を確実に</div>
+      <ul><li>五段・一段・サ変・カ変</li><li>動詞の分類と見分け方</li><li>特殊な動詞・複合動詞</li><li>活用表・練習問題</li></ul>
+    </div>
+
+    <div class="bigcard mint" onclick="openP('eval')">
+      <div class="ctitle"><span>📊</span><b>評価・統計・計算</b><i>›</i></div>
+      <div class="catch">データを読み取り、活用する</div>
+      <ul><li>平均・中央値・標準偏差</li><li>正答率・難易度・識別力</li><li>グラフ・表の読み取り</li><li>評価方法・ルーブリック</li><li>簡単な計算問題</li></ul>
+    </div>
+
+    <div class="bigcard lavender2" onclick="openP('cefr')">
+      <div class="ctitle"><span>🌍</span><b>CEFR・JLPT</b><i>›</i></div>
+      <div class="catch">レベルとCan-doを理解する</div>
+      <ul><li>CEFRのレベルと特徴</li><li>JF Can-do</li><li>JLPTとの対応</li><li>タスク例・評価の視点</li><li>レベル判定の練習問題</li></ul>
+    </div>
+
+    <div class="bigcard pink2" onclick="openP('law')">
+      <div class="ctitle"><span>⚖️</span><b>法令・制度</b><i>›</i></div>
+      <div class="catch">日本語教育に関する法令・制度を<br>確実に押さえる</div>
+      <ul><li>日本語教育推進法</li><li>告示・審議会・資格制度</li><li>機関・行政の役割</li><li>最新の動向・時事問題</li><li>著作権・教育利用</li></ul>
+    </div>
+  </div>
+
+  <div class="smallgrid">
+    <div class="smallcard" onclick="openP('boost')"><span>📄</span><b>模擬試験</b><i>›</i><small>本番形式で力試し</small></div>
+    <div class="smallcard" onclick="openP('master')"><span>⭐</span><b>よく出る用語集</b><i>›</i><small>重要用語を効率よく暗記</small></div>
+    <div class="smallcard" onclick="openP('wrong')"><span>🔖</span><b>学習履歴・お気に入り</b><i>›</i><small>間違いを残して復習</small></div>
+  </div>
+
+  <div class="goalbar"><span>🎯</span><b>合格は、正しい理解と、くり返しの練習から</b><small>2026 日本語教員試験・応用攻略　<span class="credit">from ひろみん</span></small></div>
+</div></div>
+
+
+
+
+
+<div id="settingsModal" class="modal" style="display:none">
+  <div class="modalbox">
+    <button class="modalclose" onclick="closeSettings()">×</button>
+    <h2>⚙️ 設定</h2>
+    <div class="settingrow">
+      <b>🎧 音声</b>
+      <div class="seg">
+        <button id="voiceAuto" onclick="setVoiceMode('auto')">自動</button>
+        <button id="voiceMale" onclick="setVoiceMode('male')">男性系</button>
+        <button id="voiceFemale" onclick="setVoiceMode('female')">女性系</button>
+      </div>
+      <small id="voiceStatus">端末の日本語音声を確認中…</small>
+    </div>
+    <div class="settingrow">
+      <b>🐢 話す速さ</b>
+      <input id="rateRange" type="range" min="0.65" max="1.1" step="0.05" value="0.82" oninput="saveRate(this.value)">
+      <span id="rateValue">0.82</span>
+    </div>
+    <div class="settingrow">
+      <b>🔊 音声テスト</b>
+      <button class="primary" onclick="testVoice()">「これは試験用の音声です」</button>
+    </div>
+    <div class="notice" style="margin-top:10px">
+      <b>音声について</b><br>
+      「男性系／女性系」は、端末やブラウザが提供する日本語音声を利用します。性別情報を公開していない音声もあるため、すべての端末で両方が選べるとは限りません。
+    </div>
+  </div>
 </div>
-
-<div class="share"><b>👥 学習仲間と共有</b><br><span class="note">公開URLにしたら、このページをLINEで送るだけ。問題・用語・音声練習を同じページで共有できます。iPhone・Android・PCから同じものを使えます。</span><button class="primary" onclick="shareApp()">📤 共有する</button></div>
-
 
 <section id="quick" class="panel"><button class="back" onclick="home()">← メニュー</button>
 <h2>⚡ スキマ時間トレーニング</h2>
@@ -421,30 +546,66 @@ const boostQ=[
 {q:'テストで測りたい能力を本当に適切に測れているかを表す概念は？',a:['信頼性','妥当性','客観性','波及効果'],c:1,e:'測定したいものを適切に測っているかは妥当性。'}];
 function runBoost(){const el=document.getElementById('boostQuiz');el.innerHTML=boostQ.map((x,i)=>`<div class="item"><span class="badge">80点 ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="boostAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}<div id="bfb${i}" class="feedback"></div></div>`).join('');}
 function boostAns(btn,i,j){const x=boostQ[i],box=document.getElementById('bfb'+i);document.querySelectorAll('#bfb'+i+' ~ .choice').forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:'80点',q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}}
-function speak(text){if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=.85;u.pitch=1;speechSynthesis.speak(u)}
+let voiceMode = localStorage.getItem('ntVoiceMode') || 'auto';
+let speechRate = parseFloat(localStorage.getItem('ntSpeechRate') || '0.82');
+let jaVoices = [];
 
-const allQuickQ = [
- {q:'「昨日、映画を見ます。」の主な問題は？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'「昨日」と「見ます」の時間関係なのでテンス。'},
- {q:'特定の日時・数字・名前を文章から探す読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'特定情報を探す＝スキャニング。'},
- {q:'測りたい能力を本当に適切に測れているかは？',a:['信頼性','妥当性','客観性','波及効果'],c:1,e:'測りたいものを測れているか＝妥当性。'},
- {q:'「する／される」の関係を表すカテゴリーは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'参与者関係・受け身などに関わる＝ヴォイス。'},
- {q:'授業途中で学習状況を確認し、次の指導に生かす評価は？',a:['総括的評価','形成的評価','診断的評価','相対評価'],c:1,e:'学習途中の改善に生かす＝形成的評価。'},
- {q:'「ネットにある画像なら自由に再配布できる」という説明は？',a:['適切','不適切','必ず引用になる','著作権とは無関係'],c:1,e:'公開されていることと自由利用できることは別。'},
- {q:'日本語のリズムを数える基本単位は？',a:['音素','モーラ','形態素','文節'],c:1,e:'日本語の拍を数える基本単位＝モーラ。'},
- {q:'誤りを直接指摘せず、正しい形に言い換えて返すのは？',a:['リキャスト','明示的訂正','翻訳','自己評価'],c:0,e:'正しい形を返して気づきを促す＝リキャスト。'},
- {q:'「う」が日本語の5母音の中で最も低い母音である。',a:['正しい','誤り'],c:1,e:'「あ」が最も低い。日本語の「う」は高母音。'},
- {q:'上位群・中位群・下位群の正答率を比較して問題の識別力を見る方法は？',a:['3群法','中央値法','多読法','ポートフォリオ法'],c:0,e:'上位・中位・下位の3群で正答率を比較する＝3群法。'}
-];
-function quickQuiz(n){
-  const data=[...allQuickQ].sort(()=>Math.random()-.5).slice(0,n);
-  document.getElementById('home').style.display='none';
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  const p=document.getElementById('quick');
-  p.classList.add('active');
-  const q=document.getElementById('quickQuiz');
-  q.innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">スキマ ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}<div id="qfb${i}" class="feedback"></div></div>`).join('');
-  window.quickData=data; scrollTo(0,0);
+function loadVoices(){
+  if(!('speechSynthesis' in window)) return;
+  jaVoices = speechSynthesis.getVoices().filter(v => /^ja(-|_)/i.test(v.lang) || /Japanese|日本語|Kyoko|Otoya|Hattori|Siri/i.test(v.name));
+  updateVoiceStatus();
 }
+function updateVoiceStatus(){
+  const el=document.getElementById('voiceStatus');
+  if(!el) return;
+  if(!('speechSynthesis' in window)){el.textContent='この端末ではブラウザ音声に対応していません。';return}
+  if(!jaVoices.length){el.textContent='日本語音声がまだ読み込まれていません。';return}
+  const male=jaVoices.filter(v=>/otoya|male|男|hattori|ichiro/i.test(v.name));
+  const female=jaVoices.filter(v=>/kyoko|female|女|siri/i.test(v.name));
+  el.textContent=`日本語音声 ${jaVoices.length}種類（男性系 ${male.length}・女性系 ${female.length}）`;
+}
+if('speechSynthesis' in window){
+  speechSynthesis.onvoiceschanged=loadVoices;
+  setTimeout(loadVoices,300);
+}
+function pickVoice(){
+  if(!jaVoices.length) loadVoices();
+  if(voiceMode==='male'){
+    return jaVoices.find(v=>/otoya|male|男|hattori|ichiro/i.test(v.name)) || jaVoices[0];
+  }
+  if(voiceMode==='female'){
+    return jaVoices.find(v=>/kyoko|female|女|siri/i.test(v.name)) || jaVoices[0];
+  }
+  return jaVoices.find(v=>v.lang.toLowerCase().startsWith('ja')) || jaVoices[0];
+}
+function speak(text){
+  if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=speechRate;u.pitch=1;
+  const v=pickVoice(); if(v) u.voice=v;
+  speechSynthesis.speak(u);
+}
+function setVoiceMode(mode){
+  voiceMode=mode;localStorage.setItem('ntVoiceMode',mode);
+  document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
+  const id=mode==='auto'?'voiceAuto':mode==='male'?'voiceMale':'voiceFemale';
+  const b=document.getElementById(id);if(b)b.classList.add('active');
+  updateVoiceStatus();
+}
+function saveRate(v){
+  speechRate=parseFloat(v);localStorage.setItem('ntSpeechRate',v);
+  const el=document.getElementById('rateValue');if(el)el.textContent=v;
+}
+function openSettings(){
+  document.getElementById('settingsModal').style.display='flex';
+  document.getElementById('rateRange').value=speechRate;
+  document.getElementById('rateValue').textContent=speechRate;
+  setVoiceMode(voiceMode);
+  loadVoices();
+}
+function closeSettings(){document.getElementById('settingsModal').style.display='none'}
+function testVoice(){speak('これは試験用の音声です。まず一回聞いてから答えてください。');}
+
 function quickAns(btn,i,j){
  const x=window.quickData[i],box=document.getElementById('qfb'+i);
  document.querySelectorAll('#qfb'+i+' ~ .choice').forEach(b=>b.disabled=true);
@@ -454,10 +615,12 @@ function quickAns(btn,i,j){
 function speakOnce(text,btn){
  if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}
  speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=.82;u.pitch=1;
+ const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=speechRate;u.pitch=1;
+ const v=pickVoice(); if(v) u.voice=v;
  speechSynthesis.speak(u);
  if(btn){btn.disabled=true;btn.textContent='🔊 再生済み（1回）';}
 }
+
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
