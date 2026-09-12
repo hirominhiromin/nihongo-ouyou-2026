@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v11</title>
+<title>2026 日本語教員試験・応用攻略 v13</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -37,11 +37,11 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .quickgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .quickbtn{border:1px solid #dfe3ea;background:#f8fafc;border-radius:11px;padding:10px 6px;font-weight:750;font-size:12px}
 .vowelbox{background:#fff;border:1px solid #d9dee8;border-radius:14px;padding:10px;margin:10px 0}
-.vowelgrid{position:relative;height:245px;border-left:2px solid #222;border-bottom:2px solid #222;margin:14px 28px 8px 42px}
-.vowelgrid:before{content:"舌の高さ（高→低）";position:absolute;left:-42px;top:0;font-size:10px;writing-mode:vertical-rl}
-.vowelgrid:after{content:"前 ← 舌の位置 → 後";position:absolute;bottom:-27px;left:20%;font-size:10px}
+.vowelgrid{position:relative;height:245px;border-left:2px solid #222;border-bottom:2px solid #222;margin:30px 48px 42px 72px}
+.vowelgrid:before{content:"舌の高さ";position:absolute;left:-58px;top:-25px;font-size:11px;font-weight:700}
+.vowelgrid:after{content:"前舌 ←──── 舌の位置 ────→ 後舌";position:absolute;bottom:-35px;left:5%;font-size:11px;font-weight:700;white-space:nowrap}
 .vowel{position:absolute;transform:translate(-50%,-50%);font-size:22px;font-weight:850}
-.vowel.i{left:18%;top:15%}.vowel.e{left:27%;top:43%}.vowel.a{left:45%;top:82%}.vowel.o{left:68%;top:63%}.vowel.u{left:78%;top:35%}
+.vowel.i{left:18%;top:18%}.vowel.u{left:78%;top:18%}.vowel.e{left:28%;top:50%}.vowel.o{left:68%;top:50%}.vowel.a{left:48%;top:83%}
 .vowel button{border:0;background:#eef2ff;border-radius:50%;width:44px;height:44px;font-size:20px;font-weight:800}
 .once{background:#172033!important}
 .typebox{background:#f8fafc;border-radius:12px;padding:11px;line-height:1.7;font-size:13px}
@@ -84,10 +84,19 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .seg{display:flex;gap:7px;margin-top:9px}.seg button{flex:1;border:1px solid #d8dee8;background:#f7f9fc;border-radius:10px;padding:10px;font-weight:750}
 .seg button.active{background:#e7f0ff;border-color:#8bb7ff}
 #rateRange{width:80%;vertical-align:middle;margin-top:10px}#rateValue{display:inline-block;margin-left:7px;font-weight:700}
+
+.audioPlus{}
+#audioPlus .exam{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:16px;margin:14px 0}
+#audioPlus .audioBtn{border:0;background:#edf5ff;border-radius:12px;padding:12px 16px;font-weight:800;font-size:15px;margin:6px 0 12px}
+#audioPlus .choices{display:grid;gap:8px}
+#audioPlus .choice{text-align:left;border:1px solid #d7dee9;background:#fff;border-radius:10px;padding:11px;font-size:15px}
+#audioPlus .choice.correct{outline:2px solid #45a36b;background:#effaf3}
+#audioPlus .choice.wrong{outline:2px solid #d96b6b}
+#audioPlus .feedback{display:none;background:#f5f7fa;border-radius:10px;padding:12px;margin-top:10px;line-height:1.65}
 </style>
 </head>
 <body>
-<header><h1>🎓 2026 日本語教員試験・応用攻略 v11</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
+<header><h1>🎓 2026 日本語教員試験・応用攻略 v13</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
 <main>
 
 <div class="quick">
@@ -134,7 +143,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <div class="bigcard lavender" onclick="openP('practice')">
       <div class="ctitle"><span>📚</span><b>日本語教育実践<br>（科目11〜13）</b><i>›</i></div>
       <div class="catch">教える力・授業をデザインする力</div>
-      <ul><li>授業設計・指導法</li><li>生教材・教材分析・教材開発</li><li>スキミング／スキャニング</li><li>精読／多読・読解指導</li><li>タスク・ロールプレイ</li><li>フィードバック（リキャスト・訂正・誘導）</li><li>評価法・学習者自己評価・Can-do</li><li>ICT活用・協働学習</li></ul>
+      <ul><li>授業設計・指導法</li><li>生教材・教材分析・教材開発</li><li>スキミング／スキャニング</li><li>精読／多読・読解指導</li><li>タスク・ロールプレイ</li><li>フィードバック（リキャスト・訂正・誘導）</li><li>評価法・学習者自己評価・Can-do</li><li>敬語・待遇表現・ポライトネス</li><li>ICT活用・協働学習</li></ul>
     </div>
 
     <div class="bigcard yellow" onclick="openP('fifty')">
@@ -291,6 +300,98 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>調音点</b>＝どこで狭める・閉鎖するか。<b>調音法</b>＝どうやって気流を妨げるか。<br>例：/p/＝両唇＋破裂音、/m/＝両唇＋鼻音。</div>
 <div class="notice"><b>国試型のコツ</b><br>「音が違う」だけで終わらず、<b>①どの音？②どこで？③どう作る？④何拍？⑤高低は？</b>まで言えるようにする。</div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題を解く</button><div id="listeningQuiz"></div></section>
+
+<section id="audioPlus" class="detail">
+<h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
+<div class="notice"><b>本番モード：</b>まず音声を1回だけ聞く → すぐ答える → 解説を見る。解答後は必要ならもう一度。</div>
+
+<div class="exam"><h3>第1問　長音・短音</h3>
+<p>次の音声を聞き、音の違いとして最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('おばさん',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① おばさんとおばあさんの長音の区別</button><button class="choice" onclick="ans(this,'不適切')">② 促音の脱落</button><button class="choice" onclick="ans(this,'不適切')">③ 撥音の誤り</button><button class="choice" onclick="ans(this,'不適切')">④ アクセントの誤り</button></div>
+<div class="feedback" data-answer="①">正解：①　長音の有無で意味が変わる対立。<br>※ここでは「長音を聞き分ける」基礎練習として使う。</div></div>
+
+<div class="exam"><h3>第2問　促音</h3>
+<p>次の2語を聞いて、音の違いとして最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('きてください。きってください。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 長音</button><button class="choice" onclick="ans(this,'不適切')">② 促音</button><button class="choice" onclick="ans(this,'不適切')">③ 撥音</button><button class="choice" onclick="ans(this,'不適切')">④ 拗音</button></div>
+<div class="feedback" data-answer="②">正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。</div></div>
+
+<div class="exam"><h3>第3問　撥音</h3>
+<p>「さんぽ」の音の特徴として最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('さんぽ',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 撥音を含む</button><button class="choice" onclick="ans(this,'不適切')">② 促音を含む</button><button class="choice" onclick="ans(this,'不適切')">③ 長音を含む</button><button class="choice" onclick="ans(this,'不適切')">④ 拗音を含む</button></div>
+<div class="feedback" data-answer="①">正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。</div></div>
+
+<div class="exam"><h3>第4問　無声化</h3>
+<p>「すき」の発音で、条件によって母音が弱くなり聞こえにくくなる現象は何か。</p>
+<button class="audioBtn" onclick="speakOnce('すき',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 連濁</button><button class="choice" onclick="ans(this,'不適切')">② 母音の無声化</button><button class="choice" onclick="ans(this,'不適切')">③ 音便</button><button class="choice" onclick="ans(this,'不適切')">④ 脱落</button></div>
+<div class="feedback" data-answer="②">正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。</div></div>
+
+<div class="exam"><h3>第5問　拗音</h3>
+<p>「きゃ」の音の構造として最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('きゃ',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 2モーラの長音</button><button class="choice" onclick="ans(this,'不適切')">② 拗音を含む1モーラ</button><button class="choice" onclick="ans(this,'不適切')">③ 撥音を含む</button><button class="choice" onclick="ans(this,'不適切')">④ 促音を含む</button></div>
+<div class="feedback" data-answer="②">正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。</div></div>
+
+<div class="exam"><h3>第6問　アクセント</h3>
+<p>同じ「はし」でも、文脈によってアクセントが異なる例を聞き、ピッチの下がり目に注目しなさい。</p>
+<button class="audioBtn" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 音節数</button><button class="choice" onclick="ans(this,'不適切')">② ピッチの下降位置</button><button class="choice" onclick="ans(this,'不適切')">③ 長音の有無だけ</button><button class="choice" onclick="ans(this,'不適切')">④ 子音の調音点だけ</button></div>
+<div class="feedback" data-answer="②">正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。</div></div>
+
+<div class="exam"><h3>第7問　モーラ</h3>
+<p>「がっこう」は何モーラか。</p>
+<button class="audioBtn" onclick="speakOnce('がっこう',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 2</button><button class="choice" onclick="ans(this,'不適切')">② 3</button><button class="choice" onclick="ans(this,'不適切')">③ 4</button><button class="choice" onclick="ans(this,'不適切')">④ 5</button></div>
+<div class="feedback" data-answer="③">正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。</div></div>
+
+<div class="exam"><h3>第8問　学習者の文法誤用</h3>
+<p>学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('昨日、映画を見ます。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① テンス</button><button class="choice" onclick="ans(this,'不適切')">② アスペクト</button><button class="choice" onclick="ans(this,'不適切')">③ ヴォイス</button><button class="choice" onclick="ans(this,'不適切')">④ 待遇表現</button></div>
+<div class="feedback" data-answer="①">正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。</div></div>
+
+<div class="exam"><h3>第9問　格</h3>
+<p>学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。</p>
+<button class="audioBtn" onclick="speakOnce('学校を行きます。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① テンス</button><button class="choice" onclick="ans(this,'不適切')">② 格・格助詞</button><button class="choice" onclick="ans(this,'不適切')">③ アスペクト</button><button class="choice" onclick="ans(this,'不適切')">④ 音韻</button></div>
+<div class="feedback" data-answer="②">正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。</div></div>
+
+<div class="exam"><h3>第10問　ヴォイス</h3>
+<p>「私は先生を褒められました。」の問題を聞き、分類しなさい。</p>
+<button class="audioBtn" onclick="speakOnce('私は先生を褒められました。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① ヴォイス</button><button class="choice" onclick="ans(this,'不適切')">② テンス</button><button class="choice" onclick="ans(this,'不適切')">③ 語彙</button><button class="choice" onclick="ans(this,'不適切')">④ アクセント</button></div>
+<div class="feedback" data-answer="①">正解：①　「する／される」という動作主・受け手の関係を確認する。</div></div>
+
+<div class="exam"><h3>第11問　アスペクト</h3>
+<p>「もう宿題をしています」の「〜ている」が表す意味に注意して聞きなさい。</p>
+<button class="audioBtn" onclick="speakOnce('もう宿題をしています。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 動作の進行・状態など、出来事の捉え方</button><button class="choice" onclick="ans(this,'不適切')">② 発話時点の丁寧さだけ</button><button class="choice" onclick="ans(this,'不適切')">③ 語のアクセント</button><button class="choice" onclick="ans(this,'不適切')">④ 調音点</button></div>
+<div class="feedback" data-answer="①">正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。</div></div>
+
+<div class="exam"><h3>第12問　モダリティ</h3>
+<p>話し手の判断・推量を表す部分を聞き取る。</p>
+<button class="audioBtn" onclick="speakOnce('明日は雨が降るでしょう。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① モダリティ</button><button class="choice" onclick="ans(this,'不適切')">② 格助詞</button><button class="choice" onclick="ans(this,'不適切')">③ 音便</button><button class="choice" onclick="ans(this,'不適切')">④ 文字・表記</button></div>
+<div class="feedback" data-answer="①">正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。</div></div>
+
+<div class="exam"><h3>第13問　待遇・ポライトネス</h3>
+<p>職場の上司に対する発話として、場面に合うものを判断する。</p>
+<button class="audioBtn" onclick="speakOnce('部長、明日の会議にいらっしゃいますか。',this)">🔊 音源を1回聞く</button>
+<div class="choices"><button class="choice" onclick="ans(this,'不適切')">① 場面に応じた敬語使用</button><button class="choice" onclick="ans(this,'不適切')">② 長音</button><button class="choice" onclick="ans(this,'不適切')">③ 撥音</button><button class="choice" onclick="ans(this,'不適切')">④ 母音無声化</button></div>
+<div class="feedback" data-answer="①">正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。</div></div>
+
+<div class="exam"><h3>第14問　音声→専門用語</h3>
+<p>聞いた瞬間に分類する練習。音声の後、「何が違う？」を自分で一言にしてから答える。</p>
+<button class="audioBtn" onclick="speakOnce('私は昨日、映画を見ます。',this)">🔊 音源を1回聞く</button>
+<div class="notice"><b>5秒ルール：</b>①いつ？→テンス　②どうなってる？→アスペクト　③する？される？→ヴォイス　④話し手の判断？→モダリティ　⑤誰に・何を？→格　⑥場面に合う？→待遇</div>
+<div class="choices"><button class="choice" onclick="ans(this,'①')">① テンス</button><button class="choice" onclick="ans(this,'②')">② アスペクト</button><button class="choice" onclick="ans(this,'③')">③ ヴォイス</button><button class="choice" onclick="ans(this,'④')">④ モダリティ</button></div>
+<div class="feedback" data-answer="①">正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。</div></div>
+
+</section>
+
 <section id="oral" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声 完全版</h2>
 <div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
 <div class="audioGrid">
@@ -309,7 +410,13 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="vowel o"><button onclick="speakOnce('お',this)">お</button></div>
 <div class="vowel u"><button onclick="speakOnce('う',this)">う</button></div>
 </div>
-<div class="diagram-tip"><b>試験の見方：</b>「舌の高さ」「舌の前後」「唇の丸め」を手掛かりにする。日本語の「う」は英語の /u/ と完全に同じではなく、唇の丸め・舌の位置にも注意。</div>
+<div class="diagram-tip"><b>試験の見方：</b>「舌の高さ」「舌の前後」「唇の丸め」を手掛かりにする。<br>
+<b>高さ：</b>い・う＝高い／え・お＝中間／あ＝低い。<br>
+<b>位置：</b>い・え＝前寄り／あ＝中央寄り／お・う＝後ろ寄り。<br>
+※日本語の「う」は英語の /u/ と完全に同じではなく、唇の丸め・舌の位置にも注意。</div>
+<div class="typebox"><b>👅 断面図でまず探す「舌」</b><br>
+舌は、口の中の下側から前後に伸びる<b>大きな筋肉質の曲線</b>として描かれる。歯・歯茎・硬口蓋・軟口蓋は舌の上側にあり、声帯・声門はさらに奥の喉頭付近。<br>
+<b>解き方：</b>①まず舌を特定 → ②舌のどの部分か（舌尖・舌端・舌面・舌根）→ ③相手側の器官を見る → ④調音点 → ⑤調音法。</div>
 </div>
 <h3>🎧 本番風：音声はまず1回だけ</h3>
 <div class="notice"><b>① 音源を1回聞く → ② すぐ答える → ③ 解説を見る。</b><br>「もう一度聞く」は答えを考えた後に使う。試験での聞き取り負荷に近づける。</div>
@@ -355,6 +462,21 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <line x1="445" y1="82" x2="430" y2="150"/><circle cx="448" cy="63" r="17" fill="white"/><text x="443" y="69" stroke="none">12</text>
 </g></svg>
 <div class="diagram-tip"><b>答えを隠して練習：</b> 1鼻腔／2歯・歯茎付近／3歯茎付近／4舌尖／5舌端／6舌面／7口蓋垂／8咽頭／9喉頭／10声門・声帯付近／11硬口蓋／12軟口蓋。<br>※これは試験対策用の簡略模式図。実際の問題は図の向き・番号・線の位置が異なる場合がある。</div></div>
+
+<h3>📝 国試風「断面図の見分け」</h3>
+<div class="item">
+<b>最初に全部を覚えようとしない。</b><br>
+①「舌」を探す → ②口の天井側（硬口蓋・軟口蓋・口蓋垂） → ③前方の歯・歯茎 → ④奥の咽頭・喉頭 → ⑤声門・声帯、の順で位置関係を取る。
+</div>
+<div class="typebox">
+<b>👅 舌の4区分</b><br>
+<span class="badge">舌尖</span> いちばん先端　
+<span class="badge">舌端</span> 舌尖の少し後ろ　
+<span class="badge">舌面</span> 中央の広い面　
+<span class="badge">舌根</span> いちばん奥<br>
+<b>ポイント：</b>「図の中で舌がどれか分からない」問題を想定し、まず<b>舌の輪郭</b>を探してから番号を見る。
+</div>
+<div class="notice"><b>本番の判断順：</b>「これは舌？→どの部分？→どこに近い？→どうやって音を作る？」</div>
 <h3>🦷 調音器官</h3>
 <div class="item"><b>唇</b>：上唇・下唇。<b>歯・歯茎</b>：舌との接触・接近に関係。<b>硬口蓋・軟口蓋・口蓋垂</b>：舌との位置関係を見る。<b>咽頭・喉頭・声帯・声門</b>：気流と発声に関係。</div>
 <h3>👅 舌の部位</h3><div class="item"><b>舌尖</b>＝先端／<b>舌端</b>＝舌尖に近い部分／<b>舌面</b>＝中央の広い部分／<b>舌根</b>＝奥の部分。試験では「舌のどこが動くか」と調音点をセットで考える。</div>
@@ -372,6 +494,31 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h3>② 🔎 読み方の使い分け</h3><div class="item"><span class="badge">スキミング</span>＝全体の大意・要点を素早く把握。<br><span class="badge">スキャニング</span>＝必要な特定情報を探す。<br><span class="badge">精読</span>＝語彙・文法・論理まで細かく読む。<br><span class="badge">多読</span>＝多くの文章を読む。読む量・流暢さ・読書経験の拡大などをねらう。</div>
 <h3>③ 🎯 タスクと練習</h3><div class="item"><b>タスク</b>＝現実的な目的・意味のある成果を伴う言語活動。例：時刻表を見て友達との旅行計画を決める。<br><b>文型練習</b>＝特定の文型・形式の正確さを練習。<br><b>ポイント</b>：「何を言うか」より「何を達成するか」が中心ならタスク性が高い。</div>
 <h3>④ 🎭 ロールプレイ・会話活動</h3><div class="item"><b>ロールプレイ</b>＝役割・場面を設定し、その役割になってやり取りする。例：店員と客、学校への相談。<br><b>自由会話</b>＝役割や台本の制約が少ない。<br><b>情報差（information gap）</b>＝参加者が異なる情報を持ち、やり取りによって情報を完成させる。</div>
+
+<h3>⑤ 🙇 敬語・待遇表現</h3>
+<div class="item">
+<b>尊敬語</b>＝相手・話題の人物の動作や状態を高めて表す。<br>
+例：先生が<strong>いらっしゃいます</strong>／先生が<strong>召し上がります</strong>。
+</div>
+<div class="item">
+<b>謙譲語</b>＝自分側の動作を低め、相手を立てる。<br>
+例：私が先生のところへ<strong>伺います</strong>／私が資料を<strong>拝見します</strong>。
+</div>
+<div class="item">
+<b>丁寧語</b>＝文末などを丁寧にする。<br>
+例：行き<strong>ます</strong>／です。
+</div>
+<div class="item">
+<b>美化語</b>＝語を美しく丁寧に言う。例：<strong>お</strong>茶、<strong>ご</strong>飯など。<br>
+<b>注意：</b>「お／ご」が付けば必ず尊敬語・謙譲語になるわけではない。
+</div>
+<div class="typebox">
+<b>🎯 試験での見分け方</b><br>
+「誰の動作を高めている？」→ 尊敬語<br>
+「誰の動作を低めて相手を立てている？」→ 謙譲語<br>
+「文末を丁寧にしている？」→ 丁寧語<br>
+「場面・相手との関係に合っている？」→ 待遇・ポライトネス
+</div>
 <h3>⑤ 🗣️ フィードバック</h3><div class="item"><b>明示的訂正</b>＝誤りを直接訂正。<br><b>リキャスト</b>＝誤りを正しい形に言い換えて返す。<br><b>明確化要求</b>＝「もう一度？」など、伝達上の問題を示す。<br><b>プロンプト／誘導</b>＝答えを与えず、学習者自身の修正を促す。<br><b>メタ言語的フィードバック</b>＝文法・形式についてヒントを与える。</div>
 <h3>⑥ ✍️ 書くことを教える</h3><div class="item"><b>プロダクト・アプローチ</b>＝完成した文章の正確さ・モデルを重視。<br><b>プロセス・アプローチ</b>＝発想→構想→下書き→推敲→書き直しなど、書く過程を重視。<br><b>ジャンル・アプローチ</b>＝目的・読者・社会的な場面に応じた文章の型や特徴を意識。<br><b>ピア・レビュー</b>＝学習者同士で文章を読み、基準に沿ってコメント・改善する。</div>
 <h3>⑦ 📝 作文評価・ルーブリック</h3><div class="item"><b>評価基準は目標と一致させる。</b>例：タスク達成、構成、文法・語彙・表記など。<br><b>分析的評価</b>＝複数の観点を分けて評価。<br><b>総括的評価</b>＝文章全体をまとめて判断。<br><b>自己評価</b>＝学習者自身が基準に照らして振り返る。<br>「文法ミスがゼロなら高得点」とは限らず、設定した目的・評価基準との整合性を見る。</div>
@@ -497,7 +644,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h2>🧠 日本語教師 必須用語マスター</h2>
 <div class="notice"><b>「公式の全必須用語リスト」ではありません。</b><br>文科省の「必須の教育内容50項目」を背骨に、日本語教師養成・試験対策で重要な用語を横断整理。覚えるだけでなく、類似語との違い・授業場面での判断につなげる。</div>
 <div class="typebox"><b>覚え方：</b> 用語 → 一言定義 → 似た用語 → 具体例 → 本番型問題。<br><b>重要：</b> 「正しいもの」だけでなく「不適切なもの」「誤っているもの」「最も適当でないもの」も出題する。</div>
-<h3>🔑 重要用語</h3><div class="mastergrid"><div class="term"><b>ZPD（発達の最近接領域）</b>一人では難しいが支援があればできる領域。足場かけと関連。</div><div class="term"><b>MKO（より有能な他者）</b>学習者の学習を支援できる他者。教師や熟達した学習者など。</div><div class="term"><b>足場かけ</b>学習者が自力でできるようになるまで、必要な支援を一時的に与える。</div><div class="term"><b>中間言語</b>第二言語学習者が形成する、目標言語へ向かう体系的な言語体系。</div><div class="term"><b>化石化</b>誤用などが学習過程で固定化し、修正されにくくなる現象。</div><div class="term"><b>転移</b>既に知っている言語・知識・経験が新しい学習に影響すること。</div><div class="term"><b>リキャスト</b>誤りを直接指摘せず、正しい形に言い換えて返す訂正フィードバック。</div><div class="term"><b>明示的訂正</b>誤りを明確に指摘し、正しい表現を示すフィードバック。</div><div class="term"><b>形成的評価</b>学習途中で学習状況を把握し、次の学習・指導の改善につなげる評価。</div><div class="term"><b>総括的評価</b>学習のまとまりの最後に到達度や成果を判断する評価。</div><div class="term"><b>診断的評価</b>学習開始前などに、既有知識や課題を把握するための評価。</div><div class="term"><b>妥当性</b>測りたいものを適切に測れている程度。</div><div class="term"><b>信頼性</b>同じ条件なら安定した結果が得られる程度。</div><div class="term"><b>客観性</b>評価者が変わっても判断が大きくぶれにくい程度。</div><div class="term"><b>波及効果（washback）</b>テストが学習・指導の内容や方法に与える影響。</div><div class="term"><b>ルーブリック</b>複数の評価観点と段階的な基準を表にした評価ツール。</div><div class="term"><b>Can-do</b>学習者が何を「できる」かを能力記述で表す考え方。</div><div class="term"><b>スキミング</b>文章全体の大意・要点を素早くつかむ読み方。</div><div class="term"><b>スキャニング</b>日時・名前・数字など特定の情報を探す読み方。</div><div class="term"><b>生教材</b>現実社会で実際に使われている素材を学習に利用するもの。</div><div class="term"><b>トップダウン</b>背景知識・目的・予測などから本文を解釈する処理。</div><div class="term"><b>ボトムアップ</b>文字・語・文など小さな単位から全体を組み立てる処理。</div><div class="term"><b>アフォーダンス</b>環境や道具が、利用者に特定の行為を促す可能性。</div><div class="term"><b>自律学習</b>学習者自身が目標・方法・進み具合などを主体的に調整する学習。</div><div class="term"><b>協働学習</b>他者と相互作用しながら課題や学習目標に取り組む学習。</div><div class="term"><b>タンデム学習</b>異なる言語を学ぶ学習者同士が互いに支援し合う学習。</div><div class="term"><b>PBL</b>問題・課題の解決を中心に、学習者が主体的に学ぶ学習方法。</div><div class="term"><b>反転授業</b>講義的内容を授業外で学び、授業時間を活動・協働・応用に使う方法。</div><div class="term"><b>コーパス</b>大量の実際の言語資料を集め、検索・分析できるデータベース。</div><div class="term"><b>コロケーション</b>特定の語と語が結びつきやすい慣用的な共起関係。</div><div class="term"><b>テンス</b>出来事を時間軸上のいつとして捉える文法カテゴリー。</div><div class="term"><b>アスペクト</b>動作・出来事を開始・継続・完了などの捉え方で表すカテゴリー。</div><div class="term"><b>ヴォイス</b>出来事の参与者と、主語などの文法的関係を表すカテゴリー。</div><div class="term"><b>モダリティ</b>話し手の判断・意志・推量・義務などの捉え方を表すカテゴリー。</div><div class="term"><b>待遇表現</b>相手・場面・関係性に応じて敬意や配慮を表す表現。</div><div class="term"><b>ポライトネス</b>対人関係を調整し、相手への配慮を示す言語的・非言語的方略。</div><div class="term"><b>発話行為</b>発話によって依頼・謝罪・約束などの行為を行うこと。</div><div class="term"><b>含意</b>文字通り明示されていないが、文脈から推論される意味。</div><div class="term"><b>前提</b>ある発話が成立する前から共有・想定されている情報。</div><div class="term"><b>モーラ</b>日本語のリズムを数える基本単位。長音・促音・撥音なども1拍として数える。</div><div class="term"><b>調音点</b>音を作るときに主に使われる場所。両唇・歯茎・硬口蓋・軟口蓋など。</div><div class="term"><b>調音法</b>閉鎖・摩擦・鼻音など、音をどのように作るか。</div><div class="term"><b>無声化</b>特定の音環境で母音などの声帯振動が弱くなったりなくなったりする現象。</div><div class="term"><b>同化</b>隣接音の影響を受けて、ある音が別の音に似た性質になる現象。</div><div class="term"><b>平均</b>得点などの合計をデータ数で割った値。</div><div class="term"><b>中央値</b>データを順に並べたとき中央に位置する値。</div><div class="term"><b>標準偏差</b>データが平均からどの程度ばらついているかを示す指標。</div><div class="term"><b>難易度</b>項目がどの程度解きやすい／難しいかを示す指標。正答率などで捉える。</div><div class="term"><b>識別力</b>その問題が、能力の高い受験者と低い受験者をどの程度区別できるか。</div><div class="term"><b>引用</b>自分の著作物の中で、他人の著作物を一定の条件のもとで利用すること。出典等の要件確認が必要。</div><div class="term"><b>著作者人格権</b>公表権・氏名表示権・同一性保持権など、著作者の人格的利益を守る権利。</div><div class="term"><b>公衆送信</b>放送・有線放送・インターネット送信など、公衆に向けて著作物を送信すること。</div><div class="term"><b>授業目的公衆送信補償金制度</b>教育機関で授業のために公衆送信する際の著作物利用に関係する制度。</div><div class="term"><b>登録日本語教員</b>認定日本語教育機関等で日本語教育を担う、国の登録を受けた日本語教員。</div><div class="term"><b>認定日本語教育機関</b>日本語教育機関認定法に基づき、文部科学大臣の認定を受けた日本語教育機関。</div></div>
+<h3>🔑 重要用語</h3><div class="mastergrid"><div class="term"><b>ZPD（発達の最近接領域）</b>一人では難しいが支援があればできる領域。足場かけと関連。</div><div class="term"><b>MKO（より有能な他者）</b>学習者の学習を支援できる他者。教師や熟達した学習者など。</div><div class="term"><b>足場かけ</b>学習者が自力でできるようになるまで、必要な支援を一時的に与える。</div><div class="term"><b>中間言語</b>第二言語学習者が形成する、目標言語へ向かう体系的な言語体系。</div><div class="term"><b>化石化</b>誤用などが学習過程で固定化し、修正されにくくなる現象。</div><div class="term"><b>転移</b>既に知っている言語・知識・経験が新しい学習に影響すること。</div><div class="term"><b>リキャスト</b>誤りを直接指摘せず、正しい形に言い換えて返す訂正フィードバック。</div><div class="term"><b>明示的訂正</b>誤りを明確に指摘し、正しい表現を示すフィードバック。</div><div class="term"><b>形成的評価</b>学習途中で学習状況を把握し、次の学習・指導の改善につなげる評価。</div><div class="term"><b>総括的評価</b>学習のまとまりの最後に到達度や成果を判断する評価。</div><div class="term"><b>診断的評価</b>学習開始前などに、既有知識や課題を把握するための評価。</div><div class="term"><b>妥当性</b>測りたいものを適切に測れている程度。</div><div class="term"><b>信頼性</b>同じ条件なら安定した結果が得られる程度。</div><div class="term"><b>客観性</b>評価者が変わっても判断が大きくぶれにくい程度。</div><div class="term"><b>波及効果（washback）</b>テストが学習・指導の内容や方法に与える影響。</div><div class="term"><b>ルーブリック</b>複数の評価観点と段階的な基準を表にした評価ツール。</div><div class="term"><b>Can-do</b>学習者が何を「できる」かを能力記述で表す考え方。</div><div class="term"><b>スキミング</b>文章全体の大意・要点を素早くつかむ読み方。</div><div class="term"><b>スキャニング</b>日時・名前・数字など特定の情報を探す読み方。</div><div class="term"><b>生教材</b>現実社会で実際に使われている素材を学習に利用するもの。</div><div class="term"><b>トップダウン</b>背景知識・目的・予測などから本文を解釈する処理。</div><div class="term"><b>ボトムアップ</b>文字・語・文など小さな単位から全体を組み立てる処理。</div><div class="term"><b>アフォーダンス</b>環境や道具が、利用者に特定の行為を促す可能性。</div><div class="term"><b>自律学習</b>学習者自身が目標・方法・進み具合などを主体的に調整する学習。</div><div class="term"><b>協働学習</b>他者と相互作用しながら課題や学習目標に取り組む学習。</div><div class="term"><b>タンデム学習</b>異なる言語を学ぶ学習者同士が互いに支援し合う学習。</div><div class="term"><b>PBL</b>問題・課題の解決を中心に、学習者が主体的に学ぶ学習方法。</div><div class="term"><b>反転授業</b>講義的内容を授業外で学び、授業時間を活動・協働・応用に使う方法。</div><div class="term"><b>コーパス</b>大量の実際の言語資料を集め、検索・分析できるデータベース。</div><div class="term"><b>コロケーション</b>特定の語と語が結びつきやすい慣用的な共起関係。</div><div class="term"><b>テンス</b>出来事を時間軸上のいつとして捉える文法カテゴリー。</div><div class="term"><b>アスペクト</b>動作・出来事を開始・継続・完了などの捉え方で表すカテゴリー。</div><div class="term"><b>ヴォイス</b>出来事の参与者と、主語などの文法的関係を表すカテゴリー。</div><div class="term"><b>モダリティ</b>話し手の判断・意志・推量・義務などの捉え方を表すカテゴリー。</div><div class="term"><b>尊敬語</b>相手・話題の人物の動作や状態を高めて表す。</div><div class="term"><b>謙譲語</b>自分側の動作を低め、相手を立てる。</div><div class="term"><b>丁寧語</b>文末などを丁寧な形にして表す。</div><div class="term"><b>美化語</b>語を美しく丁寧に表す。必ずしも尊敬語・謙譲語ではない。</div><div class="term"><b>待遇表現</b>相手・場面・関係性に応じて敬意や配慮を表す表現。</div><div class="term"><b>ポライトネス</b>対人関係を調整し、相手への配慮を示す言語的・非言語的方略。</div><div class="term"><b>発話行為</b>発話によって依頼・謝罪・約束などの行為を行うこと。</div><div class="term"><b>含意</b>文字通り明示されていないが、文脈から推論される意味。</div><div class="term"><b>前提</b>ある発話が成立する前から共有・想定されている情報。</div><div class="term"><b>モーラ</b>日本語のリズムを数える基本単位。長音・促音・撥音なども1拍として数える。</div><div class="term"><b>調音点</b>音を作るときに主に使われる場所。両唇・歯茎・硬口蓋・軟口蓋など。</div><div class="term"><b>調音法</b>閉鎖・摩擦・鼻音など、音をどのように作るか。</div><div class="term"><b>無声化</b>特定の音環境で母音などの声帯振動が弱くなったりなくなったりする現象。</div><div class="term"><b>同化</b>隣接音の影響を受けて、ある音が別の音に似た性質になる現象。</div><div class="term"><b>平均</b>得点などの合計をデータ数で割った値。</div><div class="term"><b>中央値</b>データを順に並べたとき中央に位置する値。</div><div class="term"><b>標準偏差</b>データが平均からどの程度ばらついているかを示す指標。</div><div class="term"><b>難易度</b>項目がどの程度解きやすい／難しいかを示す指標。正答率などで捉える。</div><div class="term"><b>識別力</b>その問題が、能力の高い受験者と低い受験者をどの程度区別できるか。</div><div class="term"><b>引用</b>自分の著作物の中で、他人の著作物を一定の条件のもとで利用すること。出典等の要件確認が必要。</div><div class="term"><b>著作者人格権</b>公表権・氏名表示権・同一性保持権など、著作者の人格的利益を守る権利。</div><div class="term"><b>公衆送信</b>放送・有線放送・インターネット送信など、公衆に向けて著作物を送信すること。</div><div class="term"><b>授業目的公衆送信補償金制度</b>教育機関で授業のために公衆送信する際の著作物利用に関係する制度。</div><div class="term"><b>登録日本語教員</b>認定日本語教育機関等で日本語教育を担う、国の登録を受けた日本語教員。</div><div class="term"><b>認定日本語教育機関</b>日本語教育機関認定法に基づき、文部科学大臣の認定を受けた日本語教育機関。</div></div>
 </section>
 
 <section id="strategy" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div>
