@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#315efb">
+<link rel="manifest" href="manifest.webmanifest">
+<title>2026 日本語教員試験・応用攻略</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
+header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
+h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-width:760px;margin:auto;padding:15px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:17px;padding:16px;min-height:112px;box-shadow:0 2px 8px #00000008;cursor:pointer}.card:active{transform:scale(.985)}
+.icon{font-size:28px}.title{font-weight:750;margin-top:7px}.desc{font-size:12px;color:#667085;line-height:1.45;margin-top:4px}
+.panel{display:none;background:#fff;border:1px solid #e5e7eb;border-radius:17px;padding:16px}.panel.active{display:block}
+.back,.secondary{border:0;background:#eef1f6;border-radius:10px;padding:9px 12px;font-weight:650}.primary{border:0;background:#315efb;color:#fff;border-radius:12px;padding:12px 15px;font-weight:700;width:100%;margin-top:10px}
+.item{padding:12px 0;border-bottom:1px solid #edf0f4;line-height:1.55}.badge{display:inline-block;font-size:11px;padding:4px 8px;border-radius:999px;background:#eef2ff;margin:2px}
+.choice{width:100%;text-align:left;border:1px solid #dfe3ea;background:#fafbfc;border-radius:12px;padding:12px;margin:7px 0;font-size:15px}.correct{background:#eefaf4!important;border-color:#18794e!important}.wrong{background:#fff1f0!important;border-color:#b42318!important}
+.feedback{padding:12px;border-radius:12px;margin-top:9px;display:none;line-height:1.55}.ok{display:block;background:#eefaf4;color:#18794e}.ng{display:block;background:#fff1f0;color:#b42318}
+.note{font-size:12px;color:#667085;line-height:1.6}.share{background:#fff;border:1px dashed #b8c1d1;border-radius:14px;padding:13px;margin:14px 0}
+@media(max-width:390px){main{padding:10px}.grid{gap:8px}.card{padding:13px}.title{font-size:14px}.desc{font-size:11px}}
+</style>
+</head>
+<body>
+<header><h1>🎓 2026 日本語教員試験・応用攻略</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
+<main>
+<div id="home" class="grid">
+<div class="card" onclick="openP('reading')"><div class="icon">📖</div><div class="title">読解</div><div class="desc">授業場面・教材・評価を読む</div></div>
+<div class="card" onclick="openP('listening')"><div class="icon">🎧</div><div class="title">聴解</div><div class="desc">聞く→分類→用語→選択肢</div></div>
+<div class="card" onclick="openP('oral')"><div class="icon">👄</div><div class="title">口腔断面図・音声</div><div class="desc">音声・調音を整理</div></div>
+<div class="card" onclick="openP('fifty')"><div class="icon">📚</div><div class="title">必須の教育内容50</div><div class="desc">公式50項目を確認</div></div>
+<div class="card" onclick="openP('eval')"><div class="icon">📊</div><div class="title">評価・統計・計算</div><div class="desc">平均・中央値・得点率</div></div>
+<div class="card" onclick="openP('cefr')"><div class="icon">🌏</div><div class="title">CEFR・JLPT</div><div class="desc">レベルを整理</div></div>
+<div class="card" onclick="openP('law')"><div class="icon">⚖️</div><div class="title">法令・制度</div><div class="desc">日本語教育の制度</div></div>
+<div class="card" onclick="openP('strategy')"><div class="icon">⭐</div><div class="title">応用問題の解き方</div><div class="desc">選択肢に結び付ける</div></div>
+<div class="card" onclick="openP('wrong')"><div class="icon">❌</div><div class="title">苦手・復習</div><div class="desc">間違えた問題を保存</div></div>
+</div>
+
+<div class="share"><b>👥 学習仲間と共有</b><br><span class="note">公開URLにしたら、このページをLINEで送るだけ。iPhone・Android・PCから同じものを使えます。</span><button class="primary" onclick="shareApp()">📤 共有する</button></div>
+
+<section id="reading" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📖 読解</h2>
+<div class="item"><b>設問→場面→根拠</b><br>「最も適切／誤っている／必要ない」を先に確認し、学習者・目的・授業条件を拾う。</div>
+<div class="item"><b>応用問題の基本</b><br>本文の根拠と専門知識を組み合わせ、選択肢を場面に当てはめる。</div>
+<button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div></section>
+
+<section id="listening" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🎧 聴解</h2>
+<div class="item"><b>5秒分類</b><br>テンス＝「いつ？」／アスペクト＝「動作はどうなってる？」／ヴォイス＝「する？される？」／モダリティ＝「話し手はどう判断？」／格＝「誰が・誰に・何を？」／音声＝「音そのもの？」</div>
+<div class="item"><b>例</b><br>「昨日、映画を見ます。」→ テンスの誤り。まず「いつ？」と考える。</div>
+<button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題を解く</button><div id="listeningQuiz"></div></section>
+
+<section id="oral" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声</h2>
+<div class="item">モーラ／長音／促音／撥音／拗音</div><div class="item">調音点：両唇・歯茎・硬口蓋・軟口蓋など</div><div class="item">舌：舌尖・舌端・舌面・舌根</div><div class="item">声帯・声門・咽頭・口蓋垂・軟口蓋・硬口蓋・歯茎・歯・唇</div>
+<p class="note">次の更新で白黒の口腔断面図クイズを追加できる構成。</p></section>
+
+<section id="fifty" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📚 必須の教育内容50項目</h2><div id="fiftyList"></div></section>
+
+<section id="eval" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📊 評価・統計・計算</h2>
+<div class="item"><b>平均値</b>＝合計÷人数</div><div class="item"><b>中央値</b>＝並べたとき中央</div><div class="item"><b>最頻値</b>＝最も多い値</div><div class="item"><b>範囲</b>＝最大−最小</div><div class="item"><b>得点率</b>＝得点÷満点×100</div><div class="item">妥当性・信頼性・客観性・波及効果・項目分析・基準準拠／集団準拠・診断的／形成的／総括的評価・ルーブリック</div>
+<button class="primary" onclick="alert('（70＋80＋90）÷3 ＝ 80点')">🧮 ミニ計算</button></section>
+
+<section id="cefr" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🌏 CEFR・JLPT</h2><div class="item">CEFR：A1 → A2 → B1 → B2 → C1 → C2</div><div class="item">JLPT：N5 → N4 → N3 → N2 → N1</div><div class="item"><b>注意：</b>CEFRとJLPTは公式な1対1対応ではない。</div></section>
+
+<section id="law" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⚖️ 法令・制度</h2><div class="item">日本語教育の推進に関する法律</div><div class="item">日本語教育機関認定法</div><div class="item">登録日本語教員制度</div><div class="item">認定日本語教育機関</div><div class="item">登録日本語教員養成機関・登録実践研修機関</div><div class="item">地域日本語教育・外国人児童生徒への日本語教育・多文化共生</div><p class="note">法令・制度は試験前に最新の公式情報で確認。</p></section>
+
+<section id="strategy" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div></section>
+
+<section id="wrong" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div></section>
+</main>
+<script>
+const fifty=["世界と日本の社会と文化","日本の在留外国人施策","多文化共生（地域社会における共生）","日本語教育史","言語政策","日本語の試験","世界と日本の日本語教育事情","社会言語学","言語政策と「ことば」","コミュニケーションストラテジー","待遇・敬意表現","言語・非言語行動","多文化・多言語主義","談話理解","言語学習","習得過程（第一言語・第二言語）","学習ストラテジー","異文化受容・適応","日本語の学習・教育の情意的側面","日本語教師の資質・能力","日本語教育プログラムの理解と実践","教室・言語環境の設定","コースデザイン","教授法","教材分析・作成・開発","評価法","授業計画","中間言語分析","授業分析・自己点検能力","目的・対象別日本語教育法","異文化間教育","異文化コミュニケーション","コミュニケーション教育","日本語教育とICT","著作権","一般言語学","対照言語学","日本語教育のための日本語分析","日本語教育のための音韻・音声体系","日本語教育のための文字と表記","日本語教育のための形態・語彙体系","日本語教育のための文法体系","日本語教育のための意味体系","日本語教育のための語用論的規範","受容・理解能力","言語運用能力","社会文化能力","対人関係能力","異文化調整能力"];
+const listeningQ=[
+{q:"「昨日、映画を見ます。」の主な問題は？",a:["テンス","アスペクト","ヴォイス","モダリティ"],c:0,e:"「昨日」＝過去。『いつ？』の不一致なのでテンス。"},
+{q:"「私は先生を褒められました。」の主な問題は？",a:["テンス","ヴォイス","音韻","待遇"],c:1,e:"する／されるという参与者関係なのでヴォイス。"},
+{q:"「学校を行きます。」の主な問題は？",a:["格・格助詞","アスペクト","モダリティ","談話"],c:0,e:"目的地の格助詞の選択を問う問題。"}
+];
+const readingQ=[
+{q:"ロールプレイの目的が『店で返品を申し出る』。授業活動を検討するとき最も重要なのは？",a:["課題達成に必要な活動か","教師の説明時間を増やす","漢字を全部暗記させる","文法用語を増やす"],c:0,e:"学習者の目的・課題達成に必要かを場面から判断する。"},
+{q:"複数の評価観点と段階的な基準を表にしたものは？",a:["ルーブリック","中央値","スキミング","ディクトグロス"],c:0,e:"観点ごとの評価基準を段階的に示すのがルーブリック。"}
+];
+let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
+document.getElementById("fiftyList").innerHTML=fifty.map((x,i)=>`<div class="item"><span class="badge">${i+1}</span> ${x}</div>`).join("");
+function openP(id){document.getElementById("home").style.display="none";document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));document.getElementById(id).classList.add("active");if(id==="wrong")renderWrong();scrollTo(0,0)}
+function home(){document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));document.getElementById("home").style.display="grid";scrollTo(0,0)}
+function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
+function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
+function renderWrong(){const e=document.getElementById("wrongList");if(!wrong.length){e.innerHTML='<p class="note">まだありません。問題を解いてみよう！</p>';return}e.innerHTML=`<p class="note">${wrong.length}問が保存されています。</p>`+wrong.map(x=>`<div class="item"><span class="badge">${x.type}</span>${x.q}</div>`).join("")+`<button class="secondary" onclick="wrong=[];localStorage.removeItem('ntWrong');renderWrong()">復習リストを消去</button>`}
+async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body></html>
