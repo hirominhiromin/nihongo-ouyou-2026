@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v17</title>
+<title>2026 日本語教員試験・応用攻略 v18</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -93,7 +93,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 #audioPlus .choice.correct{outline:2px solid #45a36b;background:#effaf3}
 #audioPlus .choice.wrong{outline:2px solid #d96b6b}
 #audioPlus .feedback{display:none;background:#f5f7fa;border-radius:10px;padding:12px;margin-top:10px;line-height:1.65}
-</style>
+.audioMini{display:flex;flex-direction:column;gap:7px}.audioMini details{background:#fff;border:1px solid #d9e0ec;border-radius:12px;padding:9px 12px;font-size:13px;line-height:1.65}.audioMini summary{color:#2f80ed;font-weight:700;cursor:pointer}.audioMini details b{color:#17213b}</style>
 </head>
 <body>
 <main>
@@ -394,9 +394,10 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <section id="oral" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声 完全版</h2>
 <div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
 <div class="audioGrid">
-<button class="primary" onclick="speakOnce('おばさん',this)">🔊 1回：おばさん</button><button class="primary" onclick="speakOnce('おばあさん',this)">🔊 1回：おばあさん</button>
-<button class="primary" onclick="speakOnce('きてください',this)">🔊 1回：きてください</button><button class="primary" onclick="speakOnce('きってください',this)">🔊 1回：きってください</button>
-<button class="primary" onclick="speakOnce('はし',this)">🔊 1回：はし</button><button class="primary" onclick="speakOnce('あめ',this)">🔊 1回：あめ</button>
+<div class="audioMini"><button class="primary" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 1回：おばさん／おばあさん</button><details><summary>▶ 解答を見る</summary><b>答え：長音</b><br>「おばさん」と「おばあさん」は、長音の有無を聞き分ける。<br>試験では「長音・短音」を音の長さ＝モーラの違いとして捉える。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('きてください。きってください。',this)">🔊 1回：きて／きって</button><details><summary>▶ 解答を見る</summary><b>答え：促音</b><br>「きって」には促音「っ」があり、1モーラとして数える。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 1回：はし（箸／橋）</button><details><summary>▶ 解答を見る</summary><b>答え：アクセント</b><br>同じ表記でも、語によってピッチの配置が異なる。特に<b>下がり目</b>に注目。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('雨が降っています。飴を食べます。',this)">🔊 1回：あめ（雨／飴）</button><details><summary>▶ 解答を見る</summary><b>答え：アクセント</b><br>「雨」と「飴」のように、アクセントの違いが語の区別に関わる例。音の高低を聞く。</details></div>
 </div>
 
 <h3>🔺 日本語の5母音：逆三角形で位置をつかむ</h3>
