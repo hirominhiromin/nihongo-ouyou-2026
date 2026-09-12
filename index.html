@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v20</title>
+<title>2026 日本語教員試験・応用攻略 v21</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -218,13 +218,12 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
   </div>
 </div>
 
-<section id="quick" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button>
-<h2>⚡ スキマ時間トレーニング</h2>
+<section id="quick" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>⚡ スキマ時間トレーニング</h2>
 <div class="notice"><b>1問だけでも前進。</b> 正解率より、毎日の積み上げを重視。間違えた問題は復習リストに保存。</div>
 <div id="quickQuiz"></div>
-</section>
+<button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="reading" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>📖 読解・完全攻略</h2>
+<section id="reading" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>📖 読解・完全攻略</h2>
 <div class="notice"><b>応用試験の読解は「本文の意味」＋「教育場面での判断」を読む。</b><br>設問→条件→本文の根拠→選択肢、の順で処理。文章全部を同じ濃さで読まない。</div>
 <h3>🧭 まず「何を問われているか」</h3>
 <div class="item"><b>① 設問の指示語を囲む</b><br>「最も適切」「適切でない」「まず行う」「必要なもの」「本文から読み取れる」などを確認。否定語の見落としを防ぐ。</div>
@@ -275,7 +274,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h3>📝 Pre / While / Post</h3>
 <div class="item"><b>Pre-reading</b>：題名・写真・キーワードから予測、背景知識を活性化。<br><b>While-reading</b>：必要情報を探す、要点を確認、推論する。<br><b>Post-reading</b>：要約、意見交換、内容を別の課題へ活用。</div>
 <button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div><button class="back" onclick="home()">↑ トップへ戻る</button></section>
-<section id="listening" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>🎧 聴解・完全攻略</h2>
+<section id="listening" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>🎧 聴解・完全攻略</h2>
 <div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br>音声・発音の識別は「音声・発音」へ。聴解では、話の要点・意図・条件・教師の対応を聞き取る。</div>
 
 <h3>📝 本番で狙われる聞き取り</h3>
@@ -318,8 +317,8 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div><button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="audioPlus" class="detail"><button class="back" onclick="home()">← トップへ戻る</button> 
-<button class="back" onclick="home()">← メニュー</button><h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
+<section id="audioPlus" class="detail"><button class="back" onclick="home()">← トップへ戻る</button>
+<h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
 <div class="notice"><b>本番モード：</b>まず音声を1回だけ聞く → すぐ答える → 解説を見る。解答後は必要ならもう一度。</div>
 
 <div class="exam"><h3>第1問　長音・短音</h3>
@@ -409,7 +408,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="oral" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声 完全版</h2>
+<section id="oral" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>👄 口腔断面図・音声 完全版</h2>
 <div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
 <div class="audioGrid">
 <div class="audioMini"><button class="primary" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 1回：おばさん／おばあさん</button><details><summary>▶ 解答を見る</summary><b>答え：長音</b><br>「おばさん」と「おばあさん」は、長音の有無を聞き分ける。<br>試験では「長音・短音」を音の長さ＝モーラの違いとして捉える。</details></div>
@@ -506,7 +505,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h3>🔄 音の変化・聞き分け</h3><div class="item"><b>清音／濁音</b>：声帯振動の違いを含めて整理。<br><b>無声化</b>：特定の環境で母音などの声帯振動が弱くなる／なくなる現象。<br><b>同化</b>：隣接する音の影響で音が似た性質になる現象。<br><b>脱落</b>：音が発音されにくくなり落ちる現象。試験では「何が起きたか」を具体的に聞き取る。</div>
 <h3>🎯 音→専門用語ドリル</h3><div class="item"><b>きて→きって</b>＝促音・1拍増加。<br><b>おばさん→おばあさん</b>＝長音・1拍増加。<br><b>きや→きゃ</b>＝拗音・音節構造の違い。<br><b>か→が</b>＝清濁・声帯振動の違い。<br><b>/p/</b>＝両唇＋破裂、<b>/m/</b>＝両唇＋鼻音。</div>
 <div class="notice"><b>本番前の合言葉：</b>「どこ？（調音点）／どう？（調音法）／声帯は？／何拍？／高低は？」</div><button class="back" onclick="home()">↑ トップへ戻る</button></section>
-<section id="practice" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>📚 日本語教育実践（科目11〜13）</h2>
+<section id="practice" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>📚 日本語教育実践（科目11〜13）</h2>
 <div class="notice"><b>ここは「用語を覚える」だけでなく、授業場面を見て用語と指導判断を結び付けるコーナー。</b><br>特に「生教材」「スキミング／スキャニング」「タスク」「フィードバック」「作文指導」「評価」「ICT」は、似た概念をセットで区別する。</div>
 <h3>① 📰 生教材（Authentic Materials）</h3><div class="item"><b>意味</b>＝学習者向けに作った教材ではなく、現実社会で実際に使われている素材。時刻表・案内・メニュー・広告・Web・実際のメールなど。<br><b>ポイント</b>：そのまま使うとは限らない。レベルに応じて語彙注釈・設問・情報量などを調整しても、元の社会的な素材を活用できる。</div>
 <h3>② 🔎 読み方の使い分け</h3><div class="item"><span class="badge">スキミング</span>＝全体の大意・要点を素早く把握。<br><span class="badge">スキャニング</span>＝必要な特定情報を探す。<br><span class="badge">精読</span>＝語彙・文法・論理まで細かく読む。<br><span class="badge">多読</span>＝多くの文章を読む。読む量・流暢さ・読書経験の拡大などをねらう。</div>
@@ -553,7 +552,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>生教材</b>＝現実社会で使われる素材 ／ <b>教材化</b>＝学習目的に合わせて加工・設計すること</div>
 
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
-<section id="grammar" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>🔤 動詞のグループ・活用</h2>
+<section id="grammar" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>🔤 動詞のグループ・活用</h2>
 <div class="notice"><b>まずここを覚える！</b><br>日本語教育では、動詞を「1グループ（五段）・2グループ（一段）・3グループ（不規則）」に分けて考える。活用問題では、まずグループを判断してから形を作る。</div>
 <div class="item"><b>① 1グループ＝五段動詞</b><br>辞書形の最後の音が、活用によって変化する。<br><span class="mini">書く→書いて／読む→読んで／話す→話して／買う→買って</span></div>
 <div class="item"><b>② 2グループ＝一段動詞</b><br>基本的に「る」を取って、必要な形を付ける。<br><span class="mini">食べる→食べて／見る→見て／起きる→起きて</span></div>
@@ -576,16 +575,15 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>🧠 覚え方</b><br>て形はまず「うつる・むぶぬ・く・ぐ・す」。<br><b>うつる→って／むぶぬ→んで／く→いて／ぐ→いで／す→して</b><br>そして例外は<b>行く→行って</b>。</div>
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="fifty" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> 
-<button class="back" onclick="home()">← メニュー</button>
+<section id="fifty" class="panel"><button class="back" onclick="home()">← トップへ戻る</button>
 <h2>📚 必須の教育内容50項目</h2>
 <div class="notice"><b>試験対策のポイント</b><br>文科省のコアカリキュラムでは「必須の教育内容」は50項目ですが、(28)「教育実習」は実践研修に該当するため、養成課程の必須教育内容は49項目です。ここでは学習用として50項目を掲載します。</div>
 <div class="sourcebox">出典：文部科学省「登録日本語教員実践研修・養成課程コアカリキュラム」</div>
 <div id="fiftyList"></div>
 <div id="fiftyDetail" class="detail" style="display:none"></div>
-</section>
+<button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="eval" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>📊 評価・統計・計算</h2>
+<section id="eval" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>📊 評価・統計・計算</h2>
 <div class="notice"><b>応用試験の見方</b><br>「何を評価するか」→「何のためか」→「いつ行うか」→「どんな方法が適切か」の順に考える。数字の計算だけでなく、評価の目的・質・解釈まで問われる。</div>
 <div class="item"><b>① 平均値</b><br>合計点 ÷ 人数。全員の得点をならして代表させる値。<br><span class="mini">例：70・80・90 → 80点</span></div>
 <div class="item"><b>② 中央値</b><br>得点を小さい順に並べたとき中央にくる値。極端に高い・低い値の影響を平均値より受けにくい。<br><span class="mini">例：60・70・75・80・100 → 中央値75</span></div>
@@ -612,9 +610,9 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <button class="primary" onclick="alert('（70＋80＋90）÷3 ＝ 80点\n\n42÷50×100＝84％')">🧮 ミニ計算を見る</button>
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="cefr" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>🌏 CEFR・JLPT</h2><div class="item">CEFR：A1 → A2 → B1 → B2 → C1 → C2</div><div class="item">JLPT：N5 → N4 → N3 → N2 → N1</div><div class="item"><b>注意：</b>CEFRとJLPTは公式な1対1対応ではない。</div></section>
+<section id="cefr" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>🌏 CEFR・JLPT</h2><div class="item">CEFR：A1 → A2 → B1 → B2 → C1 → C2</div><div class="item">JLPT：N5 → N4 → N3 → N2 → N1</div><div class="item"><b>注意：</b>CEFRとJLPTは公式な1対1対応ではない。</div><button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="law" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>⚖️ 法令・制度 完全版</h2>
+<section id="law" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>⚖️ 法令・制度 完全版</h2>
 <div class="notice"><b>法令は「法律名→目的→制度→対象→誰が何をするか」で覚える。</b><br>制度は更新されるため、試験前は文部科学省の最新情報も確認する。</div>
 <h3>📜 ① 日本語教育の推進に関する法律</h3>
 <div class="item"><b>ポイント</b><br>日本語教育の推進に関する基本理念や、国・地方公共団体等の責務、基本的施策の方向性を定める法律。</div>
@@ -646,7 +644,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="notice"><b>本番型の問い方</b><br>「最も適切なもの」だけでなく、<b>「不適切なもの」「誤っているもの」「最も適当でないもの」</b>を必ず混ぜて判断する。</div>
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="boost" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>🎯 80点突破トレーニング</h2>
+<section id="boost" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>🎯 80点突破トレーニング</h2>
 <div class="notice"><b>目標は66点ギリギリではなく、110点中80点前後を安定して狙う。</b><br>応用試験の「知識→場面判断→選択肢」をまとめて練習するコーナー。</div>
 <h3>🔥 まず覚える「場面判断5問」</h3>
 <div id="boostQuiz"></div>
@@ -658,14 +656,13 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
 
-<section id="master" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button>
-<h2>🧠 日本語教師 必須用語マスター</h2>
+<section id="master" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>🧠 日本語教師 必須用語マスター</h2>
 <div class="notice"><b>「公式の全必須用語リスト」ではありません。</b><br>文科省の「必須の教育内容50項目」を背骨に、日本語教師養成・試験対策で重要な用語を横断整理。覚えるだけでなく、類似語との違い・授業場面での判断につなげる。</div>
 <div class="typebox"><b>覚え方：</b> 用語 → 一言定義 → 似た用語 → 具体例 → 本番型問題。<br><b>重要：</b> 「正しいもの」だけでなく「不適切なもの」「誤っているもの」「最も適当でないもの」も出題する。</div>
 <h3>🔑 重要用語</h3><div class="mastergrid"><div class="term"><b>ZPD（発達の最近接領域）</b>一人では難しいが支援があればできる領域。足場かけと関連。</div><div class="term"><b>MKO（より有能な他者）</b>学習者の学習を支援できる他者。教師や熟達した学習者など。</div><div class="term"><b>足場かけ</b>学習者が自力でできるようになるまで、必要な支援を一時的に与える。</div><div class="term"><b>中間言語</b>第二言語学習者が形成する、目標言語へ向かう体系的な言語体系。</div><div class="term"><b>化石化</b>誤用などが学習過程で固定化し、修正されにくくなる現象。</div><div class="term"><b>転移</b>既に知っている言語・知識・経験が新しい学習に影響すること。</div><div class="term"><b>リキャスト</b>誤りを直接指摘せず、正しい形に言い換えて返す訂正フィードバック。</div><div class="term"><b>明示的訂正</b>誤りを明確に指摘し、正しい表現を示すフィードバック。</div><div class="term"><b>形成的評価</b>学習途中で学習状況を把握し、次の学習・指導の改善につなげる評価。</div><div class="term"><b>総括的評価</b>学習のまとまりの最後に到達度や成果を判断する評価。</div><div class="term"><b>診断的評価</b>学習開始前などに、既有知識や課題を把握するための評価。</div><div class="term"><b>妥当性</b>測りたいものを適切に測れている程度。</div><div class="term"><b>信頼性</b>同じ条件なら安定した結果が得られる程度。</div><div class="term"><b>客観性</b>評価者が変わっても判断が大きくぶれにくい程度。</div><div class="term"><b>波及効果（washback）</b>テストが学習・指導の内容や方法に与える影響。</div><div class="term"><b>ルーブリック</b>複数の評価観点と段階的な基準を表にした評価ツール。</div><div class="term"><b>Can-do</b>学習者が何を「できる」かを能力記述で表す考え方。</div><div class="term"><b>スキミング</b>文章全体の大意・要点を素早くつかむ読み方。</div><div class="term"><b>スキャニング</b>日時・名前・数字など特定の情報を探す読み方。</div><div class="term"><b>生教材</b>現実社会で実際に使われている素材を学習に利用するもの。</div><div class="term"><b>トップダウン</b>背景知識・目的・予測などから本文を解釈する処理。</div><div class="term"><b>ボトムアップ</b>文字・語・文など小さな単位から全体を組み立てる処理。</div><div class="term"><b>アフォーダンス</b>環境や道具が、利用者に特定の行為を促す可能性。</div><div class="term"><b>自律学習</b>学習者自身が目標・方法・進み具合などを主体的に調整する学習。</div><div class="term"><b>協働学習</b>他者と相互作用しながら課題や学習目標に取り組む学習。</div><div class="term"><b>タンデム学習</b>異なる言語を学ぶ学習者同士が互いに支援し合う学習。</div><div class="term"><b>PBL</b>問題・課題の解決を中心に、学習者が主体的に学ぶ学習方法。</div><div class="term"><b>反転授業</b>講義的内容を授業外で学び、授業時間を活動・協働・応用に使う方法。</div><div class="term"><b>コーパス</b>大量の実際の言語資料を集め、検索・分析できるデータベース。</div><div class="term"><b>コロケーション</b>特定の語と語が結びつきやすい慣用的な共起関係。</div><div class="term"><b>テンス</b>出来事を時間軸上のいつとして捉える文法カテゴリー。</div><div class="term"><b>アスペクト</b>動作・出来事を開始・継続・完了などの捉え方で表すカテゴリー。</div><div class="term"><b>ヴォイス</b>出来事の参与者と、主語などの文法的関係を表すカテゴリー。</div><div class="term"><b>モダリティ</b>話し手の判断・意志・推量・義務などの捉え方を表すカテゴリー。</div><div class="term"><b>尊敬語</b>相手・話題の人物の動作や状態を高めて表す。</div><div class="term"><b>謙譲語</b>自分側の動作を低め、相手を立てる。</div><div class="term"><b>丁寧語</b>文末などを丁寧な形にして表す。</div><div class="term"><b>美化語</b>語を美しく丁寧に表す。必ずしも尊敬語・謙譲語ではない。</div><div class="term"><b>待遇表現</b>相手・場面・関係性に応じて敬意や配慮を表す表現。</div><div class="term"><b>ポライトネス</b>対人関係を調整し、相手への配慮を示す言語的・非言語的方略。</div><div class="term"><b>発話行為</b>発話によって依頼・謝罪・約束などの行為を行うこと。</div><div class="term"><b>含意</b>文字通り明示されていないが、文脈から推論される意味。</div><div class="term"><b>前提</b>ある発話が成立する前から共有・想定されている情報。</div><div class="term"><b>モーラ</b>日本語のリズムを数える基本単位。長音・促音・撥音なども1拍として数える。</div><div class="term"><b>調音点</b>音を作るときに主に使われる場所。両唇・歯茎・硬口蓋・軟口蓋など。</div><div class="term"><b>調音法</b>閉鎖・摩擦・鼻音など、音をどのように作るか。</div><div class="term"><b>無声化</b>特定の音環境で母音などの声帯振動が弱くなったりなくなったりする現象。</div><div class="term"><b>同化</b>隣接音の影響を受けて、ある音が別の音に似た性質になる現象。</div><div class="term"><b>平均</b>得点などの合計をデータ数で割った値。</div><div class="term"><b>中央値</b>データを順に並べたとき中央に位置する値。</div><div class="term"><b>標準偏差</b>データが平均からどの程度ばらついているかを示す指標。</div><div class="term"><b>難易度</b>項目がどの程度解きやすい／難しいかを示す指標。正答率などで捉える。</div><div class="term"><b>識別力</b>その問題が、能力の高い受験者と低い受験者をどの程度区別できるか。</div><div class="term"><b>引用</b>自分の著作物の中で、他人の著作物を一定の条件のもとで利用すること。出典等の要件確認が必要。</div><div class="term"><b>著作者人格権</b>公表権・氏名表示権・同一性保持権など、著作者の人格的利益を守る権利。</div><div class="term"><b>公衆送信</b>放送・有線放送・インターネット送信など、公衆に向けて著作物を送信すること。</div><div class="term"><b>授業目的公衆送信補償金制度</b>教育機関で授業のために公衆送信する際の著作物利用に関係する制度。</div><div class="term"><b>登録日本語教員</b>認定日本語教育機関等で日本語教育を担う、国の登録を受けた日本語教員。</div><div class="term"><b>認定日本語教育機関</b>日本語教育機関認定法に基づき、文部科学大臣の認定を受けた日本語教育機関。</div></div>
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="strategy" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div>
+<section id="strategy" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div>
 <h3>⚠️ 設問の向きを間違えない</h3>
 <div class="typebox">
 <b>正しいもの</b>＝適切な選択肢を探す。<br>
@@ -677,7 +674,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="notice"><b>回答前の3秒チェック：</b>①何を選ぶ？ ②何個選ぶ？ ③「最も」がある？ ④「不」がある？</div>
 <button class="back" onclick="home()">↑ トップへ戻る</button></section>
 
-<section id="wrong" class="panel"><button class="back" onclick="home()">← トップへ戻る</button> <button class="back" onclick="home()">← メニュー</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div></section>
+<section id="wrong" class="panel"><button class="back" onclick="home()">← トップへ戻る</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div><button class="back" onclick="home()">↑ トップへ戻る</button></section>
 </main>
 <script>
 const fifty=[{"n":1,"name":"世界と日本の社会と文化","summary":"国際社会の情勢、人の移動、日本と諸外国の関係、日本や各地域の社会・文化を理解する。","keywords":"国際化／人の移動／社会・文化の多様性／グローバルな視点","exam":"『日本人中心』ではなく、学習者の背景と日本社会との関係から考える。"},{"n":2,"name":"日本の在留外国人施策","summary":"在留外国人の現状・動向と、日本の在留外国人施策を理解する。","keywords":"在留外国人／外国人施策／制度・支援","exam":"制度名だけでなく、誰を対象に、何を目的とする施策かを整理する。"},{"n":3,"name":"多文化共生（地域社会における共生）","summary":"国・地方公共団体の多文化共生施策と、地域で学習者が周囲と接触する状況を理解する。","keywords":"多文化共生／地域日本語教育／自治体／社会参加","exam":"日本語を『社会参加のための手段』として捉える。"},{"n":4,"name":"日本語教育史","summary":"日本と他国・地域との関わりを含め、日本語教育の歴史を理解する。","keywords":"海外日本語教育／国内日本語教育／歴史的背景","exam":"年代だけの暗記ではなく、社会情勢と日本語教育の変化を結び付ける。"},{"n":5,"name":"言語政策","summary":"日本や他国の言語政策について理解する。","keywords":"言語政策／公用語／国語政策／言語権","exam":"政策が言語使用・教育・社会にどのような影響を与えるかを見る。"},{"n":6,"name":"日本語の試験","summary":"学習者の進学・就職・キャリア等に関係する日本語能力評価の試験を理解する。","keywords":"日本語教員試験／JLPT／日本留学試験／評価","exam":"試験の目的・対象・測定する能力を区別する。"},{"n":7,"name":"世界と日本の日本語教育事情","summary":"日本国内と主要な国・地域の日本語教育の状況を理解する。","keywords":"学習者数／学習目的／教育機関／教師","exam":"『誰が・どこで・何のために日本語を学ぶか』を考える。"},{"n":8,"name":"社会言語学","summary":"同一言語内の言語変種とその要因、社会における言語使用や言語行動を理解する。","keywords":"方言／社会方言／世代差／性差／場面差／言語変種","exam":"『正しい日本語』だけでなく、場面・集団・地域による変異を見る。"},{"n":9,"name":"言語政策と「ことば」","summary":"社会・文化・政策と言語の関係を理解する。","keywords":"言語規範／標準語／言語権／公用語","exam":"言語を単なる文法体系ではなく社会制度との関係で捉える。"},{"n":10,"name":"コミュニケーションストラテジー","summary":"社会生活の言語活動を達成するための方略と、会話を成立させる仕組みを理解する。","keywords":"言い換え／確認／聞き返し／回避／補償ストラテジー","exam":"『言えないから終わり』ではなく、目的達成のための別の手段に注目する。"},{"n":11,"name":"待遇・敬意表現","summary":"社会的状況や人間関係に応じて求められる待遇表現を理解する。","keywords":"敬語／丁寧さ／上下／親疎／内外／待遇表現","exam":"文法的に正しいだけでなく、その場面・相手に適切かを判断する。"},{"n":12,"name":"言語・非言語行動","summary":"コミュニケーションにおける言語的・非言語的行動の様相を理解する。","keywords":"視線／表情／ジェスチャー／距離／沈黙／ターンテイキング","exam":"言葉だけで意味を決めず、非言語情報との組合せを見る。"},{"n":13,"name":"多文化・多言語主義","summary":"多言語多文化社会と、日本語を通じた社会参加・共生社会における日本語教育の役割を理解する。","keywords":"多言語主義／多文化主義／共生／社会参加","exam":"日本語習得を同化のためだけに考えないことが重要。"},{"n":14,"name":"談話理解","summary":"談話を理解する過程や仕組みについて基礎的に理解する。","keywords":"談話／文脈／結束性／一貫性／推論／スキーマ","exam":"一文だけでなく、前後関係や文脈から意味を構築する。"},{"n":15,"name":"言語学習","summary":"学習の仕組みや学習環境など、日本語学習を支援するための基礎知識を理解する。","keywords":"学習／インプット／アウトプット／相互作用／学習環境","exam":"『教えた量』ではなく、学習者がどう学んだかを考える。"},{"n":16,"name":"習得過程（第一言語・第二言語）","summary":"第一言語・第二言語の習得過程と学習者要因を理解する。","keywords":"L1／L2／中間言語／インプット／アウトプット／習得順序","exam":"母語・年齢・動機・環境など、習得に影響する要因を整理する。"},{"n":17,"name":"学習ストラテジー","summary":"学習ストラテジーと、学習効果を高める方法を理解し、自律的な学習を促す。","keywords":"認知／メタ認知／社会的ストラテジー／自律学習","exam":"学習者に『どう勉強するか』を選ばせ、振り返らせる。"},{"n":18,"name":"異文化受容・適応","summary":"異文化接触で生じる問題と、異文化への適応プロセスを理解する。","keywords":"カルチャーショック／適応／同化／統合／分離／周辺化","exam":"適応を一方向の『日本文化への同化』と捉えない。"},{"n":19,"name":"日本語の学習・教育の情意的側面","summary":"学習に影響する心理的要因や、学習者の心的側面への対応を理解する。","keywords":"動機づけ／不安／自信／態度／情意要因","exam":"不安を下げ、成功経験や主体性につながる学習環境を考える。"},{"n":20,"name":"日本語教師の資質・能力","summary":"日本語教育人材の役割・段階・活動分野、キャリアパスと求められる資質・能力を理解する。","keywords":"知識・技能・態度／自己研修／連携／専門性","exam":"教師は『知識を教える人』だけでなく、学習を支援し連携する専門職。"},{"n":21,"name":"日本語教育プログラムの理解と実践","summary":"プログラムの構成要素を理解し、自分の授業をプログラム全体に位置付ける。","keywords":"理念／目的／目標／カリキュラム／コース／授業","exam":"授業単体ではなく、上位の目的・目標との整合性を見る。"},{"n":22,"name":"教室・言語環境の設定","summary":"教室形態や学習環境が学習に与える影響・効果を理解する。","keywords":"座席配置／人数／対面・オンライン／言語環境／心理的安全性","exam":"活動目的に合う教室配置・グループ構成を選ぶ。"},{"n":23,"name":"コースデザイン","summary":"日本語教育プログラムの目的・目標に沿った教育計画を立てるための方法を理解する。","keywords":"ニーズ分析／目標設定／シラバス／評価／PDCA","exam":"目的→目標→内容→活動→評価が一貫しているか確認する。"},{"n":24,"name":"教授法","summary":"多様な学習者・環境に応じて教授方法を選択・活用するため、第二言語教授法を理解する。","keywords":"文法訳読法／直接法／オーディオリンガル／コミュニカティブ／タスク","exam":"『どの教授法が常に最良』ではなく、目的・学習者・活動との適合を見る。"},{"n":25,"name":"教材分析・作成・開発","summary":"日本語教育教材の分析方法と、教材作成・開発の方法を理解する。","keywords":"教材分析／真正性／難易度／タスク／ICT教材","exam":"学習目標・学習者・レベルに教材が合っているかを見る。"},{"n":26,"name":"評価法","summary":"日本語教育における評価の考え方と方法を理解する。","keywords":"妥当性／信頼性／客観性／波及効果／形成的／総括的／ルーブリック","exam":"何を・なぜ・いつ・どう評価するかを整理する。"},{"n":27,"name":"授業計画","summary":"日本語教育の授業計画の立て方を理解する。","keywords":"目標／導入／提示／練習／活動／まとめ／時間配分","exam":"授業目標と各活動がつながっているかを確認する。"},{"n":28,"name":"教育実習","summary":"日本語学習者を想定した実践研修に関わる項目。オリエンテーション、授業見学、授業準備、模擬授業、教壇実習、振り返りを通して実践力を高める。","keywords":"授業見学／教案／教材／模擬授業／教壇実習／振り返り","exam":"重要：コアカリキュラムでは(28)教育実習は実践研修に該当し、養成課程の必須教育内容は49項目。試験対策では実践研修の内容も押さえる。"},{"n":29,"name":"中間言語分析","summary":"学習者の誤用を分析し、原因を考え、適切なフィードバック方法を理解する。","keywords":"中間言語／誤用分析／転移／過剰般化／フィードバック","exam":"『間違い＝能力不足』と決めつけず、体系的な学習途中の言語として見る。"},{"n":30,"name":"授業分析・自己点検能力","summary":"授業を客観的に分析し、自己点検・相互評価を通して改善する方法を理解する。","keywords":"授業観察／自己評価／相互評価／省察／PDCA","exam":"『なんとなく良かった』ではなく、目標・学習者反応・活動結果を根拠に振り返る。"},{"n":31,"name":"目的・対象別日本語教育法","summary":"教育プログラムの目的・目標に応じた、対象別の日本語教育プログラムを理解する。","keywords":"留学生／生活者／就労者／児童生徒／難民等／目的別教育","exam":"対象者の生活・学習・就労上のニーズに合わせて方法を選ぶ。"},{"n":32,"name":"異文化間教育","summary":"異文化間の問題を克服し、文化の多様性を尊重して共生に向けた関係を築くための基礎知識を理解する。","keywords":"文化相対主義／ステレオタイプ／エスノセントリズム／共生","exam":"『日本文化を教える』だけでなく、相互理解と対話を重視する。"},{"n":33,"name":"異文化コミュニケーション","summary":"異なる文化背景を持つ人々と円滑にコミュニケーションするための知識・技能を理解する。","keywords":"文化差／高・低文脈／価値観／誤解／調整","exam":"文化差を固定的に決めつけず、個人差・状況差も考える。"},{"n":34,"name":"コミュニケーション教育","summary":"日本語によるコミュニケーション能力を育成するための理論・手法を理解する。","keywords":"コミュニカティブ・アプローチ／タスク／相互作用／機能","exam":"『文法が正しい』だけでなく、目的を達成して相手とやり取りできるかを見る。"},{"n":35,"name":"日本語教育とICT","summary":"授業、学習管理、教材作成等にICTを効果的に活用する方法を理解する。","keywords":"LMS／オンライン授業／デジタル教材／学習管理／情報活用","exam":"ICTを使うこと自体を目的にせず、学習目標に対する効果で選ぶ。"},{"n":36,"name":"著作権","summary":"日本語教育活動に必要な情報資源の扱い方を理解する。","keywords":"著作権／引用／転載／二次利用／ライセンス","exam":"『ネットにある＝自由に使える』ではない。授業利用でも条件確認が必要。"},{"n":37,"name":"一般言語学","summary":"世界の言語と日本語を系統的・類型的に捉え、言語を客観的に分析する方法を理解する。","keywords":"音声／形態／統語／意味／語用／言語類型","exam":"言語を複数の階層から分析する視点を持つ。"},{"n":38,"name":"対照言語学","summary":"日本語と他言語を比較し、共通点・相違点を分析する方法を理解する。","keywords":"母語転移／対照分析／語順／音韻／文法","exam":"学習者の母語との違いがどんな誤用・困難につながるか考える。"},{"n":39,"name":"日本語教育のための日本語分析","summary":"日本語を分析的に捉える方法を理解する。","keywords":"形式／機能／用法／文脈／分析単位","exam":"『日本語学として正しい説明』を、学習者に教えられる形に変換する。"},{"n":40,"name":"日本語教育のための音韻・音声体系","summary":"日本語の発音指導に必要な音韻・音声の知識を理解する。","keywords":"音素／拍・モーラ／アクセント／長音／促音／撥音／調音点・調音法","exam":"聴解では『音の違い→専門用語→選択肢』へ変換する。"},{"n":41,"name":"日本語教育のための文字と表記","summary":"日本語の文字指導に必要な書記体系の知識を理解する。","keywords":"漢字／ひらがな／カタカナ／送り仮名／表記／かな遣い","exam":"文字種の使い分けや表記上の誤りを、指導につなげて考える。"},{"n":42,"name":"日本語教育のための形態・語彙体系","summary":"日本語の形態論・語構成を理解し、語彙指導に必要な知識を理解する。","keywords":"形態素／語形成／複合語／派生／語彙関係／コロケーション","exam":"語の形だけでなく、語構成・意味・共起関係をまとめて見る。"},{"n":43,"name":"日本語教育のための文法体系","summary":"日本語教育文法を体系的に学び、指導に必要な分析方法を理解する。","keywords":"品詞／活用／格／テンス／アスペクト／ヴォイス／モダリティ／複文","exam":"誤用を聞いたら『何が違う？→文法カテゴリーは？』と分類する。"},{"n":44,"name":"日本語教育のための意味体系","summary":"日本語の意味体系と、指導に必要な分析方法を理解する。","keywords":"語彙意味／多義／類義／反義／意味役割／比喩","exam":"辞書的な意味だけでなく、文脈での意味・意味関係を考える。"},{"n":45,"name":"日本語教育のための語用論的規範","summary":"語用論的規範を理解し、効果的な教育実践につなげる。","keywords":"発話行為／含意／前提／ポライトネス／文脈／配慮","exam":"文法的に正しくても場面に不適切な表現があることに注意。"},{"n":46,"name":"受容・理解能力","summary":"読む・聞くなどの受容・理解能力と、その向上方法を理解する。","keywords":"読解／聴解／トップダウン／ボトムアップ／推測／モニタリング","exam":"読解・聴解では情報の取り方と理解方略を意識する。"},{"n":47,"name":"言語運用能力","summary":"話す・書くなどの言語運用能力と、その向上方法を理解する。","keywords":"発話／作文／流暢さ／正確さ／課題達成／フィードバック","exam":"産出物を目的・内容・構成・言語形式など複数の観点で見る。"},{"n":48,"name":"社会文化能力","summary":"日本語での社会言語的な適切さと社会文化的知識、能力向上の方法を理解する。","keywords":"場面適切性／社会言語能力／文化知識／待遇","exam":"『正しい文』と『その場に適切な文』を区別する。"},{"n":49,"name":"対人関係能力","summary":"多様な価値観を持つ関係者や地域・コミュニティと連携して教育実践するための能力を理解する。","keywords":"協働／連携／相談／合意形成／ネットワーク","exam":"教師だけで問題を抱え込まず、関係者と協働して支援する。"},{"n":50,"name":"異文化調整能力","summary":"異文化理解と、異文化接触場面の摩擦を調整するコミュニケーション能力を理解する。","keywords":"文化摩擦／調整／仲介／対話／協働","exam":"『どちらが正しいか』ではなく、双方が納得できる調整を考える。"}];
@@ -693,8 +690,23 @@ const readingQ=[
 let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
 document.getElementById("fiftyList").innerHTML=fifty.map(x=>`<div class="fiftyrow" onclick="showFifty(${x.n})"><div class="fiftynum">${x.n}</div><div class="fiftyname">${x.name}</div><div class="fiftyarrow">›</div></div>`).join("");
 function showFifty(n){const x=fifty.find(v=>v.n===n),d=document.getElementById("fiftyDetail");d.style.display="block";d.innerHTML=`<button class="secondary" onclick="document.getElementById('fiftyDetail').style.display='none'">一覧に戻る</button><h3>${x.n}. ${x.name}</h3><h4>📌 何を学ぶ？</h4><div>${x.summary}</div><h4>🔑 キーワード</h4><div>${x.keywords}</div><h4>⭐ 応用試験での見方</h4><div class="exam">${x.exam}</div>`;d.scrollIntoView({behavior:"smooth",block:"start"})}
-function openP(id){document.getElementById("home").style.display="none";document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));document.getElementById(id).classList.add("active");if(id==="wrong")renderWrong();scrollTo(0,0)}
-function home(){document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));document.getElementById("home").style.display="grid";scrollTo(0,0)}
+function openP(id){
+  const homeEl=document.getElementById("home");
+  const panels=document.querySelectorAll(".panel");
+  panels.forEach(p=>{p.classList.remove("active");p.style.display="none";});
+  const target=document.getElementById(id);
+  if(!target)return;
+  homeEl.style.display="none";
+  target.classList.add("active");
+  target.style.display="block";
+  if(id==="wrong" && typeof renderWrong==="function")renderWrong();
+  window.scrollTo(0,0);
+}
+function home(){
+  document.querySelectorAll(".panel").forEach(p=>{p.classList.remove("active");p.style.display="none";});
+  document.getElementById("home").style.display="grid";
+  window.scrollTo(0,0);
+}
 function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
 function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function audioAns(btn, answer, correct, explanation){
