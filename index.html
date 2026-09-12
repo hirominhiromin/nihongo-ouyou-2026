@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v5</title>
+<title>2026 日本語教員試験・応用攻略 v6</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -31,7 +31,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .feedback{padding:12px;border-radius:12px;margin-top:9px;display:none;line-height:1.55}.ok{display:block;background:#eefaf4;color:#18794e}.ng{display:block;background:#fff1f0;color:#b42318}
 .note{font-size:12px;color:#667085;line-height:1.6}.share{background:#fff;border:1px dashed #b8c1d1;border-radius:14px;padding:13px;margin:14px 0}
 @media(max-width:390px){main{padding:10px}.grid{gap:8px}.card{padding:13px}.title{font-size:14px}.desc{font-size:11px}}
-.diagram{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:8px;margin:10px 0 14px;overflow:hidden}.diagram img{display:block;width:100%;height:auto;border-radius:10px}.mini{font-size:14px}.exam-diagram-wrap{background:#fff;border:1px solid #cfd5df;border-radius:12px;padding:10px;margin:10px 0}.diagram-title{font-weight:800;font-size:15px;margin:0 0 8px}.exam-diagram{width:100%;height:auto;display:block}.diagram-note{font-size:13px;line-height:1.65;margin-top:8px}.diagram-tip{font-size:12px;line-height:1.6;background:#f3f4f6;border-radius:8px;padding:9px;margin-top:8px}</style>
+.diagram{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:8px;margin:10px 0 14px;overflow:hidden}.diagram img{display:block;width:100%;height:auto;border-radius:10px}.mini{font-size:14px}.exam-diagram-wrap{background:#fff;border:1px solid #cfd5df;border-radius:12px;padding:10px;margin:10px 0}.diagram-title{font-weight:800;font-size:15px;margin:0 0 8px}.exam-diagram{width:100%;height:auto;display:block}.diagram-note{font-size:13px;line-height:1.65;margin-top:8px}.diagram-tip{font-size:12px;line-height:1.6;background:#f3f4f6;border-radius:8px;padding:9px;margin-top:8px}.audioGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.audioGrid .primary{margin:0}.exam-diagram{max-width:100%;height:auto;background:#fff;border:1px solid #ddd;border-radius:12px}.sourcebox{font-size:.85em}.choice{display:block;width:100%;text-align:left;margin:7px 0;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff}.feedback{margin-top:8px}.correct{outline:2px solid #4caf50}.wrong{outline:2px solid #f44336}@media(max-width:420px){.audioGrid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <header><h1>🎓 2026 日本語教員試験・応用攻略</h1><div class="sub">iPhone・Android・PCで使える共有版</div></header>
@@ -40,6 +40,8 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="card" onclick="openP('reading')"><div class="icon">📖</div><div class="title">読解</div><div class="desc">授業場面・教材・評価を根拠から読む</div></div>
 <div class="card" onclick="openP('listening')"><div class="icon">🎧</div><div class="title">聴解</div><div class="desc">聞く→分類→用語→選択肢＋フィードバック</div></div>
 <div class="card" onclick="openP('oral')"><div class="icon">👄</div><div class="title">口腔断面図・音声</div><div class="desc">口腔断面図・調音点・調音法・音声</div></div>
+<div class="card" onclick="openP('practice')"><div class="icon">📚</div><div class="title">日本語教育実践（科目11〜13）</div><div class="desc">教材・読解・タスク・作文・評価・ICT</div></div>
+<div class="card" onclick="openP('boost')"><div class="icon">🎯</div><div class="title">80点突破トレーニング</div><div class="desc">場面判断・本番型・弱点診断・模試</div></div>
 <div class="card" onclick="openP('fifty')"><div class="icon">📚</div><div class="title">必須の教育内容50</div><div class="desc">公式50項目を確認</div></div>
 <div class="card" onclick="openP('grammar')"><div class="icon">🔤</div><div class="title">動詞のグループ・活用</div><div class="desc">て形・ない形・た形・辞書形</div></div>
 <div class="card" onclick="openP('eval')"><div class="icon">📊</div><div class="title">評価・統計・計算</div><div class="desc">平均・中央値・得点率</div></div>
@@ -52,103 +54,162 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="share"><b>👥 学習仲間と共有</b><br><span class="note">公開URLにしたら、このページをLINEで送るだけ。iPhone・Android・PCから同じものを使えます。</span><button class="primary" onclick="shareApp()">📤 共有する</button></div>
 
 <section id="reading" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📖 読解・完全攻略</h2>
-<div class="notice"><b>応用試験の読解は「文章を読む試験」ではなく「場面を分析して最適解を選ぶ試験」</b><br>設問・対象者・目的・授業条件を先に押さえ、本文の根拠と教育的妥当性を組み合わせる。</div>
-<div class="item"><b>① 設問を先に読む</b><br>「最も適切」「誤っている」「必要ない」「まず行うべき」など、何を選ぶ問題かを確認する。</div>
-<div class="item"><b>② 場面を整理する</b><br>学習者のレベル・目的・母語・課題／教師の目的・授業段階／教材・時間・人数を拾う。</div>
-<div class="item"><b>③ 根拠を探す</b><br>しかし・一方・つまり・そのため・例えば・これに対して、などの接続表現に注目。主張・理由・具体例・結論を分ける。</div>
-<h3>🔍 読解の2つの処理</h3>
-<div class="item"><b>トップダウン</b><br>既有知識・文脈・予測・スキーマを使って全体像から理解する。</div>
-<div class="item"><b>ボトムアップ</b><br>文字→語→文→段落と、小さい単位を積み上げて理解する。</div>
-<div class="item"><b>応用試験では両方</b><br>まず全体を予測し、必要な箇所だけ精密に読む。全部を同じ濃さで読まない。</div>
-<h3>📚 よく出るキーワード</h3>
-<div class="item"><span class="badge">スキミング</span>全体の要点を素早く把握する。<br><span class="badge">スキャニング</span>日時・数字・固有情報など特定情報を探す。<br><span class="badge">推論</span>本文に直接書かれていない内容を根拠から推測する。<br><span class="badge">モニタリング</span>自分の理解を確認・修正する。<br><span class="badge">結束性</span>指示詞・接続詞・照応など、文と文をつなぐ仕組み。<br><span class="badge">一貫性</span>文章全体が意味的にまとまっていること。</div>
-<h3>🎯 選択肢の見抜き方</h3>
-<div class="item"><b>「いつも・必ず・すべて・絶対」</b>→ 強すぎないか確認。<br><b>本文にない知識</b>→ 常識では正しくても本文の根拠がなければ注意。<br><b>一部だけ正しい</b>→ 条件が抜けていないか確認。<br><b>目的と手段の逆転</b>→ 「活動そのもの」が目的になっていないか確認。</div>
-<h3>🧑‍🏫 授業場面の読み方</h3>
-<div class="item">① 学習者が何に困っている？ → ② 教師は何を目標にしている？ → ③ 今は授業のどの段階？ → ④ その活動は目標に合う？ → ⑤ 次に何をするのが最適？</div>
-<div class="notice"><b>迷ったら</b><br>「学習者にとって有効か」「授業目標に合うか」「場面に適切か」の3点で比較する。</div>
+<div class="notice"><b>応用試験の読解は「本文の意味」＋「教育場面での判断」を読む。</b><br>設問→条件→本文の根拠→選択肢、の順で処理。文章全部を同じ濃さで読まない。</div>
+<h3>🧭 まず「何を問われているか」</h3>
+<div class="item"><b>① 設問の指示語を囲む</b><br>「最も適切」「適切でない」「まず行う」「必要なもの」「本文から読み取れる」などを確認。否定語の見落としを防ぐ。</div>
+<div class="item"><b>② 条件を3つに分ける</b><br>【学習者】レベル・目的・母語・経験・困りごと／【授業】目標・段階・時間・人数／【教材】種類・情報量・難易度・活動方法。</div>
+<div class="item"><b>③ 根拠を本文に戻って確認</b><br>「だから」「しかし」「一方」「つまり」「例えば」「そのため」「これに対して」などの前後を読む。選択肢の正しさではなく、<b>本文・場面に合うか</b>を見る。</div>
+<h3>🔄 読解処理の基本</h3>
+<div class="item"><b>ボトムアップ処理</b>＝文字・音→語→文→段落→全体。知らない語や文法を積み上げて理解する。</div>
+<div class="item"><b>トップダウン処理</b>＝目的・文脈・スキーマ・予測→本文を解釈する。タイトルや見出しから内容を予測するのもこれ。</div>
+<div class="item"><b>スキーマ</b>＝既有知識。テーマについての知識があると、文章の理解や予測を助ける。</div>
+<div class="item"><b>モニタリング</b>＝「今の自分の理解は合っているか」を確認し、必要なら読み直し・修正する。</div>
+<h3>🔎 似ている用語を絶対に区別</h3>
+<div class="item"><span class="badge">スキミング</span><b>全体の大意・要点を素早くつかむ</b>。例：この文章は何について書かれている？<br><span class="badge">スキャニング</span><b>特定の情報を探す</b>。例：日付・金額・時刻・駅名は？</div>
+<div class="item"><span class="badge">精読</span>細部まで正確に読む。語彙・文法・論理関係などを丁寧に確認。<br><span class="badge">多読</span>大量の文章を読む。内容を楽しみながら読むことや読む量の確保を重視する。</div>
+<div class="item"><b>覚え方：</b>「概要＝スキミング」「探す＝スキャニング」「細かく＝精読」「たくさん＝多読」</div>
+<h3>🧩 文章を「つながり」で読む</h3>
+<div class="item"><b>結束性（cohesion）</b>＝指示詞・接続詞・代名詞・語彙的反復など、文と文を表面的につなぐ仕組み。<br><b>一貫性（coherence）</b>＝文章全体の意味・論理がまとまっていること。</div>
+<div class="item"><b>照応・指示</b>：「これ」「それ」「そのような」は何を指す？ 直前だけでなく、前後の文脈から特定する。</div>
+<div class="item"><b>接続表現</b>：「しかし」＝逆接、「つまり」＝言い換え・まとめ、「例えば」＝具体化、「そのため」＝結果・因果、「一方」＝対比。</div>
+<h3>🧠 読解で行う「推測」</h3>
+<div class="item"><b>推論</b>＝本文に明示されていないことを、本文の情報＋文脈＋知識から合理的に導く。ただし、本文の根拠を超えて想像しない。</div>
+<div class="item"><b>予測</b>＝これから出てくる内容を先に予想する。タイトル・見出し・既有知識などを利用。</div>
+<div class="item"><b>要約</b>＝重要情報を残し、細部を整理して短くまとめる。具体例だけを拾うのではなく主張との関係を見る。</div>
+<h3>📚 読む前・読んでいる途中・読んだ後</h3>
+<div class="item"><b>読む前（Pre-reading）</b>：タイトル・写真・見出しから予測、背景知識を活性化、読む目的を設定。<br><b>読んでいる途中（While-reading）</b>：重要語を探す、予測を修正、疑問点を確認、必要箇所を読み直す。<br><b>読んだ後（Post-reading）</b>：要約・意見・タスク・情報統合などで理解を確認。</div>
+<h3>📰 教材・文章タイプから考える</h3>
+<div class="item"><b>生教材</b>＝現実社会で実際に使われている素材。例：時刻表、案内、メニュー、広告、Webページ、実際のメール。学習者の目的に合わせて加工・支援して使うこともある。</div>
+<div class="item"><b>説明文・論説文</b>：主張→理由→根拠・例→結論などの論理展開を追う。<br><b>案内・実用文</b>：誰に・何を・いつ・どこで・条件は何かを探す。スキャニングと相性がよい。</div>
+<h3>🎯 選択肢の罠</h3>
+<div class="item"><b>① 強すぎる</b>：「必ず・すべて・常に・絶対」→本文にその強さがあるか。<br><b>② もっともらしいが根拠なし</b>→一般常識では正しくても、本文から判断できるか。<br><b>③ 一部だけ正しい</b>→条件・対象・目的が抜けていないか。<br><b>④ 目的と手段が逆</b>→活動をすること自体が目的になっていないか。<br><b>⑤ 用語だけ正しい</b>→用語の説明は正しくても、その場面に合うとは限らない。</div>
+<h3>🧑‍🏫 授業場面を読む5問</h3>
+<div class="item"><b>Q1</b> 学習者は誰？　<b>Q2</b> 何ができるようになる？　<b>Q3</b> 今どこでつまずいている？　<b>Q4</b> その活動は目標に直結している？　<b>Q5</b> 次の一手として何が最も妥当？</div>
+<div class="notice"><b>迷ったら「目標との整合性」</b><br>「この活動をしたら、設定された目標に近づくか？」で選択肢を比較する。正しそうな一般論より、<b>その場面に最適なもの</b>を選ぶ。</div>
+<h3>✍️ ミニ判定</h3>
+<div class="item"><b>「電車の時刻表から、成田空港に到着する時刻を探してください」</b>→ スキャニング。<br><b>「この文章の中心的な内容は何ですか」</b>→ スキミング。<br><b>「『それ』が何を指すか本文から特定する」</b>→ 指示・照応の理解。<br><b>「筆者が最後に何を主張しているか、理由と合わせて説明する」</b>→ 論理展開・要旨の把握。</div>
+<h3>🧭 読解の「何を見る？」チェック</h3>
+<div class="item"><b>① 設問先読み</b>：何を答える問題かを先に決める。「最も適切」「不適切」「理由」「目的」などの条件に印を付ける。</div>
+<div class="item"><b>② 場面の4点</b>：学習者／目的／レベル／活動。授業場面ではこの4点を拾うだけで選択肢のズレが見えやすい。</div>
+<div class="item"><b>③ 根拠マーキング</b>：しかし・一方・つまり・そのため・例えば・これら・このように、などの転換・因果・指示を目印にする。</div>
+<div class="item"><b>④ 選択肢の検証</b>：「本文に書いてあるか」「条件を満たすか」「言い過ぎていないか」を確認。常識ではなく本文・場面を根拠にする。</div>
+<div class="item"><b>⑤ 教育場面</b>：教師の発言→学習者の反応→次の活動、の因果関係を追う。「なぜこの活動を入れた？」を考える。</div>
+<h3>🧩 文章のつながり</h3>
+<div class="item"><b>結束性</b>＝指示詞・照応・接続表現・語彙的反復など、文と文を表面上つなぐ仕組み。</div>
+<div class="item"><b>一貫性</b>＝文章全体が意味的にまとまり、読み手が内容を筋道立てて理解できること。</div>
+<div class="item"><b>トップダウン</b>＝背景知識・目的・予測から理解。<b>ボトムアップ</b>＝文字・音・語・文法など小さい単位から積み上げる理解。</div>
+<div class="item"><b>スキーマ</b>＝既有知識・経験などの知識構造。文章理解ではスキーマを活性化することで予測や推論がしやすくなる。</div>
+<h3>🔍 読み方の使い分け</h3>
+<div class="item"><b>スキミング</b>：全体の大意・概要を素早くつかむ。<br><b>スキャニング</b>：時刻・氏名・数字など、必要な特定情報を探す。<br><b>精読</b>：細部まで正確に読む。<br><b>多読</b>：多くの文章を読むことで、読解量・流暢さなどを伸ばす。</div>
+<h3>📝 Pre / While / Post</h3>
+<div class="item"><b>Pre-reading</b>：題名・写真・キーワードから予測、背景知識を活性化。<br><b>While-reading</b>：必要情報を探す、要点を確認、推論する。<br><b>Post-reading</b>：要約、意見交換、内容を別の課題へ活用。</div>
 <button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div></section>
-
 <section id="listening" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🎧 聴解・完全攻略</h2>
-<div class="notice"><b>聞こえた瞬間に「用語」を当てない。</b><br>①何が違う？ → ②どの領域？ → ③専門用語 → ④選択肢、の順で処理する。</div>
+<div class="notice"><b>聞く→違いを発見→領域分類→専門用語→選択肢。</b><br>「何となく変」を「日本語教育の言葉」に変換する練習をする。</div>
 <h3>⏱ 5秒分類</h3>
-<div class="item"><b>テンス</b>＝「いつ？」<br>昨日、映画を<b>見ます</b>。→過去なのに現在形 → テンス</div>
-<div class="item"><b>アスペクト</b>＝「動作はどう進んでいる？」<br>もう宿題を<b>しています</b>／もう宿題を<b>しました</b>など、完了・継続・開始などを見る。</div>
-<div class="item"><b>ヴォイス</b>＝「誰がする？誰が影響を受ける？」<br>私は先生を<b>褒められました</b>。→受身・使役などの関係。</div>
-<div class="item"><b>モダリティ</b>＝「話し手はどう判断・態度を示す？」<br>でしょう・かもしれない・はずだ・に違いない等。</div>
-<div class="item"><b>格・格助詞</b>＝「誰が・誰に・何を・どこへ？」<br>学校<b>を</b>行きます。→「に」など、名詞と述語の関係。</div>
-<div class="item"><b>待遇・語用</b>＝「この相手・場面に合う？」<br>文法的に正しくても、依頼・断り・謝罪などで不適切なことがある。</div>
-<div class="item"><b>音声・音韻</b>＝「音そのもの？」<br>長音・促音・撥音・アクセント・清濁・調音点・調音法など。</div>
-<div class="item"><b>語彙・意味</b>＝「語の意味・使い方・共起？」<br>コロケーション、類義語、多義語、メタファー、メトニミーなど。</div>
-<h3>👂 聞き取りのチェック順</h3>
-<div class="item">① 学習者の発話をそのまま聞く → ② 正しい形を頭に置く → ③ 差を1か所に絞る → ④ 文法／音声／語彙／語用に分類 → ⑤ 選択肢の用語と一致させる。</div>
-<h3>🗣️ 教師の応答も聞く</h3>
-<div class="item"><b>直接訂正</b>：誤りをすぐ示す。<br><b>明示的フィードバック</b>：何が誤りか明確に示す。<br><b>リキャスト</b>：学習者の誤りを正しい形に言い換えて返す。<br><b>明確化要求</b>：「もう一度お願いします」など、伝達上の問題を示す。<br><b>誘導・ヒント</b>：学習者自身に修正させる。</div>
-<h3>🎵 音声で特に注意</h3>
-<div class="item">長音「おばさん／おばあさん」・促音「きて／きって」・撥音「しんぶん」・拗音「きや／きゃ」・アクセント・無声化・清音／濁音・拍（モーラ）。</div>
-<div class="notice"><b>国試型のコツ</b><br>「聞こえたもの」ではなく、「その違いを日本語教育の専門用語で説明すると何か？」まで考える。</div>
+<div class="item"><b>テンス</b>＝「いつ？」。過去・現在・未来など時間との関係。<br>例：「昨日、映画を<b>見ます</b>」→ 過去の出来事に現在形 → テンス。</div>
+<div class="item"><b>アスペクト</b>＝「動作・出来事はどう進んでいる？」。開始・継続・完了など。<br>例：「もう宿題を<b>しています</b>」と「もう宿題を<b>しました</b>」では、完了・継続の捉え方が異なる。</div>
+<div class="item"><b>ヴォイス</b>＝「誰が行為者？誰が影響を受ける？」。受身・使役・可能などの関係に注目。</div>
+<div class="item"><b>モダリティ</b>＝「話し手はどう判断・態度を示す？」。推量・意志・義務・当然・許可など。例：でしょう／かもしれない／はずだ。</div>
+<div class="item"><b>格・格助詞</b>＝「誰が・誰に・何を・どこへ？」。名詞と述語の関係を見る。例：「学校<b>を</b>行きます」→格助詞の問題。</div>
+<div class="item"><b>待遇・語用</b>＝「その相手・関係・場面に合う？」。文法的に成立していても、依頼・断り・謝罪などで不適切なことがある。</div>
+<div class="item"><b>音声・音韻</b>＝「音そのもの？」。長音・促音・撥音・拗音・アクセント・イントネーション・清濁・無声化・調音点・調音法など。</div>
+<div class="item"><b>語彙・意味</b>＝「語の意味・使い方・結び付き？」。類義語・多義語・コロケーション・メタファー・メトニミーなど。</div>
+<h3>🧠 「聞こえたらこう考える」</h3>
+<div class="item"><b>昨日なのに「行きます」</b>→ テンス。<br><b>「先生を褒められました」</b>→ ヴォイス。<br><b>「学校を行きます」</b>→ 格・格助詞。<br><b>「明日は雨が降るでしょう」</b>→ モダリティ。<br><b>「きて／きって」</b>→ 促音・モーラ。<br><b>「おばさん／おばあさん」</b>→ 長音・モーラ。<br><b>「この薬を飲む」vs「薬を服用する」</b>→ 語彙・語用・レジスターなどを文脈から判断。</div>
+<h3>👂 聞き取りの手順</h3>
+<div class="item"><b>STEP 1</b> 発話をそのまま聞く → <b>STEP 2</b> 正しい形を頭の中で言い直す → <b>STEP 3</b> 差を1点に絞る → <b>STEP 4</b> 文法／音声／語彙／語用に分類 → <b>STEP 5</b> 専門用語を選択肢と照合。</div>
+<h3>🗣️ フィードバックを聞き分ける</h3>
+<div class="item"><b>明示的訂正</b>：「そこは『〜です』ではなく『〜でした』です」のように誤りを直接示す。<br><b>リキャスト</b>：学習者の誤りを正しい形に言い換えて返す。<br><b>明確化要求</b>：「え？」「もう一度お願いします」など、発話が理解できない・伝達に問題があることを示す。<br><b>誘導・プロンプト</b>：教師が答えを言わず、学習者自身の修正を促す。<br><b>メタ言語的フィードバック</b>：誤りそのものを正解で置き換えるのではなく、文法・形式についてヒントを与える。</div>
+<h3>🔊 音声・音韻の頻出整理</h3>
+<div class="item"><b>モーラ（拍）</b>＝日本語のリズムを捉える基本単位。長音・促音・撥音も原則1拍として数える。<br><b>長音</b>：母音を長く保つ。「おばさん／おばあさん」。<br><b>促音</b>：「っ」に代表される1拍。「きて／きって」。<br><b>撥音</b>：「ん」に代表される1拍。「しんぶん」。<br><b>拗音</b>：「きゃ・しゅ・ちょ」など。表記上の小書き仮名を含む音節構造に注意。</div>
+<div class="item"><b>アクセント</b>＝音の高低の配置。日本語では「強く読む」だけではなく、高低のパターンを見る。<br><b>イントネーション</b>＝文全体の高さの変化。疑問・感情・話題など、発話全体の意味・機能に関わる。</div>
+<div class="item"><b>無声化</b>＝母音などの声帯振動が弱く／なくなる現象。環境と話者によって生じるため、「いつでも起こる」と固定しない。</div>
+<div class="item"><b>調音点</b>＝どこで狭める・閉鎖するか。<b>調音法</b>＝どうやって気流を妨げるか。<br>例：/p/＝両唇＋破裂音、/m/＝両唇＋鼻音。</div>
+<div class="notice"><b>国試型のコツ</b><br>「音が違う」だけで終わらず、<b>①どの音？②どこで？③どう作る？④何拍？⑤高低は？</b>まで言えるようにする。</div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題を解く</button><div id="listeningQuiz"></div></section>
-
 <section id="oral" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>👄 口腔断面図・音声 完全版</h2>
-<div class="notice"><b>音声問題は「音→どこで→どう作る→用語」の順。</b><br>口腔断面図では、調音点と調音法をセットで見る。</div>
-<div class="exam-diagram-wrap">
-<div class="diagram-title">【国試対策】口腔断面図・番号から名称を答える</div>
-<svg class="exam-diagram" viewBox="0 0 760 560" role="img" aria-label="日本語の発音に関わる口腔断面図。番号で部位を示す。">
-<rect x="0" y="0" width="760" height="560" fill="white"/>
-<!-- head / nasal / oral outline -->
-<path d="M95 105 Q155 45 285 48 Q430 45 555 80 Q630 100 680 165 L650 185 Q610 170 570 168 L535 190 Q510 225 470 240 L455 300 Q445 370 390 405 Q350 430 315 415 L280 395 Q240 380 205 350 Q175 320 165 285 L145 245 L112 220 Q80 195 78 160 Z" fill="none" stroke="#222" stroke-width="3"/>
-<!-- nasal cavity -->
-<path d="M165 115 Q300 82 475 105 Q535 112 580 145 L560 165 Q515 150 455 148 L300 145 L190 158 Z" fill="none" stroke="#333" stroke-width="2.5"/>
-<!-- palate -->
-<path d="M185 170 Q300 155 430 158 Q500 160 550 178" fill="none" stroke="#111" stroke-width="5"/>
-<!-- uvula -->
-<path d="M550 178 Q562 188 555 205 Q548 216 541 204 Q535 190 550 178" fill="none" stroke="#222" stroke-width="3"/>
-<!-- teeth -->
-<path d="M172 180 l0 35 M183 178 l0 37 M194 177 l0 38 M205 177 l0 38" stroke="#222" stroke-width="3"/>
-<path d="M168 215 Q188 222 210 215" fill="none" stroke="#222" stroke-width="3"/>
-<!-- tongue -->
-<path d="M215 270 Q260 235 330 250 Q405 270 470 245 Q495 238 500 265 Q490 325 440 355 Q380 390 305 365 Q250 348 220 315 Q205 292 215 270 Z" fill="#eee" stroke="#222" stroke-width="3"/>
-<!-- pharynx/larynx -->
-<path d="M500 245 Q530 280 520 340 Q515 390 500 430" fill="none" stroke="#222" stroke-width="5"/>
-<path d="M505 375 L540 395 L505 415" fill="none" stroke="#222" stroke-width="3"/>
-<path d="M505 395 L540 395" stroke="#222" stroke-width="4"/>
-<!-- vocal folds / glottis -->
-<path d="M505 390 Q520 382 535 390 M505 400 Q520 408 535 400" fill="none" stroke="#222" stroke-width="3"/>
-<!-- numbered leader lines -->
-<g font-family="sans-serif" font-size="18" font-weight="700" fill="#111" stroke="#111" stroke-width="1">
-<line x1="110" y1="130" x2="188" y2="140"/><circle cx="95" cy="128" r="18" fill="white"/><text x="89" y="134" stroke="none">1</text>
-<line x1="110" y1="185" x2="172" y2="185"/><circle cx="95" cy="185" r="18" fill="white"/><text x="89" y="191" stroke="none">2</text>
-<line x1="115" y1="245" x2="172" y2="210"/><circle cx="98" cy="250" r="18" fill="white"/><text x="92" y="256" stroke="none">3</text>
-<line x1="145" y1="315" x2="225" y2="295"/><circle cx="128" cy="320" r="18" fill="white"/><text x="122" y="326" stroke="none">4</text>
-<line x1="260" y1="455" x2="300" y2="370"/><circle cx="255" cy="475" r="18" fill="white"/><text x="249" y="481" stroke="none">5</text>
-<line x1="360" y1="470" x2="375" y2="375"/><circle cx="355" cy="490" r="18" fill="white"/><text x="349" y="496" stroke="none">6</text>
-<line x1="650" y1="215" x2="555" y2="192"/><circle cx="675" cy="218" r="18" fill="white"/><text x="669" y="224" stroke="none">7</text>
-<line x1="650" y1="285" x2="505" y2="280"/><circle cx="675" cy="288" r="18" fill="white"/><text x="669" y="294" stroke="none">8</text>
-<line x1="650" y1="350" x2="520" y2="340"/><circle cx="675" cy="353" r="18" fill="white"/><text x="669" y="359" stroke="none">9</text>
-<line x1="610" y1="425" x2="520" y2="398"/><circle cx="635" cy="430" r="18" fill="white"/><text x="629" y="436" stroke="none">10</text>
-<line x1="300" y1="80" x2="300" y2="145"/><circle cx="300" cy="60" r="18" fill="white"/><text x="294" y="66" stroke="none">11</text>
-<line x1="450" y1="80" x2="445" y2="158"/><circle cx="450" cy="60" r="18" fill="white"/><text x="444" y="66" stroke="none">12</text>
-</g>
-</svg>
-<div class="diagram-note"><b>まず番号で覚える：</b> 1鼻腔　2上の歯・歯茎　3口腔前方　4舌尖　5舌端　6舌面　7口蓋垂　8咽頭　9喉頭　10声門・声帯付近　11硬口蓋　12軟口蓋</div>
-<div class="diagram-tip">⚠️ 実際の試験では、図がもっと簡略化され、部位名ではなく番号だけが示されることがあります。<br>→「図を見る → 調音点を判断 → 音を結び付ける」の練習を優先。</div>
+<div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
+<div class="audioGrid">
+<button class="primary" onclick="speak('おばさん')">🔊 おばさん</button><button class="primary" onclick="speak('おばあさん')">🔊 おばあさん</button>
+<button class="primary" onclick="speak('きてください')">🔊 きてください</button><button class="primary" onclick="speak('きってください')">🔊 きってください</button>
+<button class="primary" onclick="speak('はし')">🔊 はし</button><button class="primary" onclick="speak('あめ')">🔊 あめ</button>
 </div>
-<h3>🦷 口腔断面図で覚える場所</h3>
-<div class="item"><b>前から順に</b><br>上唇・下唇 → 歯 → 歯茎 → 硬口蓋 → 軟口蓋 → 口蓋垂 → 咽頭 → 喉頭 → 声帯・声門。</div>
-<div class="item"><b>舌の部位</b><br>舌尖（舌の先）／舌端（先端に近い部分）／舌面（中央・広い面）／舌根（奥の部分）。</div>
-<h3>📍 調音点</h3>
-<div class="item"><b>両唇音</b>：唇で作る → ぱ・ば・ま<br><b>歯茎音</b>：歯茎付近 → た・だ・な・ら・さ・ざ<br><b>硬口蓋付近</b>：硬口蓋付近 → き・ぎ・に・ひ等<br><b>軟口蓋音</b>：軟口蓋付近 → か・が等</div>
-<h3>🔧 調音法</h3>
-<div class="item"><b>破裂音</b>：閉鎖→圧力→一気に開放。<br><b>摩擦音</b>：狭い隙間を通して摩擦を起こす。<br><b>破擦音</b>：破裂＋摩擦。<br><b>鼻音</b>：鼻腔へ空気を通す。<br><b>弾き音</b>：舌先などを一度弾く。</div>
-<h3>🔊 声の仕組み</h3>
-<div class="item"><b>声帯</b>：振動して有声音を作る。<br><b>声門</b>：声帯の間のすき間。<br><b>有声音</b>：声帯が振動。<br><b>無声音</b>：基本的に声帯が振動しない。</div>
-<h3>🎵 日本語の音声用語</h3>
-<div class="item"><span class="badge">モーラ（拍）</span>日本語のリズムの基本単位。<br><span class="badge">長音</span>母音を長く発音する。<br><span class="badge">促音</span>「っ」に代表される1拍。<br><span class="badge">撥音</span>「ん」に代表される1拍。<br><span class="badge">拗音</span>「きゃ・しゅ・ちょ」など。<br><span class="badge">アクセント</span>音の高低の配置。</div>
-<h3>🎯 音→用語 練習</h3>
-<div class="item"><b>「きて」と「きって」</b>の違い → 促音・拍数。<br><b>「おばさん」と「おばあさん」</b> → 長音。<br><b>「か」と「が」</b> → 清濁・声帯振動。<br><b>「きゃ」と「きや」</b> → 拗音・拍構造。</div>
-<div class="notice">※図は学習用の模式図。試験では白黒の口腔断面図を見て、部位・調音点・調音法を判断できるようにする。</div>
-</section>
+<h3>🫁 音声の基本：3段階で考える</h3>
+<div class="item"><b>① 音声学</b>：実際に発せられる音の物理・生理的側面。<br><b>② 音韻論</b>：言語の中で意味の区別に関わる音の体系。<br><b>③ 調音</b>：どこで・どうやって音を作るか。</div>
+<h3>👄 調音点 × 調音法</h3>
+<div class="item"><b>両唇音</b>：上下の唇。例：/p b m/。<br><b>歯茎音</b>：舌先・舌端と歯茎付近。例：/t d s z n r/。<br><b>硬口蓋付近</b>：舌面と硬口蓋付近。例：/ɕ/ など。<br><b>軟口蓋音</b>：舌後部と軟口蓋。例：/k g/。<br><b>声門音</b>：声門付近。</div>
+<div class="item"><b>閉鎖音</b>：一度閉鎖してから開放。<br><b>摩擦音</b>：狭い隙間を通して摩擦。<br><b>破擦音</b>：閉鎖→摩擦。<br><b>鼻音</b>：鼻腔へ空気を通す。<br><b>弾き音</b>：舌などを一度はじく。</div>
+<h3>🔊 有声・無声</h3>
+<div class="item"><b>有声音</b>：声帯が振動する。<b>無声音</b>：声帯が振動しない。<br>「声帯が振動しているか？」を判断するのが第一歩。調音点・調音法とは別の軸。</div>
+<h3>⏱ 日本語の拍・特殊拍</h3>
+<div class="item"><b>モーラ（拍）</b>：日本語のリズムを数える単位。<br><b>長音</b>：1拍分伸びる。<b>促音</b>：1拍分の閉鎖・詰まり。<b>撥音</b>：/N/。<b>拗音</b>：きゃ・しゅ等の音節構造に注意。</div>
+<h3>🎵 アクセント・イントネーション</h3>
+<div class="item"><b>アクセント</b>：語の中での音の高低の配置。<br><b>イントネーション</b>：発話・文全体の声の高さの変化。<br>日本語の高低アクセントでは「何拍目で高低が変わるか」を意識する。</div>
+<h2>👄 口腔断面図・音声 完全版</h2>
+<div class="notice"><b>ここは「綺麗な図を眺める」場所ではなく、試験で番号・矢印を見て答えるための練習。</b><br>白黒の簡略模式図 → 部位 → 調音点 → 調音法 → 日本語の音、の順で覚える。</div>
+<div class="exam-diagram-wrap"><div class="diagram-title">【試験対策・白黒模式図】番号を見て部位を答える</div>
+<svg class="exam-diagram" viewBox="0 0 720 520" role="img" aria-label="白黒の口腔断面模式図。番号付き">
+<rect width="720" height="520" fill="#fff"/>
+<!-- rough head contour -->
+<path d="M75 105 C125 55 230 38 350 48 C470 58 575 80 640 140 L650 178 C610 188 570 180 535 175 C510 205 490 228 475 250 C465 285 460 330 430 370 C400 410 360 425 315 405 C270 385 230 365 205 335 C180 305 168 270 145 245 C118 220 92 200 82 170 Z" fill="none" stroke="#111" stroke-width="3"/>
+<!-- nasal cavity --> <path d="M135 115 C245 78 405 82 520 112 C565 124 595 145 615 160 C585 164 555 160 525 150 C470 136 400 132 320 135 L180 150 Z" fill="none" stroke="#222" stroke-width="2"/>
+<!-- palate line --> <path d="M175 163 C285 145 405 145 515 166" fill="none" stroke="#111" stroke-width="5"/>
+<!-- uvula --> <path d="M515 166 C530 174 530 192 519 202 C508 192 505 177 515 166" fill="none" stroke="#111" stroke-width="3"/>
+<!-- teeth/gum --> <path d="M155 174 L155 208 M166 171 L166 210 M177 169 L177 211 M188 168 L188 210 M145 213 C160 220 180 220 195 213" fill="none" stroke="#111" stroke-width="3"/>
+<!-- tongue --> <path d="M195 275 C225 248 270 236 320 246 C370 257 418 274 475 245 C490 238 500 250 494 272 C480 325 435 357 380 370 C325 383 265 360 225 332 C205 317 190 295 195 275 Z" fill="#f7f7f7" stroke="#111" stroke-width="3"/>
+<!-- pharynx --> <path d="M490 220 C525 255 530 305 515 350 C505 380 500 400 505 420" fill="none" stroke="#111" stroke-width="5"/>
+<!-- larynx --> <path d="M505 355 L545 385 L505 415" fill="none" stroke="#111" stroke-width="3"/><path d="M510 385 L540 385" stroke="#111" stroke-width="4"/>
+<!-- vocal folds/glottis --> <path d="M508 376 Q525 368 540 380 M508 394 Q525 402 540 390" fill="none" stroke="#111" stroke-width="3"/>
+<!-- leader lines and numbers -->
+<g font-family="sans-serif" font-size="16" font-weight="700" fill="#111" stroke="#111" stroke-width="1">
+<line x1="92" y1="120" x2="155" y2="138"/><circle cx="75" cy="116" r="17" fill="white"/><text x="70" y="122" stroke="none">1</text>
+<line x1="92" y1="180" x2="155" y2="184"/><circle cx="75" cy="178" r="17" fill="white"/><text x="70" y="184" stroke="none">2</text>
+<line x1="100" y1="245" x2="160" y2="205"/><circle cx="82" cy="250" r="17" fill="white"/><text x="77" y="256" stroke="none">3</text>
+<line x1="120" y1="315" x2="205" y2="288"/><circle cx="102" cy="320" r="17" fill="white"/><text x="97" y="326" stroke="none">4</text>
+<line x1="235" y1="455" x2="260" y2="350"/><circle cx="230" cy="474" r="17" fill="white"/><text x="225" y="480" stroke="none">5</text>
+<line x1="335" y1="462" x2="340" y2="360"/><circle cx="335" cy="480" r="17" fill="white"/><text x="330" y="486" stroke="none">6</text>
+<line x1="635" y1="205" x2="520" y2="184"/><circle cx="655" cy="208" r="17" fill="white"/><text x="650" y="214" stroke="none">7</text>
+<line x1="635" y1="270" x2="500" y2="260"/><circle cx="655" cy="272" r="17" fill="white"/><text x="650" y="278" stroke="none">8</text>
+<line x1="635" y1="335" x2="515" y2="330"/><circle cx="655" cy="337" r="17" fill="white"/><text x="650" y="343" stroke="none">9</text>
+<line x1="625" y1="405" x2="525" y2="385"/><circle cx="645" cy="410" r="17" fill="white"/><text x="640" y="416" stroke="none">10</text>
+<line x1="300" y1="80" x2="330" y2="145"/><circle cx="292" cy="62" r="17" fill="white"/><text x="287" y="68" stroke="none">11</text>
+<line x1="445" y1="82" x2="430" y2="150"/><circle cx="448" cy="63" r="17" fill="white"/><text x="443" y="69" stroke="none">12</text>
+</g></svg>
+<div class="diagram-tip"><b>答えを隠して練習：</b> 1鼻腔／2歯・歯茎付近／3歯茎付近／4舌尖／5舌端／6舌面／7口蓋垂／8咽頭／9喉頭／10声門・声帯付近／11硬口蓋／12軟口蓋。<br>※これは試験対策用の簡略模式図。実際の問題は図の向き・番号・線の位置が異なる場合がある。</div></div>
+<h3>🦷 調音器官</h3>
+<div class="item"><b>唇</b>：上唇・下唇。<b>歯・歯茎</b>：舌との接触・接近に関係。<b>硬口蓋・軟口蓋・口蓋垂</b>：舌との位置関係を見る。<b>咽頭・喉頭・声帯・声門</b>：気流と発声に関係。</div>
+<h3>👅 舌の部位</h3><div class="item"><b>舌尖</b>＝先端／<b>舌端</b>＝舌尖に近い部分／<b>舌面</b>＝中央の広い部分／<b>舌根</b>＝奥の部分。試験では「舌のどこが動くか」と調音点をセットで考える。</div>
+<h3>📍 調音点 × 🔧 調音法</h3>
+<div class="item"><b>両唇音</b>：両唇を使う。例 /p b m/。<br><b>歯茎音</b>：歯茎付近で作る音。日本語の /t d n s z ɾ/ などを整理。<br><b>硬口蓋付近</b>：舌の前方と硬口蓋付近の関係を見る。<br><b>軟口蓋音</b>：舌の奥と軟口蓋付近。/k g/ など。</div>
+<div class="item"><b>破裂音</b>＝閉鎖→気流をためる→開放。<br><b>摩擦音</b>＝狭い隙間に気流を通し摩擦。<br><b>破擦音</b>＝破裂に続いて摩擦。<br><b>鼻音</b>＝鼻腔側へ気流を通す。<br><b>弾き音</b>＝舌尖などを一度弾く。</div>
+<h3>🫁 声帯・声門</h3><div class="item"><b>声帯</b>＝振動して有声音に関わる器官。<b>声門</b>＝左右の声帯の間。<b>有声音／無声音</b>＝声帯振動の有無を軸に区別する。</div>
+<h3>🎵 日本語のリズム・韻律</h3><div class="item"><b>モーラ（拍）</b>＝日本語のリズムを数える単位。長音・促音・撥音などを1拍として捉える。<br><b>長音</b>：「おばあさん」／<b>促音</b>：「きって」／<b>撥音</b>：「ほん」／<b>拗音</b>：「きゃ」。<br><b>アクセント</b>＝語の中の高さの配置。<b>イントネーション</b>＝句・文など発話全体の高さの変化。</div>
+<h3>🔄 音の変化・聞き分け</h3><div class="item"><b>清音／濁音</b>：声帯振動の違いを含めて整理。<br><b>無声化</b>：特定の環境で母音などの声帯振動が弱くなる／なくなる現象。<br><b>同化</b>：隣接する音の影響で音が似た性質になる現象。<br><b>脱落</b>：音が発音されにくくなり落ちる現象。試験では「何が起きたか」を具体的に聞き取る。</div>
+<h3>🎯 音→専門用語ドリル</h3><div class="item"><b>きて→きって</b>＝促音・1拍増加。<br><b>おばさん→おばあさん</b>＝長音・1拍増加。<br><b>きや→きゃ</b>＝拗音・音節構造の違い。<br><b>か→が</b>＝清濁・声帯振動の違い。<br><b>/p/</b>＝両唇＋破裂、<b>/m/</b>＝両唇＋鼻音。</div>
+<div class="notice"><b>本番前の合言葉：</b>「どこ？（調音点）／どう？（調音法）／声帯は？／何拍？／高低は？」</div></section>
+<section id="practice" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>📚 日本語教育実践（科目11〜13）</h2>
+<div class="notice"><b>ここは「用語を覚える」だけでなく、授業場面を見て用語と指導判断を結び付けるコーナー。</b><br>特に「生教材」「スキミング／スキャニング」「タスク」「フィードバック」「作文指導」「評価」「ICT」は、似た概念をセットで区別する。</div>
+<h3>① 📰 生教材（Authentic Materials）</h3><div class="item"><b>意味</b>＝学習者向けに作った教材ではなく、現実社会で実際に使われている素材。時刻表・案内・メニュー・広告・Web・実際のメールなど。<br><b>ポイント</b>：そのまま使うとは限らない。レベルに応じて語彙注釈・設問・情報量などを調整しても、元の社会的な素材を活用できる。</div>
+<h3>② 🔎 読み方の使い分け</h3><div class="item"><span class="badge">スキミング</span>＝全体の大意・要点を素早く把握。<br><span class="badge">スキャニング</span>＝必要な特定情報を探す。<br><span class="badge">精読</span>＝語彙・文法・論理まで細かく読む。<br><span class="badge">多読</span>＝多くの文章を読む。読む量・流暢さ・読書経験の拡大などをねらう。</div>
+<h3>③ 🎯 タスクと練習</h3><div class="item"><b>タスク</b>＝現実的な目的・意味のある成果を伴う言語活動。例：時刻表を見て友達との旅行計画を決める。<br><b>文型練習</b>＝特定の文型・形式の正確さを練習。<br><b>ポイント</b>：「何を言うか」より「何を達成するか」が中心ならタスク性が高い。</div>
+<h3>④ 🎭 ロールプレイ・会話活動</h3><div class="item"><b>ロールプレイ</b>＝役割・場面を設定し、その役割になってやり取りする。例：店員と客、学校への相談。<br><b>自由会話</b>＝役割や台本の制約が少ない。<br><b>情報差（information gap）</b>＝参加者が異なる情報を持ち、やり取りによって情報を完成させる。</div>
+<h3>⑤ 🗣️ フィードバック</h3><div class="item"><b>明示的訂正</b>＝誤りを直接訂正。<br><b>リキャスト</b>＝誤りを正しい形に言い換えて返す。<br><b>明確化要求</b>＝「もう一度？」など、伝達上の問題を示す。<br><b>プロンプト／誘導</b>＝答えを与えず、学習者自身の修正を促す。<br><b>メタ言語的フィードバック</b>＝文法・形式についてヒントを与える。</div>
+<h3>⑥ ✍️ 書くことを教える</h3><div class="item"><b>プロダクト・アプローチ</b>＝完成した文章の正確さ・モデルを重視。<br><b>プロセス・アプローチ</b>＝発想→構想→下書き→推敲→書き直しなど、書く過程を重視。<br><b>ジャンル・アプローチ</b>＝目的・読者・社会的な場面に応じた文章の型や特徴を意識。<br><b>ピア・レビュー</b>＝学習者同士で文章を読み、基準に沿ってコメント・改善する。</div>
+<h3>⑦ 📝 作文評価・ルーブリック</h3><div class="item"><b>評価基準は目標と一致させる。</b>例：タスク達成、構成、文法・語彙・表記など。<br><b>分析的評価</b>＝複数の観点を分けて評価。<br><b>総括的評価</b>＝文章全体をまとめて判断。<br><b>自己評価</b>＝学習者自身が基準に照らして振り返る。<br>「文法ミスがゼロなら高得点」とは限らず、設定した目的・評価基準との整合性を見る。</div>
+<h3>⑧ 🌏 Can-do / JF Can-do</h3><div class="item"><b>Can-do</b>＝「何ができるか」を能力・行動として記述する考え方。<br>例：「駅で必要な情報を聞き取って確認できる」。文法項目だけではなく、実際の言語活動・達成できることを中心に考える。</div>
+<h3>⑨ 💻 ICT・協働学習</h3><div class="item"><b>ICT</b>＝教材提示、録音・録画、オンライン交流、課題提出、学習管理などに活用。ただ使うのではなく、<b>学習目標に対して何が改善するか</b>で選ぶ。<br><b>協働学習</b>＝学習者同士の相互作用を通して学ぶ。役割分担・相互説明・ピア評価などを設計する。</div>
+<h3>⑩ 🧭 授業設計の「目標→活動→評価」</h3><div class="item"><b>目標</b>「実際に何ができるようになる？」→ <b>活動</b>「その能力を使う練習になっている？」→ <b>評価</b>「できたかを測れる？」の3点をそろえる。これを<b>整合性</b>の視点で見る。</div>
+<h3>⑪ 🔥 試験で狙われやすい比較</h3><div class="item"><b>スキミング</b>≠スキャニング／<b>生教材</b>≠加工禁止／<b>タスク</b>≠文型反復だけ／<b>リキャスト</b>≠明示的訂正／<b>プロンプト</b>≠答えを教師が言う／<b>Can-do</b>≠文法項目の一覧。</div>
+<h3>⑫ 🧩 場面で判定</h3><div class="item"><b>場面A：</b>「市役所のWebページから、申請期限を探す」→ 生教材＋スキャニング。<br><b>場面B：</b>「学習者が『昨日行きます』と言い、教師が『昨日行きました？』と返す」→ リキャストに近いフィードバック。<br><b>場面C：</b>「旅行の予定を相談して、最終的に日程を決める」→ 意味のあるタスク。<br><b>場面D：</b>「作文を一度書いて終わりではなく、コメントを受けて書き直す」→ プロセス・アプローチ。</div>
+<div class="notice"><b>覚え方：</b>「教材は何？／読む目的は？／何を達成？／教師はどう支援？／何で評価？」の5問で、用語を場面に結び付ける。</div>
+<h3>🆚 あやふや用語・瞬間判定</h3>
+<div class="item"><b>スキミング</b>＝大意を取る ／ <b>スキャニング</b>＝特定情報を探す</div>
+<div class="item"><b>リキャスト</b>＝誤りを明示せず正しい形で言い直す ／ <b>明示的訂正</b>＝誤りを直接指摘して正しい形を示す</div>
+<div class="item"><b>タスク</b>＝意味のある目的達成が中心 ／ <b>文型練習</b>＝特定形式の正確な練習が中心</div>
+<div class="item"><b>生教材</b>＝現実社会で使われる素材 ／ <b>教材化</b>＝学習目的に合わせて加工・設計すること</div>
 
+</section>
 <section id="grammar" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🔤 動詞のグループ・活用</h2>
 <div class="notice"><b>まずここを覚える！</b><br>日本語教育では、動詞を「1グループ（五段）・2グループ（一段）・3グループ（不規則）」に分けて考える。活用問題では、まずグループを判断してから形を作る。</div>
 <div class="item"><b>① 1グループ＝五段動詞</b><br>辞書形の最後の音が、活用によって変化する。<br><span class="mini">書く→書いて／読む→読んで／話す→話して／買う→買って</span></div>
@@ -235,6 +296,17 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="sourcebox">出典・最新確認：文部科学省「日本語教育」／「日本語教育機関認定法ポータル」</div>
 </section>
 
+<section id="boost" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>🎯 80点突破トレーニング</h2>
+<div class="notice"><b>目標は66点ギリギリではなく、110点中80点前後を安定して狙う。</b><br>応用試験の「知識→場面判断→選択肢」をまとめて練習するコーナー。</div>
+<h3>🔥 まず覚える「場面判断5問」</h3>
+<div id="boostQuiz"></div>
+<h3>📌 本番での5ステップ</h3>
+<div class="item"><b>1</b> 設問条件を読む → <b>2</b> 学習者・目的・場面・レベルを拾う → <b>3</b> 何の領域か分類 → <b>4</b> 選択肢を場面に当てる → <b>5</b> 本文・音声の根拠に戻る。</div>
+<h3>📊 80点の目安</h3>
+<div class="item">110問で <b>80点＝約72.7%</b>。<br>目標：読解・聴解ともに7割以上、苦手分野は6割を切らない状態を作る。</div>
+<button class="primary" onclick="runBoost()">🎯 5問チャレンジ</button>
+</section>
+
 <section id="strategy" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>⭐ 応用問題の解き方</h2><div class="item"><b>1</b> 設問の条件を読む</div><div class="item"><b>2</b> 学習者・目的・場面・レベルを拾う</div><div class="item"><b>3</b> 専門用語を呼び出す</div><div class="item"><b>4</b> 選択肢を場面に当てはめる</div><div class="item"><b>5</b> 根拠に戻って決める</div></section>
 
 <section id="wrong" class="panel"><button class="back" onclick="home()">← メニュー</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div></section>
@@ -258,6 +330,15 @@ function home(){document.querySelectorAll(".panel").forEach(p=>p.classList.remov
 function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
 function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function renderWrong(){const e=document.getElementById("wrongList");if(!wrong.length){e.innerHTML='<p class="note">まだありません。問題を解いてみよう！</p>';return}e.innerHTML=`<p class="note">${wrong.length}問が保存されています。</p>`+wrong.map(x=>`<div class="item"><span class="badge">${x.type}</span>${x.q}</div>`).join("")+`<button class="secondary" onclick="wrong=[];localStorage.removeItem('ntWrong');renderWrong()">復習リストを消去</button>`}
+const boostQ=[
+{q:'実際の駅の時刻表から「東京駅に何時に着くか」を探させる。中心となる読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'特定の必要情報を探すのでスキャニング。'},
+{q:'学習者「昨日、映画を見ます。」教師が正しい形を示すが、誤りを直接指摘しない。この対応に最も近いものは？',a:['リキャスト','明示的訂正','翻訳','自己評価'],c:0,e:'正しい形への言い換えを返すのがリキャスト。'},
+{q:'学習者に「店で返品を申し出る」という現実的な目的を達成させる活動。最も適切なのは？',a:['目的のない文型暗記','タスク中心の活動','漢字書き取りだけ','教師講義だけ'],c:1,e:'意味のある目的達成を中心にするのでタスク中心。'},
+{q:'「明日来ます。」の「明日」と「来ます」の時間関係のずれを判断するカテゴリーは？',a:['アスペクト','テンス','ヴォイス','モダリティ'],c:1,e:'出来事をいつ起こるものとして捉えるかはテンス。'},
+{q:'テストで測りたい能力を本当に適切に測れているかを表す概念は？',a:['信頼性','妥当性','客観性','波及効果'],c:1,e:'測定したいものを適切に測っているかは妥当性。'}];
+function runBoost(){const el=document.getElementById('boostQuiz');el.innerHTML=boostQ.map((x,i)=>`<div class="item"><span class="badge">80点 ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="boostAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}<div id="bfb${i}" class="feedback"></div></div>`).join('');}
+function boostAns(btn,i,j){const x=boostQ[i],box=document.getElementById('bfb'+i);document.querySelectorAll('#bfb'+i+' ~ .choice').forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:'80点',q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}}
+function speak(text){if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=.85;u.pitch=1;speechSynthesis.speak(u)}
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 </script>
