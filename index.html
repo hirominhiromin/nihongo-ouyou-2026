@@ -1294,10 +1294,36 @@ function nativeSpeakNow(text,btn){
 function speak(text){ return speakOnce(text,null); }
 function speakOnce(text,btn){
   if(!text){alert('音声データがありません。');return false;}
-  // IMPORTANT: call SpeechSynthesis synchronously from the user's tap.
-  // Calling it later from audio.play().catch() can lose iOS Safari's user-activation permission.
-  unlockSpeech();
-  return nativeSpeakNow(String(text),btn);
+  if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
+    alert('このブラウザでは音声再生に対応していません。');
+    return false;
+  }
+  // iPhone Safari: start the actual utterance directly inside the tap handler.
+  // Do NOT play a silent "unlock" utterance first; it can consume/cancel the
+  // user activation and leave the following Japanese utterance silent.
+  const synth=window.speechSynthesis;
+  try{
+    synth.cancel();
+    const u=new SpeechSynthesisUtterance(String(text));
+    u.lang='ja-JP';
+    u.rate=speechRate || 0.82;
+    u.pitch=1;
+    u.volume=1;
+    const voices=synth.getVoices ? synth.getVoices() : [];
+    const ja=voices.find(v=>/^ja(-|_)/i.test(v.lang)) || voices.find(v=>/Japanese|日本語|Kyoko|Otoya|Hattori|Siri/i.test(v.name));
+    if(ja) u.voice=ja;
+    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    u.onstart=function(){if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}};
+    u.onend=function(){currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}};
+    u.onerror=function(){currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
+    currentUtterance2=u;
+    synth.speak(u);
+    return true;
+  }catch(e){
+    currentUtterance2=null;
+    if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    return false;
+  }
 }
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
