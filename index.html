@@ -1249,72 +1249,56 @@ function quickAns(btn,i,j){
   }
 }
 let currentUtterance2=null;
-function ttsUrl(text){
-  return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q='+encodeURIComponent(String(text));
-}
-let htmlAudio=null;
-function getHtmlAudio(){
-  if(!htmlAudio){
-    htmlAudio=document.createElement('audio');
-    htmlAudio.preload='none';
-    htmlAudio.setAttribute('playsinline','');
-    htmlAudio.setAttribute('webkit-playsinline','');
-    htmlAudio.style.display='none';
-    document.body.appendChild(htmlAudio);
-  }
-  return htmlAudio;
-}
-function playHtmlTTS(text,btn){
-  if(!text) return false;
-  const a=getHtmlAudio();
+let speechUnlocked=false;
+function unlockSpeech(){
+  if(!('speechSynthesis' in window)) return false;
   try{
-    a.pause();
-    a.currentTime=0;
-    a.src=ttsUrl(text);
-    a.load();
-    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
-    const p=a.play();
-    if(p && p.catch){
-      p.catch(function(){
-        if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
-        // HTML audio is still attempted directly from the tap; if blocked, fall back to Safari speech.
-        try{ fallbackSpeech(text,btn); }catch(e){}
-      });
-    }
-    a.onended=function(){if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}};
-    a.onerror=function(){
-      if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
-      try{ fallbackSpeech(text,btn); }catch(e){}
-    };
+    window.speechSynthesis.resume();
+    // iOS Safari can require a user-gesture-initiated speech call before later speech works.
+    // Keep this utterance silent and extremely short; it is only an unlock attempt.
+    const u=new SpeechSynthesisUtterance('');
+    u.lang='ja-JP'; u.volume=0;
+    window.speechSynthesis.speak(u);
+    speechUnlocked=true;
     return true;
-  }catch(e){
-    try{fallbackSpeech(text,btn);}catch(_){ }
-    return false;
-  }
+  }catch(e){ return false; }
 }
-function fallbackSpeech(text,btn){
+function pickJapaneseVoice(){
+  if(!('speechSynthesis' in window)) return null;
+  const vs=window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
+  return vs.find(v=>/^ja(-|_)/i.test(v.lang)) || vs.find(v=>/Japanese|日本語|Kyoko|Otoya|Hattori|Siri/i.test(v.name)) || null;
+}
+function nativeSpeakNow(text,btn){
   if(!('speechSynthesis' in window)) return false;
   const synth=window.speechSynthesis;
-  try{synth.cancel();}catch(e){}
-  const u=new SpeechSynthesisUtterance(String(text));
-  const voice=pickVoice();
-  if(voice){u.voice=voice;u.lang=voice.lang||'ja-JP';}else{u.lang='ja-JP';}
-  u.rate=speechRate;u.pitch=1;
-  if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
-  u.onstart=function(){if(btn)btn.textContent='🔊 再生済み（1回）';};
-  u.onerror=function(){if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
-  u.onend=function(){currentUtterance2=null;};
-  currentUtterance2=u;
-  synth.speak(u);
-  return true;
+  try{
+    synth.cancel();
+    synth.resume();
+    const u=new SpeechSynthesisUtterance(String(text));
+    const voice=pickJapaneseVoice();
+    if(voice){ u.voice=voice; u.lang=voice.lang || 'ja-JP'; }
+    else u.lang='ja-JP';
+    u.rate=speechRate; u.pitch=1; u.volume=1;
+    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    u.onstart=function(){if(btn)btn.textContent='🔊 再生中…';};
+    u.onend=function(){currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}};
+    u.onerror=function(){currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
+    currentUtterance2=u;
+    synth.speak(u);
+    return true;
+  }catch(e){
+    if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    return false;
+  }
 }
 function speak(text){ return speakOnce(text,null); }
 function speakOnce(text,btn){
   if(!text){alert('音声データがありません。');return false;}
-  // iPhone Safari: use a real HTMLAudioElement first, directly from the tap.
-  return playHtmlTTS(String(text),btn);
+  // IMPORTANT: call SpeechSynthesis synchronously from the user's tap.
+  // Calling it later from audio.play().catch() can lose iOS Safari's user-activation permission.
+  unlockSpeech();
+  return nativeSpeakNow(String(text),btn);
 }
-
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator){
