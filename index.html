@@ -191,8 +191,8 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="smallgrid">
 <div class="smallcard" onclick="location.hash='#boost'; return false;"><span>📄</span><b>模擬試験</b><i>›</i><small>本番形式で力試し</small></div>
 <div class="smallcard" onclick="location.hash='#master'; return false;"><span>⭐</span><b>よく出る用語集</b><i>›</i><small>重要用語を効率よく暗記</small></div>
-<div class="smallcard" onclick="location.hash='#bank'; return false;"><span>📚</span><b>110問演習バンク</b><i>›</i><small>読解60＋聴解50＋追加90・全200問</small></div>
-<div class="smallcard" onclick="location.hash='#wrong'; return false;"><span>🔖</span><b>苦手・お気に入り</b><i>›</i><small>間違えた問題＋お気に入りを復習</small></div>
+<div class="smallcard" onclick="location.hash='#bank'; return false;"><span>📚</span><b>応用演習・問題集</b><i>›</i><small>読解60＋聴解50＋追加90・全200問</small></div>
+<div class="smallcard" onclick="location.hash='#wrong'; return false;"><span>🔖</span><b>苦手・お気に入り</b><i>›</i><small>間違えた問題＋⭐を付けた問題を復習</small></div>
 </div>
 <div class="goal80"><b>🔥 打倒・応用試験　🎯 目指せ満点！まず80点超</b><br/>
   応用試験は <strong>読解60問＋聴解50問＝110点</strong>。<br/>
@@ -203,10 +203,10 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="quick">
 <h3>⚡ スキマ時間で今すぐ</h3>
 <div class="quickgrid">
-<button class="quickbtn" onclick="quickQuiz(1)">1分<br/>🎯 1問</button>
-<button class="quickbtn" onclick="quickQuiz(3)">3分<br/>🧠 3問</button>
-<button class="quickbtn" onclick="quickQuiz(5)">5分<br/>📝 5問</button>
-<button class="quickbtn" onclick="quickQuiz(10)">10分<br/>🔥 10問</button>
+<button type="button" class="quickbtn" onclick="quickQuiz(1); return false;">1分<br/>🎯 1問</button>
+<button type="button" class="quickbtn" onclick="quickQuiz(3); return false;">3分<br/>🧠 3問</button>
+<button type="button" class="quickbtn" onclick="quickQuiz(5); return false;">5分<br/>📝 5問</button>
+<button type="button" class="quickbtn" onclick="quickQuiz(10); return false;">10分<br/>🔥 10問</button>
 <button class="quickbtn" onclick="location.hash='#wrong'; return false;">❌ 苦手だけ</button>
 <button class="quickbtn" onclick="location.hash='#master'; return false;">🧠 用語</button>
 </div>
@@ -329,81 +329,15 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="choices"><button class="choice" onclick="ans(this,'①')">① どのレベルでも使いやすい</button><button class="choice" onclick="ans(this,'②')">② 初級には使いやすいが、中級には課題がある</button><button class="choice" onclick="ans(this,'③')">③ 中級だけに適している</button><button class="choice" onclick="ans(this,'④')">④ 初級には使えない</button></div>
 <div class="feedback" data-answer="②">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
-<section class="panel" id="audioPlus"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
+<section class="panel" id="audioPlus">
+<button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
-<div class="notice"><b>本番モード：</b>まず音声を1回だけ聞く → すぐ答える → 解説を見る。解答後は必要ならもう一度。</div>
-<div class="exam"><h3>第1問　長音・短音</h3>
-<p>次の音声を聞き、音の違いとして最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　長音の有無で意味が変わる対立。 ※ここでは「長音を聞き分ける」基礎練習として使う。')">① おばさんとおばあさんの長音の区別</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　長音の有無で意味が変わる対立。 ※ここでは「長音を聞き分ける」基礎練習として使う。')">② 促音の脱落</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　長音の有無で意味が変わる対立。 ※ここでは「長音を聞き分ける」基礎練習として使う。')">③ 撥音の誤り</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　長音の有無で意味が変わる対立。 ※ここでは「長音を聞き分ける」基礎練習として使う。')">④ アクセントの誤り</button></div>
-<div class="feedback" data-answer="①">正解：①　長音の有無で意味が変わる対立。<br/>※ここでは「長音を聞き分ける」基礎練習として使う。</div></div>
-<div class="exam"><h3>第2問　促音</h3>
-<p>次の2語を聞いて、音の違いとして最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('きてください。きってください。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','②','正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。')">① 長音</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','②','正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。')">② 促音</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','②','正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。')">③ 撥音</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','②','正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。')">④ 拗音</button></div>
-<div class="feedback" data-answer="②">正解：②　「きって」には促音 /Q/ がある。日本語では1モーラとして数える。</div></div>
-<div class="exam"><h3>第3問　撥音</h3>
-<p>「さんぽ」の音の特徴として最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('さんぽ',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。')">① 撥音を含む</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。')">② 促音を含む</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。')">③ 長音を含む</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。')">④ 拗音を含む</button></div>
-<div class="feedback" data-answer="①">正解：①　「ん」は撥音。後続音に応じて実際の音価が変化する点も重要。</div></div>
-<div class="exam"><h3>第4問　無声化</h3>
-<p>「すき」の発音で、条件によって母音が弱くなり聞こえにくくなる現象は何か。</p>
-<button class="audioBtn" onclick="speakOnce('すき',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','②','正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。')">① 連濁</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','②','正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。')">② 母音の無声化</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','②','正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。')">③ 音便</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','②','正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。')">④ 脱落</button></div>
-<div class="feedback" data-answer="②">正解：②　高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。</div></div>
-<div class="exam"><h3>第5問　拗音</h3>
-<p>「きゃ」の音の構造として最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('きゃ',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','②','正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。')">① 2モーラの長音</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','②','正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。')">② 拗音を含む1モーラ</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','②','正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。')">③ 撥音を含む</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','②','正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。')">④ 促音を含む</button></div>
-<div class="feedback" data-answer="②">正解：②　「きゃ」は「き・や」の2モーラではなく、基本的に1モーラ。</div></div>
-<div class="exam"><h3>第6問　アクセント</h3>
-<p>同じ「はし」でも、文脈によってアクセントが異なる例を聞き、ピッチの下がり目に注目しなさい。</p>
-<button class="audioBtn" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','②','正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。')">① 音節数</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','②','正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。')">② ピッチの下降位置</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','②','正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。')">③ 長音の有無だけ</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','②','正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。')">④ 子音の調音点だけ</button></div>
-<div class="feedback" data-answer="②">正解：②　日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。</div></div>
-<div class="exam"><h3>第7問　モーラ</h3>
-<p>「がっこう」は何モーラか。</p>
-<button class="audioBtn" onclick="speakOnce('がっこう',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','③','正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。')">① 2</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','③','正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。')">② 3</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','③','正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。')">③ 4</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','③','正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。')">④ 5</button></div>
-<div class="feedback" data-answer="③">正解：③　が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も1モーラとして数える。</div></div>
-<div class="exam"><h3>第8問　学習者の文法誤用</h3>
-<p>学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('昨日、映画を見ます。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。')">① テンス</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。')">② アスペクト</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。')">③ ヴォイス</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。')">④ 待遇表現</button></div>
-<div class="feedback" data-answer="①">正解：①　「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。</div></div>
-<div class="exam"><h3>第9問　格</h3>
-<p>学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。</p>
-<button class="audioBtn" onclick="speakOnce('学校を行きます。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','②','正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。')">① テンス</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','②','正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。')">② 格・格助詞</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','②','正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。')">③ アスペクト</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','②','正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。')">④ 音韻</button></div>
-<div class="feedback" data-answer="②">正解：②　移動先には通常「学校に行きます」。まず「誰が・誰に・どこへ？」→格関係。</div></div>
-<div class="exam"><h3>第10問　ヴォイス</h3>
-<p>「私は先生を褒められました。」の問題を聞き、分類しなさい。</p>
-<button class="audioBtn" onclick="speakOnce('私は先生を褒められました。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「する／される」という動作主・受け手の関係を確認する。')">① ヴォイス</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「する／される」という動作主・受け手の関係を確認する。')">② テンス</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「する／される」という動作主・受け手の関係を確認する。')">③ 語彙</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「する／される」という動作主・受け手の関係を確認する。')">④ アクセント</button></div>
-<div class="feedback" data-answer="①">正解：①　「する／される」という動作主・受け手の関係を確認する。</div></div>
-<div class="exam"><h3>第11問　アスペクト</h3>
-<p>「もう宿題をしています」の「〜ている」が表す意味に注意して聞きなさい。</p>
-<button class="audioBtn" onclick="speakOnce('もう宿題をしています。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。')">① 動作の進行・状態など、出来事の捉え方</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。')">② 発話時点の丁寧さだけ</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。')">③ 語のアクセント</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。')">④ 調音点</button></div>
-<div class="feedback" data-answer="①">正解：①　アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。</div></div>
-<div class="exam"><h3>第12問　モダリティ</h3>
-<p>話し手の判断・推量を表す部分を聞き取る。</p>
-<button class="audioBtn" onclick="speakOnce('明日は雨が降るでしょう。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。')">① モダリティ</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。')">② 格助詞</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。')">③ 音便</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。')">④ 文字・表記</button></div>
-<div class="feedback" data-answer="①">正解：①　「でしょう」は話し手の判断・推量などを表すモダリティ。</div></div>
-<div class="exam"><h3>第13問　待遇・ポライトネス</h3>
-<p>職場の上司に対する発話として、場面に合うものを判断する。</p>
-<button class="audioBtn" onclick="speakOnce('部長、明日の会議にいらっしゃいますか。',this)">🔊 音源を1回聞く</button>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。')">① 場面に応じた敬語使用</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。')">② 長音</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。')">③ 撥音</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。')">④ 母音無声化</button></div>
-<div class="feedback" data-answer="①">正解：①　「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。</div></div>
-<div class="exam"><h3>第14問　音声→専門用語</h3>
-<p>聞いた瞬間に分類する練習。音声の後、「何が違う？」を自分で一言にしてから答える。</p>
-<button class="audioBtn" onclick="speakOnce('私は昨日、映画を見ます。',this)">🔊 音源を1回聞く</button>
-<div class="notice"><b>5秒ルール：</b>①いつ？→テンス　②どうなってる？→アスペクト　③する？される？→ヴォイス　④話し手の判断？→モダリティ　⑤誰に・何を？→格　⑥場面に合う？→待遇</div>
-<div class="choices"><button class="choice" data-answer="①" onclick="audioAns(this,'①','①','正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。')">① テンス</button><button class="choice" data-answer="②" onclick="audioAns(this,'②','①','正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。')">② アスペクト</button><button class="choice" data-answer="③" onclick="audioAns(this,'③','①','正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。')">③ ヴォイス</button><button class="choice" data-answer="④" onclick="audioAns(this,'④','①','正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。')">④ モダリティ</button></div>
-<div class="feedback" data-answer="①">正解：①　「昨日」なのに「見ます」。聞こえた違和感をまず「いつ？」に変換すると、テンスにたどり着ける。</div></div>
-<button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
+<div class="notice"><b>🎲 ランダム出題：</b>このドリルは、開くたびに問題をランダムに並べ替え、さらに<strong>選択肢の順番もシャッフル</strong>します。毎回同じ番号が正解になることを防ぎ、「答えの位置」ではなく「内容」で判断する練習にします。<br/><b>本番モード：</b>まず音声を1回だけ聞く → すぐ答える → 正解・解説を見る。</div>
+<div id="audioDrillMeta" class="item"><b>今回の出題：</b>10問（全問題プールからランダム）</div>
+<div id="audioDrill"></div>
+<button class="primary" type="button" onclick="renderAudioDrill()">🎲 もう一度ランダムで10問</button>
+<button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button>
+</section>
 <section class="panel" id="oral">
 <button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>👄 音声・発音／口腔断面図 完全攻略</h2>
@@ -899,7 +833,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="bank"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>📚 応用試験・演習バンク</h2>
-<div class="notice"><b>📚 本番110問＋追加90問＝全200問。</b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
+<div class="notice"><b>📚 ここが問題集です：本番110問＋追加90問＝全200問。</b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
 <div class="typebox"><b>使い方：</b>①まず分野別に弱点を発見 → ②次に60問／50問を通しで解く → ③最後に110問で本番感覚を作る。正解だけでなく「なぜ他の選択肢ではないか」まで確認。</div>
 <div class="item"><b>目標：</b>110問でまず80点、安定して85点前後。読解45＋聴解35＝80点を一つの目安にします。</div>
 <div class="choices" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><button class="primary" onclick="runBank('reading')">📖 読解60問</button><button class="primary" onclick="runBank('listening')">🎧 聴解50問</button><button class="secondary" onclick="runBank('random20')">🎯 ランダム20問</button><button class="secondary" onclick="runBank('all')">🔥 本番110問</button><button class="secondary" onclick="runBank('extra40')">💪 追加40問</button><button class="secondary" onclick="runBank('extra50')">🆕 追加50問</button><button class="secondary" onclick="runBank('all150')">🚀 強化150問</button><button class="secondary" onclick="runBank('all200')">🏆 完全強化200問</button></div>
@@ -1031,6 +965,43 @@ function showFifty(n){
   location.hash='#fifty-'+Number(n);
 }
 
+const audioDrillPool = [
+  {q:'次の音声を聞き、音の違いとして最も適切なものを選びなさい。',script:'おばさん。おばあさん。',a:['長音の有無','促音の脱落','撥音の誤り','アクセントの誤り'],c:0,e:'「おばさん／おばあさん」の違いは長音の有無。長音は1モーラ分の長さを持つ。'},
+  {q:'次の2語を聞いて、音の違いとして最も適切なものを選びなさい。',script:'きてください。きってください。',a:['長音','促音','撥音','拗音'],c:1,e:'「きって」には促音「っ」がある。促音も1モーラとして数える。'},
+  {q:'「さんぽ」の音の特徴として最も適切なものを選びなさい。',script:'さんぽ',a:['撥音を含む','促音を含む','長音を含む','拗音を含む'],c:0,e:'「ん」は撥音。後続音によって実際の音価が変化する点も重要。'},
+  {q:'「すき」の発音で、条件によって母音が弱くなり聞こえにくくなる現象は何か。',script:'すき',a:['連濁','母音の無声化','音便','脱落'],c:1,e:'高母音 /i, ɯ/ は、無声子音に挟まれるなどの条件で無声化しやすい。'},
+  {q:'「きゃ」の音の構造として最も適切なものを選びなさい。',script:'きゃ',a:['2モーラの長音','拗音を含む1モーラ','撥音を含む','促音を含む'],c:1,e:'「きゃ」は「き・や」の2モーラではなく、基本的に1モーラとして扱う。'},
+  {q:'同じ「はし」でも意味が変わる場合、アクセントで特に注目するものは何か。',script:'箸を使います。橋を渡ります。',a:['音節数','ピッチの下降位置','長音の有無だけ','子音の調音点だけ'],c:1,e:'日本語アクセントでは高低（ピッチ）の配置、とくに下がり目が重要。'},
+  {q:'「がっこう」は何モーラか。',script:'がっこう',a:['2','3','4','5'],c:2,e:'が・っ・こ・う＝4モーラ。「っ」「ん」「長音」も原則1モーラ。'},
+  {q:'学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。',script:'昨日、映画を見ます。',a:['テンス','アスペクト','ヴォイス','待遇表現'],c:0,e:'「昨日」という過去の時点に対して「見ます」は不自然。まず「いつ？」→テンス。'},
+  {q:'学習者の発話を聞き、誤りの分類として最も適切なものを選びなさい。',script:'学校を行きます。',a:['テンス','格・格助詞','アスペクト','音韻'],c:1,e:'移動先には通常「学校に行きます」。まず「誰が・どこへ？」→格関係。'},
+  {q:'「私は先生を褒められました。」の問題を聞き、分類しなさい。',script:'私は先生を褒められました。',a:['ヴォイス','テンス','語彙','アクセント'],c:0,e:'「する／される」という動作主・受け手の関係を確認するのでヴォイス。'},
+  {q:'「もう宿題をしています」の「〜ている」が表す意味に注意して聞きなさい。',script:'もう宿題をしています。',a:['動作の進行・状態など、出来事の捉え方','発話時点の丁寧さだけ','語のアクセント','調音点'],c:0,e:'アスペクトは「動作・出来事をどう捉えるか」。テンスの「いつ」と区別する。'},
+  {q:'話し手の判断・推量を表す部分を聞き取り、カテゴリーを選びなさい。',script:'明日は雨が降るでしょう。',a:['モダリティ','格助詞','音便','文字・表記'],c:0,e:'「でしょう」は話し手の判断・推量などを表すモダリティ。'},
+  {q:'職場の上司に対する発話として、場面に合うものを判断しなさい。',script:'部長、明日の会議にいらっしゃいますか。',a:['場面に応じた敬語使用','長音','撥音','母音無声化'],c:0,e:'「いらっしゃる」は尊敬語。相手・場面・関係性に応じた待遇表現を判断する。'},
+  {q:'聞いた瞬間に分類する練習。音声の後、「何が違う？」を一言にしてから答えなさい。',script:'私は昨日、映画を見ます。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'「昨日」なのに「見ます」。聞こえた違和感を「いつ？」に変換するとテンスにたどり着ける。'},
+  {q:'教師の対応を聞き、学習者の自己修正を促すフィードバックとして最も近いものを選びなさい。',script:'学習者「昨日、映画を見ます。」教師「昨日……？ じゃあ、もう一度言ってみましょう。」',a:['明示的訂正','リキャスト','誘導・プロンプト','答えを先に提示'],c:2,e:'教師は正しい形を直接与えず、学習者自身の修正を促しているので誘導・プロンプト。'},
+  {q:'教師の発話を聞き、相手の発話をもう一度求める対応として最も適切なものを選びなさい。',script:'学習者「駅で先生を……えっと……」教師「すみません、もう一度お願いします。」',a:['リキャスト','明示的訂正','明確化要求','メタ言語的フィードバック'],c:2,e:'理解できなかったことを示し、もう一度の発話を求めているので明確化要求。'},
+  {q:'教師の説明を聞き、教材の使い方として最も適切な判断を選びなさい。',script:'この教材は初級には使いやすいですが、中級では内容が簡単すぎるかもしれません。',a:['どのレベルでもそのまま使う','初級には使いやすいが、中級では調整が必要','中級だけに適している','初級には使えない'],c:1,e:'「初級には使いやすい」が「中級では簡単すぎる」と限定されている。レベルに応じた教材化がポイント。'}
+];
+function shuffleArray(arr){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+function renderAudioDrill(){
+  const root=document.getElementById('audioDrill');
+  if(!root) return;
+  const selected=shuffleArray(audioDrillPool).slice(0,10);
+  root.innerHTML=selected.map((x,i)=>{
+    const choices=shuffleArray(x.a.map((text,j)=>({text,correct:j===x.c})));
+    const correctIndex=choices.findIndex(o=>o.correct);
+    return `<div class="exam"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn" type="button" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" onclick="audioAns(this,'${String.fromCharCode(65+j)}','${String.fromCharCode(65+correctIndex)}',${JSON.stringify(x.e)})">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
+  }).join('');
+  const meta=document.getElementById('audioDrillMeta');
+  if(meta) meta.innerHTML='<b>今回の出題：</b>10問（全'+audioDrillPool.length+'問からランダム）　<span class="mini">※問題の順番＋選択肢の順番を毎回シャッフル</span>';
+}
+
 function showPageFromHash(){
   var raw=(location.hash||'#home').slice(1) || 'home';
   var fiftyMatch=raw.match(/^fifty-(\d+)$/);
@@ -1048,6 +1019,7 @@ function showPageFromHash(){
   }else{
     target=document.getElementById(id);
     if(target){target.style.display='block';target.classList.add('active');}
+    if(id==='audioPlus'){ renderAudioDrill(); }
   }
   var detail=document.getElementById('fiftyDetail');
   var fiftyPanel=document.getElementById('fifty');
@@ -1082,16 +1054,23 @@ function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data
 function audioAns(btn, answer, correct, explanation){
   const exam = btn.closest('.exam');
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
-  if(answer===correct){ btn.classList.add('correct'); }
+  const isCorrect=answer===correct;
+  if(isCorrect){ btn.classList.add('correct'); }
   else{
     btn.classList.add('wrong');
     exam.querySelectorAll('.choice').forEach(b=>{ if(b.dataset.answer===correct) b.classList.add('correct'); });
+    const q=(exam.querySelector('p')||{}).textContent||'音声判断ドリル';
+    const key='audio-'+q;
+    if(!wrong.some(w=>w.key===key)){
+      wrong.push({key,type:'音声・発音',q:q,answer:correct,explanation:explanation});
+      localStorage.setItem('ntWrong',JSON.stringify(wrong));
+    }
   }
   const fb=exam.querySelector('.feedback');
-  fb.className='feedback '+(answer===correct?'ok':'ng');
-  fb.innerHTML=(answer===correct?'⭕ 正解！<br>':'❌ 不正解。正解は '+correct+'。<br>')+explanation;
+  fb.className='feedback '+(isCorrect?'ok':'ng');
+  fb.innerHTML=(isCorrect?'⭕ 正解！<br>':'❌ 不正解。正解は '+correct+'。<br>')+explanation;
 }
-function toggleFavoriteByIndex(btn,i){const x=bankState.questions[i];if(x)toggleFavorite(x.q,btn);} function toggleFavorite(q,btn){let fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]');const i=fav.indexOf(q);if(i>=0){fav.splice(i,1);btn.textContent='☆ お気に入り';}else{fav.push(q);btn.textContent='★ お気に入り';}localStorage.setItem('ntFavorites',JSON.stringify(fav));} function renderFavorites(){const e=document.getElementById('favoriteList');if(!e)return;const fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]');e.innerHTML=fav.length?fav.map(q=>`<div class="item">⭐ ${q}</div>`).join(''):'<p class="note">お気に入りはまだありません。演習問題の「☆ お気に入り」を押してください。</p>';} function renderWrong(){const e=document.getElementById("wrongList");if(!wrong.length){e.innerHTML='<p class="note">まだありません。問題を解いてみよう！</p>';return}e.innerHTML=`<p class="note">${wrong.length}問が保存されています。</p>`+wrong.map((x,i)=>`<div class="item"><span class="badge">${x.type}</span><b>${x.q}</b>${x.answer?`<div class="mini">正解：${x.answer}</div>`:''}${x.explanation?`<div class="mini">ポイント：${x.explanation}</div>`:''}</div>`).join("")+`<button class="secondary" onclick="wrong=[];localStorage.removeItem('ntWrong');renderWrong()">復習リストを消去</button>`}
+function toggleFavoriteByIndex(btn,i){const x=bankState.questions[i];if(x)toggleFavorite(x.q,btn);} function toggleFavorite(q,btn){let fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]');const i=fav.indexOf(q);if(i>=0){fav.splice(i,1);if(btn)btn.textContent='☆ お気に入り';}else{fav.push(q);if(btn)btn.textContent='★ お気に入り';}localStorage.setItem('ntFavorites',JSON.stringify(fav));renderFavorites();} function renderFavorites(){const e=document.getElementById('favoriteList');if(!e)return;const fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]');e.innerHTML=fav.length?fav.map(q=>`<div class="item">⭐ ${q}</div>`).join(''):'<p class="note">お気に入りはまだありません。演習問題の「☆ お気に入り」を押してください。</p>';} function renderWrong(){const e=document.getElementById("wrongList");if(!wrong.length){e.innerHTML='<p class="note">まだありません。問題を解いてみよう！</p>';return}e.innerHTML=`<p class="note">${wrong.length}問が保存されています。</p>`+wrong.map((x,i)=>`<div class="item"><span class="badge">${x.type}</span><b>${x.q}</b>${x.answer?`<div class="mini">正解：${x.answer}</div>`:''}${x.explanation?`<div class="mini">ポイント：${x.explanation}</div>`:''}</div>`).join("")+`<button class="secondary" onclick="wrong=[];localStorage.removeItem('ntWrong');renderWrong()">復習リストを消去</button>`}
 const boostQ=[
 {q:'【不適切なもの】実際の駅の時刻表を使った授業について、最も不適切なものは？',a:['必要な時刻を探す活動にする','スキャニングを使わせる','現実の目的と結び付ける','生教材なら必ず全文を暗記させる'],c:3,e:'生教材でも目的に応じた情報探索を行う。全文暗記が必須という考え方は不適切。'},
 {q:'【不適切なもの】設問を読むとき最初に確認するものは？',a:['何を選ぶか','選択肢の長さ','正しい／不適切の向き','選択数'],c:1,e:'選択肢の長さは基本的な設問条件ではない。'},
@@ -1239,19 +1218,22 @@ function testVoice(){speak('これは試験用の音声です。まず一回聞�
 function quickQuiz(n){
   const panel=document.getElementById('quick');
   const box=document.getElementById('quickQuiz');
-  if(!panel || !box) return;
+  if(!panel || !box) return false;
   const pool=bankReading.concat(bankListening).concat(bankExtraReading).concat(bankExtraListening);
-  const qs=shuffleArr(pool).slice(0,Math.min(n,pool.length));
+  if(!pool.length){ box.innerHTML='<p class="note">問題データが見つかりません。</p>'; return false; }
+  const qs=shuffleArr(pool).slice(0,Math.min(Number(n)||1,pool.length));
   window.quickData=qs;
   box.innerHTML=qs.map((x,i)=>{
-    const audio=x.type==='聴解'?`<button type="button" class="audioBtn" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を聞く</button>`:'';
-    return `<div class="exam quickq"><h3>${i+1}. ${x.type==='聴解'?'🎧':'📖'} ${x.cat||''}</h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div id="qfb${i}" class="feedback"></div></div>`;
+    const audio=x.type==='聴解' && x.script ? `<button type="button" class="audioBtn" onclick="speakOnce(${JSON.stringify(x.script)},this); return false;">🔊 音声を聞く</button>` : '';
+    const fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]').includes(x.q);
+    return `<div class="exam quickq"><h3>${i+1}. ${x.type==='聴解'?'🎧':'📖'} ${x.cat||''} <button type="button" class="favBtn" onclick="toggleFavorite('${String(x.q).replace(/'/g,"\\'")}',this);event.stopPropagation()">${fav?'★':'☆'} お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div id="qfb${i}" class="feedback"></div></div>`;
   }).join('');
   document.querySelectorAll('section.panel').forEach(p=>{p.style.display='none';p.classList.remove('active');});
   const homeEl=document.getElementById('home'); if(homeEl) homeEl.style.display='none';
   panel.style.display='block'; panel.classList.add('active');
   location.hash='#quick';
   window.scrollTo(0,0);
+  return false;
 }
 function quickAns(btn,i,j){
   const x=window.quickData && window.quickData[i], exam=btn.closest('.quickq'), box=document.getElementById('qfb'+i);
@@ -1270,13 +1252,21 @@ function quickAns(btn,i,j){
     if(!wrong.some(w=>w.key===key)){wrong.push({key,type:'スキマ',q:x.q,answer:x.a[x.c],explanation:x.e});localStorage.setItem('ntWrong',JSON.stringify(wrong));}
   }
 }
+let currentUtterance=null;
 function speakOnce(text,btn){
- if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}
+ if(!('speechSynthesis' in window)){alert('この端末ではブラウザ音声に対応していません。');return}
+ if(!text){alert('音声データがありません。');return}
  speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.rate=speechRate;u.pitch=1;
+ speechSynthesis.resume();
+ const u=new SpeechSynthesisUtterance(String(text));
+ u.lang='ja-JP';u.rate=speechRate;u.pitch=1;
  const v=pickVoice(); if(v) u.voice=v;
+ if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+ u.onstart=function(){if(btn){btn.textContent='🔊 再生済み（1回）';}};
+ u.onerror=function(){if(btn){btn.disabled=false;btn.textContent='🔊 音声を1回聞く';} };
+ u.onend=function(){currentUtterance=null;};
+ currentUtterance=u;
  speechSynthesis.speak(u);
- if(btn){btn.disabled=true;btn.textContent='🔊 再生済み（1回）';}
 }
 
 
