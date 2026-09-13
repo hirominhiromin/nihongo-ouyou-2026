@@ -899,7 +899,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="bank"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>📚 応用試験・演習バンク</h2>
-<div class="notice"><b>🔎 v49 監査済み：問題の重複・分野偏り・選択肢の質を見直し。</b><br/>問題集代わりを目指すための本番型演習。<br/>本番形式は読解60問＋聴解50問＝110問。さらに追加40問を収録。令和8年度の公式形式（読解60問・100分、聴解50問・約50分）を意識し、場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを横断して練習します。<br/><span class="mini">※すべてオリジナル問題。文科省の公式問題・サンプル問題そのものではありません。公式サンプルで確認できる「学習者の発話→専門用語」「教師―学習者のやり取り」「教材・活動・授業判断」などの傾向を参考にしています。<br/><span class="mini">🎧 聴解50問は端末の読み上げ機能を使った練習です。本番の録音音声・話者・速度・音質を完全に再現するものではないため、別途「実音声への慣れ」も必要です。</span></span></div>
+<div class="notice"><b>📚 本番110問＋追加90問＝全200問。</b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
 <div class="typebox"><b>使い方：</b>①まず分野別に弱点を発見 → ②次に60問／50問を通しで解く → ③最後に110問で本番感覚を作る。正解だけでなく「なぜ他の選択肢ではないか」まで確認。</div>
 <div class="item"><b>目標：</b>110問でまず80点、安定して85点前後。読解45＋聴解35＝80点を一つの目安にします。</div>
 <div class="choices" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><button class="primary" onclick="runBank('reading')">📖 読解60問</button><button class="primary" onclick="runBank('listening')">🎧 聴解50問</button><button class="secondary" onclick="runBank('random20')">🎯 ランダム20問</button><button class="secondary" onclick="runBank('all')">🔥 本番110問</button><button class="secondary" onclick="runBank('extra40')">💪 追加40問</button><button class="secondary" onclick="runBank('extra50')">🆕 追加50問</button><button class="secondary" onclick="runBank('all150')">🚀 強化150問</button><button class="secondary" onclick="runBank('all200')">🏆 完全強化200問</button></div>
@@ -1237,20 +1237,38 @@ function closeSettings(){document.getElementById('settingsModal').style.display=
 function testVoice(){speak('これは試験用の音声です。まず一回聞いてから答えてください。');}
 
 function quickQuiz(n){
-  location.hash='#quick';
+  const panel=document.getElementById('quick');
+  const box=document.getElementById('quickQuiz');
+  if(!panel || !box) return;
   const pool=bankReading.concat(bankListening).concat(bankExtraReading).concat(bankExtraListening);
   const qs=shuffleArr(pool).slice(0,Math.min(n,pool.length));
   window.quickData=qs;
-  const box=document.getElementById('quickQuiz');
-  if(!box) return;
-  box.innerHTML=qs.map((x,i)=>`<div class="exam"><h3>${i+1}. ${x.type==='聴解'?'🎧':'📖'} ${x.cat||''}</h3><p>${x.q}</p>${x.type==='聴解'?`<button class="audioBtn" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を聞く</button>`:''}<div class="choices">${x.a.map((a,j)=>`<button class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div id="qfb${i}" class="feedback"></div></div>`).join('');
+  box.innerHTML=qs.map((x,i)=>{
+    const audio=x.type==='聴解'?`<button type="button" class="audioBtn" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を聞く</button>`:'';
+    return `<div class="exam quickq"><h3>${i+1}. ${x.type==='聴解'?'🎧':'📖'} ${x.cat||''}</h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div id="qfb${i}" class="feedback"></div></div>`;
+  }).join('');
+  document.querySelectorAll('section.panel').forEach(p=>{p.style.display='none';p.classList.remove('active');});
+  const homeEl=document.getElementById('home'); if(homeEl) homeEl.style.display='none';
+  panel.style.display='block'; panel.classList.add('active');
+  location.hash='#quick';
   window.scrollTo(0,0);
 }
 function quickAns(btn,i,j){
- const x=window.quickData[i],box=document.getElementById('qfb'+i);
- document.querySelectorAll('#qfb'+i+' ~ .choice').forEach(b=>b.disabled=true);
- if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}
- else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:'スキマ',q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}
+  const x=window.quickData && window.quickData[i], exam=btn.closest('.quickq'), box=document.getElementById('qfb'+i);
+  if(!x || !exam || !box) return;
+  exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+  if(j===x.c){
+    btn.classList.add('correct');
+    box.className='feedback ok';
+    box.innerHTML='⭕ 正解！<br>'+x.e;
+  }else{
+    btn.classList.add('wrong');
+    exam.querySelectorAll('.choice').forEach((b,k)=>{if(k===x.c)b.classList.add('correct');});
+    box.className='feedback ng';
+    box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;
+    const key='quick-'+x.q;
+    if(!wrong.some(w=>w.key===key)){wrong.push({key,type:'スキマ',q:x.q,answer:x.a[x.c],explanation:x.e});localStorage.setItem('ntWrong',JSON.stringify(wrong));}
+  }
 }
 function speakOnce(text,btn){
  if(!('speechSynthesis' in window)){alert('この端末では音声再生に対応していません。');return}
