@@ -926,7 +926,7 @@ const extra2=bankExtra2Reading.map(x=>({...x})).concat(bankExtra2Listening.map(x
   res.style.display='block';res.innerHTML='<b>'+({reading:'読解60問',listening:'聴解50問',random20:'ランダム20問',extra40:'追加40問',extra50:'追加50問',all:'本番110問',all150:'強化150問',all200:'完全強化200問'}[mode])+'</b> を開始。選んだ答えは変更できません。';
   box.innerHTML=qs.map((x,i)=>{
     const isL=x.type==='聴解';
-    const audio=isL?`<button type="button" class="audioBtn" onclick='speakOnce(${JSON.stringify(x.script).replace(/\'/g,"&#39;")},this)'>🔊 音声を聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div>`:'';
+    const audioKey=isL?'bank-'+i:''; if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[audioKey]=x.script;} const audio=isL?`<button type="button" class="audioBtn ntAudioButton" data-audio-key="${audioKey}">🔊 音声を聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div>`:'';
     return `<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button class="choice" onclick="answerBank(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -996,7 +996,7 @@ function renderAudioDrill(){
   root.innerHTML=selected.map((x,i)=>{
     const choices=shuffleArray(x.a.map((text,j)=>({text,correct:j===x.c})));
     const correctIndex=choices.findIndex(o=>o.correct);
-    return `<div class="exam"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn" type="button" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" onclick="audioAns(this,'${String.fromCharCode(65+j)}','${String.fromCharCode(65+correctIndex)}',${JSON.stringify(x.e)})">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    const audioKey="drill-"+i+"-"+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[audioKey]=x.script; return `<div class="exam"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn ntAudioButton" type="button" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" onclick="audioAns(this,'${String.fromCharCode(65+j)}','${String.fromCharCode(65+correctIndex)}',${JSON.stringify(x.e)})">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
   const meta=document.getElementById('audioDrillMeta');
   if(meta) meta.innerHTML='<b>今回の出題：</b>10問（全'+audioDrillPool.length+'問からランダム）　<span class="mini">※問題の順番＋選択肢の順番を毎回シャッフル</span>';
@@ -1220,7 +1220,7 @@ function quickQuiz(n){
   const qs=shuffleArr(pool).slice(0,Math.min(Number(n)||1,pool.length));
   window.quickData=qs;
   box.innerHTML=qs.map((x,i)=>{
-    const audio=x.type==='聴解' && x.script ? `<button type="button" class="audioBtn" onclick='speakOnce(${JSON.stringify(x.script).replace(/\'/g,"&#39;")},this); return false;'>🔊 音声を聞く</button>` : '';
+    const audioKey=x.type==='聴解' && x.script ? 'quick-'+i : ''; if(audioKey){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[audioKey]=x.script;} const audio=x.type==='聴解' && x.script ? `<button type="button" class="audioBtn ntAudioButton" data-audio-key="${audioKey}">🔊 音声を聞く</button>` : '';
     const fav=JSON.parse(localStorage.getItem('ntFavorites')||'[]').includes(x.q);
     return `<div class="exam quickq"><h3>${i+1}. ${x.type==='聴解'?'🎧':'📖'} ${x.cat||''} <button type="button" class="favBtn" onclick="toggleFavorite('${String(x.q).replace(/'/g,"\\'")}',this);event.stopPropagation()">${fav?'★':'☆'} お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" onclick="quickAns(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div id="qfb${i}" class="feedback"></div></div>`;
   }).join('');
@@ -1292,6 +1292,17 @@ function nativeSpeakNow(text,btn){
   }
 }
 function speak(text){ return speakOnce(text,null); }
+document.addEventListener('click',function(e){
+  const btn=e.target.closest && e.target.closest('.ntAudioButton');
+  if(!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const key=btn.getAttribute('data-audio-key');
+  const text=(window.ntAudioTexts||{})[key];
+  if(!text){alert('音声データが見つかりません。');return false;}
+  speakOnce(text,btn);
+},true);
+
 function speakOnce(text,btn){
   if(!text){alert('音声データがありません。');return false;}
   if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
