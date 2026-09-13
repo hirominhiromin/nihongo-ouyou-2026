@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#315efb">
 <link rel="manifest" href="manifest.webmanifest">
-<title>2026 日本語教員試験・応用攻略 v30</title>
+<title>2026 日本語教員試験・応用攻略 最終版</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -93,7 +93,23 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 #audioPlus .choice.correct{outline:2px solid #45a36b;background:#effaf3}
 #audioPlus .choice.wrong{outline:2px solid #d96b6b}
 #audioPlus .feedback{display:none;background:#f5f7fa;border-radius:10px;padding:12px;margin-top:10px;line-height:1.65}
-.audioMini{display:flex;flex-direction:column;gap:7px}.audioMini details{background:#fff;border:1px solid #d9e0ec;border-radius:12px;padding:9px 12px;font-size:13px;line-height:1.65}.audioMini summary{color:#2f80ed;font-weight:700;cursor:pointer}.audioMini details b{color:#17213b}.credit{font-size:9px!important;color:#ff69b4!important;font-weight:500!important;line-height:1!important;opacity:.9!important;white-space:nowrap!important;letter-spacing:0!important}.goal80{background:linear-gradient(135deg,#eef5ff,#f8f3ff);border:1px solid #dbe5f3;border-radius:18px;padding:16px 18px;margin:16px 0;color:#243451;line-height:1.7}.goal80 strong{font-size:1.05em}</style>
+.audioMini{display:flex;flex-direction:column;gap:7px}.audioMini details{background:#fff;border:1px solid #d9e0ec;border-radius:12px;padding:9px 12px;font-size:13px;line-height:1.65}.audioMini summary{color:#2f80ed;font-weight:700;cursor:pointer}.audioMini details b{color:#17213b}.credit{font-size:9px!important;color:#ff69b4!important;font-weight:500!important;line-height:1!important;opacity:.9!important;white-space:nowrap!important;letter-spacing:0!important}.goal80{background:linear-gradient(135deg,#eef5ff,#f8f3ff);border:1px solid #dbe5f3;border-radius:18px;padding:16px 18px;margin:16px 0;color:#243451;line-height:1.7}.goal80 strong{font-size:1.05em}.oralGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.oralCard{background:#fff;border:1px solid #dbe2ea;border-radius:14px;padding:10px;line-height:1.55}.oralCard b{display:block;margin-bottom:5px}.oralCard svg{width:100%;height:auto;background:#fff;border-radius:10px}.oralCard .mini{display:block}@media(max-width:420px){.oralGrid{grid-template-columns:1fr}}
+
+/* v36 final: clear oral/anatomy diagrams */
+.clear-mouth-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:12px 0 18px}
+.clear-mouth-card{background:#fff;border:1px solid #dfe4ed;border-radius:18px;padding:10px;box-shadow:0 5px 16px rgba(20,30,50,.05)}
+.clear-mouth-svg{display:block;width:100%;height:auto}
+.mouth-title{font-size:18px;font-weight:800;color:#172033;margin:4px 4px 2px}
+.mouth-sound{font-size:15px;margin:0 4px;color:#25334d}
+.mouth-desc{font-size:13px;line-height:1.55;color:#5d687b;margin:3px 4px 4px}
+.vowel-trapezoid{position:relative;height:270px;max-width:520px;margin:14px auto 8px;border:2px solid #dfe4ed;border-radius:18px;background:#fff}
+.vowel-trapezoid:before{content:"";position:absolute;left:72px;right:54px;top:36px;bottom:38px;border-left:2px solid #9ba6b8;border-bottom:2px solid #9ba6b8;transform:skewY(-5deg)}
+.vowel-point{position:absolute;width:54px;height:54px;border-radius:50%;border:2px solid #c9d1df;background:#f8faff;color:#172033;font-size:25px;font-weight:800}
+.vp-i{left:105px;top:45px}.vp-u{right:105px;top:45px}.vp-e{left:155px;top:110px}.vp-o{right:155px;top:110px}.vp-a{left:calc(50% - 27px);bottom:36px}
+.vt-label{position:absolute;left:14px;color:#657187;font-size:13px;font-weight:700}.vt-label.top{top:45px}.vt-label.mid{top:112px}.vt-label.low{bottom:45px}
+.front-label,.back-label{position:absolute;bottom:8px;font-size:13px;color:#657187;font-weight:700}.front-label{left:72px}.back-label{right:54px}
+@media(max-width:650px){.clear-mouth-grid{grid-template-columns:1fr}.vowel-trapezoid{height:240px}.vp-i{left:72px}.vp-u{right:72px}.vp-e{left:105px}.vp-o{right:105px}.vp-a{bottom:28px}}
+</style>
 </head>
 <body>
 <main>
@@ -130,7 +146,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <div class="bigcard lavender" onclick="location.hash='#practice'; return false;">
       <div class="ctitle"><span>📚</span><b>日本語教育実践<br>（科目11〜13）</b><i>›</i></div>
       <div class="catch">教える力・授業をデザインする力</div>
-      <ul><li>授業設計（目標→活動→評価）</li><li>指導法（直接法・AL・CLT・TBLT・PPP）</li><li>生教材・教材分析・教材開発</li><li>スキミング／スキャニング</li><li>精読／多読・読解指導</li><li>タスク・ロールプレイ</li><li>フィードバック（リキャスト・訂正・誘導）</li><li>評価法・学習者自己評価・Can-do</li><li>敬語・待遇表現・ポライトネス</li><li>ICT活用・協働学習</li></ul>
+      <ul><li>学習者分析・ニーズ／レディネス調査</li><li>授業設計（目標→活動→評価）</li><li>指導法（直接法・AL・CLT・TBLT・PPP）</li><li>生教材・教材分析・教材開発</li><li>スキミング／スキャニング</li><li>精読／多読・読解指導</li><li>タスク・ロールプレイ</li><li>フィードバック（リキャスト・訂正・誘導）</li><li>評価法・学習者自己評価・Can-do</li><li>敬語・待遇表現・ポライトネス</li><li>ICT活用・協働学習</li></ul>
     </div>
 
     <div class="bigcard yellow" onclick="location.hash='#fifty'; return false;">
@@ -170,9 +186,10 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <div class="smallcard" onclick="location.hash='#wrong'; return false;"><span>🔖</span><b>学習履歴・お気に入り</b><i>›</i><small>間違いを残して復習</small></div>
   </div>
 
-  <div class="goal80"><b>🎯 80点プロジェクト</b><br>
-  応用試験110点 → <strong>80点以上</strong>を安定して取る。<br>
-  <strong>読解45点＋聴解35点＝80点</strong>を一つの目標にし、苦手を6割未満にしない。
+  <div class="goal80"><b>🔥 打倒・応用試験　🎯 目指せ満点！まず80点超</b><br>
+  応用試験は <strong>読解60問＋聴解50問＝110点</strong>。<br>
+  <strong>「取れる問題を絶対落とさない」→「場面問題で稼ぐ」→「難問にも挑む」</strong>の順で、80点超を安定させる。
+  <div id="countdown" class="mini" style="margin-top:6px;font-weight:800"></div>
   </div>
 
   <div class="goalbar"><span>🎯</span><b>合格は、正しい理解と、くり返しの練習から</b><small>2026 日本語教員試験・応用攻略　<span class="credit">from ひろみん</span></small></div>
@@ -413,117 +430,325 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 
 <button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button></section>
 
-<section id="oral" class="panel"><button class="back" type="button" onclick="location.hash='#home'; return false;">← トップへ戻る</button><h2>👄 口腔断面図・音声 完全版</h2>
-<div class="notice"><b>🔊 音声トレーニング</b><br>下のボタンで日本語音声を再生できます。聞いたあと「どこが違う？→何の用語？」まで答えるのが目的です。</div>
-<div class="audioGrid">
-<div class="audioMini"><button class="primary" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 1回：おばさん／おばあさん</button><details><summary>▶ 解答を見る</summary><b>答え：長音</b><br>「おばさん」と「おばあさん」は、長音の有無を聞き分ける。<br>試験では「長音・短音」を音の長さ＝モーラの違いとして捉える。</details></div>
-<div class="audioMini"><button class="primary" onclick="speakOnce('きてください。きってください。',this)">🔊 1回：きて／きって</button><details><summary>▶ 解答を見る</summary><b>答え：促音</b><br>「きって」には促音「っ」があり、1モーラとして数える。</details></div>
-<div class="audioMini"><button class="primary" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 1回：はし（箸／橋）</button><details><summary>▶ 解答を見る</summary><b>答え：アクセント</b><br>同じ表記でも、語によってピッチの配置が異なる。特に<b>下がり目</b>に注目。</details></div>
-<div class="audioMini"><button class="primary" onclick="speakOnce('雨が降っています。飴を食べます。',this)">🔊 1回：あめ（雨／飴）</button><details><summary>▶ 解答を見る</summary><b>答え：アクセント</b><br>「雨」と「飴」のように、アクセントの違いが語の区別に関わる例。音の高低を聞く。</details></div>
-</div>
+<section id="oral" class="panel">
+<button class="back" type="button" onclick="location.hash='#home'; return false;">← トップへ戻る</button>
+<h2>👄 音声・発音／口腔断面図 完全攻略</h2>
+<div class="notice"><b>🎯 国試対策：</b>「図を見て、どこで・どうやって音を作るか」を判断できるようにする。<br>
+まず日本語で理解し、必要な場合だけ音声記号を確認する。記号の丸暗記を目的にしない。</div>
 
-<h3>🔺 日本語の5母音：逆三角形で位置をつかむ</h3>
+<h3>🔍 まず覚える「調音の見方」</h3>
+<div class="item"><b>① どこ？＝調音点</b> → 唇・歯茎・硬口蓋・軟口蓋など<br>
+<b>② どうやって？＝調音法</b> → 破裂・摩擦・破擦・鼻・弾きなど<br>
+<b>③ 声帯は？</b> → 振動する／しない<br>
+<b>④ 何拍？</b> → モーラ、長音、促音、撥音、拗音<br>
+<b>⑤ 高低は？</b> → アクセント・イントネーション</div>
+
+<h3>👄 国試風・口腔断面図 6パターン</h3>
+<div class="notice"><b>見分け方：</b>すべて同じ向きの図で練習する。<br>
+<strong>前（口）→ 後（喉）</strong>の位置関係を先に取り、ピンクの部分＝主な接触・接近位置に注目。</div>
+<div class="clear-mouth-grid"><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="① 両唇音">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="38,90 58,94" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">① 両唇音</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">① 両唇音</div><div class="mouth-sound"><b>パ行・バ行・マ行</b></div><div class="mouth-desc">上下の唇を近づける／閉じる</div></div><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="② 歯茎音">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="76,102 103,104" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">② 歯茎音</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">② 歯茎音</div><div class="mouth-sound"><b>タ行・ダ行・ナ行・ラ行など</b></div><div class="mouth-desc">舌先・舌端を歯茎付近へ</div></div><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="③ 歯茎後部〜硬口蓋付近">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="111,102 135,99" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">③ 歯茎後部〜硬口蓋付近</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">③ 歯茎後部〜硬口蓋付近</div><div class="mouth-sound"><b>シャ・ジャ・チャ系</b></div><div class="mouth-desc">舌の前方を歯茎後部〜硬口蓋付近へ</div></div><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="④ 軟口蓋音">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="160,93 187,88" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">④ 軟口蓋音</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">④ 軟口蓋音</div><div class="mouth-sound"><b>カ行・ガ行</b></div><div class="mouth-desc">舌の後部を軟口蓋へ</div></div><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="⑤ 声門">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="224,135 246,135" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">⑤ 声門</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">⑤ 声門</div><div class="mouth-sound"><b>声門での発声・摩擦など</b></div><div class="mouth-desc">声帯の間＝声門</div></div><div class="clear-mouth-card">
+<svg class="clear-mouth-svg" viewBox="0 0 520 260" role="img" aria-label="⑥ 舌の部位">
+ <rect x="0" y="0" width="520" height="260" rx="18" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+ <!-- head / face / throat -->
+ <path d="M55 42 Q145 18 255 35 Q355 52 405 82 L450 105 Q470 115 454 126 L424 131
+          Q408 145 405 165 Q401 197 381 220 Q350 244 295 238 Q245 231 205 215
+          Q164 198 132 173 Q102 151 88 129 Q72 113 57 101 Q42 90 48 72 Z"
+       fill="#f7f8fa" stroke="#273142" stroke-width="3"/>
+ <!-- nasal/oral cavity -->
+ <path d="M86 71 Q170 42 270 51 Q352 58 410 89 Q425 97 430 105
+          Q402 108 372 99 Q300 77 215 83 Q147 87 95 104"
+       fill="#fff" stroke="#273142" stroke-width="2.5"/>
+ <!-- palate -->
+ <path d="M94 105 Q175 84 266 88 Q335 91 388 108" fill="none" stroke="#273142" stroke-width="5"/>
+ <!-- teeth -->
+ <g stroke="#273142" stroke-width="2">
+   <path d="M86 108 l-2 18 M94 106 l-1 20 M102 104 l1 21 M110 102 l2 21"/>
+ </g>
+ <!-- uvula -->
+ <path d="M388 108 Q402 113 397 127 Q391 136 386 126" fill="#fff" stroke="#273142" stroke-width="2"/>
+ <!-- tongue -->
+ <path d="M110 155 Q155 130 215 137 Q266 144 318 136 Q352 130 371 143
+          Q356 179 315 197 Q267 219 207 206 Q155 196 123 178 Q107 169 110 155 Z"
+       fill="#fff" stroke="#273142" stroke-width="3"/>
+ <!-- pharynx -->
+ <path d="M394 129 Q416 155 412 184 Q408 207 418 224" fill="none" stroke="#273142" stroke-width="4"/>
+ <!-- larynx / vocal folds -->
+ <path d="M405 180 L440 202 L405 224" fill="none" stroke="#273142" stroke-width="3"/>
+ <path d="M410 201 L436 201 M410 210 L436 210" stroke="#273142" stroke-width="3"/>
+ <!-- highlighted contact/target -->
+ <polyline points="128,176 158,166" fill="none" stroke="#d83a76" stroke-width="10" stroke-linecap="round"/>
+ <!-- label bubble -->
+ <rect x="24" y="18" width="215" height="42" rx="12" fill="#eef3ff" stroke="#b9c7e8"/>
+ <text x="38" y="45" font-size="20" font-weight="700" fill="#172033">⑥ 舌の部位</text>
+ <!-- direction labels -->
+ <text x="68" y="242" font-size="14" fill="#596579">前（口）</text>
+ <text x="397" y="242" font-size="14" fill="#596579">後（喉）</text>
+</svg><div class="mouth-title">⑥ 舌の部位</div><div class="mouth-sound"><b>舌尖・舌端・舌面・舌根</b></div><div class="mouth-desc">まず舌を見つけ、どの部分かを判断</div></div></div>
+
+<h3>🧠 口腔断面図の解き方 5ステップ</h3>
+<div class="item"><b>STEP 1：</b>まず「舌」を探す。<br>
+<b>STEP 2：</b>舌のどこか → <b>舌尖・舌端・舌面・舌根</b>。<br>
+<b>STEP 3：</b>舌がどこに近い／接触しているか → <b>調音点</b>。<br>
+<b>STEP 4：</b>気流をどう作るか → <b>調音法</b>。<br>
+<b>STEP 5：</b>声帯の振動の有無も確認。</div>
+
+<h3>🔺 日本語の5母音：位置をイメージ</h3>
 <div class="vowelbox">
-<div class="note">上＝舌が高い／下＝舌が低い、左＝前舌／右＝後舌。ボタンを押して音を確認。</div>
-<div class="vowelgrid">
-<div class="vowel i"><button onclick="speakOnce('い',this)">い</button></div>
-<div class="vowel e"><button onclick="speakOnce('え',this)">え</button></div>
-<div class="vowel a"><button onclick="speakOnce('あ',this)">あ</button></div>
-<div class="vowel o"><button onclick="speakOnce('お',this)">お</button></div>
-<div class="vowel u"><button onclick="speakOnce('う',this)">う</button></div>
+<div class="note">縦＝舌の高さ、横＝舌の前後。日本語では「い・う」が高く、「あ」が低い。「え・お」は中間。</div>
+<div class="vowel-trapezoid" aria-label="日本語の5母音図">
+  <div class="vt-label top">高</div><div class="vt-label mid">中</div><div class="vt-label low">低</div>
+  <button class="vowel-point vp-i" onclick="speakOnce('い',this)">い</button>
+  <button class="vowel-point vp-u" onclick="speakOnce('う',this)">う</button>
+  <button class="vowel-point vp-e" onclick="speakOnce('え',this)">え</button>
+  <button class="vowel-point vp-o" onclick="speakOnce('お',this)">お</button>
+  <button class="vowel-point vp-a" onclick="speakOnce('あ',this)">あ</button>
+  <div class="front-label">前</div><div class="back-label">後</div>
 </div>
-<div class="diagram-tip"><b>試験の見方：</b>「舌の高さ」「舌の前後」「唇の丸め」を手掛かりにする。<br>
-<b>高さ：</b>い・う＝高い／え・お＝中間／あ＝低い。<br>
-<b>位置：</b>い・え＝前寄り／あ＝中央寄り／お・う＝後ろ寄り。<br>
-※日本語の「う」は英語の /u/ と完全に同じではなく、唇の丸め・舌の位置にも注意。</div>
-<div class="typebox"><b>👅 断面図でまず探す「舌」</b><br>
-舌は、口の中の下側から前後に伸びる<b>大きな筋肉質の曲線</b>として描かれる。歯・歯茎・硬口蓋・軟口蓋は舌の上側にあり、声帯・声門はさらに奥の喉頭付近。<br>
-<b>解き方：</b>①まず舌を特定 → ②舌のどの部分か（舌尖・舌端・舌面・舌根）→ ③相手側の器官を見る → ④調音点 → ⑤調音法。</div>
+<div class="diagram-tip"><b>試験でのポイント：</b>「高い／低い」「前／後ろ」「唇の丸め」を手掛かりにする。<br>
+い・え＝前寄り、あ＝中央寄り、お・う＝後ろ寄り。日本語の「う」は唇の丸めが弱く、英語の /u/ と完全に同じではない。</div>
 </div>
-<h3>🎧 本番風：音声はまず1回だけ</h3>
-<div class="notice"><b>① 音源を1回聞く → ② すぐ答える → ③ 解説を見る。</b><br>「もう一度聞く」は答えを考えた後に使う。試験での聞き取り負荷に近づける。</div>
-<h3>🫁 音声の基本：3段階で考える</h3>
-<div class="item"><b>① 音声学</b>：実際に発せられる音の物理・生理的側面。<br><b>② 音韻論</b>：言語の中で意味の区別に関わる音の体系。<br><b>③ 調音</b>：どこで・どうやって音を作るか。</div>
-<h3>👄 調音点 × 調音法</h3>
-<div class="item"><b>両唇音</b>：上下の唇。例：/p b m/。<br><b>歯茎音</b>：舌先・舌端と歯茎付近。例：/t d s z n r/。<br><b>硬口蓋付近</b>：舌面と硬口蓋付近。例：/ɕ/ など。<br><b>軟口蓋音</b>：舌後部と軟口蓋。例：/k g/。<br><b>声門音</b>：声門付近。</div>
-<div class="item"><b>閉鎖音</b>：一度閉鎖してから開放。<br><b>摩擦音</b>：狭い隙間を通して摩擦。<br><b>破擦音</b>：閉鎖→摩擦。<br><b>鼻音</b>：鼻腔へ空気を通す。<br><b>弾き音</b>：舌などを一度はじく。</div>
-<h3>🔊 有声・無声</h3>
-<div class="item"><b>有声音</b>：声帯が振動する。<b>無声音</b>：声帯が振動しない。<br>「声帯が振動しているか？」を判断するのが第一歩。調音点・調音法とは別の軸。</div>
-<h3>⏱ 日本語の拍・特殊拍</h3>
-<div class="item"><b>モーラ（拍）</b>：日本語のリズムを数える単位。<br><b>長音</b>：1拍分伸びる。<b>促音</b>：1拍分の閉鎖・詰まり。<b>撥音</b>：/N/。<b>拗音</b>：きゃ・しゅ等の音節構造に注意。</div>
-<h3>🎵 アクセント・イントネーション</h3>
-<div class="item"><b>アクセント</b>：語の中での音の高低の配置。<br><b>イントネーション</b>：発話・文全体の声の高さの変化。<br>日本語の高低アクセントでは「何拍目で高低が変わるか」を意識する。</div>
-<h2>👄 口腔断面図・音声 完全版</h2>
-<div class="notice"><b>ここは「綺麗な図を眺める」場所ではなく、試験で番号・矢印を見て答えるための練習。</b><br>白黒の簡略模式図 → 部位 → 調音点 → 調音法 → 日本語の音、の順で覚える。</div>
-<div class="exam-diagram-wrap"><div class="diagram-title">【試験対策・白黒模式図】番号を見て部位を答える</div>
-<svg class="exam-diagram" viewBox="0 0 720 520" role="img" aria-label="白黒の口腔断面模式図。番号付き">
-<rect width="720" height="520" fill="#fff"/>
-<!-- rough head contour -->
-<path d="M75 105 C125 55 230 38 350 48 C470 58 575 80 640 140 L650 178 C610 188 570 180 535 175 C510 205 490 228 475 250 C465 285 460 330 430 370 C400 410 360 425 315 405 C270 385 230 365 205 335 C180 305 168 270 145 245 C118 220 92 200 82 170 Z" fill="none" stroke="#111" stroke-width="3"/>
-<!-- nasal cavity --> <path d="M135 115 C245 78 405 82 520 112 C565 124 595 145 615 160 C585 164 555 160 525 150 C470 136 400 132 320 135 L180 150 Z" fill="none" stroke="#222" stroke-width="2"/>
-<!-- palate line --> <path d="M175 163 C285 145 405 145 515 166" fill="none" stroke="#111" stroke-width="5"/>
-<!-- uvula --> <path d="M515 166 C530 174 530 192 519 202 C508 192 505 177 515 166" fill="none" stroke="#111" stroke-width="3"/>
-<!-- teeth/gum --> <path d="M155 174 L155 208 M166 171 L166 210 M177 169 L177 211 M188 168 L188 210 M145 213 C160 220 180 220 195 213" fill="none" stroke="#111" stroke-width="3"/>
-<!-- tongue --> <path d="M195 275 C225 248 270 236 320 246 C370 257 418 274 475 245 C490 238 500 250 494 272 C480 325 435 357 380 370 C325 383 265 360 225 332 C205 317 190 295 195 275 Z" fill="#f7f7f7" stroke="#111" stroke-width="3"/>
-<!-- pharynx --> <path d="M490 220 C525 255 530 305 515 350 C505 380 500 400 505 420" fill="none" stroke="#111" stroke-width="5"/>
-<!-- larynx --> <path d="M505 355 L545 385 L505 415" fill="none" stroke="#111" stroke-width="3"/><path d="M510 385 L540 385" stroke="#111" stroke-width="4"/>
-<!-- vocal folds/glottis --> <path d="M508 376 Q525 368 540 380 M508 394 Q525 402 540 390" fill="none" stroke="#111" stroke-width="3"/>
-<!-- leader lines and numbers -->
-<g font-family="sans-serif" font-size="16" font-weight="700" fill="#111" stroke="#111" stroke-width="1">
-<line x1="92" y1="120" x2="155" y2="138"/><circle cx="75" cy="116" r="17" fill="white"/><text x="70" y="122" stroke="none">1</text>
-<line x1="92" y1="180" x2="155" y2="184"/><circle cx="75" cy="178" r="17" fill="white"/><text x="70" y="184" stroke="none">2</text>
-<line x1="100" y1="245" x2="160" y2="205"/><circle cx="82" cy="250" r="17" fill="white"/><text x="77" y="256" stroke="none">3</text>
-<line x1="120" y1="315" x2="205" y2="288"/><circle cx="102" cy="320" r="17" fill="white"/><text x="97" y="326" stroke="none">4</text>
-<line x1="235" y1="455" x2="260" y2="350"/><circle cx="230" cy="474" r="17" fill="white"/><text x="225" y="480" stroke="none">5</text>
-<line x1="335" y1="462" x2="340" y2="360"/><circle cx="335" cy="480" r="17" fill="white"/><text x="330" y="486" stroke="none">6</text>
-<line x1="635" y1="205" x2="520" y2="184"/><circle cx="655" cy="208" r="17" fill="white"/><text x="650" y="214" stroke="none">7</text>
-<line x1="635" y1="270" x2="500" y2="260"/><circle cx="655" cy="272" r="17" fill="white"/><text x="650" y="278" stroke="none">8</text>
-<line x1="635" y1="335" x2="515" y2="330"/><circle cx="655" cy="337" r="17" fill="white"/><text x="650" y="343" stroke="none">9</text>
-<line x1="625" y1="405" x2="525" y2="385"/><circle cx="645" cy="410" r="17" fill="white"/><text x="640" y="416" stroke="none">10</text>
-<line x1="300" y1="80" x2="330" y2="145"/><circle cx="292" cy="62" r="17" fill="white"/><text x="287" y="68" stroke="none">11</text>
-<line x1="445" y1="82" x2="430" y2="150"/><circle cx="448" cy="63" r="17" fill="white"/><text x="443" y="69" stroke="none">12</text>
-</g></svg>
-<div class="diagram-tip"><b>答えを隠して練習：</b> 1鼻腔／2歯・歯茎付近／3歯茎付近／4舌尖／5舌端／6舌面／7口蓋垂／8咽頭／9喉頭／10声門・声帯付近／11硬口蓋／12軟口蓋。<br>※これは試験対策用の簡略模式図。実際の問題は図の向き・番号・線の位置が異なる場合がある。</div></div>
 
-<h3>📝 国試風「断面図の見分け」</h3>
-<div class="item">
-<b>最初に全部を覚えようとしない。</b><br>
-①「舌」を探す → ②口の天井側（硬口蓋・軟口蓋・口蓋垂） → ③前方の歯・歯茎 → ④奥の咽頭・喉頭 → ⑤声門・声帯、の順で位置関係を取る。
+<h3>🔤 音声記号はどう扱う？</h3>
+<div class="item"><b>アプリでは日本語名を主役にする。</b><br>
+例：<b>両唇音（パ行・バ行・マ行）</b>、<b>歯茎音（タ行・ダ行など）</b>。<br>
+音声記号は、必要なところで確認できるようにする。<br>
+<b>重要：</b>ローマ字と音声記号（IPA）は別物。試験対策では「調音点・調音法・有声／無声」を理解することを優先。</div>
+
+<h3>🎧 音声→判断ドリル</h3>
+<div class="audioGrid">
+<div class="audioMini"><button class="primary" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 長音：おばさん／おばあさん</button><details><summary>▶ 解答を見る</summary><b>長音</b>。音の長さ＝モーラの違い。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('きてください。きってください。',this)">🔊 促音：きて／きって</button><details><summary>▶ 解答を見る</summary><b>促音</b>。「っ」は1モーラ。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 アクセント：はし</button><details><summary>▶ 解答を見る</summary><b>アクセント</b>。ピッチの配置、とくに下がり目を見る。</details></div>
+<div class="audioMini"><button class="primary" onclick="speakOnce('すき',this)">🔊 無声化：すき</button><details><summary>▶ 解答を見る</summary><b>母音の無声化</b>。条件によって高母音が無声化しやすい。</details></div>
 </div>
-<div class="typebox">
-<b>👅 舌の4区分</b><br>
-<span class="badge">舌尖</span> いちばん先端　
-<span class="badge">舌端</span> 舌尖の少し後ろ　
-<span class="badge">舌面</span> 中央の広い面　
-<span class="badge">舌根</span> いちばん奥<br>
-<b>ポイント：</b>「図の中で舌がどれか分からない」問題を想定し、まず<b>舌の輪郭</b>を探してから番号を見る。
-</div>
-<div class="notice"><b>本番の判断順：</b>「これは舌？→どの部分？→どこに近い？→どうやって音を作る？」</div>
-<h3>🦷 調音器官</h3>
-<div class="item"><b>唇</b>：上唇・下唇。<b>歯・歯茎</b>：舌との接触・接近に関係。<b>硬口蓋・軟口蓋・口蓋垂</b>：舌との位置関係を見る。<b>咽頭・喉頭・声帯・声門</b>：気流と発声に関係。</div>
-<h3>👅 舌の部位</h3><div class="item"><b>舌尖</b>＝先端／<b>舌端</b>＝舌尖に近い部分／<b>舌面</b>＝中央の広い部分／<b>舌根</b>＝奥の部分。試験では「舌のどこが動くか」と調音点をセットで考える。</div>
-<h3>📍 調音点 × 🔧 調音法</h3>
-<div class="item"><b>両唇音</b>：両唇を使う。例 /p b m/。<br><b>歯茎音</b>：歯茎付近で作る音。日本語の /t d n s z ɾ/ などを整理。<br><b>硬口蓋付近</b>：舌の前方と硬口蓋付近の関係を見る。<br><b>軟口蓋音</b>：舌の奥と軟口蓋付近。/k g/ など。</div>
-<div class="item"><b>破裂音</b>＝閉鎖→気流をためる→開放。<br><b>摩擦音</b>＝狭い隙間に気流を通し摩擦。<br><b>破擦音</b>＝破裂に続いて摩擦。<br><b>鼻音</b>＝鼻腔側へ気流を通す。<br><b>弾き音</b>＝舌尖などを一度弾く。</div>
-<h3>🫁 声帯・声門</h3><div class="item"><b>声帯</b>＝振動して有声音に関わる器官。<b>声門</b>＝左右の声帯の間。<b>有声音／無声音</b>＝声帯振動の有無を軸に区別する。</div>
-<h3>🎵 日本語のリズム・韻律</h3><div class="item"><b>モーラ（拍）</b>＝日本語のリズムを数える単位。長音・促音・撥音などを1拍として捉える。<br><b>長音</b>：「おばあさん」／<b>促音</b>：「きって」／<b>撥音</b>：「ほん」／<b>拗音</b>：「きゃ」。<br><b>アクセント</b>＝語の中の高さの配置。<b>イントネーション</b>＝句・文など発話全体の高さの変化。</div>
-<h3>🔄 音の変化・聞き分け</h3><div class="item"><b>清音／濁音</b>：声帯振動の違いを含めて整理。<br><b>無声化</b>：特定の環境で母音などの声帯振動が弱くなる／なくなる現象。<br><b>同化</b>：隣接する音の影響で音が似た性質になる現象。<br><b>脱落</b>：音が発音されにくくなり落ちる現象。試験では「何が起きたか」を具体的に聞き取る。</div>
-<h3>🎯 音→専門用語ドリル</h3><div class="item"><b>きて→きって</b>＝促音・1拍増加。<br><b>おばさん→おばあさん</b>＝長音・1拍増加。<br><b>きや→きゃ</b>＝拗音・音節構造の違い。<br><b>か→が</b>＝清濁・声帯振動の違い。<br><b>/p/</b>＝両唇＋破裂、<b>/m/</b>＝両唇＋鼻音。</div>
-<div class="notice"><b>本番前の合言葉：</b>「どこ？（調音点）／どう？（調音法）／声帯は？／何拍？／高低は？」</div><button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button></section>
+
+<h3>⏱ 日本語の拍・韻律</h3>
+<div class="item"><b>モーラ（拍）</b>＝日本語のリズムを数える単位。<br>
+<b>長音</b>・<b>促音</b>・<b>撥音</b>はそれぞれ1拍。<b>拗音</b>は「きゃ」など、基本的に1モーラ。</div>
+
+<h3>🔊 有声・無声</h3>
+<div class="item"><b>有声音</b>＝声帯が振動する。<b>無声音</b>＝声帯が振動しない。<br>
+調音点・調音法とは別の軸なので、混同しない。</div>
+
+<h3>🎵 アクセント・イントネーション</h3>
+<div class="item"><b>アクセント</b>＝語の中の高さの配置。<br>
+<b>イントネーション</b>＝句・文など発話全体の高さの変化。</div>
+
+<div class="notice"><b>🎯 本番前の合言葉：</b>「どこ？＝調音点／どう？＝調音法／声帯は？／何拍？／高低は？」</div>
+<button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button>
+</section>
 <section id="practice" class="panel"><button class="back" type="button" onclick="location.hash='#home'; return false;">← トップへ戻る</button>
 <h2>📚 日本語教育実践（科目11〜13）</h2>
 
 <div class="notice"><b>ここは「用語を覚える」だけでなく、授業場面を見て「何をねらい、どう活動し、どう評価するか」を判断するコーナー。</b><br>
 試験では、用語そのものよりも「この教師の対応として最も適切なのはどれか」のような場面判断につなげる。</div>
 
-<h3>① 🧭 授業設計：目標 → 活動 → 評価</h3>
+<h3>① 🔎 学習者分析：授業を作る前に知る</h3>
+<div class="item"><b>ニーズ調査</b>＝学習者が「何のために日本語を使うのか」「どんな場面・課題で日本語が必要なのか」を把握する。<br>
+例：職場で電話対応が必要、病院で症状を説明したい、大学で発表したい。</div>
+<div class="item"><b>レディネス調査</b>＝学習開始時点で「何ができるか・何を知っているか・どこに課題があるか」を把握する。日本語レベル、学習経験、既習項目などを見る。</div>
+<div class="item"><b>学習者分析</b>＝年齢・背景・目的・日本語レベル・学習経験・学習環境・学習上の課題などを把握し、授業設計に反映する。</div>
+<div class="typebox"><b>⚠️ ひっかけ：</b>「何が必要か」→ニーズ。「今どこまでできるか」→レディネス。調査結果を集めるだけで終わらず、目標・教材・活動に反映する。</div>
+
+<h3>② 🧰 教案作成の前準備</h3>
+<div class="item"><b>前準備の流れ：</b>学習者分析 → ニーズ／レディネス → 学習目標 → Can-do → 学習項目 → 活動 → 評価 → 教材・教具 → 時間配分。</div>
+<div class="item"><b>教材・教具の確認：</b>PPT、配布資料、音声、画像、動画、板書などを準備し、授業で使う順番と必要な部数・動作を確認する。</div>
+<div class="item"><b>つまずきの予測：</b>学習者がどこで迷うか、どんな誤用が出そうか、指示が伝わらない場合はどうするかを事前に考える。</div>
+<div class="item"><b>代替案：</b>時間が足りない／余る、機器が使えない、活動が進まない場合の短縮・延長・別活動を用意する。</div>
+
+<h3>③ 🧭 授業設計：目標 → 活動 → 評価</h3>
 <div class="item"><b>目標</b>＝学習後に何ができるようになるか。<br>
 <b>活動</b>＝目標の能力を実際に使う活動になっているか。<br>
 <b>評価</b>＝目標が達成できたかを測れる方法になっているか。<br>
 この3つがずれていない状態を<b>整合性（alignment）</b>の視点で考える。</div>
 <div class="typebox"><b>逆向き設計</b>：まず「最終的に何ができればよいか・どう評価するか」を決め、そこから授業活動を設計する。</div>
 
-<h3>② 🧑‍🏫 指導法：場面から「なぜこの方法か」を判断</h3>
+<h3>④ 🧑‍🏫 指導法：場面から「なぜこの方法か」を判断</h3>
 <div class="item"><b>文法訳読法</b>＝文法説明と翻訳を重視。読解・正確な文法理解には使えるが、会話能力の育成を直接の中心にはしない。</div>
 <div class="item"><b>直接法</b>＝目標言語を主に使い、翻訳に頼らず意味を理解・使用させる。実際のやり取りや文脈を重視する。</div>
 <div class="item"><b>オーディオリンガル法</b>＝模倣・反復・パターンプラクティスなどを通して、文型や音声の正確な運用を練習する。</div>
@@ -533,11 +758,11 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>帰納的／演繹的な文法指導</b>＝帰納的は例から学習者自身に規則を気づかせる。演繹的は先に規則を説明してから例・練習へ進む。</div>
 <div class="typebox"><b>応用試験の見分け方：</b>「正しい文を何度も言わせる」→パターンプラクティス／オーディオリンガル法。「情報を持ち寄って目的を達成する」→コミュニカティブ・アプローチ／タスク。「まず教師が形式を提示→練習→実際に使う」→PPP。</div>
 
-<h3>③ 📰 生教材（Authentic Materials）</h3>
+<h3>⑤ 📰 生教材（Authentic Materials）</h3>
 <div class="item"><b>意味</b>＝学習者向けに作った教材ではなく、現実社会で実際に使われている素材。時刻表・案内・メニュー・広告・Web・実際のメールなど。<br>
 <b>重要：</b>生教材は「一切加工してはいけない」という意味ではない。学習目的に合わせて語彙注釈、設問、情報量などを調整して教材化できる。</div>
 
-<h3>④ 🔎 読解指導</h3>
+<h3>⑥ 🔎 読解指導</h3>
 <div class="item"><span class="badge">スキミング</span>＝全体の大意・要点を素早く把握。<br>
 <span class="badge">スキャニング</span>＝日付・時刻・名前・金額など特定情報を探す。<br>
 <span class="badge">精読</span>＝語彙・文法・論理まで細かく読む。<br>
@@ -546,26 +771,26 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <b>ボトムアップ</b>＝文字・語彙・文法・文のつながりなど小さい単位から意味を組み立てる。<br>
 実際の読解では両方を組み合わせる。</div>
 
-<h3>⑤ 🎯 タスク・コミュニカティブな活動</h3>
+<h3>⑦ 🎯 タスク・コミュニカティブな活動</h3>
 <div class="item"><b>タスク</b>＝現実的な目的があり、意味のあるやり取りを通して、何らかの成果を達成する活動。<br>
 例：「時刻表を見て、友達と旅行の日程を決める」。</div>
 <div class="item"><b>文型練習</b>＝特定の形式の正確さを練習する活動。<br>
 <b>タスク</b>＝「正しい文を作ること」だけでなく「目的を達成すること」が中心。</div>
 <div class="item"><b>情報差（information gap）</b>＝学習者同士が異なる情報を持ち、質問・確認などのやり取りによって情報を完成させる。</div>
 
-<h3>⑥ 🎭 ロールプレイ・シミュレーション</h3>
+<h3>⑧ 🎭 ロールプレイ・シミュレーション</h3>
 <div class="item"><b>ロールプレイ</b>＝役割・場面を設定し、その役割になってやり取りする。<br>
 例：店員と客、職場での依頼、学校への相談。</div>
 <div class="item"><b>ポイント：</b>役割カードに「目的・条件・必要な情報」を入れると、単なる暗唱ではなく相互作用を生みやすい。</div>
 
-<h3>⑦ 🗣️ 話す・聞くことの指導</h3>
+<h3>⑨ 🗣️ 話す・聞くことの指導</h3>
 <div class="item"><b>モノローグ</b>＝一人でまとまった発話をする活動。<br>
 <b>インタラクション</b>＝相手とのやり取りを行う活動。質問・応答・確認・言い換えなどを含む。</div>
 <div class="item"><b>流暢さ（fluency）</b>＝止まりすぎず、意味を伝えながら話せるか。<br>
 <b>正確さ（accuracy）</b>＝文法・語彙・発音などが適切か。<br>
 <b>複雑さ（complexity）</b>＝より多様で複雑な表現を使えるか。</div>
 
-<h3>⑧ 🙋 フィードバック・訂正</h3>
+<h3>⑩ 🙋 フィードバック・訂正</h3>
 <div class="item"><b>明示的訂正</b>＝誤りを直接示し、正しい形を提示する。<br>
 <b>リキャスト</b>＝誤りを明示的に指摘せず、正しい形に言い換えて返す。<br>
 <b>明確化要求</b>＝「もう一度言ってください」など、意味・伝達上の問題を示す。<br>
@@ -573,67 +798,67 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <b>メタ言語的フィードバック</b>＝文法・形式についてヒントを与える。</div>
 <div class="typebox"><b>試験の見分け方：</b>教師が正解を言った？→明示的訂正／リキャスト。学習者に自分で直させる？→プロンプト。文法用語やルールのヒント？→メタ言語的フィードバック。</div>
 
-<h3>⑨ 🔁 インタラクションと足場かけ</h3>
+<h3>⑪ 🔁 インタラクションと足場かけ</h3>
 <div class="item"><b>足場かけ（scaffolding）</b>＝学習者が一人では難しい課題を達成できるよう、教師や仲間が一時的に支援し、必要に応じて支援を減らす。</div>
 <div class="item"><b>ZPD（最近接発達領域）</b>＝一人ではできないが、他者の支援があればできる範囲。<br>
 支援は「何でも教える」ことではなく、学習者が自力でできるようになる方向へ調整する。</div>
 
-<h3>⑩ ✍️ 書くことを教える</h3>
+<h3>⑫ ✍️ 書くことを教える</h3>
 <div class="item"><b>プロダクト・アプローチ</b>＝完成した文章のモデルや正確さを重視。<br>
 <b>プロセス・アプローチ</b>＝発想→構想→下書き→フィードバック→推敲→書き直しなど、書く過程を重視。<br>
 <b>ジャンル・アプローチ</b>＝目的・読者・社会的場面に応じた文章の型や特徴を扱う。</div>
 <div class="item"><b>ピア・レビュー／ピア・レスポンス</b>＝学習者同士が文章を読み、基準に沿ってコメントし改善につなげる。</div>
 
-<h3>⑪ 📝 作文評価・ルーブリック</h3>
+<h3>⑬ 📝 作文評価・ルーブリック</h3>
 <div class="item"><b>分析的評価</b>＝「タスク達成・構成・文法・語彙・表記」など複数の観点を分けて評価。<br>
 <b>総括的評価</b>＝文章全体を総合して判断。</div>
 <div class="item"><b>ルーブリック</b>＝評価観点と達成水準を表にした評価基準。学習者に事前提示すると、目標の明確化や自己評価にも使える。</div>
 <div class="item"><b>注意：</b>評価基準は授業目標と一致させる。「文法ミスが少ない＝必ず高得点」ではなく、設定した課題・目的に照らして判断する。</div>
 
-<h3>⑫ 🌏 Can-do・JF Can-do</h3>
+<h3>⑭ 🌏 Can-do・JF Can-do</h3>
 <div class="item"><b>Can-do</b>＝「何ができるか」を具体的な言語行動として記述する考え方。<br>
 例：「駅で必要な情報を聞き取って確認できる」。</div>
 <div class="item"><b>文法項目</b>は「〜てくださいを教える」のような内容中心。<br>
 <b>Can-do</b>は「窓口で必要なことを依頼できる」のような行動・達成中心。</div>
 
-<h3>⑬ 🙇 敬語・待遇表現・ポライトネス</h3>
+<h3>⑮ 🙇 敬語・待遇表現・ポライトネス</h3>
 <div class="item"><b>尊敬語</b>＝相手・話題の人物の動作や状態を高める。例：先生が<strong>いらっしゃいます</strong>。</div>
 <div class="item"><b>謙譲語</b>＝自分側の動作を低めて相手を立てる。例：私が先生のところへ<strong>伺います</strong>。</div>
 <div class="item"><b>丁寧語</b>＝文末などを丁寧にする。例：行き<strong>ます</strong>・です。<br>
 <b>美化語</b>＝「お茶」「ご飯」など、語を美しく・上品に表す。</div>
 <div class="typebox"><b>待遇・ポライトネス：</b>「誰の動作か」だけでなく、「相手との関係・場面・目的に合った表現か」で判断する。</div>
 
-<h3>⑭ 🧑‍🏫 教師の役割・学習者中心</h3>
+<h3>⑯ 🧑‍🏫 教師の役割・学習者中心</h3>
 <div class="item"><b>教師中心</b>＝教師からの説明・提示が中心。<br>
 <b>学習者中心</b>＝学習者が考える・選ぶ・やり取りする時間を重視。<br>
 <b>教師の役割</b>は「知識を一方的に伝える人」だけではなく、活動を設計し、支援し、学習を促進する役割もある。</div>
 <div class="item"><b>ファシリテーター</b>＝学習者同士の活動や問題解決が進むよう、環境・課題・支援を整える役割。</div>
 
-<h3>⑮ 👥 協働学習・ピア・ラーニング</h3>
+<h3>⑰ 👥 協働学習・ピア・ラーニング</h3>
 <div class="item"><b>協働学習</b>＝学習者同士が相互作用しながら課題に取り組む。<br>
 <b>ピア・ラーニング</b>＝仲間同士で説明・質問・評価などを行い、学びを深める。</div>
 <div class="item"><b>注意：</b>「グループにしただけ」では協働学習とは限らない。役割・相互依存・課題・成果物などを設計することが重要。</div>
 
-<h3>⑯ 💻 ICT・オンライン授業</h3>
+<h3>⑱ 💻 ICT・オンライン授業</h3>
 <div class="item"><b>ICT活用</b>＝教材提示、録音・録画、オンライン交流、課題提出、学習管理などに活用する。<br>
 <b>重要：</b>「ICTを使うこと」自体が目的ではなく、学習目標に対して何が改善するかで選ぶ。</div>
 <div class="item"><b>同期型</b>＝教師と学習者が同時に参加。<br>
 <b>非同期型</b>＝時間をずらして学習できる。<br>
 <b>ブレンディッド・ラーニング</b>＝対面とオンラインなど複数の学習形態を組み合わせる。</div>
 
-<h3>⑰ © 著作権・教材利用</h3>
+<h3>⑲ © 著作権・教材利用</h3>
 <div class="item"><b>著作権</b>＝創作的な著作物を保護する権利。教材・画像・文章・動画などを扱う際に注意する。<br>
 <b>引用</b>＝必要性・主従関係・明確な区別・出典表示などの要件を満たして利用する。</div>
 <div class="item"><b>試験ポイント：</b>「授業だから何でもコピー・配信できる」と考えない。学校・授業での利用でも、利用方法や範囲によって扱いが異なる。</div>
 
-<h3>⑱ 🧩 授業活動の選択：場面で判定</h3>
+<h3>⑳ 🧩 授業活動の選択：場面で判定</h3>
 <div class="item"><b>A：</b>市役所Webから申請期限を探す → <b>生教材＋スキャニング</b><br>
 <b>B：</b>「昨日行きます」に「昨日行きました？」と返す → <b>リキャスト型</b><br>
 <b>C：</b>旅行の予定を相談して日程を決める → <b>タスク＋インタラクション</b><br>
 <b>D：</b>作文を書き、コメントを受けて書き直す → <b>プロセス・アプローチ＋形成的評価</b><br>
 <b>E：</b>学習者が自分で正しい形を言い直すまで教師がヒントを出す → <b>プロンプト</b></div>
 
-<h3>⑲ 🔥 試験で狙われやすい「ひっかけ」</h3>
+<h3>㉑ 🔥 試験で狙われやすい「ひっかけ」</h3>
 <div class="item"><b>スキミング</b>≠特定情報探し（それはスキャニング）<br>
 <b>生教材</b>≠加工禁止<br>
 <b>タスク</b>≠文型を何度も言うだけ<br>
@@ -913,9 +1138,9 @@ N5が最もやさしく、N1が最も難しい。<br>
 <button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button></section>
 
 <section id="boost" class="panel"><button class="back" type="button" onclick="location.hash='#home'; return false;">← トップへ戻る</button>
-<h2>🎯 80点突破トレーニング</h2>
-<div class="notice"><b>ヒロの目標：応用試験110点中80点以上。</b><br>
-令和8年度の応用試験は、読解60問＋聴解50問＝110点。合格基準は総合得点で6割程度。だからこのアプリでは「合格できる」ではなく、<b>本番で80点以上を安定して取る</b>ことを目標にする。citeturn0search12turn0search14</div>
+<h2>🔥 打倒・応用試験｜目指せ満点！80点突破トレーニング</h2>
+<div class="notice"><b>目標：応用試験110点で満点を狙い、まず80点超を安定させる。</b><br>
+令和8年度の応用試験は、読解60問＋聴解50問＝110点。合格基準は総合得点で6割程度。だからこのアプリでは「合格できる」ではなく、<b>本番で80点以上を安定して取る</b>ことを目標にする。</div>
 
 <h3>🏁 80点の作戦</h3>
 <div class="item"><b>目標例：</b>読解45／60 ＋ 聴解35／50 ＝ <b>80／110（72.7%）</b>。</div>
@@ -926,7 +1151,7 @@ N5が最もやさしく、N1が最も難しい。<br>
 <div class="item"><b>STEP 1｜土台</b>：用語マスター・50項目・音声／発音・評価を固める。</div>
 <div class="item"><b>STEP 2｜場面判断</b>：日本語教育実践・読解・聴解を「なぜその選択肢か」まで説明する。</div>
 <div class="item"><b>STEP 3｜演習</b>：10問→30問→60問と量を増やし、間違いを復習。</div>
-<div class="item"><b>STEP 4｜本番型</b>：読解100分・聴解約50分の時間感覚を作る。令和8年度は11月8日（日）実施予定。citeturn0search14</div>
+<div class="item"><b>STEP 4｜本番型</b>：読解100分・聴解約50分の時間感覚を作る。令和8年度は11月8日（日）実施予定。</div>
 <div class="item"><b>STEP 5｜仕上げ</b>：85点前後を安定させ、苦手分野の取りこぼしを減らす。</div>
 
 <h3>🧪 80点チャレンジ</h3>
@@ -973,6 +1198,13 @@ N5が最もやさしく、N1が最も難しい。<br>
 <b>すべて選べ</b>＝複数正解の可能性を考える。
 </div>
 <div class="notice"><b>回答前の3秒チェック：</b>①何を選ぶ？ ②何個選ぶ？ ③「最も」がある？ ④「不」がある？</div>
+<h3>🏆 最終得点戦略：満点を狙って80点を取りに行く</h3>
+<div class="item"><b>🟢 絶対に取りたい：</b>基本用語、授業設計、指導法、評価、教材分析、教師対応、基本音声、CEFR/JLPT、法令・制度。</div>
+<div class="item"><b>🟡 差をつける：</b>ケース問題、ロールプレイ、タスク、学習者の誤用分析、語用論、異文化、授業改善、複合資料。</div>
+<div class="item"><b>🔴 難問：</b>時間を使いすぎない。根拠が薄い問題は一度飛ばし、取れる問題を先に確保する。</div>
+<div class="item"><b>本番の順序：</b>設問の向き → 学習者・目的・場面・レベル → 問われている領域 → 選択肢比較 → 本文・音声の根拠。</div>
+<div class="item"><b>失点を減らす：</b>「正しい／不適切」「最も」「複数選択」など、設問条件を最初に確認する。</div>
+<div class="notice"><b>📌 最終チェック：</b>用語を説明できる／似た用語を区別できる／授業場面で判断できる／音声を聞いて分類できる／口腔断面図を見て調音点・調音法を判断できる。ここまでできたら、あとは演習と復習に集中！</div>
 <button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button></section>
 
 <section id="wrong" class="panel"><button class="back" type="button" onclick="location.hash='#home'; return false;">← トップへ戻る</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div><button class="back" type="button" onclick="location.hash='#home'; return false;">↑ トップへ戻る</button></section>
@@ -1067,7 +1299,16 @@ const boostQ=[
 {q:'【最も適切】学習途中の情報を次の指導改善に使う評価は？',a:['診断的評価','形成的評価','総括的評価','集団準拠評価'],c:1,e:'学習途中で改善に生かすのが形成的評価。',d:'評価'},
 {q:'【最も適切】学習開始前に現在の力や課題を把握する評価は？',a:['診断的評価','形成的評価','総括的評価','波及効果'],c:0,e:'学習開始前などの状態把握は診断的評価。',d:'評価'},
 {q:'【最も適切】学習者同士が異なる情報を持ち、質問して情報を完成させる活動は？',a:['情報差活動','一斉講義','精読','翻訳法'],c:0,e:'異なる情報を持つことで相互作用が必要になる情報差活動。',d:'実践'},
-{q:'【最も適切】「平均80、標準偏差10、自分90」の偏差値は？',a:['50','55','60','70'],c:2,e:'50＋10×(90−80)÷10＝60。',d:'評価'}];
+{q:'【最も適切】授業開始前に、学習者が何を必要としているかを把握する調査は？',a:['ニーズ調査','レディネス調査','形成的評価','項目分析'],c:0,e:'何のために・どんな場面で日本語が必要かを把握するのがニーズ調査。',d:'実践'},
+{q:'【最も適切】学習開始時点の日本語能力や既習事項を把握するのは？',a:['ニーズ調査','レディネス調査','総括的評価','波及効果'],c:1,e:'現在何ができるか・何を知っているかを把握するのがレディネス調査。',d:'実践'},
+{q:'【最も適切】「目標→評価→活動」の順に設計し、最後に授業活動を決める考え方は？',a:['逆向き設計','文法訳読法','オーディオリンガル法','多読'],c:0,e:'最終的な目標と評価を先に定め、そこから活動を設計する。',d:'実践'},
+{q:'【最も適切】授業後、学習者の反応や目標達成度を確認し、次回の教案を修正する行為は？',a:['授業分析・自己点検','ニーズ調査だけ','スキャニング','診断的評価だけ'],c:0,e:'授業を根拠に振り返り、改善につなげるのが授業分析・自己点検。',d:'実践'},
+{q:'【最も適切】「教師が答えを言わず、学習者が自分で修正できるようヒントを出す」は？',a:['プロンプト','明示的訂正','リキャスト','総括的評価'],c:0,e:'学習者自身の修正を促す支援がプロンプト。',d:'実践'},
+{q:'【最も適切】「舌の後部を軟口蓋付近に近づけて作る音」の調音点は？',a:['両唇','歯茎','硬口蓋','軟口蓋'],c:3,e:'舌の後部と軟口蓋付近で作るのが軟口蓋音。',d:'音声'},
+{q:'【最も適切】「上下の唇を閉じてから開放する」音の調音点・調音法は？',a:['両唇・破裂音','歯茎・摩擦音','硬口蓋・鼻音','軟口蓋・弾き音'],c:0,e:'上下の唇を使い、閉鎖→開放するので両唇・破裂音。',d:'音声'},
+{q:'【最も適切】授業の目的が「駅で必要な情報を探して乗車する」なら、時刻表を使った活動として最も適切なのは？',a:['全文暗記','特定情報を探すスキャニング','文法訳読','漢字書き取りだけ'],c:1,e:'現実の目的に必要な情報を探すのでスキャニングが適切。',d:'実践'},
+{q:'【最も適切】教師が学習者の誤用を正しい形に言い換えて返すが、誤りを直接指摘しない。',a:['リキャスト','明示的訂正','プロンプト','診断的評価'],c:0,e:'正しい形を言い換えて提示するのがリキャスト。',d:'実践'},
+{q:'【最も適切】「学習者が自力でできるようになるまで、一時的に支援を行い、徐々に支援を減らす」は？',a:['scaffolding','スキャニング','総括的評価','文法訳読法'],c:0,e:'一時的な支援を調整し、自立へつなげるのがscaffolding。',d:'心理'}];
 
 let boostSession=[];
 let boostScore=0;
@@ -1187,5 +1428,8 @@ if("serviceWorker" in navigator){
     rs.forEach(function(r){r.unregister();});
   });
 }
+function updateCountdown(){const el=document.getElementById('countdown');if(!el)return;const target=new Date('2026-11-08T00:00:00+09:00');const now=new Date();const d=Math.max(0,Math.ceil((target-now)/86400000));el.textContent=d>0?`📅 本番まであと ${d}日。今は「問題を解く→間違いを復習」を積み上げる時期。`:'🎓 今日は本番！落ち着いて、取れる問題から。';}
+updateCountdown();setInterval(updateCountdown,3600000);
+
 </script>
 </body></html>
