@@ -1249,37 +1249,72 @@ function quickAns(btn,i,j){
   }
 }
 let currentUtterance2=null;
-function speakOnce(text,btn){
-  if(!('speechSynthesis' in window)){alert('この端末ではブラウザ音声に対応していません。');return false;}
-  if(!text){alert('音声データがありません。');return false;}
-  const synth=window.speechSynthesis;
-  const voice=pickVoice();
-  if(!voice){
-    alert('日本語音声を取得できませんでした。iPhoneの日本語音声を確認してSafariを再読み込みしてください。');
+function ttsUrl(text){
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q='+encodeURIComponent(String(text));
+}
+let htmlAudio=null;
+function getHtmlAudio(){
+  if(!htmlAudio){
+    htmlAudio=document.createElement('audio');
+    htmlAudio.preload='none';
+    htmlAudio.setAttribute('playsinline','');
+    htmlAudio.setAttribute('webkit-playsinline','');
+    htmlAudio.style.display='none';
+    document.body.appendChild(htmlAudio);
+  }
+  return htmlAudio;
+}
+function playHtmlTTS(text,btn){
+  if(!text) return false;
+  const a=getHtmlAudio();
+  try{
+    a.pause();
+    a.currentTime=0;
+    a.src=ttsUrl(text);
+    a.load();
+    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    const p=a.play();
+    if(p && p.catch){
+      p.catch(function(){
+        if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+        // HTML audio is still attempted directly from the tap; if blocked, fall back to Safari speech.
+        try{ fallbackSpeech(text,btn); }catch(e){}
+      });
+    }
+    a.onended=function(){if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}};
+    a.onerror=function(){
+      if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+      try{ fallbackSpeech(text,btn); }catch(e){}
+    };
+    return true;
+  }catch(e){
+    try{fallbackSpeech(text,btn);}catch(_){ }
     return false;
   }
-  synth.cancel();
-  try{synth.resume();}catch(e){}
+}
+function fallbackSpeech(text,btn){
+  if(!('speechSynthesis' in window)) return false;
+  const synth=window.speechSynthesis;
+  try{synth.cancel();}catch(e){}
   const u=new SpeechSynthesisUtterance(String(text));
-  u.voice=voice;
-  u.lang=/^ja(-|_)/i.test(voice.lang||'') ? voice.lang : 'ja-JP';
-  u.rate=speechRate; u.pitch=1;
+  const voice=pickVoice();
+  if(voice){u.voice=voice;u.lang=voice.lang||'ja-JP';}else{u.lang='ja-JP';}
+  u.rate=speechRate;u.pitch=1;
   if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
   u.onstart=function(){if(btn)btn.textContent='🔊 再生済み（1回）';};
-  u.onerror=function(){if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';} currentUtterance2=null;};
+  u.onerror=function(){if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
   u.onend=function(){currentUtterance2=null;};
   currentUtterance2=u;
-  try{
-    synth.speak(u);
-    // iOS/Safari workaround: if the queue did not start, retry once immediately.
-    if(!synth.speaking && !synth.pending){synth.cancel();synth.speak(u);}
-  }catch(e){
-    currentUtterance2=null;
-    if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
-    alert('音声の再生に失敗しました。Safariを再読み込みしてもう一度お試しください。');
-  }
-  return false;
+  synth.speak(u);
+  return true;
 }
+function speak(text){ return speakOnce(text,null); }
+function speakOnce(text,btn){
+  if(!text){alert('音声データがありません。');return false;}
+  // iPhone Safari: use a real HTMLAudioElement first, directly from the tap.
+  return playHtmlTTS(String(text),btn);
+}
+
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator){
