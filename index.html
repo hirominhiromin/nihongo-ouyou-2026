@@ -1191,6 +1191,77 @@ function pickVoice(){
   return jaVoices.find(v=>/^ja(-|_)/i.test(v.lang)) || jaVoices[0] || allVoices.find(v=>/^ja(-|_)/i.test(v.lang)) || allVoices[0] || null;
 }
 function speak(text){ return speakOnce(text,null); }
+
+/* v58: 聴解の会話は役割ごとに読み分ける。ラベルは画面に残し、音声では読まない。 */
+function roleVoice(role){
+  loadVoices();
+  const list=jaVoices.length ? jaVoices : allVoices.filter(v=>/^ja(-|_)/i.test(v.lang));
+  if(!list.length) return null;
+  if(role==='teacher'){
+    return list.find(v=>/otoya|hattori|ichiro|male|man|男/i.test(v.name)) || list[0];
+  }
+  if(role==='learner'){
+    return list.find(v=>/kyoko|female|woman|girl|女/i.test(v.name)) || list.find(v=>!/otoya|hattori|ichiro/i.test(v.name)) || list[0];
+  }
+  return pickVoice();
+}
+function parseDialogue(text){
+  const s=String(text||'');
+  const re=/(教師|学習者)\s*[「『"]([^」』"]*)[」』"]/g;
+  const out=[]; let last=0,m;
+  while((m=re.exec(s))){
+    if(m.index>last){
+      const pre=s.slice(last,m.index).replace(/^\s+|\s+$/g,'');
+      if(pre && !/^(教師|学習者)\s*$/.test(pre)) out.push({role:null,text:pre});
+    }
+    out.push({role:m[1]==='教師'?'teacher':'learner',text:m[2]});
+    last=re.lastIndex;
+  }
+  const tail=s.slice(last).replace(/^\s+|\s+$/g,'');
+  if(tail) out.push({role:null,text:tail});
+  return out.length?out:null;
+}
+function speakDialogue(text,btn){
+  const parts=parseDialogue(text);
+  if(!parts) return speakOnce(text,btn);
+  if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
+    alert('このブラウザでは音声再生に対応していません。'); return false;
+  }
+  const synth=window.speechSynthesis;
+  let i=0, stopped=false;
+  try{
+    synth.cancel();
+    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    function next(){
+      if(stopped || i>=parts.length){
+        if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}
+        currentUtterance2=null; return;
+      }
+      const p=parts[i++];
+      const u=new SpeechSynthesisUtterance(p.text);
+      u.lang='ja-JP'; u.rate=speechRate||0.82; u.volume=1;
+      if(p.role){
+        const v=roleVoice(p.role);
+        if(v) u.voice=v;
+        /* iOSで男女音声名が取得できない場合の補助。 */
+        u.pitch=p.role==='teacher'?0.82:1.12;
+      }else{
+        const v=pickVoice(); if(v) u.voice=v; u.pitch=1;
+      }
+      u.onstart=function(){if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}};
+      u.onend=function(){setTimeout(next,80);};
+      u.onerror=function(){stopped=true;currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
+      currentUtterance2=u;
+      synth.speak(u);
+    }
+    next();
+    return true;
+  }catch(e){
+    currentUtterance2=null;
+    if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    return false;
+  }
+}
 function setVoiceMode(mode){
   voiceMode=mode;localStorage.setItem('ntVoiceMode',mode);
   document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
@@ -1300,7 +1371,7 @@ document.addEventListener('click',function(e){
   const key=btn.getAttribute('data-audio-key');
   const text=(window.ntAudioTexts||{})[key];
   if(!text){alert('音声データが見つかりません。');return false;}
-  speakOnce(text,btn);
+  speakDialogue(text,btn);
 },true);
 
 function speakOnce(text,btn){
@@ -1320,8 +1391,7 @@ function speakOnce(text,btn){
     u.rate=speechRate || 0.82;
     u.pitch=1;
     u.volume=1;
-    const voices=synth.getVoices ? synth.getVoices() : [];
-    const ja=voices.find(v=>/^ja(-|_)/i.test(v.lang)) || voices.find(v=>/Japanese|日本語|Kyoko|Otoya|Hattori|Siri/i.test(v.name));
+    const ja=pickVoice();
     if(ja) u.voice=ja;
     if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
     u.onstart=function(){if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}};
