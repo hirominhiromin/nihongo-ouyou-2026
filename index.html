@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
-<title>2026 日本語教員試験・応用攻略 完成版</title>
+<title>2026 日本語教員試験・応用攻略 最終版</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -20,6 +20,9 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .sourcebox{font-size:11px;color:#667085;margin:8px 2px 12px}
 .fiftyrow{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;margin:7px 0;cursor:pointer}
 .fiftyrow:active{transform:scale(.99)}
+#fifty.fifty-detail-mode > .back,#fifty.fifty-detail-mode > .notice,#fifty.fifty-detail-mode > .sourcebox,#fifty.fifty-detail-mode > .item,#fifty.fifty-detail-mode > #fiftyList{display:none}
+#fifty.fifty-detail-mode > h2{margin-bottom:12px}
+#fiftyDetail{margin-top:8px}
 .fiftynum{min-width:30px;height:30px;border-radius:50%;background:#eef1f6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
 .fiftyname{font-weight:700;line-height:1.45}
 .fiftyarrow{margin-left:auto;color:#98a2b3;font-size:18px}
@@ -142,12 +145,12 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="bigcard pink" onclick="location.hash='#reading'; return false;">
 <div class="ctitle"><span>📖</span><b>読解</b><i>›</i></div>
 <div class="catch">文章を正確に読み取り<br/>設問を解く力をつける</div>
-<ul><li>場面把握→教師判断</li><li>授業設計・タスク・教授法</li><li>教材・フィードバック分析</li><li>学習者の誤用・言語分析</li><li>本番型ケース演習</li></ul>
+<ul><li>設問パターン別攻略</li><li>文章の構造・論理展開</li><li>キーワード・指示語</li><li>グラフ・表・資料の読み取り</li><li>過去問演習</li></ul>
 </div>
 <div class="bigcard blue" onclick="location.hash='#listening'; return false;">
 <div class="ctitle"><span>🎧</span><b>聴解</b><i>›</i></div>
 <div class="catch">聞いて理解し<br/>正しく判断する力をつける</div>
-<ul><li>誤用を聞く→専門用語へ</li><li>授業場面・教師判断</li><li>教授法・フィードバック</li><li>聴解教材・活動分析</li><li>本番型音声ドリル</li></ul>
+<ul><li>会話・講義の聞き取り</li><li>選択肢のポイント</li><li>メモの取り方</li><li>よく出る場面・トピック</li><li>本番風音声問題</li></ul>
 </div>
 <div class="bigcard green" onclick="location.hash='#oral'; return false;">
 <div class="ctitle"><span>👄</span><b>音声・発音</b><i>›</i></div>
@@ -290,15 +293,10 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="item"><b>スキミング</b>：全体の大意・概要を素早くつかむ。<br/><b>スキャニング</b>：時刻・氏名・数字など、必要な特定情報を探す。<br/><b>精読</b>：細部まで正確に読む。<br/><b>多読</b>：多くの文章を読むことで、読解量・流暢さなどを伸ばす。</div>
 <h3>📝 Pre / While / Post</h3>
 <div class="item"><b>Pre-reading</b>：題名・写真・キーワードから予測、背景知識を活性化。<br/><b>While-reading</b>：必要情報を探す、要点を確認、推論する。<br/><b>Post-reading</b>：要約、意見交換、内容を別の課題へ活用。</div>
-<h3>🔥 応用型・場面判断ドリル</h3>
-<div class="notice"><b>本番の読み方：</b>「誰が・目的・レベル・活動」を拾い、正しい一般論ではなく<strong>この場面に最も適切なもの</strong>を選ぶ。</div>
-<div id="readingCaseQuiz"></div>
-<button class="primary" onclick="startCaseQuiz('reading')">読解ケース5問を開始</button>
-<div id="readingCaseResult" class="goal80" style="display:none"></div>
 <button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="listening"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🎧 聴解・完全攻略</h2>
-<div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br/>公式サンプル型では、学習者の誤用分類・教師―学習者のやり取り・教授法・聴解教材と事後活動まで判断する。音声・発音の基礎は「音声・発音」へ。</div>
-<div class="sourcebox">文科省公式サンプルで確認できる型：①学習者の誤用診断 ②教師―学習者のやり取り・教授法 ③聴解教材の改善・事後活動。</div><h3>📝 本番で狙われる聞き取り</h3>
+<div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br/>音声・発音の識別は「音声・発音」へ。聴解では、話の要点・意図・条件・教師の対応を聞き取る。</div>
+<h3>📝 本番で狙われる聞き取り</h3>
 <div class="item"><b>① 要点・主旨</b>＝話し手が一番伝えたいこと。細部より「結局何を言っているか」を取る。</div>
 <div class="item"><b>② 必要情報</b>＝日時・人数・条件・順序など、設問に必要な情報を拾う。<b>スキャニング</b>的に聞く。</div>
 <div class="item"><b>③ 話し手の意図</b>＝依頼・断り・提案・確認・不満・許可など。「何と言ったか」だけでなく「何のために言ったか」を考える。</div>
@@ -329,11 +327,6 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <p>「この教材は初級には使いやすいです。一方、中級では内容が簡単すぎるかもしれません。」最も適切な聞き取りは？</p>
 <div class="choices"><button class="choice" onclick="ans(this,'①')">① どのレベルでも使いやすい</button><button class="choice" onclick="ans(this,'②')">② 初級には使いやすいが、中級には課題がある</button><button class="choice" onclick="ans(this,'③')">③ 中級だけに適している</button><button class="choice" onclick="ans(this,'④')">④ 初級には使えない</button></div>
 <div class="feedback" data-answer="②">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
-<h3>🔥 応用型・聞いて判断ドリル</h3>
-<div class="notice"><b>本番の聞き方：</b>①誰が ②何の場面 ③何が問題・目的 ④条件・対比 ⑤教師ならどうする、の順で処理。</div>
-<div id="listeningCaseQuiz"></div>
-<button class="primary" onclick="startCaseQuiz('listening')">聴解ケース5問を開始</button>
-<div id="listeningCaseResult" class="goal80" style="display:none"></div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="audioPlus"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>🎧 音声トレーニング＋　— 国試型・聞いて判定</h2>
@@ -950,40 +943,27 @@ const readingQ=[
 {q:"ロールプレイの目的が『店で返品を申し出る』。授業活動を検討するとき最も重要なのは？",a:["課題達成に必要な活動か","教師の説明時間を増やす","漢字を全部暗記させる","文法用語を増やす"],c:0,e:"学習者の目的・課題達成に必要かを場面から判断する。"},
 {q:"複数の評価観点と段階的な基準を表にしたものは？",a:["ルーブリック","中央値","スキミング","ディクトグロス"],c:0,e:"観点ごとの評価基準を段階的に示すのがルーブリック。"}
 ];
-const readingCaseQ=[
-{q:'中級学習者が「病院で症状を説明する」ロールプレイを行う。教師が最初に行う活動として最も適切なのは？',a:['目標場面で必要な情報や表現を確認し、短い準備活動を行う','全員に文法用語を暗記させる','関係のない漢字テストを行う','教師が会話をすべて演じ、学習者には発話させない'],c:0,e:'学習者の目的と活動をつなぐ準備が適切。'},
-{q:'初級学習者向けの聴解教材について、内容はよいが未習語が多く、背景文化の知識も大量に必要である。最も適切な改善は？',a:['学習者が必要な情報を処理できるよう語彙・背景情報・課題を調整する','難しい語をさらに増やす','文化情報をすべて削除して目的も変える','教材をそのまま使い、理解できない部分は学習者の努力に任せる'],c:0,e:'教材は目的・レベル・認知負荷に合わせて支援・調整する。'},
-{q:'教師が学習者の誤用を聞いた。活動の目的は流暢な会話で、意味は十分通じている。教師の対応として最も適切なのは？',a:['活動を止めてすべての誤りを明示的に訂正する','目標に関係する誤りを必要に応じて扱い、会話の流れを保つ','誤りが一つでもあれば活動を中止する','正確さだけを評価し、内容は評価しない'],c:1,e:'活動目的が流暢なやり取りなら、すべてを止めず、目標との整合性を優先する。'},
-{q:'「店で返品を申し出る」がCan-do目標。次の評価として最も整合的なのは？',a:['返品場面で必要なやり取りを実際に行えるかを評価する','漢字の書き順だけを評価する','教師が説明した文法項目数を評価する','授業への出席だけを評価する'],c:0,e:'Can-doの言語行動と評価課題を一致させる。'},
-{q:'タスク先行型活動で、学習者が「言いたいが言えない」と気づいた。教師の次の対応として最も適切なのは？',a:['気づきを手がかりに必要な表現を整理し、再度タスクで使う機会を設ける','すぐに別の単元へ進む','教師が正解文を全部暗記させて終了する','学習者の気づきを無視する'],c:0,e:'タスクで生じた「必要感」を次の言語学習につなげる。'}
-];
-const listeningCaseQ=[
-{q:'教師「昨日、映画を見ます」と言った学習者に「昨日……？」と返し、続きを促した。教師の対応は？',a:['誘導・プロンプト','明示的訂正','リキャスト','総括的評価'],c:0,e:'正しい形を直接言わず、学習者自身の修正を促している。'},
-{q:'学習者の発話を聞くと「学校を行きます」となっていた。最初に分類するなら？',a:['格・格助詞','アスペクト','ヴォイス','アクセント'],c:0,e:'移動先と格助詞の関係なので格・格助詞。'},
-{q:'初級者向け聴解教材を聞くと、話者が途中で急に非常にくだけた話し方に変わる。教材改善の観点として最も適切なのは？',a:['学習者レベルと目的に対するスピーチレベルの負荷','教師の声の大きさだけ','文字の字体だけ','評価の中央値'],c:0,e:'話し方の変化は聴解処理の負荷に関係するため、学習者レベルとの適合を見る。'},
-{q:'聴解後の活動として最も適切なのは？　教材の内容は「飲食店で注文する会話」で、目標は注文時のやり取り。',a:['内容をもとに注文場面のロールプレイを行う','関係のない漢字を50個書く','教師が教材の全文を翻訳して終える','音声とは無関係な文法用語を暗記する'],c:0,e:'聴解内容と目標を次のコミュニケーション活動につなげる。'},
-{q:'音声を聞いて「アスペクト／ダイクシス／メトニミー／コロケーション」から選ぶ問題。聞こえた表現が語と語の自然な組み合わせの問題だった。正解は？',a:['アスペクト','ダイクシス','メトニミー','コロケーション'],c:3,e:'語と語の結び付き・共起の自然さに関する問題はコロケーション。'}
-];
-let caseState={reading:null,listening:null};
-function startCaseQuiz(type){
- const data=type==='reading'?readingCaseQ:listeningCaseQ, wrap=document.getElementById(type+'CaseQuiz'), result=document.getElementById(type+'CaseResult');
- caseState[type]={data,score:0,done:0}; if(result){result.style.display='none';result.innerHTML='';}
- wrap.innerHTML=data.map((x,i)=>`<div class="exam caseItem" id="${type}Case${i}"><span class="badge">${type==='reading'?'読解':'聴解'}ケース ${i+1}/5</span><p><b>${x.q}</b></p><div class="choices">${x.a.map((a,j)=>`<button class="choice" onclick="caseAns(this,'${type}',${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`).join('');
- wrap.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function caseAns(btn,type,i,j){
- const st=caseState[type]; if(!st||!st.data[i])return; const item=document.getElementById(type+'Case'+i); if(item.dataset.done)return; item.dataset.done='1';
- const x=st.data[i]; item.querySelectorAll('.choice').forEach(b=>b.disabled=true); const fb=item.querySelector('.feedback');
- if(j===x.c){btn.classList.add('correct');st.score++;fb.className='feedback ok';fb.innerHTML='⭕ 正解！<br>'+x.e;}
- else{btn.classList.add('wrong');item.querySelectorAll('.choice')[x.c].classList.add('correct');fb.className='feedback ng';fb.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type:(type==='reading'?'読解ケース':'聴解ケース'),q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong));}
- st.done++; if(st.done===st.data.length){const result=document.getElementById(type+'CaseResult');result.style.display='block';result.innerHTML=`<b>今回：${st.score}/5（${st.score*20}%）</b><br>${st.score>=4?'🟢 本番型の場面判断はいい感じ。次は時間を意識。':st.score>=3?'🟡 まずまず。間違えたテーマを知識カードで復習。':'🔴 場面の条件→目的→選択肢の順で復習しよう。'}`;}}
-
 let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
-document.getElementById("fiftyList").innerHTML=fifty.map(x=>`<div class="fiftyrow" onclick="showFifty(${x.n})"><div class="fiftynum">${x.n}</div><div class="fiftyname">${x.name}</div><div class="fiftyarrow">›</div></div>`).join("");
-function showFifty(n){const x=fifty.find(v=>v.n===n),d=document.getElementById("fiftyDetail");d.style.display="block";d.innerHTML=`<button class="secondary" onclick="document.getElementById('fiftyDetail').style.display='none'">一覧に戻る</button><h3>${x.n}. ${x.name}</h3><h4>📌 何を学ぶ？</h4><div>${x.summary}</div><h4>🔑 キーワード</h4><div>${x.keywords}</div><h4>⭐ 応用試験での見方</h4><div class="exam">${x.exam}</div>`;d.scrollIntoView({behavior:"smooth",block:"start"})}
+document.getElementById("fiftyList").innerHTML=fifty.map(x=>`<div class="fiftyrow" onclick="showFifty(${x.n})" role="button" tabindex="0" aria-label="${x.n}. ${x.name}"><div class="fiftynum">${x.n}</div><div class="fiftyname">${x.name}</div><div class="fiftyarrow">›</div></div>`).join("");
+
+function renderFiftyDetail(n){
+  const x=fifty.find(v=>v.n===Number(n));
+  const d=document.getElementById("fiftyDetail");
+  if(!x || !d) return false;
+  d.style.display="block";
+  d.innerHTML=`<button class="secondary" onclick="location.hash='#fifty'; return false;" type="button">← 一覧に戻る</button><h3>${x.n}. ${x.name}</h3><h4>📌 何を学ぶ？</h4><div>${x.summary}</div><h4>🔑 キーワード</h4><div>${x.keywords}</div><h4>⭐ 応用試験での見方</h4><div class="exam">${x.exam}</div>`;
+  return true;
+}
+
+function showFifty(n){
+  if(!fifty.some(v=>v.n===Number(n))) return;
+  location.hash='#fifty-'+Number(n);
+}
 
 function showPageFromHash(){
-  var id=(location.hash||'#home').slice(1) || 'home';
+  var raw=(location.hash||'#home').slice(1) || 'home';
+  var fiftyMatch=raw.match(/^fifty-(\d+)$/);
+  var id=fiftyMatch ? 'fifty' : raw;
   var target=document.getElementById(id);
   if(!target) id='home';
   document.querySelectorAll('section[id]').forEach(function(p){
@@ -998,6 +978,18 @@ function showPageFromHash(){
     target=document.getElementById(id);
     if(target){target.style.display='block';target.classList.add('active');}
   }
+  var detail=document.getElementById('fiftyDetail');
+  var fiftyPanel=document.getElementById('fifty');
+  if(detail && fiftyPanel){
+    if(fiftyMatch && id==='fifty'){
+      fiftyPanel.classList.add('fifty-detail-mode');
+      detail.style.display='block';
+      renderFiftyDetail(Number(fiftyMatch[1]));
+    }else{
+      fiftyPanel.classList.remove('fifty-detail-mode');
+      detail.style.display='none';
+    }
+  }
   window.scrollTo(0,0);
 }
 function goPage(id){ location.hash='#'+id; }
@@ -1006,25 +998,7 @@ window.addEventListener('hashchange',showPageFromHash);
 document.addEventListener('DOMContentLoaded',showPageFromHash);
 
 function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
-function ans(btn,i,j,type){
-  // 旧形式（ans(this,'③')）も壊さず処理できるようにする。
-  if(typeof i==='string' && (j===undefined || type===undefined)){
-    const exam=btn.closest('.exam');
-    const choices=exam?exam.querySelectorAll('.choice'):[];
-    const box=exam?exam.querySelector('.feedback'):null;
-    if(!box)return;
-    const correct=box.dataset.answer||'';
-    choices.forEach(b=>b.disabled=true);
-    if(i===correct){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+box.textContent.trim();}
-    else{btn.classList.add('wrong');choices.forEach(b=>{if(b.textContent.trim().startsWith(correct))b.classList.add('correct');});box.className='feedback ng';box.innerHTML='❌ 不正解。<br>'+box.textContent.trim();}
-    return;
-  }
-  const data=type==='聴解'?listeningQ:readingQ,x=data[i],id=type==='聴解'?'listeningQuiz':'readingQuiz',box=document.getElementById(id+i);
-  if(!x||!box)return;
-  document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);
-  if(j===x.c){btn.classList.add('correct');box.className='feedback ok';box.innerHTML='⭕ 正解！<br>'+x.e}
-  else{btn.classList.add('wrong');box.className='feedback ng';box.innerHTML='❌ 正解は '+String.fromCharCode(65+x.c)+'。<br>'+x.e;wrong.push({type,q:x.q});localStorage.setItem('ntWrong',JSON.stringify(wrong))}
-}
+function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function audioAns(btn, answer, correct, explanation){
   const exam = btn.closest('.exam');
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
