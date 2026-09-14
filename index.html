@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 v76</title>
+<title>2026 日本語教員試験・応用攻略 v81</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -145,10 +145,22 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 </style>
 
 <style>.mouth-chart-img{display:block;width:100%;height:auto;max-width:100%;image-rendering:auto}.mouth-exact-panel{background:#fff}<style>
-/* V80: 発音問題の選択肢は、タップで回答するまで操作可能。 */
+/* V81: 発音問題の選択肢は、タップで回答するまで操作可能。 */
 .pronChoices .choice{pointer-events:auto;touch-action:manipulation}
 .pronChoices .choice:disabled{pointer-events:none}
 </style>
+<style>
+/* V81: 図が読めない／読み込み失敗した場合も学習を止めない */
+img.img-safe-error{display:none!important}
+.img-fallback{display:none;margin:10px;padding:14px;border:1px dashed #9aa4b2;border-radius:10px;background:#f7f8fa;color:#4d5868;line-height:1.7}
+.img-fallback.show{display:block}
+.tap-safe{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.point-card{border:2px solid #d8dee8;border-radius:16px;padding:16px;margin:12px 0;background:#fff}
+.point-score{font-size:1.15rem;font-weight:700;margin:10px 0}
+.point-progress{height:10px;background:#e9edf2;border-radius:99px;overflow:hidden;margin:8px 0 14px}.point-progress>span{display:block;height:100%;width:0;background:#334155;transition:width .2s ease}
+.point-option{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 14px;border:1px solid #cfd6df;border-radius:12px;background:#fff;font-size:1rem;line-height:1.55;cursor:pointer}
+.point-option:disabled{cursor:default;opacity:1}.point-option.correct{border:2px solid #198754}.point-option.wrong{border:2px solid #dc3545}
+.point-result{font-weight:700;margin-top:10px}.point-result.ok{color:#198754}.point-result.ng{color:#b42318}
 </style>
 </head>
 <body>
@@ -202,6 +214,11 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="ctitle"><span>🌍</span><b>CEFR・JLPT</b><i>›</i></div>
 <div class="catch">レベルとCan-doを理解する</div>
 <ul><li>CEFRのレベルと特徴</li><li>JF Can-do</li><li>JLPTとの対応</li><li>タスク例・評価の視点</li><li>レベル判定の練習問題</li></ul>
+</div>
+<div class="bigcard orange" onclick="location.hash='#points'; return false;">
+<div class="ctitle"><span>🎯</span><b>点取り強化</b><i>›</i></div>
+<div class="catch">取れる問題を落とさない<br/>本番直結の仕上げ</div>
+<ul><li>頻出・取りやすい知識</li><li>選択肢の見抜き方</li><li>初見ケース判断</li><li>弱点になりやすい分野</li><li>20問ミニ本番</li></ul>
 </div>
 <div class="bigcard pink2" onclick="location.hash='#law'; return false;">
 <div class="ctitle"><span>⚖️</span><b>法令・制度</b><i>›</i></div>
@@ -978,6 +995,13 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div class="item"><b>失点を減らす：</b>「正しい／不適切」「最も」「複数選択」など、設問条件を最初に確認する。</div>
 <div class="notice"><b>📌 最終チェック：</b>用語を説明できる／似た用語を区別できる／授業場面で判断できる／音声を聞いて分類できる／口腔断面図を見て調音点・調音法を判断できる。ここまでできたら、あとは演習と復習に集中！</div>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
+
+<section class="panel" id="points"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🎯 点取り強化・本番直結</h2>
+<div class="notice"><b>「難しい問題を増やす」より、まず取れる問題を確実に取る。</b><br/>公式範囲の中でも、用語の意味・授業判断・評価・語用・言語分析など、選択肢で差がつきやすいポイントを短時間で確認する。</div>
+<div id="pointQuiz"></div>
+<button class="primary" type="button" onclick="startPointQuiz()">🎯 20問を開始</button>
+<div class="item"><b>使い方</b>：1問ずつ回答 → すぐ解説 → 最後に得点を確認。間違えた問題は「間違いリスト」に保存できる。
+</div></section>
 <section class="panel" id="wrong"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div><h3>⭐ お気に入り</h3><div id="favoriteList"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 </main>
 <script>
@@ -1109,7 +1133,7 @@ function renderPronunciationDiagnosisQuiz(){
   root.innerHTML=selected.map((x,i)=>{
     const key='pd-'+i+'-'+Date.now();
     window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.audio||x.script;
-    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音誤りの診断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button" onclick="pronAns(this,${i},${j},'diag');return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音誤りの診断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 function renderPronunciationTeachingQuiz(){
@@ -1122,7 +1146,7 @@ function renderPronunciationTeachingQuiz(){
   root.innerHTML=selected.map((x,i)=>{
     const key='pt-'+i+'-'+Date.now();
     window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.audio||x.script;
-    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音指導の判断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button" onclick="pronAns(this,${i},${j},'teach');return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音指導の判断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 function pronAns(btn,i,j,mode){
@@ -1190,7 +1214,7 @@ function mouthSvg(kind){
     'postalveolar-affricate':'歯茎硬口蓋・破擦音の口腔断面図',
     'alveolar-tap':'歯茎・弾き音の口腔断面図'
   };
-  return `<img class="mouth-exact-panel" src="data:image/png;base64,${img}" alt="${labels[kind]||'口腔断面図'}" loading="lazy">`;
+  return `<img class="mouth-exact-panel" src="data:image/jpeg;base64,${img}" alt="${labels[kind]||'口腔断面図'}" loading="lazy">`;
 }
 
 function renderMouthExamQuiz(){
@@ -1204,7 +1228,7 @@ function renderMouthExamQuiz(){
     const kinds=shuffleArray([correctKind,...distractors]);
     const key='mouth-'+i+'-'+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.sound;
     window.mouthExamState[i]={correct:correctKind, answered:false, explanation:x.e};
-    return `<div class="mouth-exam" data-mouth-index="${i}"><h4>第${i+1}問　国試型・音声→図</h4><p>${x.q}</p><button class="mouth-audio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="mouth-options">${kinds.map((k,j)=>`<button class="mouth-option" type="button" data-kind="${k}" onclick="mouthChoice(this,${i},'${k}')"><div class="mouth-option-label">${String.fromCharCode(65+j)}.</div>${mouthSvg(k)}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="mouth-exam" data-mouth-index="${i}"><h4>第${i+1}問　国試型・音声→図</h4><p>${x.q}</p><button class="mouth-audio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="mouth-options">${kinds.map((k,j)=>`<button class="mouth-option" type="button" data-kind="${k}"><div class="mouth-option-label">${String.fromCharCode(65+j)}.</div>${mouthSvg(k)}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 
@@ -1233,6 +1257,51 @@ function renderAudioDrill(){
   const meta=document.getElementById('audioDrillMeta');
   if(meta) meta.innerHTML='<b>今回の出題：</b>10問（全'+audioDrillPool.length+'問からランダム）　<span class="mini">※問題の順番＋選択肢の順番を毎回シャッフル</span>';
 }
+
+
+// V81: 点取り強化20問。知識だけでなく「条件→判断→選択肢」を短く回す。
+const pointQ = [
+{q:'教師が学習者の誤りを直接直さず、正しい形を言い直して示した。これは？',a:['リキャスト','明示的訂正','総括的評価','スキャニング'],c:0,e:'誤りを正しい形に言い換えて返すのがリキャスト。'},
+{q:'教師が答えを教えず「昨日は……？」と促し、学習者自身に「見ました」と言わせた。これは？',a:['明示的訂正','プロンプトによる自己修正','リキャスト','総括的評価'],c:1,e:'答えを直接与えず、学習者自身の修正を促しているのでプロンプト。'},
+{q:'「ここ」「今」「私」のように、発話場面によって指示対象が変わる表現は？',a:['メトニミー','コロケーション','ダイクシス','スキーマ'],c:2,e:'発話者・場所・時間などの文脈に依存する指示表現はダイクシス。'},
+{q:'「薬を飲む」のような、語と語の自然な共起関係を表す概念は？',a:['ダイクシス','コロケーション','モーラ','タスク'],c:1,e:'自然に一緒に使われやすい語の組合せがコロケーション。'},
+{q:'「会社が発表した」のように、組織名でその組織の担当者・行為を指す用法に近いのは？',a:['メトニミー','ダイクシス','スキャニング','アクセント'],c:0,e:'関連する対象を別の表現で指す換喩がメトニミー。'},
+{q:'学習者の「昨日、映画を見ます」という発話で、まず確認すべき文法的観点は？',a:['テンス','ヴォイス','アスペクト','待遇表現'],c:0,e:'「昨日」という過去の時点と「見ます」の時制の対応なのでテンス。'},
+{q:'「学校を行きます」を「学校に行きます」とする際、中心となるのは？',a:['格・格助詞','アスペクト','モダリティ','音便'],c:0,e:'「に」は移動先を表す格助詞。'},
+{q:'「がっこう」は何モーラ？',a:['2','3','4','5'],c:2,e:'が・っ・こ・うの4モーラ。「っ」と長音も1モーラとして数える。'},
+{q:'「きゃ」は原則として何モーラ？',a:['1モーラ','2モーラ','3モーラ','数えない'],c:0,e:'拗音「きゃ」は「き・や」の2モーラではなく1モーラ。'},
+{q:'「ぱ」の調音点と調音法の組合せは？',a:['両唇＋破裂','歯茎＋摩擦','軟口蓋＋鼻音','歯茎硬口蓋＋破擦'],c:0,e:'「ぱ」は両唇を閉鎖して開放する無声の破裂音。'},
+{q:'「な」の調音点と調音法の組合せは？',a:['両唇＋鼻音','歯茎＋鼻音','軟口蓋＋破裂','歯茎＋摩擦'],c:1,e:'「な」は歯茎付近で口腔を閉鎖し、鼻腔へ気流を通す鼻音。'},
+{q:'学習者が必要な情報だけを探す読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'日時・氏名・数字など特定情報を探すのがスキャニング。'},
+{q:'読み手の既有知識・経験などの知識構造を何という？',a:['スキーマ','レパートリー','リキャスト','ルーブリック'],c:0,e:'文章理解の背景となる既有知識・経験の構造がスキーマ。'},
+{q:'学習目標を「何ができるようになるか」で具体化する記述として代表的なのは？',a:['Can-do','正規分布','クロンバックα','メトニミー'],c:0,e:'Can-doは学習者が何をできるようになるかを行動で表す。'},
+{q:'評価基準を観点別に示し、段階ごとの到達度を判断しやすくするものは？',a:['ルーブリック','ディクトグロス','スキーマ','シャドーイング'],c:0,e:'評価観点と到達レベルを組み合わせた評価表がルーブリック。'},
+{q:'一つの授業活動の中で、目標・活動・評価が整合していることを重視する考え方は？',a:['建設的整合性','音韻転移','メタニミー','言語相対論'],c:0,e:'学習目標、学習活動、評価を整合させる考え方が建設的整合性。'},
+{q:'学習者の実際の生活・仕事で必要なことを分析し、教育内容に反映するのは？',a:['ニーズ分析','総括的評価','精読','誤用分析'],c:0,e:'学習者が何を必要としているかを把握するのがニーズ分析。'},
+{q:'授業中、教師が「まずA、その後B」と順序を明示している。聞き手が特に注意する語句は？',a:['限定・順序表現','固有名詞だけ','助詞だけ','敬語だけ'],c:0,e:'「まず」「その後」などの順序表現は、聴解で判断の手掛かりになる。'},
+{q:'教師が「この活動では、答えが一つに決まる必要はありません」と条件を示した。最も適切な対応は？',a:['正解を一つに固定する','条件を踏まえて複数の考えを扱う','文法だけを採点する','活動を中止する'],c:1,e:'設問や活動の条件を無視せず、その条件の範囲で判断する。'},
+{q:'応用試験で初見の用語が選択肢に出た。最初に取るべき行動は？',a:['用語を知らないので即座に捨てる','前後の文脈と他選択肢との整合性を見る','全部暗記し直す','最初の選択肢を選ぶ'],c:1,e:'応用試験は文脈から判断できる問題もある。未知語でも本文・条件・他選択肢との関係を見る。'}
+];
+function startPointQuiz(){
+ const root=document.getElementById('pointQuiz'); if(!root)return;
+ const qs=shuffleArr(pointQ).slice(0,20).map(x=>{const opts=shuffleArr(x.a.map((t,i)=>({t,ok:i===x.c})));return {...x,a:opts.map(o=>o.t),c:opts.findIndex(o=>o.ok)};});
+ window.pointState={qs,idx:0,score:0,answered:false}; renderPointQuestion();
+}
+function renderPointQuestion(){
+ const st=window.pointState, root=document.getElementById('pointQuiz'); if(!st||!root)return;
+ if(st.idx>=st.qs.length){root.innerHTML=`<div class="point-card"><h3>🎯 結果</h3><div class="point-score">${st.qs.length}問中 <strong>${st.score}問正解</strong></div><div class="point-result ${st.score>=16?'ok':'ng'}">${st.score>=18?'かなり強い。次は初見ケースへ。':st.score>=16?'合格圏を意識できる出来。間違えた所を復習。':'ここは伸びしろ大。間違えた問題をもう一周。'}</div><button class="primary" type="button" onclick="startPointQuiz()">もう一度20問</button></div>`;return;}
+ const x=st.qs[st.idx]; st.answered=false;
+ root.innerHTML=`<div class="point-card"><div><b>第${st.idx+1}問 / ${st.qs.length}問</b></div><div class="point-progress"><span style="width:${(st.idx/st.qs.length)*100}%"></span></div><div class="point-score">現在 ${st.score}点</div><h3>${x.q}</h3><div>${x.a.map((a,j)=>`<button class="point-option tap-safe" type="button" data-point-index="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback" id="pointFeedback"></div></div>`;
+}
+document.addEventListener('click',function(e){
+ const b=e.target.closest&&e.target.closest('.point-option'); if(!b)return;
+ const st=window.pointState; if(!st||st.answered)return;
+ const i=Number(b.dataset.pointIndex), x=st.qs[st.idx]; if(!x||!Number.isInteger(i))return;
+ st.answered=true; b.parentElement.querySelectorAll('.point-option').forEach((el,k)=>{el.disabled=true;if(k===x.c)el.classList.add('correct');});
+ const ok=i===x.c; if(ok){st.score++;b.classList.add('correct');}
+ const fb=document.getElementById('pointFeedback'); fb.className='feedback '+(ok?'ok':'ng'); fb.innerHTML=(ok?'⭕ 正解！':'❌ 不正解。正解は '+String.fromCharCode(65+x.c)+'。')+'<br>'+x.e;
+ setTimeout(function(){st.idx++;renderPointQuestion();},900);
+},true);
 
 function showPageFromHash(){
   var raw=(location.hash||'#home').slice(1) || 'home';
@@ -1639,6 +1708,26 @@ function speakOnce(text,btn){
     return false;
   }
 }
+
+
+// V81: タップ不能・インラインonclick不調への保険。イベント委譲で回答を必ず拾う。
+document.addEventListener('click',function(e){
+ const b=e.target.closest&&e.target.closest('.pronChoices .choice');
+ if(b){ e.preventDefault(); e.stopPropagation(); const card=b.closest('.pronExam'); if(card && !card.dataset.done){ const i=Number(card.dataset.pronIndex); const j=[...card.querySelectorAll('.choice')].indexOf(b); const mode=card.closest('#pronunciationTeachingQuiz')?'teach':'diag'; if(Number.isInteger(i)&&j>=0&&typeof pronAns==='function') pronAns(b,i,j,mode); } return; }
+ const m=e.target.closest&&e.target.closest('.mouth-option');
+ if(m){ e.preventDefault(); e.stopPropagation(); const card=m.closest('.mouth-exam'); if(card){ const i=Number(card.dataset.mouthIndex); const k=m.dataset.kind; if(typeof mouthChoice==='function') mouthChoice(m,i,k); } return; }
+},true);
+// V81: 画像が壊れても「何も表示されない」状態を防ぐ。
+document.addEventListener('error',function(e){
+ const img=e.target; if(!img || img.tagName!=='IMG' || img.dataset.fallbackDone)return;
+ img.dataset.fallbackDone='1'; img.classList.add('img-safe-error');
+ let fb=img.parentElement&&img.parentElement.querySelector('.img-fallback');
+ if(!fb){fb=document.createElement('div');fb.className='img-fallback';fb.textContent='図の読み込みに失敗しました。図なしでも解けるよう、下の説明を確認してください。';img.parentElement&&img.parentElement.appendChild(fb);}
+ fb.classList.add('show');
+},true);
+// V81: localStorage が壊れていてもアプリ全体を止めない。
+window.addEventListener('error',function(e){ console.warn('App runtime error:',e.error||e.message); });
+window.addEventListener('unhandledrejection',function(e){ console.warn('App promise error:',e.reason); });
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator){
