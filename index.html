@@ -1146,21 +1146,97 @@ const mouthExamPool = [
 ];
 
 function mouthSvg(kind){
+  // V73: 問題用口腔断面図を全面差し替え。
+  // 「調音点・調音法」だけでなく、口腔／鼻腔への通路／軟口蓋／舌の接触・狭めを図から読めるようにする。
   const specs={
-    'bilabial-stop':['両唇・破裂','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M178 116 Q205 105 232 116 L232 131 Q205 140 178 131 Z'],
-    'bilabial-nasal':['両唇・鼻音','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M178 116 Q205 105 232 116 L232 131 Q205 140 178 131 Z'],
-    'alveolar-stop':['歯茎・破裂','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M214 111 L246 111 L246 127 L214 127 Z'],
-    'alveolar-nasal':['歯茎・鼻音','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M214 111 L246 111 L246 127 L214 127 Z'],
-    'alveolar-fricative':['歯茎・摩擦','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M208 113 Q230 106 252 113 L252 119 Q230 124 208 119 Z'],
-    'postalveolar-fricative':['歯茎硬口蓋・摩擦','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M245 94 Q274 86 294 94 L294 101 Q274 106 245 101 Z'],
-    'postalveolar-affricate':['歯茎硬口蓋・破擦','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M245 96 L292 96 L292 111 Q270 116 245 111 Z'],
-    'velar-stop':['軟口蓋・破裂','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M300 87 L335 87 L335 105 L300 105 Z'],
-    'alveolar-tap':['歯茎・弾き音','M92 82 Q145 45 205 52 Q265 45 326 74 Q352 86 369 112','M82 118 Q130 102 172 113 L205 120 L238 113 Q280 102 332 118 L360 136 Q292 157 226 150 Q150 157 82 136 Z','M222 108 Q231 102 240 108 L240 121 Q231 125 222 121 Z']
+    'bilabial-stop':{place:'両唇',manner:'破裂',contact:'両唇を完全閉鎖',velum:'closed',air:'oral',tongue:'neutral'},
+    'bilabial-nasal':{place:'両唇',manner:'鼻音',contact:'両唇を完全閉鎖',velum:'open',air:'nasal',tongue:'neutral'},
+    'alveolar-stop':{place:'歯茎',manner:'破裂',contact:'舌先を歯茎に完全接触',velum:'closed',air:'oral',tongue:'alveolar'},
+    'alveolar-nasal':{place:'歯茎',manner:'鼻音',contact:'舌先を歯茎に接触',velum:'open',air:'nasal',tongue:'alveolar'},
+    'alveolar-fricative':{place:'歯茎',manner:'摩擦',contact:'歯茎付近を狭める（閉鎖しない）',velum:'closed',air:'oral',tongue:'alveolar-fric'},
+    'postalveolar-fricative':{place:'歯茎硬口蓋',manner:'摩擦',contact:'歯茎硬口蓋付近を狭める',velum:'closed',air:'oral',tongue:'postal-fric'},
+    'postalveolar-affricate':{place:'歯茎硬口蓋',manner:'破擦',contact:'いったん閉鎖→すぐ狭めて摩擦',velum:'closed',air:'oral',tongue:'postal-stop'},
+    'velar-stop':{place:'軟口蓋',manner:'破裂',contact:'舌の奥を軟口蓋に完全接触',velum:'closed',air:'oral',tongue:'velar'},
+    'alveolar-tap':{place:'歯茎',manner:'弾き音',contact:'舌先が歯茎に一瞬接触',velum:'closed',air:'oral',tongue:'tap'}
   };
   const z=specs[kind]||specs['alveolar-stop'];
-  const nasal=(kind.includes('nasal'));
-  const opening=nasal?'M286 61 Q306 48 326 61':'M286 61 Q306 61 326 61';
-  return `<svg class="mouth-svg" viewBox="0 0 440 190" role="img" aria-label="${z[0]}の口腔断面図"><rect x="1" y="1" width="438" height="188" rx="10" fill="white" stroke="#222"/><path d="${z[1]}" fill="none" stroke="#222" stroke-width="5" stroke-linecap="round"/><path d="${z[2]}" fill="white" stroke="#222" stroke-width="4"/><path d="${z[3]}" fill="#ddd" stroke="#222" stroke-width="3"/><path d="${opening}" fill="none" stroke="#222" stroke-width="3"/><path d="M335 104 Q370 112 385 142" fill="none" stroke="#222" stroke-width="3"/><path d="M105 145 Q175 170 245 151" fill="none" stroke="#222" stroke-width="2"/><text x="14" y="178" font-size="14" font-weight="800">${z[0]}</text></svg>`;
+  const uid='m'+Math.random().toString(36).slice(2,9);
+  const velumOpen=z.velum==='open';
+
+  // 鼻腔・口腔・咽頭を明示し、舌の位置だけを強調する模式断面図。
+  // 色は補助情報。文字と形だけでも判別できる設計。
+  let tonguePath='M238 132 Q270 104 307 110 Q330 115 339 139 Q330 169 294 174 Q257 174 232 157 Z';
+  let contact='';
+  let constrict='';
+  if(z.tongue==='alveolar' || z.tongue==='alveolar-fric' || z.tongue==='tap'){
+    tonguePath='M238 132 Q262 108 294 111 Q316 114 333 132 Q319 163 288 170 Q255 170 232 156 Z';
+    contact='<circle cx="219" cy="113" r="9" fill="none" stroke="#d92d20" stroke-width="3"/>';
+  }
+  if(z.tongue==='postal-fric' || z.tongue==='postal-stop'){
+    tonguePath='M238 132 Q268 106 312 112 Q337 117 350 138 Q337 166 301 172 Q260 171 232 156 Z';
+    contact='<circle cx="286" cy="103" r="10" fill="none" stroke="#d92d20" stroke-width="3"/>';
+  }
+  if(z.tongue==='velar'){
+    tonguePath='M238 142 Q285 103 331 100 Q352 104 362 124 Q347 159 311 171 Q267 173 232 157 Z';
+    contact='<circle cx="357" cy="101" r="10" fill="none" stroke="#d92d20" stroke-width="3"/>';
+  }
+  if(z.tongue==='neutral'){
+    contact='';
+  }
+  if(z.tongue==='alveolar-fric'){
+    constrict='<path d="M216 121 Q229 117 242 121" fill="none" stroke="#1677ff" stroke-width="4" stroke-dasharray="5 4"/>';
+  }
+  if(z.tongue==='postal-fric'){
+    constrict='<path d="M279 112 Q294 107 309 112" fill="none" stroke="#1677ff" stroke-width="4" stroke-dasharray="5 4"/>';
+  }
+  if(z.tongue==='tap'){
+    contact='<path d="M214 111 Q223 104 232 111" fill="none" stroke="#d92d20" stroke-width="4"/><text x="200" y="91" font-size="11" font-weight="700" fill="#b42318">一瞬接触</text>';
+  }
+  if(kind==='bilabial-stop' || kind==='bilabial-nasal'){
+    contact='<line x1="105" y1="113" x2="122" y2="113" stroke="#d92d20" stroke-width="7" stroke-linecap="round"/>';
+  }
+
+  const oralAir = z.air==='oral' ? '<path d="M140 135 C168 133 185 132 211 130" fill="none" stroke="#1677ff" stroke-width="4" marker-end="url(#'+uid+'a)"/>' : '';
+  const nasalAir = z.air==='nasal' ? '<path d="M136 132 C170 123 189 92 206 65" fill="none" stroke="#1677ff" stroke-width="4" stroke-dasharray="8 5" marker-end="url(#'+uid+'a)"/>' : '';
+  const velumPath = velumOpen
+    ? 'M351 77 Q369 93 381 105'
+    : 'M351 77 Q366 70 379 72';
+  const velumLabel=velumOpen?'軟口蓋（開放）':'軟口蓋（閉鎖）';
+  const nasalStatus=velumOpen?'鼻腔への通路：開く':'鼻腔への通路：閉じる';
+  const glottis=velumOpen?'open':'closed';
+  const glottisMark=glottis==='open'
+    ? '<path d="M391 145 Q399 138 407 145" fill="none" stroke="#555" stroke-width="3"/><text x="372" y="167" font-size="10" fill="#555">喉：開き</text>'
+    : '<path d="M391 145 L407 145" fill="none" stroke="#555" stroke-width="4"/><text x="372" y="167" font-size="10" fill="#555">喉：閉じ気味</text>';
+
+  return `<svg class="mouth-svg mouth-svg-v73" viewBox="0 0 520 225" role="img" aria-label="${z.place}・${z.manner}の口腔断面図">
+    <defs>
+      <marker id="${uid}a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#1677ff"/></marker>
+    </defs>
+    <rect x="1" y="1" width="518" height="223" rx="12" fill="#fff" stroke="#d5dbe3" stroke-width="2"/>
+    <!-- 鼻腔 -->
+    <path d="M142 80 Q154 24 239 20 L344 20 Q381 25 397 59 L397 91 L380 91 Q366 61 338 54 L215 54 Q180 57 160 83 Z" fill="#eef6ff" stroke="#333" stroke-width="3"/>
+    <text x="247" y="43" text-anchor="middle" font-size="15" font-weight="700" fill="#243b53">鼻腔</text>
+    <!-- 口腔・咽頭の外形 -->
+    <path d="M139 91 Q178 72 222 74 L343 74 Q370 76 388 94 L404 115 Q413 130 408 150 L402 184 L382 184 L380 145 Q379 119 354 111 L313 105 L258 106 L215 111 L173 106 L139 108 Z" fill="#fff8f4" stroke="#333" stroke-width="3"/>
+    <text x="282" y="91" font-size="14" font-weight="700" fill="#243b53">口腔</text>
+    <!-- 歯 -->
+    <path d="M139 93 L151 91 L160 105 L158 116 L145 113 Z" fill="#fff" stroke="#333" stroke-width="2"/>
+    <path d="M139 151 L158 153 L165 163 L145 164 L138 158 Z" fill="#fff" stroke="#333" stroke-width="2"/>
+    <!-- 舌 -->
+    <path d="${tonguePath}" fill="#f6b5ad" stroke="#333" stroke-width="3"/>
+    <text x="286" y="151" text-anchor="middle" font-size="15" font-weight="700" fill="#7a2e2e">舌</text>
+    <!-- 軟口蓋 -->
+    <path d="M343 75 Q363 75 379 91 L388 103" fill="none" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+    <path d="${velumPath}" fill="none" stroke="#d92d20" stroke-width="5" stroke-linecap="round"/>
+    <text x="398" y="75" font-size="11" font-weight="700" fill="#b42318">${velumLabel}</text>
+    <text x="397" y="89" font-size="10" fill="#555">${nasalStatus}</text>
+    ${contact}${constrict}${oralAir}${nasalAir}
+    ${glottisMark}
+    <!-- 右下の読み取りポイント -->
+    <rect x="16" y="186" width="488" height="27" rx="7" fill="#f5f8fb" stroke="#d8dee8"/>
+    <text x="27" y="204" font-size="12" font-weight="700" fill="#243b53">${z.place}・${z.manner}</text>
+    <text x="164" y="204" font-size="11" fill="#4b5563">${z.contact}</text>
+  </svg>`;
 }
 function renderMouthExamQuiz(){
   const root=document.getElementById('mouthExamQuiz'); if(!root)return;
