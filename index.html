@@ -981,7 +981,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div class="notice"><b>📚 ここが演習バンクです：本番110問＋追加90問＋本番型難問50問＝全250問。<b>カテゴリー別の正解数・正答率も記録します。</b></b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
 <div class="typebox"><b>使い方：</b>①まず分野別に弱点を発見 → ②次に60問／50問を通しで解く → ③最後に110問で本番感覚を作る。正解だけでなく「なぜ他の選択肢ではないか」まで確認。</div>
 <div class="item"><b>目標：</b>110問でまず80点、安定して85点前後。読解45＋聴解35＝80点を一つの目安にします。</div>
-<div class="choices bankModes" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><button class="secondary bankModeBtn" data-bank-mode="reading" onclick="runBank('reading')">📖 読解60問</button><button class="secondary bankModeBtn" data-bank-mode="listening" onclick="runBank('listening')">🎧 聴解50問</button><button class="secondary bankModeBtn" data-bank-mode="random20" onclick="runBank('random20')">🎯 ランダム20問</button><button class="secondary bankModeBtn" data-bank-mode="all" onclick="runBank('all')">🔥 本番110問</button><button class="secondary bankModeBtn" data-bank-mode="extra40" onclick="runBank('extra40')">💪 追加40問</button><button class="secondary bankModeBtn" data-bank-mode="extra50" onclick="runBank('extra50')">🆕 追加50問</button><button class="secondary bankModeBtn" data-bank-mode="hard50" onclick="runBank('hard50')">🔴 本番型・難問50問</button><button class="secondary bankModeBtn" data-bank-mode="all150" onclick="runBank('all150')">🚀 強化150問</button><button class="secondary bankModeBtn" data-bank-mode="all200" onclick="runBank('all200')">🏆 完全強化200問</button><button class="secondary bankModeBtn" data-bank-mode="all250" onclick="runBank('all250')">💎 完全強化250問</button></div>
+<div class="choices bankModes" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><button class="secondary bankModeBtn" data-bank-mode="reading" onclick="runBank('reading')">📖 読解60問</button><button class="secondary bankModeBtn" data-bank-mode="listening" onclick="runBank('listening')">🎧 聴解50問</button><button class="secondary bankModeBtn" data-bank-mode="random20" onclick="runRandom20();return false;">🎯 ランダム20問</button><button class="secondary bankModeBtn" data-bank-mode="all" onclick="runBank('all')">🔥 本番110問</button><button class="secondary bankModeBtn" data-bank-mode="extra40" onclick="runBank('extra40')">💪 追加40問</button><button class="secondary bankModeBtn" data-bank-mode="extra50" onclick="runBank('extra50')">🆕 追加50問</button><button class="secondary bankModeBtn" data-bank-mode="hard50" onclick="runBank('hard50')">🔴 本番型・難問50問</button><button class="secondary bankModeBtn" data-bank-mode="all150" onclick="runBank('all150')">🚀 強化150問</button><button class="secondary bankModeBtn" data-bank-mode="all200" onclick="runBank('all200')">🏆 完全強化200問</button><button class="secondary bankModeBtn" data-bank-mode="all250" onclick="runBank('all250')">💎 完全強化250問</button></div>
 <div id="bankResult" class="notice" style="display:none"></div><div id="bankCategoryStats" class="item" style="display:none"></div><div id="bankQuiz"></div>
 </section>
 <section class="panel" id="master"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
@@ -1096,7 +1096,7 @@ function answerBank(btn,i,j){
   if(x.type==='聴解'){fb.innerHTML+=' <br><details><summary>🎧 スクリプトを見る</summary><div class="mini">'+(x.script||'')+'</div></details>';}
   if(bankState.answered===bankState.questions.length){
     const total=bankState.questions.length,rate=Math.round(bankState.answers/total*1000)/10;
-    const res=document.getElementById('bankResult');res.style.display='block';res.innerHTML=`<b>🏁 結果：${bankState.answers} / ${total}（${rate}%）</b><br/>110点換算の学習目安：${Math.round(bankState.answers/total*110*10)/10} / 110。<br/><span class="mini">※実際の合格基準は年度ごとに調整される場合があります。</span>`;
+    const res=document.getElementById('bankResult');res.style.display='block';const bank110=Math.round(bankState.answers/total*110*10)/10;const bankLevel=bank110>=85?'🌟 安定して合格圏内！この調子！':bank110>=80?'🎉 合格圏内！目標80点をクリア！':bank110>=75?'🟡 もう少し！あと'+(80-bank110).toFixed(1)+'点で目標80点。':bank110>=70?'🟠 あと一歩！弱点を復習すれば伸びる！':'🔴 ここから頑張ろう！間違えた問題を復習して伸ばそう！';res.innerHTML=`<b>🏁 結果：${bankState.answers} / ${total}（${rate}%）</b><br/><b style="font-size:1.08em">${bankLevel}</b><br/>110点換算の学習目安：${bank110} / 110。<br/><span class="mini">※「合格圏内」は、このアプリの目標80点を基準にした学習目安です。実際の合格基準は年度ごとに調整される場合があります。</span>`;
   }
 }
 let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
@@ -1918,8 +1918,8 @@ function scoreMock(){
     cats[cat].total++;if(s.selected[stage][qi]===q.c)cats[cat].correct++;
   });
   const rows=Object.entries(cats).sort((a,b)=>a[0].localeCompare(b[0],'ja')).map(([cat,v])=>`<tr><td style="padding:5px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.total}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${Math.round(v.correct/v.total*1000)/10}%</td></tr>`).join('');
-  const res=document.getElementById('mockResult');res.style.display='block';
-  res.innerHTML=`<h3>🏁 模試終了・採点結果</h3><b>総合：${s.answers} / 110（${rate}%）</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>目標80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※公式の応用試験は総合得点6割程度が合格基準。ここでは80点超を目標にしています。</span><br><button type="button" class="primary" onclick="startMock()">🔄 もう一度模試</button>`;
+  const res=document.getElementById('mockResult');res.style.display='block';const mockLevel=s.answers>=85?'🌟 安定して合格圏内！この調子！':s.answers>=80?'🎉 合格圏内！目標80点をクリア！':s.answers>=75?'🟡 もう少し！あと'+(80-s.answers)+'点で目標80点。':s.answers>=70?'🟠 あと一歩！弱点を復習すれば伸びる！':'🔴 ここから頑張ろう！間違えた問題を復習して伸ばそう！';
+  res.innerHTML=`<h3>🏁 模試終了・採点結果</h3><b>総合：${s.answers} / 110（${rate}%）</b><br><b style="font-size:1.12em">${mockLevel}</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>目標80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※公式の応用試験は総合得点6割程度が合格基準。ここでは80点超を目標にしています。</span><br><button type="button" class="primary" onclick="startMock()">🔄 もう一度模試</button>`;
   document.getElementById('mockArea').innerHTML='';
   clearTimeout(window.mockTimerId);
 }
@@ -2059,7 +2059,7 @@ function v85ScoreMock(){
  const s=window.mockState;if(!s)return; s.readingScore=s.questions.reduce((n,q,i)=>n+(s.selected.reading[i]===q.c?1:0),0); s.listeningScore=s.all.slice(60).reduce((n,q,i)=>n+(s.selected.listening[i]===q.c?1:0),0); s.answers=s.readingScore+s.listeningScore;
  const cats={};s.all.forEach((q,idx)=>{const st=idx<60?'reading':'listening',i=idx<60?idx:idx-60,cat=q.cat||'その他';if(!cats[cat])cats[cat]={correct:0,total:0};cats[cat].total++;if(s.selected[st][i]===q.c)cats[cat].correct++;});
  const rows=Object.entries(cats).sort((a,b)=>a[0].localeCompare(b[0],'ja')).map(([cat,v])=>`<tr><td style="padding:5px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.total}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${Math.round(v.correct/v.total*1000)/10}%</td></tr>`).join('');
- const res=document.getElementById('mockResult');if(res){res.style.display='block';res.innerHTML=`<h3>🏁 模試${s.setNo} 終了</h3><b>総合：${s.answers} / 110（${Math.round(s.answers/110*1000)/10}%）</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※完全新作のオリジナル模試です。公式問題そのものではありません。</span><br><button type="button" class="primary" onclick="v85MockStart(${s.setNo===1?2:1})">🔄 別の完全新作模試へ</button>`;}
+ const res=document.getElementById('mockResult');if(res){res.style.display='block';const mockRate=Math.round(s.answers/110*1000)/10;const mockLevel=s.answers>=85?'🌟 安定して合格圏内！この調子！':s.answers>=80?'🎉 合格圏内！目標80点をクリア！':s.answers>=75?'🟡 もう少し！あと'+(80-s.answers)+'点で目標80点。':s.answers>=70?'🟠 あと一歩！弱点を復習すれば伸びる！':'🔴 ここから頑張ろう！間違えた問題を復習して伸ばそう！';res.innerHTML=`<h3>🏁 模試${s.setNo} 終了</h3><b>総合：${s.answers} / 110（${mockRate}%）</b><br><b style="font-size:1.12em">${mockLevel}</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※「合格圏内」は、このアプリの目標80点を基準にした学習目安です。完全新作のオリジナル模試で、公式問題そのものではありません。</span><br><button type="button" class="primary" onclick="v85MockStart(${s.setNo===1?2:1})">🔄 別の完全新作模試へ</button>`;}
  document.getElementById('mockArea').innerHTML='';clearTimeout(window.mockTimerId);
 }
 window.scoreMock=v85ScoreMock;
@@ -2106,14 +2106,34 @@ window.mockMove=function(delta){const s=window.mockState;if(!s)return;if(s.stage
    fresh.forEach(x=>seen[key(x)]=1);saveSeen(seen);return v85Shuffle(fresh);
  }
  window.v85PickBank=function(mode,count){return pick(poolFor(mode),count,mode);};
- window.v85AdaptiveRunBank=function(mode){
+ window.runRandom20=function(){
+  try{
+    v85AdaptiveRunBank('random20');
+    return;
+  }catch(err){
+    console.error('random20 adaptive failed; using base bank runner',err);
+    if(typeof originalRunBank==='function'){
+      originalRunBank('random20');
+      return;
+    }
+    alert('ランダム20問を開けませんでした。ページを一度再読み込みしてください。');
+  }
+};
+window.v85AdaptiveRunBank=function(mode){
    let qs; if(mode==='all')qs=pick([],110,'all'); else if(mode==='reading')qs=pick(bankReading,60,mode); else if(mode==='listening')qs=pick(bankListening,50,mode); else {const pool=poolFor(mode); const n=({random20:20,extra40:40,extra50:50,hard50:50,all150:150,all200:200,all250:250}[mode]||110);qs=pick(pool,n,mode);}
    qs=balanceChoicePositions(qs).map((x,i)=>({...x,n:i+1}));
    bankState={mode,questions:qs,answers:0,answered:0,started:Date.now()};
    const box=document.getElementById('bankQuiz'),res=document.getElementById('bankResult');res.style.display='block';res.innerHTML='<b>🔄 今回の出題を開始</b>：未出題を優先し、弱点カテゴリーも反映します。<br><span class="mini">※同じモードでも出題セットは毎回変わります。全問題を一巡すると新しい周回に入ります。</span>';renderBankCategoryStats();
    box.innerHTML=qs.map((x,i)=>{const isL=x.type==='聴解',k=isL?'v85-bank-'+i:'';if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[k]=x.script||'';}return `<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${k}">🔊 音声を聞く</button><div class="mini">※この練習では1回再生。解答後にスクリプトを表示します。</div>`:''}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-bank-choice="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`}).join('');window.scrollTo(0,0);
  };
- const originalRunBank=window.runBank; window.runBank=function(mode){v85AdaptiveRunBank(mode);};
+ const originalRunBank=window.runBank; window.runBank=function(mode){
+  try{ v85AdaptiveRunBank(mode); }
+  catch(err){
+    console.error('adaptive bank failed; restoring base bank runner',err);
+    if(typeof originalRunBank==='function') originalRunBank(mode);
+    else throw err;
+  }
+};
 })();
 
 // Weakness diagnosis: converts cumulative bank stats into three concrete next actions.
