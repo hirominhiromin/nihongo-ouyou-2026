@@ -2150,5 +2150,51 @@ const _renderBankCategoryStats=renderBankCategoryStats; renderBankCategoryStats=
 
 // Ensure mock rendering/selection uses the final implementation even after earlier declarations.
 renderMockQuestion=v85RenderMockQuestion;
+// V94: large bank modes render progressively to keep iPhone responsive.
+window.v94RunLargeBank=function(mode){
+  try{
+    const counts={all150:150,all200:200,all250:250};
+    const labels={all150:'🚀 強化150問',all200:'🏆 完全強化200問',all250:'💎 完全強化250問'};
+    const count=counts[mode];
+    if(!count) return;
+    document.querySelectorAll('.bankModeBtn').forEach(b=>b.classList.toggle('active',b.dataset.bankMode===mode));
+    let qs=window.v85PickBank(mode,count);
+    qs=balanceChoicePositions(qs).map((x,i)=>({...x,n:i+1}));
+    bankState={mode,questions:qs,answers:0,answered:0,started:Date.now()};
+    const box=document.getElementById('bankQuiz'),res=document.getElementById('bankResult');
+    if(!box||!res) return;
+    res.style.display='block';
+    res.innerHTML='<b>'+labels[mode]+'</b> を開始。未出題を優先し、弱点カテゴリーも反映します。<br><span class="mini">※問題を少しずつ表示することで、スマートフォンでも開きやすくしています。</span>';
+    renderBankCategoryStats();
+    box.innerHTML='';
+    let pos=0;
+    const renderChunk=()=>{
+      if(!bankState || bankState.mode!==mode) return;
+      const end=Math.min(pos+20,qs.length);
+      const tmp=document.createElement('div');
+      for(let i=pos;i<end;i++){
+        const x=qs[i],isL=x.type==='聴解',k=isL?'v94-bank-'+i:'';
+        if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[k]=x.script||'';}
+        const audio=isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${k}">🔊 音声を聞く</button><div class="mini">※この練習では1回再生。解答後にスクリプトを表示します。</div>`:'';
+        tmp.insertAdjacentHTML('beforeend',`<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-bank-q="${i}" data-bank-choice="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`);
+      }
+      while(tmp.firstChild) box.appendChild(tmp.firstChild);
+      pos=end;
+      if(pos<qs.length) requestAnimationFrame(renderChunk);
+    };
+    requestAnimationFrame(renderChunk);
+    window.scrollTo(0,0);
+  }catch(err){
+    console.error('V94 large bank failed',err);
+    if(typeof originalRunBank==='function') originalRunBank(mode);
+    else if(window.runBank && window.runBank!==window.v94RunLargeBank) window.runBank(mode);
+    else alert('問題を開けませんでした。ページを一度再読み込みしてください。');
+  }
+};
+// Only the three large modes are redirected; all other modes remain unchanged.
+document.querySelectorAll('.bankModeBtn').forEach(function(b){
+  const mode=b.dataset.bankMode;
+  if(mode==='all150'||mode==='all200'||mode==='all250') b.onclick=function(){window.v94RunLargeBank(mode);};
+});
 </script>
 </body></html>
