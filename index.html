@@ -923,7 +923,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 
 <section class="panel" id="mock">
-<button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
+<button class="back" onclick="exitMock(); return false;" type="button">← 模試を終了して選択に戻る</button>
 <h2>📝 応用試験・独立完全新作模擬試験</h2>
 <div class="notice">
 <b>読解60問＋聴解50問＝110問</b>を、本番と同じ構成で通します。<br>
@@ -1954,6 +1954,37 @@ function v85Shuffle(a){return shuffleArray(a);}
 function v85Clone(a){return a.map(x=>({...x,a:[...x.a]}));}
 function v85Balanced(qs){return balanceChoicePositions(v85Clone(qs));}
 
+function exitMock(){
+  try{ clearTimeout(window.mockTimerId); }catch(e){}
+  window.mockState=null;
+  const setup=document.getElementById('mockSetup');
+  const area=document.getElementById('mockArea');
+  const res=document.getElementById('mockResult');
+  if(setup)setup.style.display='block';
+  if(area){area.style.display='none';area.innerHTML='';}
+  if(res){res.style.display='none';res.innerHTML='';}
+  const choices=document.getElementById('v85MockChoices');
+  if(choices)choices.remove();
+  // Recreate the two mock-selection buttons when returning to the selection screen.
+  if(setup && !document.getElementById('v85MockChoices')){
+    const d=document.createElement('div');d.id='v85MockChoices';d.className='choices';
+    d.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px';
+    d.innerHTML='<button type=\"button\" class=\"primary\" onclick=\"v85MockStart(1)\">🆕 完全新作模試① 110問</button><button type=\"button\" class=\"primary\" onclick=\"v85MockStart(2)\">🆕 完全新作模試② 110問</button>';
+    const old=setup.querySelector('button[onclick=\"startMock()\"]');
+    if(old)old.remove();
+    setup.appendChild(d);
+  }
+  location.hash='#mock';
+  window.scrollTo({top:0,behavior:'auto'});
+}
+// If the user leaves the mock section by another navigation route, discard the active session
+// so returning to the mock always shows the two-set selection screen instead of resuming.
+window.addEventListener('hashchange',function(){
+  if(location.hash!=='#mock' && window.mockState){
+    try{ clearTimeout(window.mockTimerId); }catch(e){}
+    window.mockState=null;
+  }
+});
 function v85MockStart(setNo){
   const R = setNo===2 ? v85Mock2Reading : v85Mock1Reading;
   const L = setNo===2 ? v85Mock2Listening : v85Mock1Listening;
