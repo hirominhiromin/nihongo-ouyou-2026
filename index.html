@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V83 完全対策</title>
+<title>2026 日本語教員試験・応用攻略 V84 完全対策</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -210,7 +210,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 </div>
 </div>
 <div class="smallgrid">
-<div class="smallcard" onclick="location.hash='#boost'; return false;"><span>📄</span><b>模擬試験</b><i>›</i><small>本番形式で力試し</small></div>
+<div class="smallcard" onclick="location.hash='#mock'; return false;"><span>📄</span><b>模擬試験</b><i>›</i><small>読解60＋聴解50・本番形式で力試し</small></div>
 <div class="smallcard" onclick="location.hash='#master'; return false;"><span>⭐</span><b>よく出る用語集</b><i>›</i><small>重要用語を効率よく暗記</small></div>
 <div class="smallcard" onclick="location.hash='#bank'; return false;"><span>📚</span><b>応用演習・問題集</b><i>›</i><small>読解60＋聴解50＋追加90・全200問</small></div>
 <div class="smallcard" onclick="location.hash='#wrong'; return false;"><span>🔖</span><b>苦手・お気に入り</b><i>›</i><small>間違えた問題＋⭐を付けた問題を復習</small></div>
@@ -333,21 +333,21 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <h3>⏱ 聞くときの5ステップ</h3>
 <div class="item"><b>STEP 1</b> 誰が？　<b>STEP 2</b> 何の場面？　<b>STEP 3</b> 何が問題・目的？　<b>STEP 4</b> 条件・対比・結論は？　<b>STEP 5</b> 設問に必要な根拠はどこ？</div>
 <h3>🎯 聴解ミニ問題</h3>
-<div class="exam"><h3>第1問　教師の意図</h3>
+<div class="exam miniListenExam"><h3>第1問　教師の意図</h3>
 <p>学習者「先生、昨日映画を見ます。」<br/>教師「昨日……？　じゃあ、もう一度言ってみましょう。」<br/>この教師の対応として最も適切なものは？</p>
-<div class="choices"><button class="choice" onclick="ans(this,'①')">① 明示的訂正</button><button class="choice" onclick="ans(this,'②')">② リキャスト</button><button class="choice" onclick="ans(this,'③')">③ 誘導・プロンプト</button><button class="choice" onclick="ans(this,'④')">④ 答えを先に提示</button></div>
+<div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 明示的訂正</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② リキャスト</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 誘導・プロンプト</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 答えを先に提示</button></div>
 <div class="feedback" data-answer="③">正解：③　教師は「見ました」と答えを言わず、学習者自身の修正を促している。これは誘導・プロンプト。</div></div>
-<div class="exam"><h3>第2問　要点</h3>
+<div class="exam miniListenExam"><h3>第2問　要点</h3>
 <p>「今日はグループで発表します。ただ、時間が限られているので、一人3分以内にしてください。」この発話で、聞き取るべき中心的な条件は？</p>
-<div class="choices"><button class="choice" onclick="ans(this,'①')">① 発表はグループで行う</button><button class="choice" onclick="ans(this,'②')">② 一人3分以内</button><button class="choice" onclick="ans(this,'③')">③ 今日は授業がある</button><button class="choice" onclick="ans(this,'④')">④ 発表をする</button></div>
+<div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 発表はグループで行う</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 一人3分以内</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 今日は授業がある</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 発表をする</button></div>
 <div class="feedback" data-answer="②">正解：②　「ただ」「ので」に続く具体的な制限条件がポイント。数字・時間・条件は聞き取り問題で狙われやすい。</div></div>
-<div class="exam"><h3>第3問　明確化要求</h3>
+<div class="exam miniListenExam"><h3>第3問　明確化要求</h3>
 <p>学習者「駅で先生を……えっと……」<br/>教師「すみません、もう一度お願いします。」<br/>教師の発話は何か。</p>
-<div class="choices"><button class="choice" onclick="ans(this,'①')">① リキャスト</button><button class="choice" onclick="ans(this,'②')">② 明示的訂正</button><button class="choice" onclick="ans(this,'③')">③ 明確化要求</button><button class="choice" onclick="ans(this,'④')">④ メタ言語的フィードバック</button></div>
+<div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① リキャスト</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 明示的訂正</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 明確化要求</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ メタ言語的フィードバック</button></div>
 <div class="feedback" data-answer="③">正解：③　理解できなかったことを示し、もう一度の発話を求めているので明確化要求。</div></div>
-<div class="exam"><h3>第4問　対比・限定</h3>
+<div class="exam miniListenExam"><h3>第4問　対比・限定</h3>
 <p>「この教材は初級には使いやすいです。一方、中級では内容が簡単すぎるかもしれません。」最も適切な聞き取りは？</p>
-<div class="choices"><button class="choice" onclick="ans(this,'①')">① どのレベルでも使いやすい</button><button class="choice" onclick="ans(this,'②')">② 初級には使いやすいが、中級には課題がある</button><button class="choice" onclick="ans(this,'③')">③ 中級だけに適している</button><button class="choice" onclick="ans(this,'④')">④ 初級には使えない</button></div>
+<div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① どのレベルでも使いやすい</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 初級には使いやすいが、中級には課題がある</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 中級だけに適している</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 初級には使えない</button></div>
 <div class="feedback" data-answer="②">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="audioPlus">
@@ -921,13 +921,35 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <b>9〜10問</b> → 強い。応用問題・時間制限へ。</div>
 <div class="notice"><b>本番の5ステップ：</b>①設問の向き確認 → ②学習者・目的・場面・レベルを拾う → ③領域を分類 → ④選択肢を場面に当てる → ⑤本文・音声の根拠に戻る。</div>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
+
+<section class="panel" id="mock">
+<button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
+<h2>📝 応用試験・独立完全新作模擬試験</h2>
+<div class="notice">
+<b>読解60問＋聴解50問＝110問</b>を、本番と同じ構成で通します。<br>
+読解は<b>100分</b>、休憩をはさんで聴解は<b>約50分</b>。本番では聴解の音声は1回しか流れないため、この模試でも聴解は原則1回再生です。
+</div>
+<div class="typebox">
+<b>この模試は「演習バンク」へのリンクではありません。</b><br>
+専用の模試画面で、読解60問→聴解50問を一続きの試験として受け、最後に総合得点・読解得点・聴解得点・カテゴリー別結果を確認します。
+</div>
+<div id="mockSetup">
+<h3>🎯 模試の受け方</h3>
+<div class="item">① 読解60問を100分で解く　→　② 自分で休憩　→　③ 聴解50問を約50分で解く</div>
+<div class="item">聴解は1問ずつ音声を聞き、選択肢を選んだら次へ。聞き直しはできません。</div>
+<div class="item">※完全新作110問×2セット。領域横断・教育実践型を意識したオリジナル問題です。公式問題そのものではありません。</div>
+<button class="primary" type="button" onclick="startMock()">🚀 本番さながら110問を開始</button>
+</div>
+<div id="mockArea" style="display:none"></div>
+<div id="mockResult" class="notice" style="display:none"></div>
+</section>
 <section class="panel" id="bank"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>📚 応用試験・演習バンク</h2>
-<div class="notice"><b>📚 ここが問題集です：本番110問＋追加90問＋本番型難問50問＝全250問。</b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
+<div class="notice"><b>📚 ここが演習バンクです：本番110問＋追加90問＋本番型難問50問＝全250問。<b>カテゴリー別の正解数・正答率も記録します。</b></b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
 <div class="typebox"><b>使い方：</b>①まず分野別に弱点を発見 → ②次に60問／50問を通しで解く → ③最後に110問で本番感覚を作る。正解だけでなく「なぜ他の選択肢ではないか」まで確認。</div>
 <div class="item"><b>目標：</b>110問でまず80点、安定して85点前後。読解45＋聴解35＝80点を一つの目安にします。</div>
 <div class="choices bankModes" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><button class="secondary bankModeBtn" data-bank-mode="reading" onclick="runBank('reading')">📖 読解60問</button><button class="secondary bankModeBtn" data-bank-mode="listening" onclick="runBank('listening')">🎧 聴解50問</button><button class="secondary bankModeBtn" data-bank-mode="random20" onclick="runBank('random20')">🎯 ランダム20問</button><button class="secondary bankModeBtn" data-bank-mode="all" onclick="runBank('all')">🔥 本番110問</button><button class="secondary bankModeBtn" data-bank-mode="extra40" onclick="runBank('extra40')">💪 追加40問</button><button class="secondary bankModeBtn" data-bank-mode="extra50" onclick="runBank('extra50')">🆕 追加50問</button><button class="secondary bankModeBtn" data-bank-mode="hard50" onclick="runBank('hard50')">🔴 本番型・難問50問</button><button class="secondary bankModeBtn" data-bank-mode="all150" onclick="runBank('all150')">🚀 強化150問</button><button class="secondary bankModeBtn" data-bank-mode="all200" onclick="runBank('all200')">🏆 完全強化200問</button><button class="secondary bankModeBtn" data-bank-mode="all250" onclick="runBank('all250')">💎 完全強化250問</button></div>
-<div id="bankResult" class="notice" style="display:none"></div><div id="bankQuiz"></div>
+<div id="bankResult" class="notice" style="display:none"></div><div id="bankCategoryStats" class="item" style="display:none"></div><div id="bankQuiz"></div>
 </section>
 <section class="panel" id="master"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>🧠 日本語教師 必須用語マスター</h2>
@@ -1020,6 +1042,7 @@ const hard=hardReading.concat(hardListening);
   bankState={mode,questions:qs,answers:0,answered:0,started:Date.now()};
   const box=document.getElementById('bankQuiz'),res=document.getElementById('bankResult');
   res.style.display='block';res.innerHTML='<b>'+({reading:'読解60問',listening:'聴解50問',random20:'ランダム20問',extra40:'追加40問',extra50:'追加50問',hard50:'🔴 本番型・難問50問（毎回ランダム）',all:'本番110問',all150:'強化150問',all200:'完全強化200問',all250:'💎 完全強化250問'}[mode])+'</b> を開始。選んだ答えは変更できません。';
+  renderBankCategoryStats();
   box.innerHTML=qs.map((x,i)=>{
     const isL=x.type==='聴解';
     const audioKey=isL?'bank-'+i:''; if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[audioKey]=x.script;} const audio=isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${audioKey}">🔊 音声を聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div>`:'';
@@ -1033,8 +1056,10 @@ function answerBank(btn,i,j){
   exam.dataset.done='1'; bankState.answered=(bankState.answered||0)+1;
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
   const fb=exam.querySelector('.feedback'); const correctIndex=x.c;
-  if(j===correctIndex){btn.classList.add('correct');bankState.answers++;fb.className='feedback ok';fb.innerHTML='⭕ 正解！<br>'+x.e;}
+  const ok=j===correctIndex;
+  if(ok){btn.classList.add('correct');bankState.answers++;fb.className='feedback ok';fb.innerHTML='⭕ 正解！<br>'+x.e;}
   else{btn.classList.add('wrong');exam.querySelectorAll('.choice').forEach((b,k)=>{if(k===correctIndex)b.classList.add('correct');});fb.className='feedback ng';fb.innerHTML='❌ 正解は '+String.fromCharCode(65+correctIndex)+'。<br>'+x.e; const key='bank-'+(x.n||i)+'-'+x.q; if(!wrong.some(w=>w.key===key)){wrong.push({key:key,type:x.type||'演習',q:x.q,answer:x.a[x.c],explanation:x.e});localStorage.setItem('ntWrong',JSON.stringify(wrong));}}
+  recordBankCategory(x,ok);
   if(x.type==='聴解'){fb.innerHTML+=' <br><details><summary>🎧 スクリプトを見る</summary><div class="mini">'+(x.script||'')+'</div></details>';}
   if(bankState.answered===bankState.questions.length){
     const total=bankState.questions.length,rate=Math.round(bankState.answers/total*1000)/10;
@@ -1675,17 +1700,206 @@ function speakOnce(text,btn){
   }
 }
 
-function shuffleStaticAudioChoices(){
-  document.querySelectorAll('.audioMini.exam').forEach(exam=>{
-    const choices=[...exam.querySelectorAll('.choice')];
-    if(choices.length<2) return;
-    const arr=shuffleArray(choices);
-    const parent=choices[0].parentNode;
-    arr.forEach((b,i)=>{ b.textContent=String.fromCharCode(0x2460+i)+' '+(b.dataset.answer||b.textContent.replace(/^.[\s.、]*/,'')); parent.appendChild(b); });
-  });
-}
+// V84: static audio mini choices are balanced by the enhanced function above.
 shuffleStaticAudioChoices();
 
+
+function staticMiniAns(btn){
+  const exam=btn.closest('.exam');
+  if(!exam || btn.disabled) return false;
+  exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+  const chosen=btn.getAttribute('data-static-answer');
+  const fb=exam.querySelector('.feedback');
+  const correct=fb ? fb.getAttribute('data-answer') : null;
+  const ok=chosen===correct;
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok){
+    exam.querySelectorAll('.choice').forEach(b=>{
+      if(b.getAttribute('data-static-answer')===correct) b.classList.add('correct');
+    });
+  }
+  if(fb){
+    fb.className='feedback '+(ok?'ok':'ng');
+    const explanation=fb.textContent.replace(/^正解：[^　 ]+　?/, '');
+    fb.innerHTML=(ok?'⭕ 正解！<br>':'❌ 不正解。正解は '+correct+'。<br>')+explanation;
+  }
+  return false;
+}
+
+function renderBankCategoryStats(extraHtml=''){
+  const el=document.getElementById('bankCategoryStats');
+  if(!el) return;
+  const st=JSON.parse(localStorage.getItem('ntBankStats')||'{}');
+  const rows=Object.entries(st).sort((a,b)=>{
+    const ar=a[1],br=b[1];
+    return (br.attempt||0)-(ar.attempt||0) || a[0].localeCompare(b[0],'ja');
+  });
+  if(!rows.length){el.style.display='none';return;}
+  let totalA=0,totalC=0;
+  rows.forEach(([,v])=>{totalA+=v.attempt||0;totalC+=v.correct||0;});
+  let table='<div style="overflow:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:6px">カテゴリー</th><th>正解</th><th>解答</th><th>正答率</th></tr></thead><tbody>';
+  for(const [cat,v] of rows){
+    const rate=v.attempt?Math.round(v.correct/v.attempt*1000)/10:0;
+    table+=`<tr><td style="padding:6px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct||0}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.attempt||0}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${rate}%</td></tr>`;
+  }
+  table+='</tbody></table></div>';
+  el.style.display='block';
+  el.innerHTML=`<b>📊 演習バンク・カテゴリー別成績</b><br><span class="mini">累計：${totalC}問正解 / ${totalA}問解答（${totalA?Math.round(totalC/totalA*1000)/10:0}%）</span>${table}<button type="button" class="secondary" onclick="clearBankStats()">カテゴリー成績をリセット</button>${extraHtml}`;
+}
+function recordBankCategory(x,ok){
+  const cat=x.cat||'その他';
+  const st=JSON.parse(localStorage.getItem('ntBankStats')||'{}');
+  if(!st[cat]) st[cat]={correct:0,attempt:0};
+  st[cat].attempt++;
+  if(ok) st[cat].correct++;
+  localStorage.setItem('ntBankStats',JSON.stringify(st));
+  renderBankCategoryStats();
+}
+function clearBankStats(){
+  localStorage.removeItem('ntBankStats');
+  renderBankCategoryStats();
+}
+
+function shuffleStaticAudioChoices(){
+  const exams=[...document.querySelectorAll('.miniListenExam')];
+  const target=[0,1,2,3];
+  // Across all static mini/drill cards, distribute correct positions rather than
+  // independently randomizing each card. This prevents long A/B runs.
+  const targets=[];
+  for(let i=0;i<exams.length;i++) targets.push(target[i%4]);
+  for(let i=targets.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[targets[i],targets[j]]=[targets[j],targets[i]];}
+  exams.forEach((exam,idx)=>{
+    const choices=[...exam.querySelectorAll('.choice')];
+    if(choices.length<2) return;
+    const fb=exam.querySelector('.feedback[data-answer]');
+    const correctVal=fb ? fb.getAttribute('data-answer') : null;
+    if(!correctVal) return;
+    const correct=choices.findIndex(b=>b.getAttribute('data-static-answer')===correctVal || b.getAttribute('data-answer')===correctVal);
+    if(correct<0) return;
+    const correctPos=targets[idx];
+    if(correctPos>=choices.length) return;
+    const arr=choices.slice();
+    [arr[correct],arr[correctPos]]=[arr[correctPos],arr[correct]];
+    const parent=choices[0].parentNode;
+    arr.forEach((b,i)=>{
+      const label=String.fromCharCode(0x2460+i);
+      const txt=(b.textContent||'').replace(/^[①②③④]\s*/,'');
+      b.textContent=label+' '+txt;
+      parent.appendChild(b);
+    });
+  });
+}
+
+function startMock(){
+  const reading=shuffleArray(bankReading).slice(0,60).map((x,i)=>({...x,n:i+1,type:'読解'}));
+  const listening=shuffleArray(bankListening).slice(0,50).map((x,i)=>({...x,n:i+1,type:'聴解'}));
+  const qs=balanceChoicePositions(reading.concat(listening));
+  window.mockState={
+    stage:'reading',questions:qs.slice(0,60),all:qs,answers:0,answered:0,index:0,
+    readingScore:0,listeningScore:0,readingStart:Date.now(),listeningStart:null,
+    selected:{reading:{},listening:{}},audioPlayed:{}
+  };
+  document.getElementById('mockSetup').style.display='none';
+  document.getElementById('mockResult').style.display='none';
+  document.getElementById('mockArea').style.display='block';
+  renderMockQuestion();
+}
+function currentMockQuestion(){
+  const s=window.mockState;
+  if(!s)return null;
+  return s.stage==='reading'?s.questions[s.index]:s.all[60+s.index];
+}
+function renderMockQuestion(){
+  const s=window.mockState;if(!s)return;
+  const area=document.getElementById('mockArea');if(!area)return;
+  const q=currentMockQuestion();
+  if(!q){finishMockStage();return;}
+  const isL=s.stage==='listening';
+  const key='mock-'+s.stage+'-'+s.index;
+  if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=q.script||'';}
+  const selected=s.selected[s.stage][s.index];
+  const nav=s.stage==='reading'
+    ? `<div class="mockNav"><button type="button" class="secondary" onclick="mockMove(-1)" ${s.index===0?'disabled':''}>← 前へ</button><button type="button" class="secondary" onclick="mockMove(1)">${s.index===59?'読解を終了 →':'次へ →'}</button></div>`
+    : `<div class="mockNav"><button type="button" class="primary" onclick="mockMove(1)">${s.index===49?'聴解を終了 →':'次の問題 →'}</button></div>`;
+  area.dataset.answered='0';
+  area.innerHTML=`<div class="exam mockq">
+    <div class="item"><b>${isL?'🎧 聴解':'📖 読解'} ${s.index+1} / ${isL?50:60}</b> <span class="badge">${q.cat||''}</span><span style="float:right;font-weight:800" id="mockTimer">--:--</span></div>
+    <p>${q.q}</p>
+    ${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${key}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}
+    <div class="choices">${q.a.map((a,j)=>`<button type="button" class="choice ${selected===j?'selected':''}" data-mock-choice="${j}" onclick="selectMock(${j});return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div>
+    <div class="mini">※本番モードでは正解・解説は試験終了まで表示しません。${isL?'聴解は次へ進んだ後、前の問題には戻れません。':'読解は前後に移動できます。'}</div>
+    ${nav}
+  </div>`;
+  updateMockTimer();
+}
+function selectMock(j){
+  const s=window.mockState;if(!s)return;
+  const q=currentMockQuestion();if(!q)return;
+  s.selected[s.stage][s.index]=j;
+  document.querySelectorAll('#mockArea .choice').forEach((b,k)=>b.classList.toggle('selected',k===j));
+}
+function mockMove(delta){
+  const s=window.mockState;if(!s)return;
+  if(s.stage==='reading'){
+    const next=s.index+delta;
+    if(next<0)return;
+    if(next>=60){finishMockStage();return;}
+    s.index=next;renderMockQuestion();
+  }else{
+    // Listening is one-way in the mock: once you leave a question, you cannot return.
+    const cur=s.index;
+    if(s.selected.listening[cur]===undefined){
+      const ok=confirm('この問題はまだ回答が選ばれていません。未回答のまま次へ進みますか？');
+      if(!ok)return;
+    }
+    const next=cur+1;
+    if(next>=50){finishMockStage();return;}
+    s.index=next;renderMockQuestion();
+  }
+}
+function finishMockStage(){
+  const s=window.mockState;
+  if(s.stage==='reading'){
+    s.stage='listening';s.index=0;s.listeningStart=null;
+    const area=document.getElementById('mockArea');
+    area.innerHTML='<div class="notice"><h3>📖 読解60問終了</h3><p>ここではまだ採点結果を表示しません。本番と同じように休憩を取ってください。</p><p>準備ができたら聴解50問を開始します。聴解は1回再生・前に戻れません。</p><button type="button" class="primary" onclick="beginMockListening()">🎧 聴解50問を開始</button></div>';
+  }else{
+    scoreMock();
+  }
+}
+function beginMockListening(){
+  const s=window.mockState;if(!s)return;
+  s.stage='listening';s.index=0;s.listeningStart=Date.now();renderMockQuestion();
+}
+function scoreMock(){
+  const s=window.mockState;
+  s.readingScore=0;s.listeningScore=0;
+  s.questions.forEach((q,i)=>{if(s.selected.reading[i]===q.c)s.readingScore++;});
+  for(let i=0;i<50;i++){const q=s.all[60+i];if(s.selected.listening[i]===q.c)s.listeningScore++;}
+  s.answers=s.readingScore+s.listeningScore;
+  const rate=Math.round(s.answers/110*1000)/10;
+  const cats={};
+  s.all.forEach((q,idx)=>{
+    const stage=idx<60?'reading':'listening',qi=idx<60?idx:idx-60;
+    const cat=q.cat||'その他';if(!cats[cat])cats[cat]={correct:0,total:0};
+    cats[cat].total++;if(s.selected[stage][qi]===q.c)cats[cat].correct++;
+  });
+  const rows=Object.entries(cats).sort((a,b)=>a[0].localeCompare(b[0],'ja')).map(([cat,v])=>`<tr><td style="padding:5px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.total}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${Math.round(v.correct/v.total*1000)/10}%</td></tr>`).join('');
+  const res=document.getElementById('mockResult');res.style.display='block';
+  res.innerHTML=`<h3>🏁 模試終了・採点結果</h3><b>総合：${s.answers} / 110（${rate}%）</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>目標80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※公式の応用試験は総合得点6割程度が合格基準。ここでは80点超を目標にしています。</span><br><button type="button" class="primary" onclick="startMock()">🔄 もう一度模試</button>`;
+  document.getElementById('mockArea').innerHTML='';
+  clearTimeout(window.mockTimerId);
+}
+function updateMockTimer(){
+  const el=document.getElementById('mockTimer'),s=window.mockState;if(!el||!s)return;
+  const limit=s.stage==='reading'?100*60:50*60;
+  const start=s.stage==='reading'?s.readingStart:s.listeningStart;
+  if(!start){el.textContent=s.stage==='reading'?'100:00':'50:00';return;}
+  const remain=Math.max(0,limit-Math.floor((Date.now()-start)/1000));
+  el.textContent=String(Math.floor(remain/60)).padStart(2,'0')+':'+String(remain%60).padStart(2,'0');
+  if(remain===0){finishMockStage();return;}
+  clearTimeout(window.mockTimerId);window.mockTimerId=setTimeout(updateMockTimer,1000);
+}
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator){
   navigator.serviceWorker.getRegistrations().then(function(rs){
@@ -1722,9 +1936,132 @@ updateCountdown();setInterval(updateCountdown,3600000);
     setTimeout(()=>b.classList.remove('v83-tapped'),180);
   },{passive:true});
   const st=document.createElement('style');
-  st.textContent='.v83-tapped{transform:scale(.985);filter:brightness(.96)}';
+  st.textContent='.v83-tapped{transform:scale(.985);filter:brightness(.96)}.mockq .choice.selected{outline:2px solid #315efb;background:#eef4ff}.mockNav{display:flex;gap:8px;justify-content:space-between;margin-top:14px}.mockNav button{flex:1}';
   document.head.appendChild(st);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit,{once:true});else audit();
+
+/* V85 final layer: two independent fully-new mock sets + adaptive bank + weakness diagnosis */
+const v85Mock1Reading = [{"q":"学習者「昨日、レポートを出します。」教師「昨日は……？」学習者「出しました。」","a":["自己修正を促すプロンプト","正しい形を教師が言い直すリキャスト","誤りを明示して訂正する","誤りを採点する"],"c":0,"e":"教師の促しで学習者自身が「出しました」に修正しているためプロンプト。","cat":"フィードバック","type":"読解"},{"q":"学習者「駅で切符を買いました。」教師「駅で切符を買いましたね。」と自然に言い直した。","a":["メタ言語的フィードバック","リキャスト","明確化要求","明示的訂正"],"c":0,"e":"教師が正しい形を自然に言い換えて返しており、リキャスト。","cat":"フィードバック","type":"読解"},{"q":"学習者「先生、昨日は宿題をしません。」教師「過去のことなら、どんな形？」学習者「しませんでした。」","a":["明示的訂正だけ","メタ言語的フィードバックを伴うプロンプト","総括的評価","レアリア提示"],"c":0,"e":"形式への手がかりを与え、自己修正を引き出している。","cat":"フィードバック","type":"読解"},{"q":"会話活動中、教師がすべての誤用をその場で止めて訂正したため、学習者同士のやり取りが途切れた。改善案として最も妥当なのは？","a":["活動目標に応じ、流暢さを優先する場面では訂正をまとめて後で扱う","すべての誤用を即時に訂正する","誤用は一切扱わない","教師が学習者の発話を代行する"],"c":0,"e":"活動の目的が相互作用なら、流れを保ちつつ後で形式に焦点を当てる調整が妥当。","cat":"授業判断","type":"読解"},{"q":"学習者の発話「この薬を食べます」を聞いた教師が、まず「薬は？ 食べますか、飲みますか」と選択肢を示した。","a":["明示的訂正","リキャスト","プロンプト","総括的評価"],"c":0,"e":"教師が正答を直接与えず、自己修正につながる手がかりを出しているためプロンプト。","cat":"フィードバック","type":"読解"},{"q":"誤用を直した後、教師が「今の言い方と、さっきの言い方は何が違いましたか」と尋ねた。主なねらいは？","a":["正答の暗記だけ","形式への気づきと内省を促す","順位を決める","学習者の母語を禁止する"],"c":0,"e":"修正前後を比較させ、言語形式への気づきと内省を促している。","cat":"フィードバック","type":"読解"},{"q":"新しい会話テストを作った。教師が測りたいのは「病院で症状を説明できる力」だが、問題の大半は文法用語の選択だった。最も大きな問題は？","a":["信頼性","妥当性","客観性","中央値"],"c":1,"e":"測りたい会話能力ではなく文法知識に偏っているため、妥当性の問題。","cat":"評価・測定","type":"読解"},{"q":"同じ作文を複数の評価者が採点すると点数が大きく異なる。まず改善を検討すべきものは？","a":["評価基準の明確化","学習者数の削減","読解時間の短縮","教材の真正性"],"c":0,"e":"評価者間のばらつきを抑えるには、評価基準やルーブリックを明確にすることが重要。","cat":"評価・測定","type":"読解"},{"q":"授業途中のミニ課題で「依頼表現」が弱いと分かった。教師が次時の練習を変更した。この評価の主な機能は？","a":["総括的","形成的","集団準拠","選抜"],"c":1,"e":"学習途中の情報を次の指導改善に使っているため形成的評価。","cat":"評価・測定","type":"読解"},{"q":"コース開始前に、学習者が「電話で予約する」経験があるか確認した。これは何の把握に近い？","a":["ニーズ","レディネス","波及効果","識別力"],"c":1,"e":"開始時点の準備状態・既習経験を把握するのでレディネス調査。","cat":"評価・測定","type":"読解"},{"q":"「上位群の正答率90%、下位群20%」という結果から考えられることは？","a":["学力差を識別する可能性がある","必ず妥当性がない","必ず難しすぎる","正答率を計算できない"],"c":0,"e":"上位群と下位群で正答率に大きな差があり、識別力が期待できる。","cat":"評価・測定","type":"読解"},{"q":"10項目中7項目を正解した。正答率は？","a":["17%","70%","73%","80%"],"c":1,"e":"7÷10×100＝70%。","cat":"評価・測定","type":"読解"},{"q":"「駅で乗り換えを説明できる」を最終目標にした。最終評価で実際の路線図を使い説明させる。最も評価できる点は？","a":["目標と評価課題が対応している","文法項目が多い","教師の説明時間が長い","教材が必ず生教材である"],"c":0,"e":"目標で求める行為と評価課題が対応しており、整合性が高い。","cat":"授業設計","type":"読解"},{"q":"学習者が「職場で同僚に報告する」必要がある。コース設計で最初に調べるべき情報は？","a":["必要な使用場面・目的","教師の好きな教授法","教室の壁の色","漢字の画数"],"c":0,"e":"学習者の目的や必要な言語活動を把握するニーズ分析が先。","cat":"授業設計","type":"読解"},{"q":"目標→評価→活動の順に逆算して授業を作る考え方は？","a":["逆向き設計","多読","文法訳読法","診断的評価"],"c":0,"e":"最終目標と評価を先に定め、活動を逆算する逆向き設計。","cat":"授業設計","type":"読解"},{"q":"「初級者が市役所で必要な情報を探す」が目標。活動として最も適切なのは？","a":["市役所の案内から必要情報を探す課題","文法用語を30個暗記","教師の講義を60分聞く","漢字を同じ字100回書く"],"c":0,"e":"目標の実際の行為に近い情報探索課題が適切。","cat":"授業設計","type":"読解"},{"q":"グループ活動で全員が同じ資料を見て沈黙している。改善案は？","a":["役割や情報差を設け、互いのやり取りを必要にする","人数だけ倍にする","教師が答えを全部話す","活動を個人テストに変える"],"c":0,"e":"相互作用を必然化する情報差や役割設定が有効。","cat":"授業設計","type":"読解"},{"q":"授業目標は「依頼を適切に行う」だが、活動は単語暗記だけ。まず確認すべきは？","a":["目標・活動・評価の整合性","教室の温度","教師の板書量","学習者の座席番号"],"c":0,"e":"目標に必要な言語行為と活動が一致しているかを見直す。","cat":"授業設計","type":"読解"},{"q":"教師がモデル会話を示し、カードを見ながら練習させ、最後にカードなしで行わせた。説明として最も適切なのは？","a":["支援を徐々に減らすスキャフォールディング","総括的評価","集団準拠評価","翻訳法"],"c":0,"e":"一時的支援を与え、段階的に自立した遂行へ移す設計。","cat":"第二言語習得","type":"読解"},{"q":"学習者が自分の発話とモデルの発話を比べ、「ここが違う」と気づいた。この過程に近いのは？","a":["Noticing","化石化","標準化","スキミング"],"c":0,"e":"自分の表現と目標言語の違いに注意を向けるのはNoticing。","cat":"第二言語習得","type":"読解"},{"q":"学習者同士が聞き返しや言い換えを行い、意味を確認しながら会話を続けた。何が習得を支える？","a":["意味交渉を伴う相互作用","一斉講義","単語暗記のみ","総括的評価"],"c":0,"e":"やり取りの中で理解を調整する意味交渉と相互作用。","cat":"第二言語習得","type":"読解"},{"q":"「教えた内容を覚えたか」だけでなく、学習者自身が学習方法を計画し振り返る活動を入れる。主に何を育てる？","a":["自律学習・メタ認知","受身形","客観性","レアリア"],"c":0,"e":"学習の計画・モニタリング・振り返りはメタ認知や自律学習に関わる。","cat":"第二言語習得","type":"読解"},{"q":"母語で「冠詞」を使う学習者が日本語で不要な「a」に相当する表現を入れ続ける。まず考えたい要因は？","a":["母語からの転移","真正性","波及効果","スキャニング"],"c":0,"e":"母語の構造が第二言語の表現に影響する可能性がある。","cat":"第二言語習得","type":"読解"},{"q":"誤用が「ランダムな間違い」ではなく、一定の規則性をもって現れる。これをどう捉える？","a":["学習途中の体系として中間言語を分析する","能力が全くない証拠とする","すべて母語のせいにする","評価を中止する"],"c":0,"e":"学習者の言語には発達途中の体系性があり、中間言語として分析できる。","cat":"第二言語習得","type":"読解"},{"q":"同じ「ちょっとお願いできますか」でも、友人と取引先では必要な配慮が異なる。判断の中心は？","a":["場面・相手との関係に応じた語用的適切さ","文字数","モーラ数だけ","辞書掲載順"],"c":0,"e":"文法的に可能でも、相手・場面・目的に応じた適切さが異なる。","cat":"語用・社会言語","type":"読解"},{"q":"上司に「これ、やって」と言う学習者への指導として最も適切なのは？","a":["関係性と場面を示し、より適切な依頼表現を比較させる","その表現を全場面で禁止する","文法的に間違いだとだけ伝える","母語を使わせない"],"c":0,"e":"待遇表現は相手・場面に応じた選択として指導する。","cat":"語用・社会言語","type":"読解"},{"q":"「ここ」「今」「私」の指示対象が発話状況で変わる。これは？","a":["ダイクシス","コロケーション","換喩","アスペクト"],"c":0,"e":"話者・場所・時間など発話場面に依存する指示表現がダイクシス。","cat":"語用・社会言語","type":"読解"},{"q":"「教室が笑った」のように、場所の名称でその場所にいる人々を指す用法に近いのは？","a":["メトニミー","ダイクシス","テンス","促音"],"c":0,"e":"関連の深い対象を別の名称で指す換喩的な用法。","cat":"語用・社会言語","type":"読解"},{"q":"学習者が「正しい日本語」を一つだけ覚えようとしている。教師の説明として適切なのは？","a":["場面や相手によって自然な表現が変わることがある","標準語以外はすべて誤り","敬語は誰にでも同じ","方言は学習対象にならない"],"c":0,"e":"言語使用には場面・関係・地域などによる変異がある。","cat":"語用・社会言語","type":"読解"},{"q":"地域日本語教室で、生活者が「ごみ出しのルールを近所の人に確認できる」ことを目標にした。適切な方向は？","a":["生活・社会参加の具体的ニーズに結び付ける","文法用語の暗記だけにする","日本文化への同化だけを目標にする","会話を避ける"],"c":0,"e":"地域日本語教育では生活・社会参加上の具体的ニーズとの接続が重要。","cat":"語用・社会言語","type":"読解"},{"q":"「食べさせられた」のように、使役と受身が組み合わさっている形を分析する。最も近い観点は？","a":["ヴォイスの複合的な表現","テンスだけ","ダイクシスだけ","語用論だけ"],"c":0,"e":"使役・受身など、参与者関係を変える形式をヴォイスの観点から分析できる。","cat":"言語分析・音声","type":"読解"},{"q":"「食べてしまった」の「てしまう」が、話し手の残念・完了などを表す。どの観点を検討する？","a":["アスペクトとモダリティ的意味","格助詞だけ","モーラだけ","社会方言だけ"],"c":0,"e":"「てしまう」には完了・遺憾などの意味があり、アスペクトや話し手の態度に関わる。","cat":"言語分析・音声","type":"読解"},{"q":"「明日は雨でしょう」の「でしょう」が表す中心的な意味は？","a":["話し手の推量・判断","出来事の完了","移動先の格","音の長さ"],"c":0,"e":"推量など話し手の判断・態度に関わるのでモダリティ。","cat":"言語分析・音声","type":"読解"},{"q":"「薬を飲む」「ご飯を食べる」のように自然な語の組み合わせを扱う指導は？","a":["コロケーション","ダイクシス","スキーマ","ZPD"],"c":0,"e":"語と語の自然な共起関係がコロケーション。","cat":"言語分析・音声","type":"読解"},{"q":"「おばさん／おばあさん」の聞き分けで中心となる音声的手掛かりは？","a":["長音の有無・母音の持続時間","促音の有無","鼻音の有無だけ","敬語の種類"],"c":0,"e":"「おばあさん」には長音があり、母音の持続時間が聞き分けの手掛かりになる。","cat":"言語分析・音声","type":"読解"},{"q":"「きって／きて」の聞き分けで注意する音声的特徴は？","a":["促音による一拍分の詰まり","長音だけ","撥音だけ","アクセントは関係しない"],"c":0,"e":"促音は一拍分の詰まりとして現れ、「きって／きて」の対立に関わる。","cat":"言語分析・音声","type":"読解"},{"q":"長い説明文を読む前に、見出しと図を見て内容を予想する。主に使っている方略は？","a":["トップダウン的な予測","一語ずつのボトムアップのみ","精読のみ","書き取り"],"c":0,"e":"既有知識や見出しなどから全体を予測するトップダウン処理。","cat":"受容・理解","type":"読解"},{"q":"契約書から「解約期限の日付」だけを探す。","a":["スキャニング","スキミング","多読","音読"],"c":0,"e":"特定の情報を探し出す読み方はスキャニング。","cat":"受容・理解","type":"読解"},{"q":"記事の全体的な主張を短時間で把握する。","a":["スキミング","スキャニング","ディクトグロス","精読"],"c":0,"e":"文章全体の概要・要点を素早くつかむスキミング。","cat":"受容・理解","type":"読解"},{"q":"未知語が一つ出ても、前後の文から意味を推測して読み進めた。","a":["文脈を利用した推測","必ず辞書を引くボトムアップのみ","書き写し","翻訳"],"c":0,"e":"前後の文脈を手掛かりに意味を推測する方略。","cat":"受容・理解","type":"読解"},{"q":"聴解で重要語をすべて聞き取れなくても、目的に必要な情報に絞るよう指導した。","a":["選択的注意","全文暗記","精読","総括的評価"],"c":0,"e":"目的に必要な情報へ注意を向ける選択的な聞き方。","cat":"受容・理解","type":"読解"},{"q":"読解後に「自分の予想と本文の内容はどこが違ったか」を確認させる。","a":["モニタリング","総括的採点","レアリア","言語変種"],"c":0,"e":"理解過程を振り返り、予測を修正するのはメタ認知的モニタリング。","cat":"受容・理解","type":"読解"},{"q":"オンライン授業で、学習者が録画を見てから掲示板で質問し、次回授業で扱う。","a":["非同期学習を組み合わせている","同期型だけ","レアリア","文法訳読法"],"c":0,"e":"録画視聴と掲示板投稿を時間をずらして行うため非同期型。","cat":"ICT・情報活用","type":"読解"},{"q":"対面授業とオンライン教材を組み合わせ、学習者が授業外でも練習する。","a":["ブレンディッド・ラーニング","多読","直接法","集団準拠評価"],"c":0,"e":"複数の学習形態を組み合わせるブレンディッド・ラーニング。","cat":"ICT・情報活用","type":"読解"},{"q":"ICT教材を選ぶ際、最も重要な基準は？","a":["学習目標に対してどんな効果があるか","最新機能が多いかだけ","見た目が派手かだけ","教師が操作しやすいかだけ"],"c":0,"e":"ICT利用自体を目的にせず、学習目標への効果で選ぶ。","cat":"ICT・情報活用","type":"読解"},{"q":"Web記事を授業資料に載せるとき、「ネット上にあるから自由に転載できる」と考えるのは？","a":["不適切。利用条件・権利・引用等を確認する","常に正しい","授業なら無条件で自由","無料記事なら無条件で自由"],"c":0,"e":"公開されていることと、複製・転載できることは別。条件確認が必要。","cat":"ICT・情報活用","type":"読解"},{"q":"学習管理システムで課題提出・進捗・フィードバックを一元管理する。主な利点は？","a":["学習活動と進捗情報を管理しやすい","必ず学習効果が上がる","教師の判断が不要になる","対面授業が法律上不要になる"],"c":0,"e":"LMSは課題・提出・進捗等を管理する基盤になるが、導入だけで効果が保証されるわけではない。","cat":"ICT・情報活用","type":"読解"},{"q":"音声認識ツールを発音練習に使う。最も適切な説明は？","a":["補助的なフィードバックとして使い、教師や学習者自身の判断と組み合わせる","判定結果を常に絶対視する","認識されない語は必ず発音が誤り","教師の指導を完全に不要にする"],"c":0,"e":"ICTの判定には限界があり、学習目標に沿った補助的フィードバックとして使うのが適切。","cat":"ICT・情報活用","type":"読解"},{"q":"日本語教育史を学ぶとき、現在の実践に生かす見方として最も適切なのは？","a":["教授法や教育観の変化を社会的背景と結び付けて捉える","昔の方法をそのまま再現する","歴史は現在と無関係と考える","年代だけ暗記する"],"c":0,"e":"歴史的背景と教育観・教授法の変化を関連付けると、現在の実践を相対化できる。","cat":"日本語教育史","type":"読解"},{"q":"多文化共生の地域活動で、外国人住民に日本人の習慣を一方的に守らせることだけを目標にする。問題点は？","a":["相互理解や参加より一方的な同化を重視している","日本語を使うから正しい","地域活動なら必ず正しい","文化差は存在しない"],"c":0,"e":"多文化共生は一方的な同化ではなく、違いを認めながら共に社会参加する視点が重要。","cat":"多文化共生","type":"読解"},{"q":"学校で日本語指導が必要な児童生徒への支援で、最も適切なのは？","a":["日本語だけでなく教科学習・学校生活・家庭背景も踏まえる","日本語が上達するまで教科を教えない","母語を一律禁止する","全員に同じ支援をする"],"c":0,"e":"児童生徒の教育では言語・教科・生活・背景を総合的に捉える。","cat":"社会・文化・地域","type":"読解"},{"q":"日本語能力試験についての説明として適切なのは？","a":["言語知識・読解・聴解を測るが、話す・書くを直接測る試験ではない","会話だけを測る","作文だけを測る","日本語教師資格を直接判定する"],"c":0,"e":"JLPTの測定範囲と、直接測定しない技能を区別する必要がある。","cat":"日本語の試験","type":"読解"},{"q":"教師が一人で学習者支援の問題を抱え込んでいる。改善として最も適切なのは？","a":["必要に応じて同僚・学校・地域の関係者と連携する","教師だけで解決する","学習者に責任を負わせる","支援を打ち切る"],"c":0,"e":"対人関係能力では、関係者と協働・連携して課題に対応することが重要。","cat":"教師・連携","type":"読解"},{"q":"異文化場面で「この国の人は必ずこう考える」と判断した。最も注意すべき点は？","a":["文化的傾向と個人差・状況差を区別する","文化差をすべて無視する","一つの文化だけを正解にする","国籍だけで個人の行動を決める"],"c":0,"e":"文化的特徴を参考にしつつ、個人差・状況差を考慮することが重要。","cat":"異文化","type":"読解"},{"q":"学習者が地域の日本語教室で、近所の人に「ごみ出しの曜日」を聞けるようになりたい。最も適切な教材は？","a":["実際の地域のごみ収集案内を使った情報探索課題","文法用語一覧","抽象的な長文だけ","無関係な漢字ドリル"],"c":0,"e":"実際の生活課題に必要な情報を扱う教材・課題が目的に合う。","cat":"教材","type":"読解"},{"q":"教材を分析するとき、初級学習者には文章が長く未習語も多いが、目標は「必要な時刻を探す」ことだった。改善案は？","a":["課題目的を保ちつつ、不要な語彙・表記負担を調整する","未習語をさらに増やす","目標を無視する","全文暗記に変える"],"c":0,"e":"真正性を保ちつつ、測りたい能力を妨げる不要な負荷を調整する。","cat":"教材分析","type":"読解"},{"q":"「教師が説明し、学習者が同じ練習を繰り返す」活動が目的に合う場合として適切なのは？","a":["新しい形の正確な練習を段階的に行う場面","必ず自由会話だけが必要な場面","社会参加の最終評価だけ","情報差活動の代替として常に使う"],"c":0,"e":"形式の正確な練習など、目的に応じて教師主導の活動が有効な場面もある。","cat":"教授法","type":"読解"},{"q":"授業見学後、実習生が「楽しかった」で終わらず、学習者の発話量・時間配分・目標達成を記録した。何につながる？","a":["根拠に基づく授業分析・自己点検","総括的評価だけ","日本語教育史","レアリア収集"],"c":0,"e":"観察可能な事実を根拠に振り返ることは授業分析・自己点検につながる。","cat":"教育実習","type":"読解"},{"q":"地域の日本語教育で、学習者の母語を使える支援者がいる。最も適切な活用は？","a":["理解や社会参加を支える資源として、目的に応じて活用する","母語使用を常に禁止する","日本語学習をやめさせる","母語だけで授業する"],"c":0,"e":"多言語資源を学習・支援に生かしつつ、日本語での社会参加も支える。","cat":"多言語・地域","type":"読解"},{"q":"教師が授業後に録画を見返し、「導入が長く活動時間が不足した」と記録した。次に最も適切なのは？","a":["次回の時間配分を修正し、改善後も結果を確認する","記録を削除する","学習者のせいにする","教材をすべて捨てる"],"c":0,"e":"省察→改善→再確認という循環で授業を改善する。","cat":"授業分析","type":"読解"}];
+const v85Mock1Listening = [{"script":"学習者「昨日は会社へ行きます。」","q":"「昨日は会社へ行きます。」の中心的な誤りは？","a":["テンス","アスペクト","ヴォイス","モダリティ"],"c":0,"e":"過去を示す「昨日」と非過去形が不一致なのでテンス。","cat":"言語分析","type":"聴解"},{"script":"学習者「先生に本を読まれました。」教師「自分が読んだのか、先生が読んだのか確認しましょう。」","q":"教師がまず確認している観点は？","a":["ヴォイスと参与者関係","長音","スキミング","評価者間一致"],"c":0,"e":"誰が行為者・受け手かを整理するためヴォイスと参与者関係を確認する。","cat":"言語分析","type":"聴解"},{"script":"学習者「明日は雨が降るでしょう。」","q":"「でしょう」に関係するカテゴリーは？","a":["モダリティ","格","アスペクト","音素"],"c":0,"e":"話し手の推量・判断なのでモダリティ。","cat":"言語分析","type":"聴解"},{"script":"学習者「宿題をしているところです。」","q":"「している」の出来事の捉え方に関係するのは？","a":["アスペクト","テンスだけ","格","待遇"],"c":0,"e":"進行・継続など出来事の捉え方はアスペクト。","cat":"言語分析","type":"聴解"},{"script":"学習者「私は学校を行きます。」教師「どこへ行きますか。」","q":"教師が確認すべき中心的な点は？","a":["移動先の格助詞","敬語","長音","メトニミー"],"c":0,"e":"「学校へ／に行く」のように移動先を表す格助詞の選択を確認する。","cat":"言語分析","type":"聴解"},{"script":"教師「おじさん」と「おじいさん」を交互に発音します。","q":"聞き分けの中心となる手掛かりは？","a":["長音の有無・母音の持続時間","促音の有無","撥音の有無だけ","敬語"],"c":0,"e":"「おじいさん」には長音があり、持続時間が手掛かり。","cat":"音声","type":"聴解"},{"script":"教師「きて」「きって」を聞き比べます。","q":"中心的な違いは？","a":["促音による一拍分の詰まり","長音だけ","撥音だけ","アクセントだけ"],"c":0,"e":"「きって」には促音があり、一拍分の詰まりが生じる。","cat":"音声","type":"聴解"},{"script":"教師「しんぶん」「しんぶん」と発音し、鼻に抜ける感じに注目してください。","q":"教師が扱っている可能性が高いのは？","a":["撥音・鼻音の特徴","長音","促音","敬語"],"c":0,"e":"「ん」に関わる撥音の音声的特徴を扱っている。","cat":"音声","type":"聴解"},{"script":"教師「はし」と「はし」を文脈を変えて言います。","q":"文脈と音の高さの変化を扱うとき関係するのは？","a":["アクセント・イントネーション","格助詞","受身","レディネス"],"c":0,"e":"同じ音列でも音の高さの配置やイントネーションが意味・談話に関わる。","cat":"音声","type":"聴解"},{"script":"教師「か」と「が」を聞き分けてください。","q":"中心となる音の違いは？","a":["声帯振動の有無など有声・無声の違い","長音だけ","促音だけ","語用論"],"c":0,"e":"「か／が」は有声・無声の対立として捉えられる。","cat":"音声","type":"聴解"},{"script":"学習者「昨日、映画を見ます。」教師「昨日……？」学習者「見ました。」","q":"教師の対応は？","a":["プロンプトによる自己修正","リキャスト","総括的評価","明示的採点"],"c":0,"e":"教師が正答を直接言わず手がかりで自己修正を促している。","cat":"フィードバック","type":"聴解"},{"script":"学習者「薬を食べました。」教師「薬を飲みました。」","q":"教師の対応は？（場面12）","a":["リキャスト","プロンプト","明確化要求","診断的評価"],"c":0,"e":"正しい形を自然に言い換えて提示するリキャスト。","cat":"フィードバック","type":"聴解"},{"script":"学習者「昨日は行きます。」教師「過去のことなら、どんな形？」","q":"この対応の特徴は？","a":["メタ言語的手がかりを伴う促し","正答の直接提示だけ","誤りを無視","総括的評価"],"c":0,"e":"過去という文法的手がかりを示して自己修正を促す。","cat":"フィードバック","type":"聴解"},{"script":"教師「今は会話を続けましょう。文法の振り返りは後でします。」","q":"教師が優先しているものは？","a":["タスク中の流暢さ・相互作用","すべての誤用の即時訂正","語彙暗記","順位付け"],"c":0,"e":"活動目的に応じて会話の流れを維持し、後で形式に焦点を当てる判断。","cat":"フィードバック","type":"聴解"},{"script":"教師「さっきの二つの言い方を比べて、何が違うと思いますか。」","q":"主なねらいは？","a":["学習者自身の気づきを促す","正解を隠すことだけ","採点すること","母語を禁止すること"],"c":0,"e":"複数の表現を比較して形式や意味への気づきを促している。","cat":"フィードバック","type":"聴解"},{"script":"学習者「部長、これ、やってください。」教師「誰にお願いしていますか。」","q":"教師が確認したいのは？","a":["相手との関係に応じた依頼表現","長音","標準偏差","スキャニング"],"c":0,"e":"上司への依頼なので待遇・ポライトネスの適切さを考える。","cat":"語用・待遇","type":"聴解"},{"script":"学習者「先生、明日休みたい。」教師「学校に伝えるなら、どう言いますか。」","q":"この活動の中心は？","a":["場面に応じた表現選択","モーラ数","評価計算","多読"],"c":0,"e":"伝達相手・場面に合わせた表現選択を考えさせている。","cat":"語用・待遇","type":"聴解"},{"script":"学習者「ここに来てください。」","q":"「ここ」の理解で必要なのは？","a":["発話場面","語彙の語源","標準偏差","ルーブリック"],"c":0,"e":"「ここ」は話者・聞き手など発話場面によって指示対象が決まる。","cat":"語用・待遇","type":"聴解"},{"script":"学習者「すみません、もう一度言ってください。」","q":"この発話の機能は？","a":["再発話を求める","許可する","謝罪だけする","命令する"],"c":0,"e":"聞き取れない・理解できないため、相手に再発話を求めている。","cat":"語用・待遇","type":"聴解"},{"script":"学習者「日本語が上手ですね。」相手「いえいえ、まだまだです。」","q":"この応答に関係するのは？","a":["対人関係上の配慮・ポライトネス","アスペクト","促音","識別力"],"c":0,"e":"相手からの評価に対する応答と対人関係上の配慮に関わる。","cat":"語用・待遇","type":"聴解"},{"script":"教師「今日は市役所で手続きを説明できるか確認します。」","q":"この評価で重視すべきなのは？","a":["目標となる実際の言語行為との対応","教師の説明時間","漢字の画数","順位だけ"],"c":0,"e":"目標が実際の手続き説明なら、評価課題もその能力に対応させる。","cat":"評価","type":"聴解"},{"script":"教師「小テストの結果、依頼表現が弱かったので次回は練習を増やします。」","q":"この評価は？","a":["形成的評価","総括的評価","集団準拠評価","選抜試験"],"c":0,"e":"途中の結果を次の指導改善に使う形成的評価。","cat":"評価","type":"聴解"},{"script":"教師「コースの最後に総合課題を評価します。」","q":"この評価は？（場面23）","a":["総括的評価","診断的評価","レディネス調査","ニーズ調査"],"c":0,"e":"コース終了時に成果をまとめて判定する総括的評価。","cat":"評価","type":"聴解"},{"script":"教師「このテストは会話能力を測りたいのに、文法知識しか測っていません。」","q":"何が問題？","a":["妥当性","信頼性","客観性","識別力だけ"],"c":0,"e":"測りたい能力を適切に測れていないため妥当性の問題。","cat":"評価","type":"聴解"},{"script":"教師「同じ作文を採点するたび点数が大きく変わります。」","q":"何を確認する？","a":["信頼性","真正性","Can-do","ダイクシス"],"c":0,"e":"結果の安定性・一貫性に関わる信頼性を確認する。","cat":"評価","type":"聴解"},{"script":"教師「最終目標は病院で症状を説明できること。評価も同じ場面で行います。」","q":"何が整っている？","a":["目標と評価の整合性","教材の長さだけ","教師の発話量","座席配置だけ"],"c":0,"e":"目標と評価課題が同じ能力・場面を向いている。","cat":"授業設計","type":"聴解"},{"script":"教師「学習者の仕事、目的、既習経験、使う場面を調べます。」","q":"これは？","a":["学習者分析・ニーズ把握","総括的評価","項目分析だけ","音声分析"],"c":0,"e":"学習者の背景・目的・経験を把握する学習者分析やニーズ把握。","cat":"授業設計","type":"聴解"},{"script":"教師「まずCan-doを決めて、次に評価、最後に活動を考えます。」","q":"この設計は？","a":["逆向き設計","文法訳読法","多読","同期型学習"],"c":0,"e":"目標と評価から活動を逆算する逆向き設計。","cat":"授業設計","type":"聴解"},{"script":"教師「AさんとBさんに違う時刻表を渡し、互いに質問して旅行計画を完成させます。」","q":"この活動の核は？","a":["情報差","一斉講義","総括的評価","精読"],"c":0,"e":"異なる情報を持たせ、やり取りを必要にする情報差活動。","cat":"授業設計","type":"聴解"},{"script":"教師「ペア活動後、学習者にCan-doでできたことを書かせます。」","q":"何を促している？","a":["自己評価・振り返り","集団準拠評価だけ","語彙暗記","母語禁止"],"c":0,"e":"Can-doに照らして自分の達成状況を振り返る自己評価。","cat":"授業設計","type":"聴解"},{"script":"学習者「一人ではできません。」教師「まずこの例を見て、次はカードなしで。」","q":"教師の支援に近いものは？","a":["スキャフォールディング","総括的評価","レアリア","選抜"],"c":0,"e":"支援を与え、徐々に減らして自立を促す足場かけ。","cat":"SLA","type":"聴解"},{"script":"教師「二つの文を比べて、自分の表現とどこが違うか話してください。」","q":"主な学習過程は？","a":["Noticing","化石化","標準化","スキミング"],"c":0,"e":"形式の違いに注意を向けるNoticingを促している。","cat":"SLA","type":"聴解"},{"script":"学習者A「意味が分かりません。」B「つまり○○ですか？」","q":"このやり取りに近い概念は？","a":["意味交渉","総括的評価","精読","レアリア"],"c":0,"e":"確認・言い換えによって理解を調整する意味交渉。","cat":"SLA","type":"聴解"},{"script":"教師「今日は自分で目標を決め、最後に達成度を振り返りましょう。」","q":"主に育てたいものは？","a":["自律学習・メタ認知","受身形","識別力","客観性"],"c":0,"e":"目標設定と振り返りは自律学習・メタ認知に関わる。","cat":"SLA","type":"聴解"},{"script":"学習者が母語の語順をそのまま日本語にして誤用した。","q":"考えられる要因は？","a":["母語からの転移","波及効果","真正性","スキャニング"],"c":0,"e":"母語の知識が第二言語表現に影響する転移。","cat":"SLA","type":"聴解"},{"script":"教師「全部聞き取れなくても、駅名と時刻に注意してください。」","q":"促している方略は？","a":["必要情報への選択的注意","全文暗記","精読","書き取り"],"c":0,"e":"目的に必要な情報へ注意を向ける選択的な聞き方。","cat":"読解・聴解方略","type":"聴解"},{"script":"教師「タイトルと写真を見て、どんな内容か予想しましょう。」","q":"主な処理は？","a":["トップダウン的予測","一語ずつのボトムアップのみ","総括的評価","音読"],"c":0,"e":"背景知識や視覚情報から全体を予測するトップダウン処理。","cat":"読解・聴解方略","type":"聴解"},{"script":"教師「契約書から解約期限の日付だけ探してください。」","q":"読み方は？","a":["スキャニング","スキミング","多読","精読"],"c":0,"e":"特定情報を探すスキャニング。","cat":"読解・聴解方略","type":"聴解"},{"script":"教師「記事の全体の主張を短時間でつかみましょう。」","q":"読み方は？（場面39）","a":["スキミング","スキャニング","ディクトグロス","音読"],"c":0,"e":"全体の要点を素早く把握するスキミング。","cat":"読解・聴解方略","type":"聴解"},{"script":"教師「予想と実際の文章を比べて、どこで読み方を修正したか振り返りましょう。」","q":"教師が促しているのは？","a":["理解過程のモニタリング","総括的採点","レアリア","待遇表現"],"c":0,"e":"自分の理解や予測を振り返り修正するメタ認知的モニタリング。","cat":"読解・聴解方略","type":"聴解"},{"script":"教師「録画を見てから掲示板に質問し、次の授業で話します。」","q":"どの形態を含む？","a":["非同期学習","同期型だけ","レアリア","直接法"],"c":0,"e":"録画視聴と掲示板投稿を時間をずらして行うため非同期型。","cat":"ICT・教材","type":"聴解"},{"script":"教師「対面授業とオンライン教材を組み合わせます。」","q":"これは？（場面42）","a":["ブレンディッド・ラーニング","文法訳読法","多読","集団準拠"],"c":0,"e":"複数の学習形態を組み合わせるブレンディッド・ラーニング。","cat":"ICT・教材","type":"聴解"},{"script":"教師「本物のメニューを使ったら、初級者が料理名の漢字ばかり読んで値段を探せませんでした。」","q":"改善として適切なのは？","a":["課題目的を保ちつつ不要な負荷を調整する","漢字をさらに増やす","目標をなくす","全文暗記にする"],"c":0,"e":"真正性を目的化せず、測りたい能力を妨げる不要な負荷を調整する。","cat":"ICT・教材","type":"聴解"},{"script":"教師「音声認識の判定を参考にしつつ、教師の観察も使います。」","q":"この考え方は？","a":["ICTを補助的フィードバックとして使う","ICTの判定を絶対視する","教師を不要にする","判定不能＝必ず誤発音"],"c":0,"e":"ICTの限界を踏まえ、複数の情報源を組み合わせる。","cat":"ICT・教材","type":"聴解"},{"script":"教師「Web記事を教材にコピーしたいので、利用条件を確認します。」","q":"教師が意識しているのは？","a":["著作権・利用条件","アスペクト","モーラ","ZPD"],"c":0,"e":"Web上の情報でも複製・転載には権利や利用条件の確認が必要。","cat":"ICT・教材","type":"聴解"},{"script":"教師「Aさんは市役所で住所変更をする必要があります。案内には窓口番号と受付時間があります。」","q":"聴解課題として、まず何を探させるのが適切？","a":["目的に必要な情報を選択して探す","全文を暗記する","教師の経歴を聞く","漢字の画数を数える"],"c":0,"e":"目的が手続き情報の取得なら、必要な情報を選択して聞き取る課題が適切。","cat":"聴解・情報選択","type":"聴解"},{"script":"学習者「先生、明日までにレポートを出しますか。」教師「提出の予定を聞いているんですね。誰に、どのように確認しますか。」","q":"教師が次に重視しているのは？","a":["場面と目的に合う確認表現","促音の有無","標準偏差","精読"],"c":0,"e":"誰に何を確認するかという場面・目的に応じた表現選択を考えさせている。","cat":"聴解・語用","type":"聴解"},{"script":"教師「二人の学習者に別々の旅行パンフレットを渡します。互いに質問して、一番よい旅程を決めてください。」","q":"この活動の特徴は？","a":["情報差を利用した相互作用","一斉講義","総括的評価だけ","全文書き取り"],"c":0,"e":"異なる情報を持つ参加者が質問し合うため、情報差を利用した相互作用活動。","cat":"聴解・タスク","type":"聴解"},{"script":"教師「授業の最後に、今日の目標『予約を変更できる』が達成できたか、具体的な場面を思い出して確認します。」","q":"この振り返りに近いものは？","a":["Can-doに基づく自己評価","集団準拠評価","語彙テスト","音韻分析"],"c":0,"e":"目標となる行為を基準に達成状況を振り返るCan-do型の自己評価。","cat":"聴解・Can-do","type":"聴解"},{"script":"教師「今日の録音では、全部を聞き取る必要はありません。最初に誰が、いつ、どこで話しているかをつかんでください。」","q":"教師が促している聴解方略は？","a":["全体状況を先に捉えるトップダウン処理","一語ずつの書き取りだけ","文法活用の暗記","総括的評価"],"c":0,"e":"話者・時間・場所など全体状況を先に捉えるのはトップダウン的な処理。","cat":"聴解・方略","type":"聴解"}];
+const v85Mock2Reading = [{"q":"【別シナリオ】受講者「先週、レポートを出します。」担当講師「先週は……？」受講者「出しました。」","a":["自己修正を促すプロンプト","正しい形を教師が言い直すリキャスト","誤りを明示して訂正する","誤りを採点する"],"c":0,"e":"模試②の判断根拠：教師の促しで学習者自身が「出しました」に修正しているためプロンプト。","cat":"フィードバック","type":"読解"},{"q":"【別シナリオ】受講者「空港で切符を買いました。」担当講師「空港で切符を買いましたね。」と自然に言い直した。","a":["メタ言語的フィードバック","リキャスト","明確化要求","明示的訂正"],"c":0,"e":"模試②の判断根拠：教師が正しい形を自然に言い換えて返しており、リキャスト。","cat":"フィードバック","type":"読解"},{"q":"【別シナリオ】受講者「先生、先週は宿題をしません。」担当講師「過去のことなら、どんな形？」受講者「しませんでした。」","a":["明示的訂正だけ","メタ言語的フィードバックを伴うプロンプト","総括的評価","レアリア提示"],"c":0,"e":"模試②の判断根拠：形式への手がかりを与え、自己修正を引き出している。","cat":"フィードバック","type":"読解"},{"q":"【別シナリオ】会話活動中、担当講師がすべての誤用をその場で止めて訂正したため、受講者同士のやり取りが途切れた。改善案として最も妥当なのは？","a":["活動目標に応じ、流暢さを優先する場面では訂正をまとめて後で扱う","すべての誤用を即時に訂正する","誤用は一切扱わない","教師が学習者の発話を代行する"],"c":0,"e":"模試②の判断根拠：活動の目的が相互作用なら、流れを保ちつつ後で形式に焦点を当てる調整が妥当。","cat":"授業判断","type":"読解"},{"q":"【別シナリオ】受講者の発話「この薬を食べます」を聞いた担当講師が、まず「薬は？ 食べますか、飲みますか」と選択肢を示した。","a":["明示的訂正","リキャスト","プロンプト","総括的評価"],"c":0,"e":"模試②の判断根拠：教師が正答を直接与えず、自己修正につながる手がかりを出しているためプロンプト。","cat":"フィードバック","type":"読解"},{"q":"【別シナリオ】誤用を直した後、担当講師が「今の言い方と、さっきの言い方は何が違いましたか」と尋ねた。主なねらいは？","a":["正答の暗記だけ","形式への気づきと内省を促す","順位を決める","学習者の母語を禁止する"],"c":0,"e":"模試②の判断根拠：修正前後を比較させ、言語形式への気づきと内省を促している。","cat":"フィードバック","type":"読解"},{"q":"【別シナリオ】新しい会話テストを作った。担当講師が測りたいのは「薬局で症状を説明できる力」だが、問題の大半は文法用語の選択だった。最も大きな問題は？","a":["信頼性","妥当性","客観性","中央値"],"c":1,"e":"模試②の判断根拠：測りたい会話能力ではなく文法知識に偏っているため、妥当性の問題。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】同じ作文を複数の評価者が採点すると点数が大きく異なる。まず改善を検討すべきものは？","a":["評価基準の明確化","学習者数の削減","読解時間の短縮","教材の真正性"],"c":0,"e":"模試②の判断根拠：評価者間のばらつきを抑えるには、評価基準やルーブリックを明確にすることが重要。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】研修途中のミニ課題で「相談表現」が弱いと分かった。担当講師が次時の練習を変更した。この評価の主な機能は？","a":["総括的","形成的","集団準拠","選抜"],"c":1,"e":"模試②の判断根拠：学習途中の情報を次の指導改善に使っているため形成的評価。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】コース開始前に、受講者が「電話で予約する」経験があるか確認した。これは何の把握に近い？","a":["ニーズ","レディネス","波及効果","識別力"],"c":1,"e":"模試②の判断根拠：開始時点の準備状態・既習経験を把握するのでレディネス調査。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】「上位群の正答率90%、下位群20%」という結果から考えられることは？","a":["学力差を識別する可能性がある","必ず妥当性がない","必ず難しすぎる","正答率を計算できない"],"c":0,"e":"模試②の判断根拠：上位群と下位群で正答率に大きな差があり、識別力が期待できる。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】10項目中7項目を正解した。正答率は？","a":["17%","70%","73%","80%"],"c":1,"e":"模試②の判断根拠：7÷10×100＝70%。","cat":"評価・測定","type":"読解"},{"q":"【別シナリオ】「空港で乗り換えを説明できる」を最終目標にした。最終評価で実際の路線図を使い説明させる。最も評価できる点は？","a":["目標と評価課題が対応している","文法項目が多い","教師の説明時間が長い","教材が必ず生教材である"],"c":0,"e":"模試②の判断根拠：目標で求める行為と評価課題が対応しており、整合性が高い。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】受講者が「職場で同僚に報告する」必要がある。コース設計で最初に調べるべき情報は？","a":["必要な使用場面・目的","教師の好きな教授法","教室の壁の色","漢字の画数"],"c":0,"e":"模試②の判断根拠：学習者の目的や必要な言語活動を把握するニーズ分析が先。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】目標→評価→活動の順に逆算して研修を作る考え方は？","a":["逆向き設計","多読","文法訳読法","診断的評価"],"c":0,"e":"模試②の判断根拠：最終目標と評価を先に定め、活動を逆算する逆向き設計。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】「初級者が区役所で必要な情報を探す」が目標。活動として最も適切なのは？","a":["市役所の案内から必要情報を探す課題","文法用語を30個暗記","教師の講義を60分聞く","漢字を同じ字100回書く"],"c":0,"e":"模試②の判断根拠：目標の実際の行為に近い情報探索課題が適切。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】グループ活動で全員が同じ資料を見て沈黙している。改善案は？","a":["役割や情報差を設け、互いのやり取りを必要にする","人数だけ倍にする","教師が答えを全部話す","活動を個人テストに変える"],"c":0,"e":"模試②の判断根拠：相互作用を必然化する情報差や役割設定が有効。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】研修目標は「相談を適切に行う」だが、活動は単語暗記だけ。まず確認すべきは？","a":["目標・活動・評価の整合性","教室の温度","教師の板書量","学習者の座席番号"],"c":0,"e":"模試②の判断根拠：目標に必要な言語行為と活動が一致しているかを見直す。","cat":"授業設計","type":"読解"},{"q":"【別シナリオ】担当講師がモデル会話を示し、カードを見ながら練習させ、最後にカードなしで行わせた。説明として最も適切なのは？","a":["支援を徐々に減らすスキャフォールディング","総括的評価","集団準拠評価","翻訳法"],"c":0,"e":"模試②の判断根拠：一時的支援を与え、段階的に自立した遂行へ移す設計。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】受講者が自分の発話とモデルの発話を比べ、「ここが違う」と気づいた。この過程に近いのは？","a":["Noticing","化石化","標準化","スキミング"],"c":0,"e":"模試②の判断根拠：自分の表現と目標言語の違いに注意を向けるのはNoticing。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】受講者同士が聞き返しや言い換えを行い、意味を確認しながら会話を続けた。何が習得を支える？","a":["意味交渉を伴う相互作用","一斉講義","単語暗記のみ","総括的評価"],"c":0,"e":"模試②の判断根拠：やり取りの中で理解を調整する意味交渉と相互作用。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】「教えた内容を覚えたか」だけでなく、受講者自身が学習方法を計画し振り返る活動を入れる。主に何を育てる？","a":["自律学習・メタ認知","受身形","客観性","レアリア"],"c":0,"e":"模試②の判断根拠：学習の計画・モニタリング・振り返りはメタ認知や自律学習に関わる。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】母語で「冠詞」を使う受講者が日本語で不要な「a」に相当する表現を入れ続ける。まず考えたい要因は？","a":["母語からの転移","真正性","波及効果","スキャニング"],"c":0,"e":"模試②の判断根拠：母語の構造が第二言語の表現に影響する可能性がある。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】誤用が「ランダムな間違い」ではなく、一定の規則性をもって現れる。これをどう捉える？","a":["学習途中の体系として中間言語を分析する","能力が全くない証拠とする","すべて母語のせいにする","評価を中止する"],"c":0,"e":"模試②の判断根拠：学習者の言語には発達途中の体系性があり、中間言語として分析できる。","cat":"第二言語習得","type":"読解"},{"q":"【別シナリオ】同じ「ちょっとお願いできますか」でも、友人と取引先では必要な配慮が異なる。判断の中心は？","a":["場面・相手との関係に応じた語用的適切さ","文字数","モーラ数だけ","辞書掲載順"],"c":0,"e":"模試②の判断根拠：文法的に可能でも、相手・場面・目的に応じた適切さが異なる。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】取引先に「これ、やって」と言う受講者への指導として最も適切なのは？","a":["関係性と場面を示し、より適切な依頼表現を比較させる","その表現を全場面で禁止する","文法的に間違いだとだけ伝える","母語を使わせない"],"c":0,"e":"模試②の判断根拠：待遇表現は相手・場面に応じた選択として指導する。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】「ここ」「今」「私」の指示対象が発話状況で変わる。これは？","a":["ダイクシス","コロケーション","換喩","アスペクト"],"c":0,"e":"模試②の判断根拠：話者・場所・時間など発話場面に依存する指示表現がダイクシス。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】「教室が笑った」のように、場所の名称でその場所にいる人々を指す用法に近いのは？","a":["メトニミー","ダイクシス","テンス","促音"],"c":0,"e":"模試②の判断根拠：関連の深い対象を別の名称で指す換喩的な用法。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】受講者が「正しい日本語」を一つだけ覚えようとしている。担当講師の説明として適切なのは？","a":["場面や相手によって自然な表現が変わることがある","標準語以外はすべて誤り","敬語は誰にでも同じ","方言は学習対象にならない"],"c":0,"e":"模試②の判断根拠：言語使用には場面・関係・地域などによる変異がある。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】地域日本語教室で、生活者が「ごみ出しのルールを近所の人に確認できる」ことを目標にした。適切な方向は？","a":["生活・社会参加の具体的ニーズに結び付ける","文法用語の暗記だけにする","日本文化への同化だけを目標にする","会話を避ける"],"c":0,"e":"模試②の判断根拠：地域日本語教育では生活・社会参加上の具体的ニーズとの接続が重要。","cat":"語用・社会言語","type":"読解"},{"q":"【別シナリオ】「食べさせられた」のように、使役と受身が組み合わさっている形を分析する。最も近い観点は？","a":["ヴォイスの複合的な表現","テンスだけ","ダイクシスだけ","語用論だけ"],"c":0,"e":"模試②の判断根拠：使役・受身など、参与者関係を変える形式をヴォイスの観点から分析できる。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】「食べてしまった」の「てしまう」が、話し手の残念・完了などを表す。どの観点を検討する？","a":["アスペクトとモダリティ的意味","格助詞だけ","モーラだけ","社会方言だけ"],"c":0,"e":"模試②の判断根拠：「てしまう」には完了・遺憾などの意味があり、アスペクトや話し手の態度に関わる。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】「明日は雨でしょう」の「でしょう」が表す中心的な意味は？","a":["話し手の推量・判断","出来事の完了","移動先の格","音の長さ"],"c":0,"e":"模試②の判断根拠：推量など話し手の判断・態度に関わるのでモダリティ。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】「薬を飲む」「ご飯を食べる」のように自然な語の組み合わせを扱う指導は？","a":["コロケーション","ダイクシス","スキーマ","ZPD"],"c":0,"e":"模試②の判断根拠：語と語の自然な共起関係がコロケーション。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】「おばさん／おばあさん」の聞き分けで中心となる音声的手掛かりは？","a":["長音の有無・母音の持続時間","促音の有無","鼻音の有無だけ","敬語の種類"],"c":0,"e":"模試②の判断根拠：「おばあさん」には長音があり、母音の持続時間が聞き分けの手掛かりになる。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】「きって／きて」の聞き分けで注意する音声的特徴は？","a":["促音による一拍分の詰まり","長音だけ","撥音だけ","アクセントは関係しない"],"c":0,"e":"模試②の判断根拠：促音は一拍分の詰まりとして現れ、「きって／きて」の対立に関わる。","cat":"言語分析・音声","type":"読解"},{"q":"【別シナリオ】長い説明文を読む前に、見出しと図を見て内容を予想する。主に使っている方略は？","a":["トップダウン的な予測","一語ずつのボトムアップのみ","精読のみ","書き取り"],"c":0,"e":"模試②の判断根拠：既有知識や見出しなどから全体を予測するトップダウン処理。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】契約書から「解約期限の日付」だけを探す。","a":["スキャニング","スキミング","多読","音読"],"c":0,"e":"模試②の判断根拠：特定の情報を探し出す読み方はスキャニング。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】記事の全体的な主張を短時間で把握する。","a":["スキミング","スキャニング","ディクトグロス","精読"],"c":0,"e":"模試②の判断根拠：文章全体の概要・要点を素早くつかむスキミング。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】未知語が一つ出ても、前後の文から意味を推測して読み進めた。","a":["文脈を利用した推測","必ず辞書を引くボトムアップのみ","書き写し","翻訳"],"c":0,"e":"模試②の判断根拠：前後の文脈を手掛かりに意味を推測する方略。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】聴解で重要語をすべて聞き取れなくても、目的に必要な情報に絞るよう指導した。","a":["選択的注意","全文暗記","精読","総括的評価"],"c":0,"e":"模試②の判断根拠：目的に必要な情報へ注意を向ける選択的な聞き方。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】読解後に「自分の予想と本文の内容はどこが違ったか」を確認させる。","a":["モニタリング","総括的採点","レアリア","言語変種"],"c":0,"e":"模試②の判断根拠：理解過程を振り返り、予測を修正するのはメタ認知的モニタリング。","cat":"受容・理解","type":"読解"},{"q":"【別シナリオ】オンライン研修で、受講者が録画を見てから掲示板で質問し、次回研修で扱う。","a":["非同期学習を組み合わせている","同期型だけ","レアリア","文法訳読法"],"c":0,"e":"模試②の判断根拠：録画視聴と掲示板投稿を時間をずらして行うため非同期型。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】対面研修とオンライン教材を組み合わせ、受講者が研修外でも練習する。","a":["ブレンディッド・ラーニング","多読","直接法","集団準拠評価"],"c":0,"e":"模試②の判断根拠：複数の学習形態を組み合わせるブレンディッド・ラーニング。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】ICT教材を選ぶ際、最も重要な基準は？","a":["学習目標に対してどんな効果があるか","最新機能が多いかだけ","見た目が派手かだけ","教師が操作しやすいかだけ"],"c":0,"e":"模試②の判断根拠：ICT利用自体を目的にせず、学習目標への効果で選ぶ。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】Web記事を研修資料に載せるとき、「ネット上にあるから自由に転載できる」と考えるのは？","a":["不適切。利用条件・権利・引用等を確認する","常に正しい","授業なら無条件で自由","無料記事なら無条件で自由"],"c":0,"e":"模試②の判断根拠：公開されていることと、複製・転載できることは別。条件確認が必要。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】学習管理システムで課題提出・進捗・フィードバックを一元管理する。主な利点は？","a":["学習活動と進捗情報を管理しやすい","必ず学習効果が上がる","教師の判断が不要になる","対面授業が法律上不要になる"],"c":0,"e":"模試②の判断根拠：LMSは課題・提出・進捗等を管理する基盤になるが、導入だけで効果が保証されるわけではない。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】音声認識ツールを発音練習に使う。最も適切な説明は？","a":["補助的なフィードバックとして使い、教師や学習者自身の判断と組み合わせる","判定結果を常に絶対視する","認識されない語は必ず発音が誤り","教師の指導を完全に不要にする"],"c":0,"e":"模試②の判断根拠：ICTの判定には限界があり、学習目標に沿った補助的フィードバックとして使うのが適切。","cat":"ICT・情報活用","type":"読解"},{"q":"【別シナリオ】日本語教育史を学ぶとき、現在の実践に生かす見方として最も適切なのは？","a":["教授法や教育観の変化を社会的背景と結び付けて捉える","昔の方法をそのまま再現する","歴史は現在と無関係と考える","年代だけ暗記する"],"c":0,"e":"模試②の判断根拠：歴史的背景と教育観・教授法の変化を関連付けると、現在の実践を相対化できる。","cat":"日本語教育史","type":"読解"},{"q":"【別シナリオ】多文化共生の地域活動で、外国人住民に日本人の習慣を一方的に守らせることだけを目標にする。問題点は？","a":["相互理解や参加より一方的な同化を重視している","日本語を使うから正しい","地域活動なら必ず正しい","文化差は存在しない"],"c":0,"e":"模試②の判断根拠：多文化共生は一方的な同化ではなく、違いを認めながら共に社会参加する視点が重要。","cat":"多文化共生","type":"読解"},{"q":"【別シナリオ】学校で日本語指導が必要な児童生徒への支援で、最も適切なのは？","a":["日本語だけでなく教科学習・学校生活・家庭背景も踏まえる","日本語が上達するまで教科を教えない","母語を一律禁止する","全員に同じ支援をする"],"c":0,"e":"模試②の判断根拠：児童生徒の教育では言語・教科・生活・背景を総合的に捉える。","cat":"社会・文化・地域","type":"読解"},{"q":"【別シナリオ】日本語能力試験についての説明として適切なのは？","a":["言語知識・読解・聴解を測るが、話す・書くを直接測る試験ではない","会話だけを測る","作文だけを測る","日本語教師資格を直接判定する"],"c":0,"e":"模試②の判断根拠：JLPTの測定範囲と、直接測定しない技能を区別する必要がある。","cat":"日本語の試験","type":"読解"},{"q":"【別シナリオ】担当講師が一人で受講者支援の問題を抱え込んでいる。改善として最も適切なのは？","a":["必要に応じて同僚・学校・地域の関係者と連携する","教師だけで解決する","学習者に責任を負わせる","支援を打ち切る"],"c":0,"e":"模試②の判断根拠：対人関係能力では、関係者と協働・連携して課題に対応することが重要。","cat":"教師・連携","type":"読解"},{"q":"【別シナリオ】異文化場面で「この国の人は必ずこう考える」と判断した。最も注意すべき点は？","a":["文化的傾向と個人差・状況差を区別する","文化差をすべて無視する","一つの文化だけを正解にする","国籍だけで個人の行動を決める"],"c":0,"e":"模試②の判断根拠：文化的特徴を参考にしつつ、個人差・状況差を考慮することが重要。","cat":"異文化","type":"読解"},{"q":"【別シナリオ】受講者が地域の日本語教室で、近所の人に「ごみ出しの曜日」を聞けるようになりたい。最も適切な教材は？","a":["実際の地域のごみ収集案内を使った情報探索課題","文法用語一覧","抽象的な長文だけ","無関係な漢字ドリル"],"c":0,"e":"模試②の判断根拠：実際の生活課題に必要な情報を扱う教材・課題が目的に合う。","cat":"教材","type":"読解"},{"q":"【別シナリオ】教材を分析するとき、初級受講者には文章が長く未習語も多いが、目標は「必要な時刻を探す」ことだった。改善案は？","a":["課題目的を保ちつつ、不要な語彙・表記負担を調整する","未習語をさらに増やす","目標を無視する","全文暗記に変える"],"c":0,"e":"模試②の判断根拠：真正性を保ちつつ、測りたい能力を妨げる不要な負荷を調整する。","cat":"教材分析","type":"読解"},{"q":"【別シナリオ】「担当講師が説明し、受講者が同じ練習を繰り返す」活動が目的に合う場合として適切なのは？","a":["新しい形の正確な練習を段階的に行う場面","必ず自由会話だけが必要な場面","社会参加の最終評価だけ","情報差活動の代替として常に使う"],"c":0,"e":"模試②の判断根拠：形式の正確な練習など、目的に応じて教師主導の活動が有効な場面もある。","cat":"教授法","type":"読解"},{"q":"【別シナリオ】研修見学後、実習生が「楽しかった」で終わらず、受講者の発話量・時間配分・目標達成を記録した。何につながる？","a":["根拠に基づく授業分析・自己点検","総括的評価だけ","日本語教育史","レアリア収集"],"c":0,"e":"模試②の判断根拠：観察可能な事実を根拠に振り返ることは授業分析・自己点検につながる。","cat":"教育実習","type":"読解"},{"q":"【別シナリオ】地域の日本語教育で、受講者の母語を使える支援者がいる。最も適切な活用は？","a":["理解や社会参加を支える資源として、目的に応じて活用する","母語使用を常に禁止する","日本語学習をやめさせる","母語だけで授業する"],"c":0,"e":"模試②の判断根拠：多言語資源を学習・支援に生かしつつ、日本語での社会参加も支える。","cat":"多言語・地域","type":"読解"},{"q":"【別シナリオ】担当講師が研修後に録画を見返し、「導入が長く活動時間が不足した」と記録した。次に最も適切なのは？","a":["次回の時間配分を修正し、改善後も結果を確認する","記録を削除する","学習者のせいにする","教材をすべて捨てる"],"c":0,"e":"模試②の判断根拠：省察→改善→再確認という循環で授業を改善する。","cat":"授業分析","type":"読解"}];
+const v85Mock2Listening = [{"script":"別シナリオ音声：受講者「先週は職場へ行きます。」","q":"【別シナリオ】「先週は職場へ行きます。」の中心的な誤りは？","a":["テンス","アスペクト","ヴォイス","モダリティ"],"c":0,"e":"模試②の判断根拠：過去を示す「昨日」と非過去形が不一致なのでテンス。","cat":"言語分析","type":"聴解"},{"script":"別シナリオ音声：受講者「先生に本を読まれました。」担当講師「自分が読んだのか、先生が読んだのか確認しましょう。」","q":"【別シナリオ】担当講師がまず確認している観点は？","a":["ヴォイスと参与者関係","長音","スキミング","評価者間一致"],"c":0,"e":"模試②の判断根拠：誰が行為者・受け手かを整理するためヴォイスと参与者関係を確認する。","cat":"言語分析","type":"聴解"},{"script":"別シナリオ音声：受講者「明日は雨が降るでしょう。」","q":"【別シナリオ】「でしょう」に関係するカテゴリーは？","a":["モダリティ","格","アスペクト","音素"],"c":0,"e":"模試②の判断根拠：話し手の推量・判断なのでモダリティ。","cat":"言語分析","type":"聴解"},{"script":"別シナリオ音声：受講者「宿題をしているところです。」","q":"【別シナリオ】「している」の出来事の捉え方に関係するのは？","a":["アスペクト","テンスだけ","格","待遇"],"c":0,"e":"模試②の判断根拠：進行・継続など出来事の捉え方はアスペクト。","cat":"言語分析","type":"聴解"},{"script":"別シナリオ音声：受講者「私は学校を行きます。」担当講師「どこへ行きますか。」","q":"【別シナリオ】担当講師が確認すべき中心的な点は？","a":["移動先の格助詞","敬語","長音","メトニミー"],"c":0,"e":"模試②の判断根拠：「学校へ／に行く」のように移動先を表す格助詞の選択を確認する。","cat":"言語分析","type":"聴解"},{"script":"別シナリオ音声：担当講師「おじさん」と「おじいさん」を交互に発音します。","q":"【別シナリオ】聞き分けの中心となる手掛かりは？","a":["長音の有無・母音の持続時間","促音の有無","撥音の有無だけ","敬語"],"c":0,"e":"模試②の判断根拠：「おじいさん」には長音があり、持続時間が手掛かり。","cat":"音声","type":"聴解"},{"script":"別シナリオ音声：担当講師「きて」「きって」を聞き比べます。","q":"【別シナリオ】中心的な違いは？","a":["促音による一拍分の詰まり","長音だけ","撥音だけ","アクセントだけ"],"c":0,"e":"模試②の判断根拠：「きって」には促音があり、一拍分の詰まりが生じる。","cat":"音声","type":"聴解"},{"script":"別シナリオ音声：担当講師「しんぶん」「しんぶん」と発音し、鼻に抜ける感じに注目してください。","q":"【別シナリオ】担当講師が扱っている可能性が高いのは？","a":["撥音・鼻音の特徴","長音","促音","敬語"],"c":0,"e":"模試②の判断根拠：「ん」に関わる撥音の音声的特徴を扱っている。","cat":"音声","type":"聴解"},{"script":"別シナリオ音声：担当講師「はし」と「はし」を文脈を変えて言います。","q":"【別シナリオ】文脈と音の高さの変化を扱うとき関係するのは？","a":["アクセント・イントネーション","格助詞","受身","レディネス"],"c":0,"e":"模試②の判断根拠：同じ音列でも音の高さの配置やイントネーションが意味・談話に関わる。","cat":"音声","type":"聴解"},{"script":"別シナリオ音声：担当講師「か」と「が」を聞き分けてください。","q":"【別シナリオ】中心となる音の違いは？","a":["声帯振動の有無など有声・無声の違い","長音だけ","促音だけ","語用論"],"c":0,"e":"模試②の判断根拠：「か／が」は有声・無声の対立として捉えられる。","cat":"音声","type":"聴解"},{"script":"別シナリオ音声：受講者「先週、映画を見ます。」担当講師「先週……？」受講者「見ました。」","q":"【別シナリオ】担当講師の対応は？","a":["プロンプトによる自己修正","リキャスト","総括的評価","明示的採点"],"c":0,"e":"模試②の判断根拠：教師が正答を直接言わず手がかりで自己修正を促している。","cat":"フィードバック","type":"聴解"},{"script":"別シナリオ音声：受講者「薬を食べました。」担当講師「薬を飲みました。」","q":"【別シナリオ】担当講師の対応は？（場面12）","a":["リキャスト","プロンプト","明確化要求","診断的評価"],"c":0,"e":"模試②の判断根拠：正しい形を自然に言い換えて提示するリキャスト。","cat":"フィードバック","type":"聴解"},{"script":"別シナリオ音声：受講者「先週は行きます。」担当講師「過去のことなら、どんな形？」","q":"【別シナリオ】この対応の特徴は？","a":["メタ言語的手がかりを伴う促し","正答の直接提示だけ","誤りを無視","総括的評価"],"c":0,"e":"模試②の判断根拠：過去という文法的手がかりを示して自己修正を促す。","cat":"フィードバック","type":"聴解"},{"script":"別シナリオ音声：担当講師「今は会話を続けましょう。文法の振り返りは後でします。」","q":"【別シナリオ】担当講師が優先しているものは？","a":["タスク中の流暢さ・相互作用","すべての誤用の即時訂正","語彙暗記","順位付け"],"c":0,"e":"模試②の判断根拠：活動目的に応じて会話の流れを維持し、後で形式に焦点を当てる判断。","cat":"フィードバック","type":"聴解"},{"script":"別シナリオ音声：担当講師「さっきの二つの言い方を比べて、何が違うと思いますか。」","q":"【別シナリオ】主なねらいは？","a":["学習者自身の気づきを促す","正解を隠すことだけ","採点すること","母語を禁止すること"],"c":0,"e":"模試②の判断根拠：複数の表現を比較して形式や意味への気づきを促している。","cat":"フィードバック","type":"聴解"},{"script":"別シナリオ音声：受講者「部長、これ、やってください。」担当講師「誰にお願いしていますか。」","q":"【別シナリオ】担当講師が確認したいのは？","a":["相手との関係に応じた依頼表現","長音","標準偏差","スキャニング"],"c":0,"e":"模試②の判断根拠：上司への依頼なので待遇・ポライトネスの適切さを考える。","cat":"語用・待遇","type":"聴解"},{"script":"別シナリオ音声：受講者「先生、明日休みたい。」担当講師「学校に伝えるなら、どう言いますか。」","q":"【別シナリオ】この活動の中心は？","a":["場面に応じた表現選択","モーラ数","評価計算","多読"],"c":0,"e":"模試②の判断根拠：伝達相手・場面に合わせた表現選択を考えさせている。","cat":"語用・待遇","type":"聴解"},{"script":"別シナリオ音声：受講者「ここに来てください。」","q":"【別シナリオ】「ここ」の理解で必要なのは？","a":["発話場面","語彙の語源","標準偏差","ルーブリック"],"c":0,"e":"模試②の判断根拠：「ここ」は話者・聞き手など発話場面によって指示対象が決まる。","cat":"語用・待遇","type":"聴解"},{"script":"別シナリオ音声：受講者「すみません、もう一度言ってください。」","q":"【別シナリオ】この発話の機能は？","a":["再発話を求める","許可する","謝罪だけする","命令する"],"c":0,"e":"模試②の判断根拠：聞き取れない・理解できないため、相手に再発話を求めている。","cat":"語用・待遇","type":"聴解"},{"script":"別シナリオ音声：受講者「日本語が上手ですね。」相手「いえいえ、まだまだです。」","q":"【別シナリオ】この応答に関係するのは？","a":["対人関係上の配慮・ポライトネス","アスペクト","促音","識別力"],"c":0,"e":"模試②の判断根拠：相手からの評価に対する応答と対人関係上の配慮に関わる。","cat":"語用・待遇","type":"聴解"},{"script":"別シナリオ音声：担当講師「今日は区役所で手続きを説明できるか確認します。」","q":"【別シナリオ】この評価で重視すべきなのは？","a":["目標となる実際の言語行為との対応","教師の説明時間","漢字の画数","順位だけ"],"c":0,"e":"模試②の判断根拠：目標が実際の手続き説明なら、評価課題もその能力に対応させる。","cat":"評価","type":"聴解"},{"script":"別シナリオ音声：担当講師「小テストの結果、相談表現が弱かったので次回は練習を増やします。」","q":"【別シナリオ】この評価は？","a":["形成的評価","総括的評価","集団準拠評価","選抜試験"],"c":0,"e":"模試②の判断根拠：途中の結果を次の指導改善に使う形成的評価。","cat":"評価","type":"聴解"},{"script":"別シナリオ音声：担当講師「コースの最後に総合課題を評価します。」","q":"【別シナリオ】この評価は？（場面23）","a":["総括的評価","診断的評価","レディネス調査","ニーズ調査"],"c":0,"e":"模試②の判断根拠：コース終了時に成果をまとめて判定する総括的評価。","cat":"評価","type":"聴解"},{"script":"別シナリオ音声：担当講師「このテストは会話能力を測りたいのに、文法知識しか測っていません。」","q":"【別シナリオ】何が問題？","a":["妥当性","信頼性","客観性","識別力だけ"],"c":0,"e":"模試②の判断根拠：測りたい能力を適切に測れていないため妥当性の問題。","cat":"評価","type":"聴解"},{"script":"別シナリオ音声：担当講師「同じ作文を採点するたび点数が大きく変わります。」","q":"【別シナリオ】何を確認する？","a":["信頼性","真正性","Can-do","ダイクシス"],"c":0,"e":"模試②の判断根拠：結果の安定性・一貫性に関わる信頼性を確認する。","cat":"評価","type":"聴解"},{"script":"別シナリオ音声：担当講師「最終目標は薬局で症状を説明できること。評価も同じ場面で行います。」","q":"【別シナリオ】何が整っている？","a":["目標と評価の整合性","教材の長さだけ","教師の発話量","座席配置だけ"],"c":0,"e":"模試②の判断根拠：目標と評価課題が同じ能力・場面を向いている。","cat":"授業設計","type":"聴解"},{"script":"別シナリオ音声：担当講師「受講者の仕事、目的、既習経験、使う場面を調べます。」","q":"【別シナリオ】これは？","a":["学習者分析・ニーズ把握","総括的評価","項目分析だけ","音声分析"],"c":0,"e":"模試②の判断根拠：学習者の背景・目的・経験を把握する学習者分析やニーズ把握。","cat":"授業設計","type":"聴解"},{"script":"別シナリオ音声：担当講師「まずCan-doを決めて、次に評価、最後に活動を考えます。」","q":"【別シナリオ】この設計は？","a":["逆向き設計","文法訳読法","多読","同期型学習"],"c":0,"e":"模試②の判断根拠：目標と評価から活動を逆算する逆向き設計。","cat":"授業設計","type":"聴解"},{"script":"別シナリオ音声：担当講師「AさんとBさんに違う時刻表を渡し、互いに質問して出張計画を完成させます。」","q":"【別シナリオ】この活動の核は？","a":["情報差","一斉講義","総括的評価","精読"],"c":0,"e":"模試②の判断根拠：異なる情報を持たせ、やり取りを必要にする情報差活動。","cat":"授業設計","type":"聴解"},{"script":"別シナリオ音声：担当講師「ペア活動後、受講者にCan-doでできたことを書かせます。」","q":"【別シナリオ】何を促している？","a":["自己評価・振り返り","集団準拠評価だけ","語彙暗記","母語禁止"],"c":0,"e":"模試②の判断根拠：Can-doに照らして自分の達成状況を振り返る自己評価。","cat":"授業設計","type":"聴解"},{"script":"別シナリオ音声：受講者「一人ではできません。」担当講師「まずこの例を見て、次はカードなしで。」","q":"【別シナリオ】担当講師の支援に近いものは？","a":["スキャフォールディング","総括的評価","レアリア","選抜"],"c":0,"e":"模試②の判断根拠：支援を与え、徐々に減らして自立を促す足場かけ。","cat":"SLA","type":"聴解"},{"script":"別シナリオ音声：担当講師「二つの文を比べて、自分の表現とどこが違うか話してください。」","q":"【別シナリオ】主な学習過程は？","a":["Noticing","化石化","標準化","スキミング"],"c":0,"e":"模試②の判断根拠：形式の違いに注意を向けるNoticingを促している。","cat":"SLA","type":"聴解"},{"script":"別シナリオ音声：受講者A「意味が分かりません。」B「つまり○○ですか？」","q":"【別シナリオ】このやり取りに近い概念は？","a":["意味交渉","総括的評価","精読","レアリア"],"c":0,"e":"模試②の判断根拠：確認・言い換えによって理解を調整する意味交渉。","cat":"SLA","type":"聴解"},{"script":"別シナリオ音声：担当講師「今日は自分で目標を決め、最後に達成度を振り返りましょう。」","q":"【別シナリオ】主に育てたいものは？","a":["自律学習・メタ認知","受身形","識別力","客観性"],"c":0,"e":"模試②の判断根拠：目標設定と振り返りは自律学習・メタ認知に関わる。","cat":"SLA","type":"聴解"},{"script":"別シナリオ音声：受講者が母語の語順をそのまま日本語にして誤用した。","q":"【別シナリオ】考えられる要因は？","a":["母語からの転移","波及効果","真正性","スキャニング"],"c":0,"e":"模試②の判断根拠：母語の知識が第二言語表現に影響する転移。","cat":"SLA","type":"聴解"},{"script":"別シナリオ音声：担当講師「全部聞き取れなくても、空港名と時刻に注意してください。」","q":"【別シナリオ】促している方略は？","a":["必要情報への選択的注意","全文暗記","精読","書き取り"],"c":0,"e":"模試②の判断根拠：目的に必要な情報へ注意を向ける選択的な聞き方。","cat":"読解・聴解方略","type":"聴解"},{"script":"別シナリオ音声：担当講師「タイトルと写真を見て、どんな内容か予想しましょう。」","q":"【別シナリオ】主な処理は？","a":["トップダウン的予測","一語ずつのボトムアップのみ","総括的評価","音読"],"c":0,"e":"模試②の判断根拠：背景知識や視覚情報から全体を予測するトップダウン処理。","cat":"読解・聴解方略","type":"聴解"},{"script":"別シナリオ音声：担当講師「契約書から解約期限の日付だけ探してください。」","q":"【別シナリオ】読み方は？","a":["スキャニング","スキミング","多読","精読"],"c":0,"e":"模試②の判断根拠：特定情報を探すスキャニング。","cat":"読解・聴解方略","type":"聴解"},{"script":"別シナリオ音声：担当講師「記事の全体の主張を短時間でつかみましょう。」","q":"【別シナリオ】読み方は？（場面39）","a":["スキミング","スキャニング","ディクトグロス","音読"],"c":0,"e":"模試②の判断根拠：全体の要点を素早く把握するスキミング。","cat":"読解・聴解方略","type":"聴解"},{"script":"別シナリオ音声：担当講師「予想と実際の文章を比べて、どこで読み方を修正したか振り返りましょう。」","q":"【別シナリオ】担当講師が促しているのは？","a":["理解過程のモニタリング","総括的採点","レアリア","待遇表現"],"c":0,"e":"模試②の判断根拠：自分の理解や予測を振り返り修正するメタ認知的モニタリング。","cat":"読解・聴解方略","type":"聴解"},{"script":"別シナリオ音声：担当講師「録画を見てから掲示板に質問し、次の研修で話します。」","q":"【別シナリオ】どの形態を含む？","a":["非同期学習","同期型だけ","レアリア","直接法"],"c":0,"e":"模試②の判断根拠：録画視聴と掲示板投稿を時間をずらして行うため非同期型。","cat":"ICT・教材","type":"聴解"},{"script":"別シナリオ音声：担当講師「対面研修とオンライン教材を組み合わせます。」","q":"【別シナリオ】これは？（場面42）","a":["ブレンディッド・ラーニング","文法訳読法","多読","集団準拠"],"c":0,"e":"模試②の判断根拠：複数の学習形態を組み合わせるブレンディッド・ラーニング。","cat":"ICT・教材","type":"聴解"},{"script":"別シナリオ音声：担当講師「本物のメニューを使ったら、初級者が料理名の漢字ばかり読んで値段を探せませんでした。」","q":"【別シナリオ】改善として適切なのは？","a":["課題目的を保ちつつ不要な負荷を調整する","漢字をさらに増やす","目標をなくす","全文暗記にする"],"c":0,"e":"模試②の判断根拠：真正性を目的化せず、測りたい能力を妨げる不要な負荷を調整する。","cat":"ICT・教材","type":"聴解"},{"script":"別シナリオ音声：担当講師「音声認識の判定を参考にしつつ、担当講師の観察も使います。」","q":"【別シナリオ】この考え方は？","a":["ICTを補助的フィードバックとして使う","ICTの判定を絶対視する","教師を不要にする","判定不能＝必ず誤発音"],"c":0,"e":"模試②の判断根拠：ICTの限界を踏まえ、複数の情報源を組み合わせる。","cat":"ICT・教材","type":"聴解"},{"script":"別シナリオ音声：担当講師「Web記事を教材にコピーしたいので、利用条件を確認します。」","q":"【別シナリオ】担当講師が意識しているのは？","a":["著作権・利用条件","アスペクト","モーラ","ZPD"],"c":0,"e":"模試②の判断根拠：Web上の情報でも複製・転載には権利や利用条件の確認が必要。","cat":"ICT・教材","type":"聴解"},{"script":"別シナリオ音声：担当講師「Aさんは区役所で住所変更をする必要があります。案内には窓口番号と受付時間があります。」","q":"【別シナリオ】聴解課題として、まず何を探させるのが適切？","a":["目的に必要な情報を選択して探す","全文を暗記する","教師の経歴を聞く","漢字の画数を数える"],"c":0,"e":"模試②の判断根拠：目的が手続き情報の取得なら、必要な情報を選択して聞き取る課題が適切。","cat":"聴解・情報選択","type":"聴解"},{"script":"別シナリオ音声：受講者「先生、明日までにレポートを出しますか。」担当講師「提出の予定を聞いているんですね。誰に、どのように確認しますか。」","q":"【別シナリオ】担当講師が次に重視しているのは？","a":["場面と目的に合う確認表現","促音の有無","標準偏差","精読"],"c":0,"e":"模試②の判断根拠：誰に何を確認するかという場面・目的に応じた表現選択を考えさせている。","cat":"聴解・語用","type":"聴解"},{"script":"別シナリオ音声：担当講師「二人の受講者に別々の出張パンフレットを渡します。互いに質問して、一番よい旅程を決めてください。」","q":"【別シナリオ】この活動の特徴は？","a":["情報差を利用した相互作用","一斉講義","総括的評価だけ","全文書き取り"],"c":0,"e":"模試②の判断根拠：異なる情報を持つ参加者が質問し合うため、情報差を利用した相互作用活動。","cat":"聴解・タスク","type":"聴解"},{"script":"別シナリオ音声：担当講師「研修の最後に、今日の目標『予約を変更できる』が達成できたか、具体的な場面を思い出して確認します。」","q":"【別シナリオ】この振り返りに近いものは？","a":["Can-doに基づく自己評価","集団準拠評価","語彙テスト","音韻分析"],"c":0,"e":"模試②の判断根拠：目標となる行為を基準に達成状況を振り返るCan-do型の自己評価。","cat":"聴解・Can-do","type":"聴解"},{"script":"別シナリオ音声：担当講師「今日の録音では、全部を聞き取る必要はありません。最初に誰が、いつ、どこで話しているかをつかんでください。」","q":"【別シナリオ】担当講師が促している聴解方略は？","a":["全体状況を先に捉えるトップダウン処理","一語ずつの書き取りだけ","文法活用の暗記","総括的評価"],"c":0,"e":"模試②の判断根拠：話者・時間・場所など全体状況を先に捉えるのはトップダウン的な処理。","cat":"聴解・方略","type":"聴解"}];
+
+function v85Shuffle(a){return shuffleArray(a);}
+function v85Clone(a){return a.map(x=>({...x,a:[...x.a]}));}
+function v85Balanced(qs){return balanceChoicePositions(v85Clone(qs));}
+
+function v85MockStart(setNo){
+  const R = setNo===2 ? v85Mock2Reading : v85Mock1Reading;
+  const L = setNo===2 ? v85Mock2Listening : v85Mock1Listening;
+  const reading=v85Balanced(v85Shuffle(R)).map((x,i)=>({...x,n:i+1}));
+  const listening=v85Balanced(v85Shuffle(L)).map((x,i)=>({...x,n:i+1}));
+  const all=reading.concat(listening);
+  window.mockState={setNo,stage:'reading',questions:reading,all,answers:0,answered:0,index:0,readingScore:0,listeningScore:0,readingStart:Date.now(),listeningStart:null,selected:{reading:{},listening:{}},audioPlayed:{}};
+  const setup=document.getElementById('mockSetup'),area=document.getElementById('mockArea'),res=document.getElementById('mockResult');
+  if(setup)setup.style.display='none'; if(res)res.style.display='none'; if(area)area.style.display='block';
+  renderMockQuestion();
+}
+window.startMock=function(){v85MockStart(1);};
+
+function v85SelectMock(j){
+  const s=window.mockState;if(!s)return;
+  const q=currentMockQuestion();if(!q)return;
+  s.selected[s.stage][s.index]=j;
+  document.querySelectorAll('#mockArea .choice').forEach((b,k)=>b.classList.toggle('selected',k===j));
+}
+window.selectMock=v85SelectMock;
+
+function v85RenderMockQuestion(){
+  const s=window.mockState;if(!s)return;
+  const area=document.getElementById('mockArea');if(!area)return;
+  const q=currentMockQuestion();if(!q){finishMockStage();return;}
+  const isL=s.stage==='listening'; const key='v85-mock-'+s.setNo+'-'+s.stage+'-'+s.index;
+  if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=q.script||'';}
+  const selected=s.selected[s.stage][s.index];
+  const nav=s.stage==='reading'
+    ? `<div class="mockNav"><button type="button" class="secondary" onclick="mockMove(-1)" ${s.index===0?'disabled':''}>← 前へ</button><button type="button" class="secondary" onclick="mockMove(1)">${s.index===59?'読解を終了 →':'次へ →'}</button></div>`
+    : `<div class="mockNav"><button type="button" class="primary" onclick="mockMove(1)">${s.index===49?'聴解を終了 →':'次の問題 →'}</button></div>`;
+  area.dataset.answered='0';
+  area.innerHTML=`<div class="exam mockq"><div class="item"><b>${isL?'🎧 聴解':'📖 読解'} ${s.index+1} / ${isL?50:60}</b> <span class="badge">${q.cat||''}</span><span style="float:right;font-weight:800" id="mockTimer">--:--</span></div><p>${q.q}</p>${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${key}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}<div class="choices">${q.a.map((a,j)=>`<button type="button" class="choice ${selected===j?'selected':''}" data-mock-choice="${j}" onclick="selectMock(${j});return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="mini">※試験中は正解・解説を表示しません。${isL?'聴解は前の問題に戻れません。':'読解は前後に移動できます。'}</div>${nav}</div>`;
+  updateMockTimer();
+}
+window.renderMockQuestion=v85RenderMockQuestion;
+
+function v85ScoreMock(){
+ const s=window.mockState;if(!s)return; s.readingScore=s.questions.reduce((n,q,i)=>n+(s.selected.reading[i]===q.c?1:0),0); s.listeningScore=s.all.slice(60).reduce((n,q,i)=>n+(s.selected.listening[i]===q.c?1:0),0); s.answers=s.readingScore+s.listeningScore;
+ const cats={};s.all.forEach((q,idx)=>{const st=idx<60?'reading':'listening',i=idx<60?idx:idx-60,cat=q.cat||'その他';if(!cats[cat])cats[cat]={correct:0,total:0};cats[cat].total++;if(s.selected[st][i]===q.c)cats[cat].correct++;});
+ const rows=Object.entries(cats).sort((a,b)=>a[0].localeCompare(b[0],'ja')).map(([cat,v])=>`<tr><td style="padding:5px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.total}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${Math.round(v.correct/v.total*1000)/10}%</td></tr>`).join('');
+ const res=document.getElementById('mockResult');if(res){res.style.display='block';res.innerHTML=`<h3>🏁 模試${s.setNo} 終了</h3><b>総合：${s.answers} / 110（${Math.round(s.answers/110*1000)/10}%）</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※完全新作のオリジナル模試です。公式問題そのものではありません。</span><br><button type="button" class="primary" onclick="v85MockStart(${s.setNo===1?2:1})">🔄 別の完全新作模試へ</button>`;}
+ document.getElementById('mockArea').innerHTML='';clearTimeout(window.mockTimerId);
+}
+window.scoreMock=v85ScoreMock;
+window.finishMockStage=function(){const s=window.mockState;if(!s)return;if(s.stage==='reading'){s.stage='listening';s.index=0;s.listeningStart=null;const a=document.getElementById('mockArea');a.innerHTML='<div class="notice"><h3>📖 読解60問終了</h3><p>ここで自由に休憩できます。準備ができたら聴解へ進んでください。</p><button type="button" class="primary" onclick="beginMockListening()">🎧 聴解50問を開始</button></div>';}else v85ScoreMock();};
+window.beginMockListening=function(){const s=window.mockState;if(!s)return;s.stage='listening';s.index=0;s.listeningStart=Date.now();renderMockQuestion();};
+window.mockMove=function(delta){const s=window.mockState;if(!s)return;if(s.stage==='reading'){const n=s.index+delta;if(n<0)return;if(n>=60){finishMockStage();return}s.index=n;renderMockQuestion();}else{if(s.selected.listening[s.index]===undefined&&!confirm('この問題は未回答です。未回答のまま次へ進みますか？'))return;const n=s.index+1;if(n>=50){finishMockStage();return}s.index=n;renderMockQuestion();}};
+
+// Add two explicit mock cards without altering existing sections.
+(function(){const setup=document.getElementById('mockSetup');if(!setup||document.getElementById('v85MockChoices'))return;const d=document.createElement('div');d.id='v85MockChoices';d.className='choices';d.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px';d.innerHTML='<button type="button" class="primary" onclick="v85MockStart(1)">🆕 完全新作模試① 110問</button><button type="button" class="primary" onclick="v85MockStart(2)">🆕 完全新作模試② 110問</button>';const old=setup.querySelector('button[onclick="startMock()"]');if(old)old.replaceWith(d);})();
+
+// Adaptive bank: unseen-first, then weak-category priority; preserves all existing modes.
+(function(){
+ const SEEN='ntBankSeen_v85';
+ function getSeen(){try{return JSON.parse(localStorage.getItem(SEEN)||'{}')}catch(e){return {}}}
+ function saveSeen(x){try{localStorage.setItem(SEEN,JSON.stringify(x))}catch(e){}}
+ function key(x){return (x.type||'')+'|'+(x.q||'')}
+ function poolFor(mode){
+   const core=bankReading.map(x=>({...x})).concat(bankListening.map(x=>({...x})));
+   const extra=bankExtraReading.map(x=>({...x})).concat(bankExtraListening.map(x=>({...x})));
+   const extra2=bankExtra2Reading.map(x=>({...x})).concat(bankExtra2Listening.map(x=>({...x})));
+   const hard=hardReading.concat(hardListening).map(x=>({...x}));
+   if(mode==='reading')return bankReading.map(x=>({...x})); if(mode==='listening')return bankListening.map(x=>({...x}));
+   if(mode==='random20')return core.concat(extra); if(mode==='extra40')return extra; if(mode==='extra50')return extra2;
+   if(mode==='hard50')return hard.concat(extra2); if(mode==='all150')return core.concat(extra); if(mode==='all200')return core.concat(extra,extra2); if(mode==='all250')return core.concat(extra,extra2,hard);
+   return core;
+ }
+ function catStats(){try{return JSON.parse(localStorage.getItem('ntBankStats')||'{}')}catch(e){return {}}}
+ function pick(pool,count,mode){
+   const seen=getSeen(),stats=catStats(), uniq=[];
+   const candidates=pool.slice();
+   // Keep requested type mix for the 110-question bank mode.
+   if(mode==='all'){
+      const rr=pick(bankReading,60,'reading'), ll=pick(bankListening,50,'listening'); return v85Shuffle(rr.concat(ll));
+   }
+   // Unseen candidates first. If all are seen, start a new cycle by clearing only this mode's seen keys.
+   let fresh=candidates.filter(x=>!seen[key(x)]);
+   if(fresh.length<count){
+      candidates.forEach(x=>{if(!fresh.some(y=>key(y)===key(x))) fresh.push(x)});
+      if(fresh.length<count){ // complete exhaustion: new cycle for this pool
+        candidates.forEach(x=>{delete seen[key(x)]}); saveSeen(seen); fresh=candidates.slice();
+      }
+   }
+   fresh=fresh.map(x=>{const st=stats[x.cat||'その他'];const att=st&&st.attempt||0,cor=st&&st.correct||0;const weak=att?1-cor/att:0;const unseen=seen[key(x)]?0:3;return {x,score:unseen+weak*2+Math.random()*1.5}}).sort((a,b)=>b.score-a.score).slice(0,Math.min(count,fresh.length)).map(o=>o.x);
+   fresh.forEach(x=>seen[key(x)]=1);saveSeen(seen);return v85Shuffle(fresh);
+ }
+ window.v85PickBank=function(mode,count){return pick(poolFor(mode),count,mode);};
+ window.v85AdaptiveRunBank=function(mode){
+   let qs; if(mode==='all')qs=pick([],110,'all'); else if(mode==='reading')qs=pick(bankReading,60,mode); else if(mode==='listening')qs=pick(bankListening,50,mode); else {const pool=poolFor(mode); const n=({random20:20,extra40:40,extra50:50,hard50:50,all150:150,all200:200,all250:250}[mode]||110);qs=pick(pool,n,mode);}
+   qs=balanceChoicePositions(qs).map((x,i)=>({...x,n:i+1}));
+   bankState={mode,questions:qs,answers:0,answered:0,started:Date.now()};
+   const box=document.getElementById('bankQuiz'),res=document.getElementById('bankResult');res.style.display='block';res.innerHTML='<b>🔄 今回の出題を開始</b>：未出題を優先し、弱点カテゴリーも反映します。<br><span class="mini">※同じモードでも出題セットは毎回変わります。全問題を一巡すると新しい周回に入ります。</span>';renderBankCategoryStats();
+   box.innerHTML=qs.map((x,i)=>{const isL=x.type==='聴解',k=isL?'v85-bank-'+i:'';if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[k]=x.script||'';}return `<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${k}">🔊 音声を聞く</button><div class="mini">※この練習では1回再生。解答後にスクリプトを表示します。</div>`:''}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-bank-choice="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`}).join('');window.scrollTo(0,0);
+ };
+ const originalRunBank=window.runBank; window.runBank=function(mode){v85AdaptiveRunBank(mode);};
+})();
+
+// Weakness diagnosis: converts cumulative bank stats into three concrete next actions.
+function v85RenderDiagnosis(){
+ const st=JSON.parse(localStorage.getItem('ntBankStats')||'{}');const rows=Object.entries(st).filter(([,v])=>(v.attempt||0)>0).map(([cat,v])=>({cat,rate:v.correct/v.attempt*100,attempt:v.attempt,correct:v.correct})).sort((a,b)=>a.rate-b.rate);
+ const el=document.getElementById('bankCategoryStats');if(!el)return;
+ const low=rows.filter(x=>x.attempt>=3).slice(0,3), focus=low.length?low:rows.slice(0,3);
+ let html='<div class="notice" style="margin-top:10px"><b>🧭 弱点診断</b><br>';
+ if(!focus.length)html+='<span class="mini">まだ十分な解答データがありません。まず20〜30問ほど演習してください。</span>';
+ else {html+='<div class="mini">カテゴリー別の累計成績から、次に優先して復習する分野を自動判定します。</div><ol>';focus.forEach(x=>{html+=`<li><b>${x.cat}</b>：${x.correct}/${x.attempt}（${Math.round(x.rate*10)/10}%） → ${x.rate<60?'用語・基本確認 → 分野別演習 → 再テスト':x.rate<75?'場面判断問題を重点演習 → 間違い復習':'難問・領域横断・時間制限へ'}</li>`});html+='</ol>';}
+ html+='</div>'; const old=el.querySelector('.v85-diagnosis');if(old)old.remove();const wrap=document.createElement('div');wrap.className='v85-diagnosis';wrap.innerHTML=html;el.appendChild(wrap);
+}
+const _renderBankCategoryStats=renderBankCategoryStats; renderBankCategoryStats=function(extraHtml=''){_renderBankCategoryStats(extraHtml);v85RenderDiagnosis();};
+
+// Ensure mock rendering/selection uses the final implementation even after earlier declarations.
+renderMockQuestion=v85RenderMockQuestion;
 })();
 </script>
 </body></html>
