@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 v81</title>
+<title>2026 日本語教員試験・応用攻略 V83 完全対策</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -32,7 +32,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .detail h4{margin:14px 0 4px;font-size:13px;color:#475467}
 .detail .exam{background:#fff8e8;border-radius:10px;padding:10px}
 .item{padding:12px 0;border-bottom:1px solid #edf0f4;line-height:1.55}.badge{display:inline-block;font-size:11px;padding:4px 8px;border-radius:999px;background:#eef2ff;margin:2px}
-.choice{width:100%;text-align:left;border:1px solid #dfe3ea;background:#fafbfc;border-radius:12px;padding:12px;margin:7px 0;font-size:15px}.correct{background:#eefaf4!important;border-color:#18794e!important}.wrong{background:#fff1f0!important;border-color:#b42318!important}
+.choice{touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer;width:100%;text-align:left;border:1px solid #dfe3ea;background:#fafbfc;border-radius:12px;padding:12px;margin:7px 0;font-size:15px}.correct{background:#eefaf4!important;border-color:#18794e!important}.wrong{background:#fff1f0!important;border-color:#b42318!important}
 .feedback{padding:12px;border-radius:12px;margin-top:9px;display:none;line-height:1.55}.ok{display:block;background:#eefaf4;color:#18794e}.ng{display:block;background:#fff1f0;color:#b42318}
 .note{font-size:12px;color:#667085;line-height:1.6}.share{background:#fff;border:1px dashed #b8c1d1;border-radius:14px;padding:13px;margin:14px 0}
 @media(max-width:390px){main{padding:10px}.grid{gap:8px}.card{padding:13px}.title{font-size:14px}.desc{font-size:11px}}
@@ -145,22 +145,10 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 </style>
 
 <style>.mouth-chart-img{display:block;width:100%;height:auto;max-width:100%;image-rendering:auto}.mouth-exact-panel{background:#fff}<style>
-/* V81: 発音問題の選択肢は、タップで回答するまで操作可能。 */
+/* V80: 発音問題の選択肢は、タップで回答するまで操作可能。 */
 .pronChoices .choice{pointer-events:auto;touch-action:manipulation}
 .pronChoices .choice:disabled{pointer-events:none}
 </style>
-<style>
-/* V81: 図が読めない／読み込み失敗した場合も学習を止めない */
-img.img-safe-error{display:none!important}
-.img-fallback{display:none;margin:10px;padding:14px;border:1px dashed #9aa4b2;border-radius:10px;background:#f7f8fa;color:#4d5868;line-height:1.7}
-.img-fallback.show{display:block}
-.tap-safe{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.point-card{border:2px solid #d8dee8;border-radius:16px;padding:16px;margin:12px 0;background:#fff}
-.point-score{font-size:1.15rem;font-weight:700;margin:10px 0}
-.point-progress{height:10px;background:#e9edf2;border-radius:99px;overflow:hidden;margin:8px 0 14px}.point-progress>span{display:block;height:100%;width:0;background:#334155;transition:width .2s ease}
-.point-option{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 14px;border:1px solid #cfd6df;border-radius:12px;background:#fff;font-size:1rem;line-height:1.55;cursor:pointer}
-.point-option:disabled{cursor:default;opacity:1}.point-option.correct{border:2px solid #198754}.point-option.wrong{border:2px solid #dc3545}
-.point-result{font-weight:700;margin-top:10px}.point-result.ok{color:#198754}.point-result.ng{color:#b42318}
 </style>
 </head>
 <body>
@@ -214,11 +202,6 @@ img.img-safe-error{display:none!important}
 <div class="ctitle"><span>🌍</span><b>CEFR・JLPT</b><i>›</i></div>
 <div class="catch">レベルとCan-doを理解する</div>
 <ul><li>CEFRのレベルと特徴</li><li>JF Can-do</li><li>JLPTとの対応</li><li>タスク例・評価の視点</li><li>レベル判定の練習問題</li></ul>
-</div>
-<div class="bigcard orange" onclick="location.hash='#points'; return false;">
-<div class="ctitle"><span>🎯</span><b>点取り強化</b><i>›</i></div>
-<div class="catch">取れる問題を落とさない<br/>本番直結の仕上げ</div>
-<ul><li>頻出・取りやすい知識</li><li>選択肢の見抜き方</li><li>初見ケース判断</li><li>弱点になりやすい分野</li><li>20問ミニ本番</li></ul>
 </div>
 <div class="bigcard pink2" onclick="location.hash='#law'; return false;">
 <div class="ctitle"><span>⚖️</span><b>法令・制度</b><i>›</i></div>
@@ -472,7 +455,7 @@ img.img-safe-error{display:none!important}
 「何が違う？」を耳で判断してから専門用語につなげる。</div>
 <div class="audioGrid">
 <div class="audioMini exam">
-<button class="primary" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 1回聞く：おばさん／おばあさん</button>
+<button class="primary one-play" onclick="speakOnce('おばさん。おばあさん。',this)">🔊 1回聞く：おばさん／おばあさん</button>
 <p><b>問：</b>この違いとして最も適切なのは？</p>
 <button class="choice" data-answer="長音" onclick="audioAns(this,'長音','長音','「おばあさん」の母音を長くするのが長音。長音は1モーラ分の長さを持つ。')">① 長音</button>
 <button class="choice" data-answer="促音" onclick="audioAns(this,'促音','長音','「おばあさん」の母音を長くするのが長音。長音は1モーラ分の長さを持つ。')">② 促音</button>
@@ -481,7 +464,7 @@ img.img-safe-error{display:none!important}
 <div class="feedback"></div>
 </div>
 <div class="audioMini exam">
-<button class="primary" onclick="speakOnce('きてください。きってください。',this)">🔊 1回聞く：きて／きって</button>
+<button class="primary one-play" onclick="speakOnce('きてください。きってください。',this)">🔊 1回聞く：きて／きって</button>
 <p><b>問：</b>「きって」の「っ」に関係するのは？</p>
 <button class="choice" data-answer="長音" onclick="audioAns(this,'長音','促音','「っ」は促音。日本語では1モーラとして数える。')">① 長音</button>
 <button class="choice" data-answer="促音" onclick="audioAns(this,'促音','促音','「っ」は促音。日本語では1モーラとして数える。')">② 促音</button>
@@ -490,7 +473,7 @@ img.img-safe-error{display:none!important}
 <div class="feedback"></div>
 </div>
 <div class="audioMini exam">
-<button class="primary" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 1回聞く：はし</button>
+<button class="primary one-play" onclick="speakOnce('箸を使います。橋を渡ります。',this)">🔊 1回聞く：はし</button>
 <p><b>問：</b>「はし」のように、語の中の高さの配置の違いを何という？</p>
 <button class="choice" data-answer="アクセント" onclick="audioAns(this,'アクセント','アクセント','語の中でのピッチの配置の違いはアクセント。文全体の高さの変化はイントネーション。')">① アクセント</button>
 <button class="choice" data-answer="イントネーション" onclick="audioAns(this,'イントネーション','アクセント','語の中でのピッチの配置の違いはアクセント。文全体の高さの変化はイントネーション。')">② イントネーション</button>
@@ -499,7 +482,7 @@ img.img-safe-error{display:none!important}
 <div class="feedback"></div>
 </div>
 <div class="audioMini exam">
-<button class="primary" onclick="speakOnce('すき',this)">🔊 1回聞く：すき</button>
+<button class="primary one-play" onclick="speakOnce('すき',this)">🔊 1回聞く：すき</button>
 <p><b>問：</b>母音が声帯振動を伴わずに発音される現象は？</p>
 <button class="choice" data-answer="母音の無声化" onclick="audioAns(this,'母音の無声化','母音の無声化','高母音などが条件によって無声化する現象を母音の無声化という。')">① 母音の無声化</button>
 <button class="choice" data-answer="連濁" onclick="audioAns(this,'連濁','母音の無声化','高母音などが条件によって無声化する現象を母音の無声化という。')">② 連濁</button>
@@ -526,9 +509,9 @@ img.img-safe-error{display:none!important}
 <h3>🧑‍🏫 発音指導・フィードバック判断</h3>
 <div class="notice"><b>国試での考え方：</b>「正しい音を言って終わり」ではなく、学習者が<strong>どこで・どう間違えたか</strong>を診断し、目標音に近づくための支援を選ぶ。</div>
 <div class="audioGrid">
-<div class="audioMini exam"><button class="primary" onclick="speakOnce('た。か。',this)">🔊 学習者の発音を聞く</button><p><b>問：</b>目標音が「た」なのに「か」に近く発音された。まず確認したいものは？</p><button class="choice" data-answer="調音点" onclick="audioAns(this,'調音点','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">① 調音点</button><button class="choice" data-answer="モーラ" onclick="audioAns(this,'モーラ','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">② モーラ</button><button class="choice" data-answer="アクセント" onclick="audioAns(this,'アクセント','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">③ アクセント</button><button class="choice" data-answer="テンス" onclick="audioAns(this,'テンス','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">④ テンス</button><div class="feedback"></div></div>
-<div class="audioMini exam"><button class="primary" onclick="speakOnce('な。だ。',this)">🔊 学習者の発音を聞く</button><p><b>問：</b>目標音「な」に対する誤りを指導するとき、特に確認したい組合せは？</p><button class="choice" data-answer="鼻腔への通路と調音点" onclick="audioAns(this,'鼻腔への通路と調音点','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">① 鼻腔への通路と調音点</button><button class="choice" data-answer="長音とアクセント" onclick="audioAns(this,'長音とアクセント','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">② 長音とアクセント</button><button class="choice" data-answer="テンスとアスペクト" onclick="audioAns(this,'テンスとアスペクト','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">③ テンスとアスペクト</button><button class="choice" data-answer="敬語と待遇" onclick="audioAns(this,'敬語と待遇','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">④ 敬語と待遇</button><div class="feedback"></div></div>
-<div class="audioMini exam"><button class="primary" onclick="speakOnce('先生：もう一度、舌先を前にして言ってみましょう。',this)">🔊 教師のフィードバックを聞く</button><p><b>問：</b>この教師の対応として最も適切なものは？</p><button class="choice" data-answer="調音位置への具体的なフィードバック" onclick="audioAns(this,'調音位置への具体的なフィードバック','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">① 調音位置への具体的なフィードバック</button><button class="choice" data-answer="語彙の意味説明" onclick="audioAns(this,'語彙の意味説明','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">② 語彙の意味説明</button><button class="choice" data-answer="作文の評価" onclick="audioAns(this,'作文の評価','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">③ 作文の評価</button><button class="choice" data-answer="テンスの訂正" onclick="audioAns(this,'テンスの訂正','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">④ テンスの訂正</button><div class="feedback"></div></div>
+<div class="audioMini exam"><button class="primary one-play" onclick="speakOnce('た。か。',this)">🔊 学習者の発音を聞く</button><p><b>問：</b>目標音が「た」なのに「か」に近く発音された。まず確認したいものは？</p><button class="choice" data-answer="調音点" onclick="audioAns(this,'調音点','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">① 調音点</button><button class="choice" data-answer="モーラ" onclick="audioAns(this,'モーラ','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">② モーラ</button><button class="choice" data-answer="アクセント" onclick="audioAns(this,'アクセント','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">③ アクセント</button><button class="choice" data-answer="テンス" onclick="audioAns(this,'テンス','調音点','「た」と「か」は調音点が異なる。舌の前後位置を確認し、歯茎付近で作ることを意識させる。')">④ テンス</button><div class="feedback"></div></div>
+<div class="audioMini exam"><button class="primary one-play" onclick="speakOnce('な。だ。',this)">🔊 学習者の発音を聞く</button><p><b>問：</b>目標音「な」に対する誤りを指導するとき、特に確認したい組合せは？</p><button class="choice" data-answer="鼻腔への通路と調音点" onclick="audioAns(this,'鼻腔への通路と調音点','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">① 鼻腔への通路と調音点</button><button class="choice" data-answer="長音とアクセント" onclick="audioAns(this,'長音とアクセント','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">② 長音とアクセント</button><button class="choice" data-answer="テンスとアスペクト" onclick="audioAns(this,'テンスとアスペクト','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">③ テンスとアスペクト</button><button class="choice" data-answer="敬語と待遇" onclick="audioAns(this,'敬語と待遇','鼻腔への通路と調音点','「な」は歯茎付近の鼻音。口腔の閉鎖だけでなく、鼻腔への通路が開いていることを確認する。')">④ 敬語と待遇</button><div class="feedback"></div></div>
+<div class="audioMini exam"><button class="primary one-play" onclick="speakOnce('先生：もう一度、舌先を前にして言ってみましょう。',this)">🔊 教師のフィードバックを聞く</button><p><b>問：</b>この教師の対応として最も適切なものは？</p><button class="choice" data-answer="調音位置への具体的なフィードバック" onclick="audioAns(this,'調音位置への具体的なフィードバック','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">① 調音位置への具体的なフィードバック</button><button class="choice" data-answer="語彙の意味説明" onclick="audioAns(this,'語彙の意味説明','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">② 語彙の意味説明</button><button class="choice" data-answer="作文の評価" onclick="audioAns(this,'作文の評価','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">③ 作文の評価</button><button class="choice" data-answer="テンスの訂正" onclick="audioAns(this,'テンスの訂正','調音位置への具体的なフィードバック','「舌先を前に」という具体的な調音位置への指示は、学習者が自分で発音を調整するための支援になる。')">④ テンスの訂正</button><div class="feedback"></div></div>
 </div>
 <div class="typebox"><b>🎯 発音指導の3点セット：</b>①誤りを聞き分ける → ②調音点・調音法・鼻腔・有声無声のどこが違うか診断 → ③学習者が自分で修正できる具体的支援を選ぶ。</div>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button>
@@ -995,13 +978,6 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div class="item"><b>失点を減らす：</b>「正しい／不適切」「最も」「複数選択」など、設問条件を最初に確認する。</div>
 <div class="notice"><b>📌 最終チェック：</b>用語を説明できる／似た用語を区別できる／授業場面で判断できる／音声を聞いて分類できる／口腔断面図を見て調音点・調音法を判断できる。ここまでできたら、あとは演習と復習に集中！</div>
 <button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
-
-<section class="panel" id="points"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🎯 点取り強化・本番直結</h2>
-<div class="notice"><b>「難しい問題を増やす」より、まず取れる問題を確実に取る。</b><br/>公式範囲の中でも、用語の意味・授業判断・評価・語用・言語分析など、選択肢で差がつきやすいポイントを短時間で確認する。</div>
-<div id="pointQuiz"></div>
-<button class="primary" type="button" onclick="startPointQuiz()">🎯 20問を開始</button>
-<div class="item"><b>使い方</b>：1問ずつ回答 → すぐ解説 → 最後に得点を確認。間違えた問題は「間違いリスト」に保存できる。
-</div></section>
 <section class="panel" id="wrong"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>❌ 苦手・復習</h2><div id="wrongList"></div><h3>⭐ お気に入り</h3><div id="favoriteList"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 </main>
 <script>
@@ -1039,27 +1015,30 @@ const hard=hardReading.concat(hardListening);
   else if(mode==='all200') qs=core.concat(extra).concat(extra2).map((x,i)=>({...x,n:i+1}));
   else if(mode==='all250') qs=core.concat(extra).concat(extra2).concat(hard).map((x,i)=>({...x,n:i+1}));
   else qs=core.map((x,i)=>({...x,n:i+1}));
-  bankState={mode,questions:qs,answers:0,started:Date.now()};
+  qs=balanceChoicePositions(qs);
+  qs=qs.map((x,i)=>({...x,n:i+1}));
+  bankState={mode,questions:qs,answers:0,answered:0,started:Date.now()};
   const box=document.getElementById('bankQuiz'),res=document.getElementById('bankResult');
   res.style.display='block';res.innerHTML='<b>'+({reading:'読解60問',listening:'聴解50問',random20:'ランダム20問',extra40:'追加40問',extra50:'追加50問',hard50:'🔴 本番型・難問50問（毎回ランダム）',all:'本番110問',all150:'強化150問',all200:'完全強化200問',all250:'💎 完全強化250問'}[mode])+'</b> を開始。選んだ答えは変更できません。';
   box.innerHTML=qs.map((x,i)=>{
     const isL=x.type==='聴解';
-    const audioKey=isL?'bank-'+i:''; if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[audioKey]=x.script;} const audio=isL?`<button type="button" class="audioBtn ntAudioButton" data-audio-key="${audioKey}">🔊 音声を聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div>`:'';
-    return `<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button class="choice" onclick="answerBank(this,${i},${j})">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    const audioKey=isL?'bank-'+i:''; if(isL){window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[audioKey]=x.script;} const audio=isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${audioKey}">🔊 音声を聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div>`:'';
+    return `<div class="exam bankq" data-i="${i}"><h3>${x.n}. ${isL?'🎧 聴解':'📖 読解'} <span class="badge">${x.cat||''}</span> <button type="button" class="favBtn" onclick="toggleFavoriteByIndex(this,${i});event.stopPropagation()">☆ お気に入り</button></h3><p>${x.q}</p>${audio}<div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-bank-q="${i}" data-bank-choice="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
   window.scrollTo(0,0);
 }
 function answerBank(btn,i,j){
-  const x=bankState.questions[i],exam=btn.closest('.bankq');
+  const x=bankState.questions[i],exam=btn&&btn.closest('.bankq');
+  if(!x||!exam||exam.dataset.done)return;
+  exam.dataset.done='1'; bankState.answered=(bankState.answered||0)+1;
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
-  const fb=exam.querySelector('.feedback');
-  if(j===x.c){btn.classList.add('correct');bankState.answers++;fb.className='feedback ok';fb.innerHTML='⭕ 正解！<br>'+x.e;}
+  const fb=exam.querySelector('.feedback'); const correctIndex=x.c;
+  if(j===correctIndex){btn.classList.add('correct');bankState.answers++;fb.className='feedback ok';fb.innerHTML='⭕ 正解！<br>'+x.e;}
   else{btn.classList.add('wrong');exam.querySelectorAll('.choice').forEach((b,k)=>{if(k===correctIndex)b.classList.add('correct');});fb.className='feedback ng';fb.innerHTML='❌ 正解は '+String.fromCharCode(65+correctIndex)+'。<br>'+x.e; const key='bank-'+(x.n||i)+'-'+x.q; if(!wrong.some(w=>w.key===key)){wrong.push({key:key,type:x.type||'演習',q:x.q,answer:x.a[x.c],explanation:x.e});localStorage.setItem('ntWrong',JSON.stringify(wrong));}}
-  if(x.type==='聴解'){fb.innerHTML+=' <br><details><summary>🎧 スクリプトを見る</summary><div class="mini">'+x.script+'</div></details>';}
-  if(document.querySelectorAll('.bankq .choice:disabled').length===bankState.questions.length*4){
+  if(x.type==='聴解'){fb.innerHTML+=' <br><details><summary>🎧 スクリプトを見る</summary><div class="mini">'+(x.script||'')+'</div></details>';}
+  if(bankState.answered===bankState.questions.length){
     const total=bankState.questions.length,rate=Math.round(bankState.answers/total*1000)/10;
-    const res=document.getElementById('bankResult');res.style.display='block';res.innerHTML=`<b>🏁 結果：${bankState.answers} / ${total}（${rate}%）</b><br/>80点換算の目安：${Math.round(bankState.answers/total*110*10)/10} / 110。<br/><span class="mini">本番は110問すべてを同じ比率で採点するわけではなく、これは学習用の換算です。</span>`;
-    window.scrollTo(0,0);
+    const res=document.getElementById('bankResult');res.style.display='block';res.innerHTML=`<b>🏁 結果：${bankState.answers} / ${total}（${rate}%）</b><br/>110点換算の学習目安：${Math.round(bankState.answers/total*110*10)/10} / 110。<br/><span class="mini">※実際の合格基準は年度ごとに調整される場合があります。</span>`;
   }
 }
 let wrong=JSON.parse(localStorage.getItem("ntWrong")||"[]");
@@ -1126,19 +1105,19 @@ const pronunciationTeachingPool = [
 function renderPronunciationDiagnosisQuiz(){
   const root=document.getElementById('pronunciationDiagnosisQuiz'); if(!root)return;
   const selected=shuffleArray(pronunciationDiagnosisPool).slice(0,4).map(x=>{
-    const choices=shuffleArray(x.a.map((text,j)=>({text,correct:j===x.c})));
+    const choices=balanceChoicePositions([{...x}])[0].a.map((text,j)=>({text,correct:j===balanceChoicePositions([{...x}])[0].c}));
     return {...x,a:choices.map(o=>o.text),c:choices.findIndex(o=>o.correct)};
   });
   window.pronDiagState=selected;
   root.innerHTML=selected.map((x,i)=>{
     const key='pd-'+i+'-'+Date.now();
     window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.audio||x.script;
-    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音誤りの診断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音誤りの診断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button" onclick="pronAns(this,${i},${j},'diag');return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 function renderPronunciationTeachingQuiz(){
   const root=document.getElementById('pronunciationTeachingQuiz'); if(!root)return;
-  const selected=shuffleArray(pronunciationTeachingPool).slice(0,3).map(x=>{
+  const selected=balanceChoicePositions(shuffleArray(pronunciationTeachingPool).slice(0,3)).map(x=>{
     const choices=shuffleArray(x.a.map((text,j)=>({text,correct:j===x.c})));
     return {...x,a:choices.map(o=>o.text),c:choices.findIndex(o=>o.correct)};
   });
@@ -1146,7 +1125,7 @@ function renderPronunciationTeachingQuiz(){
   root.innerHTML=selected.map((x,i)=>{
     const key='pt-'+i+'-'+Date.now();
     window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.audio||x.script;
-    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音指導の判断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="pronExam" data-pron-index="${i}" data-correct-index="${x.c}"><h4>第${i+1}問　発音指導の判断</h4><p>${x.q}</p><button class="pronAudio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="pronChoices">${x.a.map((a,j)=>`<button class="choice" type="button" onclick="pronAns(this,${i},${j},'teach');return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 function pronAns(btn,i,j,mode){
@@ -1214,7 +1193,7 @@ function mouthSvg(kind){
     'postalveolar-affricate':'歯茎硬口蓋・破擦音の口腔断面図',
     'alveolar-tap':'歯茎・弾き音の口腔断面図'
   };
-  return `<img class="mouth-exact-panel" src="data:image/jpeg;base64,${img}" alt="${labels[kind]||'口腔断面図'}" loading="lazy">`;
+  return `<img class="mouth-exact-panel" src="data:image/png;base64,${img}" alt="${labels[kind]||'口腔断面図'}" loading="lazy">`;
 }
 
 function renderMouthExamQuiz(){
@@ -1228,7 +1207,7 @@ function renderMouthExamQuiz(){
     const kinds=shuffleArray([correctKind,...distractors]);
     const key='mouth-'+i+'-'+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[key]=x.sound;
     window.mouthExamState[i]={correct:correctKind, answered:false, explanation:x.e};
-    return `<div class="mouth-exam" data-mouth-index="${i}"><h4>第${i+1}問　国試型・音声→図</h4><p>${x.q}</p><button class="mouth-audio ntAudioButton" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="mouth-options">${kinds.map((k,j)=>`<button class="mouth-option" type="button" data-kind="${k}"><div class="mouth-option-label">${String.fromCharCode(65+j)}.</div>${mouthSvg(k)}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    return `<div class="mouth-exam" data-mouth-index="${i}"><h4>第${i+1}問　国試型・音声→図</h4><p>${x.q}</p><button class="mouth-audio ntAudioButton one-play" type="button" data-audio-key="${key}">🔊 模擬音声を1回聞く</button><div class="mouth-options">${kinds.map((k,j)=>`<button class="mouth-option" type="button" data-kind="${k}" onclick="mouthChoice(this,${i},'${k}')"><div class="mouth-option-label">${String.fromCharCode(65+j)}.</div>${mouthSvg(k)}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
 }
 
@@ -1248,60 +1227,15 @@ function shuffleArray(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){con
 function renderAudioDrill(){
   const root=document.getElementById('audioDrill');
   if(!root) return;
-  const selected=shuffleArray(audioDrillPool).slice(0,10);
+  const selected=balanceChoicePositions(shuffleArray(audioDrillPool).slice(0,10));
   root.innerHTML=selected.map((x,i)=>{
-    const choices=shuffleArray(x.a.map((text,j)=>({text,correct:j===x.c})));
-    const correctIndex=choices.findIndex(o=>o.correct);
+    const choices=x.a.map((text,j)=>({text,correct:j===x.c}));
+    const correctIndex=x.c;
     const audioKey="drill-"+i+"-"+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[audioKey]=x.script; return `<div class="exam"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn ntAudioButton" type="button" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" onclick="audioAns(this,'${String.fromCharCode(65+j)}','${String.fromCharCode(65+correctIndex)}',${JSON.stringify(x.e)})">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
   const meta=document.getElementById('audioDrillMeta');
   if(meta) meta.innerHTML='<b>今回の出題：</b>10問（全'+audioDrillPool.length+'問からランダム）　<span class="mini">※問題の順番＋選択肢の順番を毎回シャッフル</span>';
 }
-
-
-// V81: 点取り強化20問。知識だけでなく「条件→判断→選択肢」を短く回す。
-const pointQ = [
-{q:'教師が学習者の誤りを直接直さず、正しい形を言い直して示した。これは？',a:['リキャスト','明示的訂正','総括的評価','スキャニング'],c:0,e:'誤りを正しい形に言い換えて返すのがリキャスト。'},
-{q:'教師が答えを教えず「昨日は……？」と促し、学習者自身に「見ました」と言わせた。これは？',a:['明示的訂正','プロンプトによる自己修正','リキャスト','総括的評価'],c:1,e:'答えを直接与えず、学習者自身の修正を促しているのでプロンプト。'},
-{q:'「ここ」「今」「私」のように、発話場面によって指示対象が変わる表現は？',a:['メトニミー','コロケーション','ダイクシス','スキーマ'],c:2,e:'発話者・場所・時間などの文脈に依存する指示表現はダイクシス。'},
-{q:'「薬を飲む」のような、語と語の自然な共起関係を表す概念は？',a:['ダイクシス','コロケーション','モーラ','タスク'],c:1,e:'自然に一緒に使われやすい語の組合せがコロケーション。'},
-{q:'「会社が発表した」のように、組織名でその組織の担当者・行為を指す用法に近いのは？',a:['メトニミー','ダイクシス','スキャニング','アクセント'],c:0,e:'関連する対象を別の表現で指す換喩がメトニミー。'},
-{q:'学習者の「昨日、映画を見ます」という発話で、まず確認すべき文法的観点は？',a:['テンス','ヴォイス','アスペクト','待遇表現'],c:0,e:'「昨日」という過去の時点と「見ます」の時制の対応なのでテンス。'},
-{q:'「学校を行きます」を「学校に行きます」とする際、中心となるのは？',a:['格・格助詞','アスペクト','モダリティ','音便'],c:0,e:'「に」は移動先を表す格助詞。'},
-{q:'「がっこう」は何モーラ？',a:['2','3','4','5'],c:2,e:'が・っ・こ・うの4モーラ。「っ」と長音も1モーラとして数える。'},
-{q:'「きゃ」は原則として何モーラ？',a:['1モーラ','2モーラ','3モーラ','数えない'],c:0,e:'拗音「きゃ」は「き・や」の2モーラではなく1モーラ。'},
-{q:'「ぱ」の調音点と調音法の組合せは？',a:['両唇＋破裂','歯茎＋摩擦','軟口蓋＋鼻音','歯茎硬口蓋＋破擦'],c:0,e:'「ぱ」は両唇を閉鎖して開放する無声の破裂音。'},
-{q:'「な」の調音点と調音法の組合せは？',a:['両唇＋鼻音','歯茎＋鼻音','軟口蓋＋破裂','歯茎＋摩擦'],c:1,e:'「な」は歯茎付近で口腔を閉鎖し、鼻腔へ気流を通す鼻音。'},
-{q:'学習者が必要な情報だけを探す読み方は？',a:['スキミング','スキャニング','精読','多読'],c:1,e:'日時・氏名・数字など特定情報を探すのがスキャニング。'},
-{q:'読み手の既有知識・経験などの知識構造を何という？',a:['スキーマ','レパートリー','リキャスト','ルーブリック'],c:0,e:'文章理解の背景となる既有知識・経験の構造がスキーマ。'},
-{q:'学習目標を「何ができるようになるか」で具体化する記述として代表的なのは？',a:['Can-do','正規分布','クロンバックα','メトニミー'],c:0,e:'Can-doは学習者が何をできるようになるかを行動で表す。'},
-{q:'評価基準を観点別に示し、段階ごとの到達度を判断しやすくするものは？',a:['ルーブリック','ディクトグロス','スキーマ','シャドーイング'],c:0,e:'評価観点と到達レベルを組み合わせた評価表がルーブリック。'},
-{q:'一つの授業活動の中で、目標・活動・評価が整合していることを重視する考え方は？',a:['建設的整合性','音韻転移','メタニミー','言語相対論'],c:0,e:'学習目標、学習活動、評価を整合させる考え方が建設的整合性。'},
-{q:'学習者の実際の生活・仕事で必要なことを分析し、教育内容に反映するのは？',a:['ニーズ分析','総括的評価','精読','誤用分析'],c:0,e:'学習者が何を必要としているかを把握するのがニーズ分析。'},
-{q:'授業中、教師が「まずA、その後B」と順序を明示している。聞き手が特に注意する語句は？',a:['限定・順序表現','固有名詞だけ','助詞だけ','敬語だけ'],c:0,e:'「まず」「その後」などの順序表現は、聴解で判断の手掛かりになる。'},
-{q:'教師が「この活動では、答えが一つに決まる必要はありません」と条件を示した。最も適切な対応は？',a:['正解を一つに固定する','条件を踏まえて複数の考えを扱う','文法だけを採点する','活動を中止する'],c:1,e:'設問や活動の条件を無視せず、その条件の範囲で判断する。'},
-{q:'応用試験で初見の用語が選択肢に出た。最初に取るべき行動は？',a:['用語を知らないので即座に捨てる','前後の文脈と他選択肢との整合性を見る','全部暗記し直す','最初の選択肢を選ぶ'],c:1,e:'応用試験は文脈から判断できる問題もある。未知語でも本文・条件・他選択肢との関係を見る。'}
-];
-function startPointQuiz(){
- const root=document.getElementById('pointQuiz'); if(!root)return;
- const qs=shuffleArr(pointQ).slice(0,20).map(x=>{const opts=shuffleArr(x.a.map((t,i)=>({t,ok:i===x.c})));return {...x,a:opts.map(o=>o.t),c:opts.findIndex(o=>o.ok)};});
- window.pointState={qs,idx:0,score:0,answered:false}; renderPointQuestion();
-}
-function renderPointQuestion(){
- const st=window.pointState, root=document.getElementById('pointQuiz'); if(!st||!root)return;
- if(st.idx>=st.qs.length){root.innerHTML=`<div class="point-card"><h3>🎯 結果</h3><div class="point-score">${st.qs.length}問中 <strong>${st.score}問正解</strong></div><div class="point-result ${st.score>=16?'ok':'ng'}">${st.score>=18?'かなり強い。次は初見ケースへ。':st.score>=16?'合格圏を意識できる出来。間違えた所を復習。':'ここは伸びしろ大。間違えた問題をもう一周。'}</div><button class="primary" type="button" onclick="startPointQuiz()">もう一度20問</button></div>`;return;}
- const x=st.qs[st.idx]; st.answered=false;
- root.innerHTML=`<div class="point-card"><div><b>第${st.idx+1}問 / ${st.qs.length}問</b></div><div class="point-progress"><span style="width:${(st.idx/st.qs.length)*100}%"></span></div><div class="point-score">現在 ${st.score}点</div><h3>${x.q}</h3><div>${x.a.map((a,j)=>`<button class="point-option tap-safe" type="button" data-point-index="${j}">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="feedback" id="pointFeedback"></div></div>`;
-}
-document.addEventListener('click',function(e){
- const b=e.target.closest&&e.target.closest('.point-option'); if(!b)return;
- const st=window.pointState; if(!st||st.answered)return;
- const i=Number(b.dataset.pointIndex), x=st.qs[st.idx]; if(!x||!Number.isInteger(i))return;
- st.answered=true; b.parentElement.querySelectorAll('.point-option').forEach((el,k)=>{el.disabled=true;if(k===x.c)el.classList.add('correct');});
- const ok=i===x.c; if(ok){st.score++;b.classList.add('correct');}
- const fb=document.getElementById('pointFeedback'); fb.className='feedback '+(ok?'ok':'ng'); fb.innerHTML=(ok?'⭕ 正解！':'❌ 不正解。正解は '+String.fromCharCode(65+x.c)+'。')+'<br>'+x.e;
- setTimeout(function(){st.idx++;renderPointQuestion();},900);
-},true);
 
 function showPageFromHash(){
   var raw=(location.hash||'#home').slice(1) || 'home';
@@ -1351,8 +1285,27 @@ function home(){ location.hash='#home'; }
 window.addEventListener('hashchange',showPageFromHash);
 document.addEventListener('DOMContentLoaded',showPageFromHash);
 
-function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button class="choice" onclick="ans(this,${i},${j},'${type}')">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
-function ans(btn,i,j,type){const data=type==="聴解"?listeningQ:readingQ,x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
+function shuffleQuestionChoices(q){
+  const pairs=q.a.map((text,index)=>({text,correct:index===q.c}));
+  const shuffled=shuffleArray(pairs);
+  return {...q,a:shuffled.map(v=>v.text),c:shuffled.findIndex(v=>v.correct)};
+}
+function balanceChoicePositions(qs){
+  const out=qs.map(x=>shuffleQuestionChoices(x));
+  // Keep the correct-answer positions balanced across a session.
+  const positions=[];
+  for(let i=0;i<out.length;i++) positions.push(i%4);
+  for(let i=positions.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[positions[i],positions[j]]=[positions[j],positions[i]];}
+  return out.map((x,i)=>{
+    const target=positions[i];
+    if(x.c===target) return x;
+    const a=x.a.slice();
+    [a[x.c],a[target]]=[a[target],a[x.c]];
+    return {...x,a,c:target};
+  });
+}
+function quiz(type,data){const id=type==="聴解"?"listeningQuiz":"readingQuiz";const state=balanceChoicePositions(data);window.miniQuizState=window.miniQuizState||{};window.miniQuizState[type]=state;document.getElementById(id).innerHTML=state.map((x,i)=>`<div class="item"><span class="badge">${type} ${i+1}</span><br><b>${x.q}</b>${x.a.map((a,j)=>`<button type="button" class="choice" data-mini-index="${i}" data-mini-choice="${j}" onclick="ans(this,${i},${j},'${type}');return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join("")}<div id="${id+i}" class="feedback"></div></div>`).join("")}
+function ans(btn,i,j,type){const data=(window.miniQuizState||{})[type]||[],x=data[i],id=type==="聴解"?"listeningQuiz":"readingQuiz",box=document.getElementById(id+i);if(!x||!box||btn.disabled)return;document.querySelectorAll(`#${id+i} .choice`).forEach(b=>b.disabled=true);if(j===x.c){btn.classList.add("correct");box.className="feedback ok";box.innerHTML="⭕ 正解！<br>"+x.e}else{btn.classList.add("wrong");box.className="feedback ng";box.innerHTML="❌ 正解は "+String.fromCharCode(65+x.c)+"。<br>"+x.e;wrong.push({type,q:x.q,answer:x.a[x.c],explanation:x.e});localStorage.setItem("ntWrong",JSON.stringify(wrong))}}
 function audioAns(btn, answer, correct, explanation){
   const exam = btn.closest('.exam');
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
@@ -1424,7 +1377,7 @@ const boostQ=[
 let boostSession=[];
 let boostScore=0;
 function runBoost(){
-  boostSession=[...boostQ].sort(()=>Math.random()-0.5).slice(0,10);
+  boostSession=balanceChoicePositions([...boostQ].sort(()=>Math.random()-0.5).slice(0,10));
   boostScore=0;
   const el=document.getElementById('boostQuiz');
   const result=document.getElementById('boostResult');
@@ -1670,13 +1623,26 @@ document.addEventListener('click',function(e){
   if(!btn) return;
   e.preventDefault();
   e.stopPropagation();
+  if(btn.classList.contains('one-play') && btn.dataset.played==='1') return false;
+  if(btn.classList.contains('one-play')) btn.dataset.played='1';
   const key=btn.getAttribute('data-audio-key');
   const text=(window.ntAudioTexts||{})[key];
   if(!text){alert('音声データが見つかりません。');return false;}
   speakDialogue(text,btn);
 },true);
 
+document.addEventListener('click',function(e){
+  const b=e.target.closest && e.target.closest('.bankq .choice');
+  if(b && !b.disabled){ const exam=b.closest('.bankq'); const i=Number(exam&&exam.dataset.i); const j=Number(b.dataset.bankChoice); if(Number.isInteger(i)&&Number.isInteger(j)) answerBank(b,i,j); }
+  const p=e.target.closest && e.target.closest('.pronExam .choice');
+  if(p && !p.disabled){ const exam=p.closest('.pronExam'); if(exam && !exam.dataset.done){ const i=Number(exam.dataset.pronIndex); const j=[...exam.querySelectorAll('.choice')].indexOf(p); const mode=exam.querySelector('.pronAudio')?.dataset.audioKey?.startsWith('pd-')?'diag':'teach'; if(Number.isInteger(i)&&j>=0) pronAns(p,i,j,mode); } }
+  const m=e.target.closest && e.target.closest('.mouth-exam .mouth-option');
+  if(m && !m.disabled){ const exam=m.closest('.mouth-exam'); if(exam && !((window.mouthExamState||{})[Number(exam.dataset.mouthIndex)]?.answered)){ mouthChoice(m,Number(exam.dataset.mouthIndex),m.dataset.kind); } }
+},false);
+
 function speakOnce(text,btn){
+  if(btn && btn.classList.contains('one-play') && btn.dataset.played==='1') return false;
+  if(btn && btn.classList.contains('one-play')) btn.dataset.played='1';
   if(!text){alert('音声データがありません。');return false;}
   if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
     alert('このブラウザでは音声再生に対応していません。');
@@ -1709,25 +1675,16 @@ function speakOnce(text,btn){
   }
 }
 
-
-// V81: タップ不能・インラインonclick不調への保険。イベント委譲で回答を必ず拾う。
-document.addEventListener('click',function(e){
- const b=e.target.closest&&e.target.closest('.pronChoices .choice');
- if(b){ e.preventDefault(); e.stopPropagation(); const card=b.closest('.pronExam'); if(card && !card.dataset.done){ const i=Number(card.dataset.pronIndex); const j=[...card.querySelectorAll('.choice')].indexOf(b); const mode=card.closest('#pronunciationTeachingQuiz')?'teach':'diag'; if(Number.isInteger(i)&&j>=0&&typeof pronAns==='function') pronAns(b,i,j,mode); } return; }
- const m=e.target.closest&&e.target.closest('.mouth-option');
- if(m){ e.preventDefault(); e.stopPropagation(); const card=m.closest('.mouth-exam'); if(card){ const i=Number(card.dataset.mouthIndex); const k=m.dataset.kind; if(typeof mouthChoice==='function') mouthChoice(m,i,k); } return; }
-},true);
-// V81: 画像が壊れても「何も表示されない」状態を防ぐ。
-document.addEventListener('error',function(e){
- const img=e.target; if(!img || img.tagName!=='IMG' || img.dataset.fallbackDone)return;
- img.dataset.fallbackDone='1'; img.classList.add('img-safe-error');
- let fb=img.parentElement&&img.parentElement.querySelector('.img-fallback');
- if(!fb){fb=document.createElement('div');fb.className='img-fallback';fb.textContent='図の読み込みに失敗しました。図なしでも解けるよう、下の説明を確認してください。';img.parentElement&&img.parentElement.appendChild(fb);}
- fb.classList.add('show');
-},true);
-// V81: localStorage が壊れていてもアプリ全体を止めない。
-window.addEventListener('error',function(e){ console.warn('App runtime error:',e.error||e.message); });
-window.addEventListener('unhandledrejection',function(e){ console.warn('App promise error:',e.reason); });
+function shuffleStaticAudioChoices(){
+  document.querySelectorAll('.audioMini.exam').forEach(exam=>{
+    const choices=[...exam.querySelectorAll('.choice')];
+    if(choices.length<2) return;
+    const arr=shuffleArray(choices);
+    const parent=choices[0].parentNode;
+    arr.forEach((b,i)=>{ b.textContent=String.fromCharCode(0x2460+i)+' '+(b.dataset.answer||b.textContent.replace(/^.[\s.、]*/,'')); parent.appendChild(b); });
+  });
+}
+shuffleStaticAudioChoices();
 
 async function shareApp(){if(navigator.share){try{await navigator.share({title:document.title,text:"2026 日本語教員試験・応用攻略"});}catch(e){}}else alert("公開URLにした後、そのURLをLINEで送れば共有できます。")}
 if("serviceWorker" in navigator){
@@ -1738,5 +1695,36 @@ if("serviceWorker" in navigator){
 function updateCountdown(){const el=document.getElementById('countdown');if(!el)return;const target=new Date('2026-11-08T00:00:00+09:00');const now=new Date();const d=Math.max(0,Math.ceil((target-now)/86400000));el.textContent=d>0?`📅 本番まであと ${d}日。今は「問題を解く→間違いを復習」を積み上げる時期。`:'🎓 今日は本番！落ち着いて、取れる問題から。';}
 updateCountdown();setInterval(updateCountdown,3600000);
 
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const KEY='v83_answer_pos_audit';
+  function audit(){
+    const out={A:0,B:0,C:0,D:0,total:0};
+    document.querySelectorAll('[data-correct-index]').forEach(el=>{
+      const n=Number(el.getAttribute('data-correct-index'));
+      if(Number.isInteger(n)&&n>=0&&n<4){out['ABCD'[n]]++;out.total++;}
+    });
+    try{localStorage.setItem(KEY,JSON.stringify(out));}catch(e){}
+    return out;
+  }
+  window.v83AuditAnswerPositions=audit;
+  window.v83QA=function(){
+    const imgs=[...document.images];
+    return {title:document.title,buttons:document.querySelectorAll('button').length,images:imgs.length,brokenImages:imgs.filter(i=>!i.complete||i.naturalWidth===0).length,answerPositions:audit()};
+  };
+  document.addEventListener('pointerup',function(e){
+    const b=e.target.closest('button,[role="button"]');
+    if(!b||b.disabled)return;
+    b.classList.add('v83-tapped');
+    setTimeout(()=>b.classList.remove('v83-tapped'),180);
+  },{passive:true});
+  const st=document.createElement('style');
+  st.textContent='.v83-tapped{transform:scale(.985);filter:brightness(.96)}';
+  document.head.appendChild(st);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit,{once:true});else audit();
+})();
 </script>
 </body></html>
