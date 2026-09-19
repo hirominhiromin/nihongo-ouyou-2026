@@ -992,7 +992,17 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div id="mockArea" style="display:none"></div>
 <div id="mockResult" class="notice" style="display:none"></div>
 </section>
-<section class="panel" id="tavmPractice"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🧠 T・A・V・M 見分け練習</h2><div class="notice"><b>🕐 テンス＝いつ？　🎥 アスペクト＝どんな段階？　👥 ヴォイス＝誰が・誰に？　❤️ モダリティ＝話し手はどう思う？</b><br/>形だけでなく「何を表しているか」で判定します。</div><div id="tavmQ"></div><div id="tavmChoices" class="choices"></div><div id="tavmExplain" class="notice" style="display:none"></div><button id="tavmNext" class="primary" type="button">次の問題</button></section>
+<section class="panel" id="tavmPractice"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
+<h2>🧠 T・A・V・M 見分け練習</h2>
+<div class="notice"><b>まず「用語」を覚えるより、4つの質問で見分けます。</b><br><span class="mini">🕐 T＝「いつ？」　🎥 A＝「動作はどんな段階？」　👥 V＝「する側・される側は？」　❤️ M＝「話し手はどう判断・意志・要求している？」</span></div>
+<div class="routegrid" style="margin:10px 0"><div class="route"><b>🕐 T テンス</b><br>発話時を基準に、過去・現在・未来など「いつ」の関係。</div><div class="route"><b>🎥 A アスペクト</b><br>動作・出来事の開始、進行、完了、継続など「どんな段階」か。</div><div class="route"><b>👥 V ヴォイス</b><br>能動・受身・使役など、出来事の参加者の関係。</div><div class="route"><b>❤️ M モダリティ</b><br>推量・意志・義務・許可など、話し手の判断や態度。</div></div>
+<div class="typebox"><b>🧠 覚え方：</b> 🕐時計＝T　🎥動画＝A　👥人＝V　❤️心＝M<br><span class="mini">※1つの文に複数の要素が入ることがあります。問題では「何を聞かれているか」を先に確認します。</span></div>
+<div class="item"><b>STEP 1　まず質問する</b><br>「いつ？」→T ／ 「途中・完了など、どんな段階？」→A ／ 「誰が・誰に？」→V ／ 「話し手はどう思う・決める・求める？」→M</div>
+<div class="item"><b>STEP 2　ここに注意</b><br>「た」があっても必ずTとは限りません。<b>「見終わった」なら、完了というA＋過去というT</b>のように、複数の要素が同時に現れることがあります。</div>
+<div class="item"><b>STEP 3　本番型</b><br>「昨日」「～ている」「～られる」「～かもしれない」など形だけで決めず、<b>設問がどの働きを聞いているか</b>を確認します。</div>
+<div class="notice" style="margin-top:10px"><b id="tavmProgress">全24問からランダム10問</b><br><span class="mini">同じ問題を固定順で繰り返しません。まず10問解き、間違えた問題を中心に復習できます。</span></div>
+<div id="tavmQ"></div><div id="tavmChoices" class="choices"></div><div id="tavmExplain" class="notice" style="display:none"></div><div id="tavmResult" class="notice" style="display:none"></div>
+<button id="tavmNext" class="primary" type="button">次の問題</button><button id="tavmRestart" class="secondary" type="button" style="display:none;margin-top:8px">🔄 もう一度10問</button></section>
 <section class="panel" id="bank"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>📚 応用試験・演習バンク</h2>
 <div class="notice"><b>📚 ここが演習バンクです：本番110問＋追加90問＋本番型難問50問＝全250問。<b>カテゴリー別の正解数・正答率も記録します。</b></b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
@@ -2238,11 +2248,56 @@ document.querySelectorAll('.bankModeBtn').forEach(function(b){
   if(mode==='all150'||mode==='all200'||mode==='all250') b.onclick=function(){window.v94RunLargeBank(mode);};
 });
 </script>
-<script>(function(){const q=[
-['「昨日、映画を見た。」の「昨日」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],0,'「昨日」は出来事がいつ起きたかを示すのでテンスです。'],
-['「今、映画を見ている。」の「見ている」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],1,'「見ている」は動作が進行中であることを示すのでアスペクトです。'],
-['「学生が先生にほめられた。」の「ほめられた」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],2,'「ほめられた」は受身を表すのでヴォイスです。「た」には過去のテンスもあります。'],
-['「明日は雨かもしれない。」の「かもしれない」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],3,'「かもしれない」は話し手の可能性についての判断を表すのでモダリティです。'],
-['「宿題をし終わった。」の「し終わった」が主に表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],1,'「終わる」は動作の完了という段階を表すため、アスペクトに関係します。「た」には過去のテンスもあります。'],
-['「明日は一緒に行きましょう。」の「ましょう」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],3,'「ましょう」は話し手の意志・勧誘を表すのでモダリティです。']
-];let i=0,done=false;function render(){const x=q[i];done=false;document.getElementById('tavmQ').innerHTML='<h3>第'+(i+1)+'問</h3><p>'+x[0]+'</p>';const c=document.getElementById('tavmChoices');c.innerHTML='';x[1].forEach((v,j)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=String.fromCharCode(65+j)+'．'+v;b.onclick=function(){if(done)return;done=true;Array.from(c.children).forEach(z=>z.disabled=true);const e=document.getElementById('tavmExplain');e.style.display='block';e.innerHTML=(j===x[2]?'✅ 正解！':'❌ 惜しい！')+'<br>'+x[3];};c.appendChild(b)});document.getElementById('tavmExplain').style.display='none'}document.getElementById('tavmNext').onclick=function(){i=(i+1)%q.length;render()};render()})();</script></body></html>
+<script>(function(){
+const q=[
+{q:'「昨日、映画を見た。」の「昨日」が、主に何を表しているか。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'🕐 「昨日」は、出来事が発話時より前のいつ起きたかを示します。まず「いつ？」と考えるのでテンスです。'},
+{q:'「今、映画を見ている。」の「見ている」が、主に何を表しているか。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「見ている」は、見るという動作が進行中であることを表します。「どんな段階？」なのでアスペクトです。'},
+{q:'「学生が先生にほめられた。」の「ほめられた」が、主に何に関係するか。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'👥 「ほめられた」は受身で、する側とされる側の関係を表します。したがって中心はヴォイスです。「た」には過去のTもあります。'},
+{q:'「明日は雨かもしれない。」の「かもしれない」が、主に何を表しているか。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「かもしれない」は、話し手が可能性をどう判断しているかを表します。話し手の判断なのでモダリティです。'},
+{q:'「宿題をし終わった。」の「し終わった」で、特に「終わる」が表すものは何か。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「終わる」は、動作が完了したという段階を表します。これはアスペクトです。「た」には過去のTもあります。'},
+{q:'「明日は一緒に行きましょう。」の「ましょう」が、主に何を表しているか。',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「ましょう」は、話し手の意志・勧誘を表します。話し手の態度なのでモダリティです。'},
+{q:'「来週、試験を受けます。」の「来週」に注目して分類すると？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'🕐 「来週」は、出来事がいつ起こるかを示します。「いつ？」なのでテンスです。'},
+{q:'「雨が降り始めた。」の「降り始めた」が特に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「始める」は、出来事の開始という段階を表します。したがってアスペクトです。「た」は過去のTも表します。'},
+{q:'「先生が学生をほめた。」から「学生が先生にほめられた。」への変化で中心となるものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'👥 「する側・される側」の関係が変わっています。能動・受身の関係なのでヴォイスです。'},
+{q:'「この薬を飲んでもいいです。」の「てもいい」が、主に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「てもいい」は許可を表します。話し手・社会的な判断としての許可なのでモダリティです。'},
+{q:'「今まで3年間、日本語を勉強している。」の「勉強している」が表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「している」は、ある状態・動作が継続していることを捉えています。「どんな段階？」なのでアスペクトです。'},
+{q:'「私は明日、病院へ行くつもりです。」の「つもりです」が主に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「つもりです」は話し手の意志・予定を表します。話し手の態度なのでモダリティです。「明日」はTの情報も持ちます。'},
+{q:'「窓が開けられた。」の「開けられた」が受身として使われている場合、中心となるものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'👥 受身は、出来事の参加者の関係を変えて捉えるヴォイスです。「た」は過去のTも表します。'},
+{q:'「もう宿題を書き終えています。」の「書き終えている」で、特に注目する「終える」は？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「終える」は完了という段階を表し、「ている」はその結果状態にもつながります。中心はアスペクトです。'},
+{q:'「たぶん明日は雨が降るでしょう。」の「でしょう」が表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「でしょう」は、話し手の推量・判断を表します。「どう思う？」なのでモダリティです。'},
+{q:'「昨日は学校へ行かなかった。」の「昨日」に注目すると？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'🕐 「昨日」は出来事の時点を示します。「いつ？」なのでテンスです。「なかった」には別の文法情報もあります。'},
+{q:'「子どもが宿題をさせられた。」の「させられた」が表す中心的な関係は？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'👥 使役・受身を含み、「誰が誰に何をさせる／されるか」という参加者関係を表すのでヴォイスです。'},
+{q:'「まだご飯を食べています。」の「食べています」が表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「食べています」は、食べる動作が進行・継続している段階を表します。アスペクトです。'},
+{q:'「ここでは写真を撮ってはいけません。」の「てはいけません」が主に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「てはいけません」は禁止・義務に関わる話し手側の判断を表すのでモダリティです。'},
+{q:'「来月から新しい仕事を始めます。」の「来月」に注目すると？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:0,e:'🕐 「来月」は、出来事がいつ起こるかを示します。「いつ？」なのでテンスです。'},
+{q:'「映画を見てしまった。」の「てしまった」が特に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「てしまう」は、出来事の完了・終了や、その結果に対する話し手の気持ちを伴うことがあります。ここではまず完了というアスペクトに注目します。「た」はTも表します。'},
+{q:'「先生が学生に本を読ませた。」の「読ませた」が表す中心的なものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:2,e:'👥 「読ませた」は使役で、「誰が誰にさせるか」という参加者関係を表します。ヴォイスです。「た」は過去のTもあります。'},
+{q:'「明日は早く起きなければなりません。」の「なければなりません」が主に表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:3,e:'❤️ 「なければなりません」は義務を表します。話し手が「必要だ」と判断しているのでモダリティです。'},
+{q:'「3時からずっと待っています。」の「待っています」が表すものは？',a:['テンス','アスペクト','ヴォイス','モダリティ'],c:1,e:'🎥 「待っています」は、待つ状態が続いていることを表します。「どんな段階？」なのでアスペクトです。'},
+];
+let order=[],pos=0,score=0,answered=false,wrong=[];
+const $=id=>document.getElementById(id);
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function start(){
+let previous=[];
+try{previous=JSON.parse(sessionStorage.getItem('tavmLastSet')||'[]');}catch(e){}
+let pool=Array.from({length:q.length},(_,i)=>i);
+let candidate=[];
+for(let attempt=0;attempt<20;attempt++){
+  candidate=shuffle(pool.slice()).slice(0,10);
+  const overlap=candidate.filter(i=>previous.includes(i)).length;
+  if(previous.length<10 || overlap<=4) break;
+}
+order=candidate;
+try{sessionStorage.setItem('tavmLastSet',JSON.stringify(order));}catch(e){}
+pos=0;score=0;wrong=[];answered=false;$('tavmResult').style.display='none';$('tavmRestart').style.display='none';$('tavmNext').style.display='inline-block';
+$('tavmProgress').innerHTML='全24問からランダム10問　｜　前回とできるだけ違う問題を出題';
+render();
+}
+function render(){const x=q[order[pos]];answered=false;$('tavmProgress').innerHTML='第'+(pos+1)+'問 / 10問　｜　正解 '+score+'問';$('tavmQ').innerHTML='<h3>第'+(pos+1)+'問</h3><p><b>'+x.q+'</b></p>';const c=$('tavmChoices');c.innerHTML='';x.a.forEach((v,j)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=String.fromCharCode(65+j)+'．'+v;b.onclick=()=>answer(j,x);c.appendChild(b);});$('tavmExplain').style.display='none';$('tavmNext').textContent=pos===9?'結果を見る':'次の問題';}
+function answer(j,x){if(answered)return;answered=true;const c=$('tavmChoices');Array.from(c.children).forEach((b,k)=>{b.disabled=true;if(k===x.c)b.classList.add('correct');if(k===j&&j!==x.c)b.classList.add('wrong');});if(j===x.c)score++;else wrong.push(x);const e=$('tavmExplain');e.style.display='block';e.innerHTML=(j===x.c?'✅ 正解！':'❌ ここを確認！')+'<br>'+x.e;}
+function finish(){if(!answered)return;const pct=Math.round(score/10*100);$('tavmProgress').innerHTML='10問終了　｜　正解 '+score+' / 10問';let msg=pct===100?'🌟 完璧！T/A/V/Mの見分けがかなり安定しています。':pct>=80?'🎉 かなり良い！間違えた問題だけ、理由まで確認しよう。':pct>=60?'🟡 もう一歩！「いつ？・段階？・誰が誰に？・話し手は？」の4問を口に出して判断してみよう。':'🔴 まず4つの質問に戻ろう。用語を丸暗記せず、「何を聞かれている？」から考えれば大丈夫。';let review=wrong.length?'<br><br><b>復習ポイント：</b>'+wrong.map(x=>x.q).join('／'):'<br><br>🎯 間違いなし！';$('tavmResult').innerHTML='<h3>📝 結果</h3><b>'+score+' / 10問（'+pct+'%）</b><br>'+msg+review;$('tavmResult').style.display='block';$('tavmNext').style.display='none';$('tavmRestart').style.display='inline-block';window.scrollTo({top:$('tavmResult').getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'});}
+$('tavmNext').onclick=()=>{if(!answered)return;if(pos===9)finish();else{pos++;render();}};
+$('tavmRestart').onclick=start;
+start();
+})();</script></body></html>
