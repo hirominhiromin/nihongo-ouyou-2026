@@ -991,6 +991,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div id="mockArea" style="display:none"></div>
 <div id="mockResult" class="notice" style="display:none"></div>
 </section>
+<section class="panel" id="tavmPractice"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🧠 T・A・V・M 見分け練習</h2><div class="notice"><b>🕐 テンス＝いつ？　🎥 アスペクト＝どんな段階？　👥 ヴォイス＝誰が・誰に？　❤️ モダリティ＝話し手はどう思う？</b><br/>形だけでなく「何を表しているか」で判定します。</div><div id="tavmQ"></div><div id="tavmChoices" class="choices"></div><div id="tavmExplain" class="notice" style="display:none"></div><button id="tavmNext" class="primary" type="button">次の問題</button></section>
 <section class="panel" id="bank"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
 <h2>📚 応用試験・演習バンク</h2>
 <div class="notice"><b>📚 ここが演習バンクです：本番110問＋追加90問＋本番型難問50問＝全250問。<b>カテゴリー別の正解数・正答率も記録します。</b></b><br/>読解60問・聴解50問の本番型に加え、追加問題で場面判断・言語分析・授業実践・評価・CEFR/JF・制度などを補強します。<br/><span class="mini">※すべてオリジナル問題。公式問題そのものではありません。🎧 聴解は端末の読み上げ音声を使う練習なので、本番の録音音声への慣れも別途必要です。</span></div>
@@ -2236,4 +2237,11 @@ document.querySelectorAll('.bankModeBtn').forEach(function(b){
   if(mode==='all150'||mode==='all200'||mode==='all250') b.onclick=function(){window.v94RunLargeBank(mode);};
 });
 </script>
-</body></html>
+<script>(function(){const q=[
+['「昨日、映画を見た。」の「昨日」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],0,'「昨日」は出来事がいつ起きたかを示すのでテンスです。'],
+['「今、映画を見ている。」の「見ている」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],1,'「見ている」は動作が進行中であることを示すのでアスペクトです。'],
+['「学生が先生にほめられた。」の「ほめられた」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],2,'「ほめられた」は受身を表すのでヴォイスです。「た」には過去のテンスもあります。'],
+['「明日は雨かもしれない。」の「かもしれない」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],3,'「かもしれない」は話し手の可能性についての判断を表すのでモダリティです。'],
+['「宿題をし終わった。」の「し終わった」が主に表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],1,'「終わる」は動作の完了という段階を表すため、アスペクトに関係します。「た」には過去のテンスもあります。'],
+['「明日は一緒に行きましょう。」の「ましょう」が表すものは？',['テンス','アスペクト','ヴォイス','モダリティ'],3,'「ましょう」は話し手の意志・勧誘を表すのでモダリティです。']
+];let i=0,done=false;function render(){const x=q[i];done=false;document.getElementById('tavmQ').innerHTML='<h3>第'+(i+1)+'問</h3><p>'+x[0]+'</p>';const c=document.getElementById('tavmChoices');c.innerHTML='';x[1].forEach((v,j)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=String.fromCharCode(65+j)+'．'+v;b.onclick=function(){if(done)return;done=true;Array.from(c.children).forEach(z=>z.disabled=true);const e=document.getElementById('tavmExplain');e.style.display='block';e.innerHTML=(j===x[2]?'✅ 正解！':'❌ 惜しい！')+'<br>'+x[3];};c.appendChild(b)});document.getElementById('tavmExplain').style.display='none'}document.getElementById('tavmNext').onclick=function(){i=(i+1)%q.length;render()};render()})();</script></body></html>
