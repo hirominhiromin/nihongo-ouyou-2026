@@ -216,14 +216,24 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .v100-hs-cefr{left:51.3%;top:76.5%;width:15.2%;height:8.5%}
 .v100-hs-verb{left:67.8%;top:76.5%;width:15.2%;height:8.5%}
 .v100-hs-settings{left:85.2%;top:0.8%;width:13.3%;height:12.5%}
+/* V100 iPhone display safety: keep hash-target sections clear of Safari's top UI. */
+@media(max-width:560px){
+  .panel{scroll-margin-top:28px;}
+  .v100-exact-home{scroll-margin-top:0;}
+  .v100-exact-top{overflow:visible;}
+  .v100-exact-art{max-width:100%;height:auto;}
+}
 </style>
 
 <style id="v100-a4-print-style">
 @page{size:A4 portrait;margin:8mm;}
 @media print{
-  body *{visibility:hidden !important;}
-  #a4Summary,#a4Summary *{visibility:visible !important;}
-  #a4Summary{display:block !important;position:absolute !important;left:0 !important;top:0 !important;width:194mm !important;min-height:281mm !important;margin:0 !important;padding:0 !important;background:#fff !important;color:#111 !important;box-shadow:none !important;border:0 !important;}
+  html,body{margin:0 !important;padding:0 !important;height:auto !important;min-height:0 !important;overflow:visible !important;background:#fff !important;}
+  body > *{display:none !important;}
+  #last10{display:block !important;position:static !important;width:auto !important;height:auto !important;min-height:0 !important;margin:0 !important;padding:0 !important;border:0 !important;background:#fff !important;}
+  #last10 > *{display:none !important;}
+  #last10 > .a4-summary-wrap{display:block !important;width:auto !important;height:auto !important;margin:0 !important;padding:0 !important;}
+  #a4Summary{display:block !important;position:static !important;left:auto !important;top:auto !important;width:194mm !important;height:281mm !important;min-height:281mm !important;max-height:281mm !important;overflow:hidden !important;margin:0 !important;padding:0 !important;background:#fff !important;color:#111 !important;box-shadow:none !important;border:0 !important;border-radius:0 !important;box-sizing:border-box !important;}
   #a4Summary .a4-screen-only{display:none !important;}
   #a4Summary .a4-grid{display:grid !important;grid-template-columns:1fr 1fr !important;gap:4mm !important;}
   #a4Summary .a4-box{break-inside:avoid !important;page-break-inside:avoid !important;}
