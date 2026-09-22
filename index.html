@@ -216,20 +216,21 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .v100-hs-eval{left:34.8%;top:75.5%;width:15.2%;height:8.0%}
 .v100-hs-cefr{left:51.3%;top:75.5%;width:15.2%;height:8.0%}
 .v100-hs-verb{left:67.8%;top:75.5%;width:15.2%;height:8.0%}
-.v100-hs-settings{left:82%;top:2.5%;width:18%;height:12%;z-index:50}
+.v100-hs-settings{left:80%;top:1%;width:20%;height:15%;z-index:99999!important;pointer-events:auto!important}
 </style>
 
-<style id="v103-a4-print-style">
+<style id="v106-a4-print-style">
 @page{size:A4 portrait;margin:0;}
 @media print{
-  html,body{margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important;}
-  body>main{display:block!important;margin:0!important;padding:0!important;width:210mm!important;}
-  body>main>*{display:none!important;}
-  body>main>#last10{display:block!important;width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;border:0!important;background:#fff!important;overflow:hidden!important;}
-  /* Print ONLY the A4 summary itself. Everything else in #last10 is excluded. */
-  #last10>button, #last10>h2, #last10>.notice, #last10>.last10, #last10>.a4-summary-wrap>.a4-print-btn{display:none!important;}
-  #last10>.a4-summary-wrap{display:block!important;width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;overflow:hidden!important;}
-  #last10>.a4-summary-wrap>#a4Summary{display:block!important;position:relative!important;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;overflow:hidden!important;margin:0!important;padding:8mm!important;background:#fff!important;color:#111!important;box-shadow:none!important;border:0!important;border-radius:0!important;box-sizing:border-box!important;}
+  html,body{margin:0!important;padding:0!important;width:210mm!important;min-height:297mm!important;background:#fff!important;overflow:hidden!important;}
+  body>main{display:block!important;width:210mm!important;max-width:none!important;margin:0!important;padding:0!important;}
+  body>main>*{display:none!important;visibility:hidden!important;}
+  body>main>#last10{display:block!important;visibility:visible!important;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;margin:0!important;padding:0!important;border:0!important;background:#fff!important;overflow:hidden!important;}
+  #last10>*{visibility:hidden!important;}
+  #last10>.a4-summary-wrap{display:block!important;visibility:visible!important;width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;overflow:hidden!important;}
+  #last10>.a4-summary-wrap>.a4-print-btn{display:none!important;}
+  #last10>.a4-summary-wrap>#a4Summary{display:block!important;visibility:visible!important;position:relative!important;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;overflow:hidden!important;margin:0!important;padding:8mm!important;background:#fff!important;color:#111!important;box-shadow:none!important;border:0!important;border-radius:0!important;box-sizing:border-box!important;}
+  #a4Summary *{visibility:visible!important;}
   #a4Summary .a4-screen-only{display:none!important;}
   #a4Summary .a4-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:3.5mm!important;}
   #a4Summary .a4-box{break-inside:avoid!important;page-break-inside:avoid!important;}
@@ -252,6 +253,14 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 #a4Summary .a4-foot{font-size:9.5px;color:#555;margin-top:8px;}
 </style>
 
+<style id="v106-print-class">
+@media print{
+ body.v106-print-a4>main> *{display:none!important;visibility:hidden!important;}
+ body.v106-print-a4>main>#last10{display:block!important;visibility:visible!important;width:210mm!important;height:297mm!important;overflow:hidden!important;}
+ body.v106-print-a4 #last10>.a4-summary-wrap{display:block!important;visibility:visible!important;width:210mm!important;height:297mm!important;overflow:hidden!important;}
+ body.v106-print-a4 #last10>.a4-summary-wrap>#a4Summary{display:block!important;visibility:visible!important;width:210mm!important;height:297mm!important;overflow:hidden!important;}
+}
+</style>
 </head>
 <body>
 <main>
@@ -273,7 +282,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <button class="v100-hotspot v100-hs-eval" aria-label="評価・統計" onclick="location.hash='#eval'; return false;"></button>
     <button class="v100-hotspot v100-hs-cefr" aria-label="CEFR・JLPT" onclick="location.hash='#cefr'; return false;"></button>
     <button class="v100-hotspot v100-hs-verb" aria-label="動詞のグループ" onclick="location.hash='#grammar'; return false;"></button>
-    <button class="v100-hotspot v100-hs-settings" aria-label="設定" onclick="openSettings(); return false;"></button>
+    <button class="v100-hotspot v100-hs-settings" aria-label="設定" onclick="event.preventDefault();event.stopPropagation();window.openSettings(); return false;"></button>
   </div>
 </div>
 <div class="modal" id="settingsModal" style="display:none">
@@ -999,7 +1008,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <h2>🚨 直前チェック</h2>
 <div class="notice"><b>本番直前は「A4まとめ → 頻出ポイント → 本番直前10分チェック」の順で確認。</b><br/>新しい知識を増やすより、「知っているのに落とす」を防ぐための最終確認に使います。</div>
 <div class="a4-summary-wrap">
-  <button type="button" class="a4-print-btn" onclick="window.print()">🖨️ A4まとめを印刷</button>
+  <button type="button" class="a4-print-btn" onclick="printA4Summary()">🖨️ A4まとめを印刷</button>
   <div id="a4Summary">
     <h3>📄 日本語教員試験・応用　直前A4まとめ</h3>
     <div class="a4-sub">「用語を思い出す」→「何を聞かれているか判断する」→「本文・音声の根拠に戻る」ための最終確認</div>
@@ -2364,4 +2373,38 @@ function finish(){if(!answered)return;const pct=Math.round(score/10*100);$('tavm
 $('tavmNext').onclick=()=>{if(!answered)return;if(pos===9)finish();else{pos++;render();}};
 $('tavmRestart').onclick=start;
 start();
-})();</script></body></html>
+})();</script><script>
+(function(){
+  // V106: make settings hotspot independent of inline-handler quirks.
+  window.openSettings = window.openSettings || function(){
+    var m=document.getElementById('settingsModal');
+    if(!m)return false;
+    m.style.display='flex';
+    var r=document.getElementById('rateRange'),v=document.getElementById('rateValue');
+    if(r && typeof window.speechRate!=='undefined')r.value=window.speechRate;
+    if(v && typeof window.speechRate!=='undefined')v.textContent=window.speechRate;
+    try{if(typeof setVoiceMode==='function')setVoiceMode(window.voiceMode||'auto');}catch(e){}
+    try{if(typeof loadVoices==='function')loadVoices();}catch(e){}
+    return false;
+  };
+  function bindSettings(){
+    var b=document.querySelector('.v100-hs-settings');
+    if(!b || b.dataset.v106Bound)return;
+    b.dataset.v106Bound='1';
+    ['pointerdown','touchstart','click'].forEach(function(ev){
+      b.addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();window.openSettings();},{passive:false});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindSettings); else bindSettings();
+
+  window.printA4Summary=function(){
+    var summary=document.getElementById('a4Summary');
+    if(!summary){window.print();return;}
+    document.body.classList.add('v106-print-a4');
+    // Force the browser to recalculate layout before opening the native print sheet.
+    requestAnimationFrame(function(){requestAnimationFrame(function(){window.print();});});
+  };
+  window.addEventListener('afterprint',function(){document.body.classList.remove('v106-print-a4');});
+})();
+</script>
+</body></html>
