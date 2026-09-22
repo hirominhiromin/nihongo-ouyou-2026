@@ -2413,4 +2413,70 @@ start();
   html.v108-print-a4 #last10>.a4-summary-wrap>#a4Summary{display:block!important;position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;overflow:hidden!important;margin:0!important;padding:8mm!important;box-sizing:border-box!important;}
 }
 </style>
+
+<script>
+/* V109 FINAL FIX: iPhone-safe settings + isolated A4 printing */
+(function(){
+  function openSettingsSafe(){
+    var m=document.getElementById('settingsModal');
+    if(!m) return;
+    m.style.setProperty('display','flex','important');
+    try{
+      var r=document.getElementById('rateRange'), rv=document.getElementById('rateValue');
+      if(r && typeof speechRate!=='undefined') r.value=speechRate;
+      if(rv && typeof speechRate!=='undefined') rv.textContent=speechRate;
+      if(typeof setVoiceMode==='function' && typeof voiceMode!=='undefined') setVoiceMode(voiceMode);
+      if(typeof loadVoices==='function') loadVoices();
+    }catch(e){}
+  }
+  window.openSettings=openSettingsSafe;
+
+  /* Make the artwork itself non-interactive so the transparent hotspot always wins. */
+  var art=document.querySelector('.v100-exact-art');
+  if(art) art.style.pointerEvents='none';
+
+  /* Direct binding, without waiting for DOMContentLoaded. */
+  var hs=document.querySelector('.v100-hs-settings');
+  if(hs){
+    hs.style.pointerEvents='auto';
+    hs.style.zIndex='100000';
+    hs.onclick=function(e){e.preventDefault();e.stopPropagation();openSettingsSafe();return false;};
+    hs.onpointerup=function(e){e.preventDefault();e.stopPropagation();openSettingsSafe();return false;};
+  }
+
+  /* Safety net: tapping the top-right settings area of the artwork opens settings. */
+  var top=document.querySelector('.v100-exact-top');
+  if(top){
+    top.addEventListener('pointerup',function(e){
+      if(e.target===hs) return;
+      var r=top.getBoundingClientRect();
+      if(r.width>0 && r.height>0){
+        var x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+        if(x>=0.80 && y<=0.16){
+          e.preventDefault();e.stopPropagation();openSettingsSafe();
+        }
+      }
+    },true);
+  }
+
+  /* Isolated print document: only the A4 summary is sent to the printer. */
+  window.printA4Summary=function(){
+    var src=document.getElementById('a4Summary');
+    if(!src){window.print();return false;}
+    var w=window.open('','_blank','noopener,noreferrer,width=900,height=1200');
+    if(!w){
+      alert('印刷画面を開けませんでした。iPhoneの「ポップアップをブロック」が有効なら、一時的にオフにしてください。');
+      return false;
+    }
+    var html='<!doctype html><html lang="ja"><head><meta charset="utf-8">'+
+      '<meta name="viewport" content="width=device-width,initial-scale=1">'+
+      '<title>A4まとめ 印刷</title>'+
+      '<style>@page{size:A4 portrait;margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff}body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#111}.sheet{width:210mm;height:297mm;padding:8mm;overflow:hidden}.sheet h3{margin:0 0 4px;font-size:18px}.sheet .a4-sub{font-size:9px;margin-bottom:6px;color:#444}.sheet .a4-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}.sheet .a4-box{border:1px solid #ddd;border-radius:7px;padding:7px;break-inside:avoid;page-break-inside:avoid}.sheet .a4-box h4{font-size:11px;margin:0 0 3px}.sheet .a4-box p{font-size:8.5px;line-height:1.28;margin:2px 0}.sheet .a4-foot{font-size:8px;margin-top:5px;color:#555}@media print{html,body{width:210mm;height:297mm}.sheet{margin:0}}</style>'+
+      '</head><body><div class="sheet">'+src.innerHTML+'</div></body></html>';
+    w.document.open();w.document.write(html);w.document.close();
+    setTimeout(function(){w.focus();w.print();},500);
+    return false;
+  };
+})();
+</script>
 </body></html>
