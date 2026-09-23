@@ -251,6 +251,23 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 @media(max-width:430px){.v107-top-score{padding:9px}.v107-top-score .mascot{width:64px;height:62px}.v107-top-score .score-line{font-size:14px}.v107-top-score .score-msg{font-size:11px}}
 </style>
 
+
+<style>
+/* V110: iPhone Safari - answered choices must remain readable */
+.choice[aria-disabled="true"]{
+  opacity:1 !important;
+  color:#1683e6 !important;
+  -webkit-text-fill-color:#1683e6 !important;
+}
+.choice[aria-disabled="true"].wrong{
+  color:#b42318 !important;
+  -webkit-text-fill-color:#b42318 !important;
+}
+.choice[aria-disabled="true"].correct{
+  color:#18794e !important;
+  -webkit-text-fill-color:#18794e !important;
+}
+</style>
 </head>
 <body>
 <div id="v107PrintSheet" aria-hidden="true"></div>
