@@ -1887,7 +1887,10 @@ function staticMiniAns(btn){
   // prevents Safari/iOS from losing the tap through layered handlers.
   try{
     if(!btn || !btn.closest) return false;
-    const item=btn.closest('.item');
+    // Static questions use two existing card shapes in this app:
+    // regular questions have .item, while the listening mini questions use
+    // .exam.miniListenExam directly. Support both without changing content.
+    const item=btn.closest('.item') || btn.closest('.miniListenExam') || btn.closest('.exam');
     if(!item) return false;
     const choices=[...item.querySelectorAll('.choices .choice[data-static-answer]')];
     const fb=item.querySelector('.feedback[data-answer]');
@@ -1931,7 +1934,8 @@ function staticMiniAns(btn){
 }
 
 // One delegated capture-phase handler is used for all static-answer cards.
-// It is intentionally independent of inline onclick timing and works on iPhone Safari.
+// It supports both .item cards and the existing .miniListenExam cards,
+// and is independent of inline onclick timing for iPhone Safari.
 document.addEventListener('click',function(e){
   const btn=e.target && e.target.closest ? e.target.closest('.choice[data-static-answer]') : null;
   if(!btn) return;
