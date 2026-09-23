@@ -268,6 +268,23 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
   -webkit-text-fill-color:#18794e !important;
 }
 </style>
+<style>
+/* V111: static mini questions — visible answer key after randomized choices */
+.choice[aria-disabled="true"].correct{
+  background:#eefaf4 !important;
+  border:2px solid #18794e !important;
+  color:#18794e !important;
+  -webkit-text-fill-color:#18794e !important;
+  opacity:1 !important;
+}
+.choice[aria-disabled="true"].wrong{
+  background:#fff1f0 !important;
+  border:2px solid #b42318 !important;
+  color:#b42318 !important;
+  -webkit-text-fill-color:#b42318 !important;
+  opacity:1 !important;
+}
+</style>
 </head>
 <body>
 <div id="v107PrintSheet" aria-hidden="true"></div>
@@ -1952,8 +1969,16 @@ function shuffleStaticAudioChoices(){
       const label=String.fromCharCode(0x2460+i);
       const txt=(b.textContent||'').replace(/^[①②③④]\s*/,'');
       b.textContent=label+' '+txt;
+      /* V111: after shuffling, the displayed label and the answer key must stay aligned. */
+      b.setAttribute('data-static-answer', label);
       parent.appendChild(b);
     });
+    /* The feedback key must use the NEW displayed label of the correct button. */
+    const correctButton=arr.find(b=>b===choices[correct]);
+    if(correctButton && fb){
+      const correctPos=arr.indexOf(correctButton);
+      fb.setAttribute('data-answer', String.fromCharCode(0x2460+correctPos));
+    }
   });
 }
 
