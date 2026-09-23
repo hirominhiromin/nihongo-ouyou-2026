@@ -1893,50 +1893,63 @@ shuffleStaticAudioChoices();
 
 
 function staticMiniAns(btn){
-  /* V112: 問題単位を正しく特定。長文読解は1つの.exam内に複数の.itemがあるため、
-     .examを回答単位にすると第1問の正解を全問で共有してしまう問題を修正。
-     iPhone/Safari対策としてdisabledは使用しない。 */
-  const questionItem=btn.closest('.item');
-  const questionExam=btn.closest('.exam');
-  const q=(questionItem && questionItem.querySelector('.feedback[data-answer]')) ? questionItem : questionExam;
-  if(!q || q.dataset.answered==='1') return false;
-  const fb=q.querySelector('.feedback[data-answer]');
-  const choices=[...q.querySelectorAll('.choice')];
-  if(!fb || !choices.length) return false;
+  // V113: 事例問題専用の堅牢な判定。DOMの入れ子やSafariの表示状態に依存しない。
+  try{
+    if(!btn || !btn.closest) return false;
+    const item=btn.closest('.item');
+    if(!item) return false;
+    const fb=item.querySelector('.feedback[data-answer]');
+    const choices=[...item.querySelectorAll(':scope > .choices > .choice')];
+    if(!fb || !choices.length) return false;
+    if(item.dataset.answered==='1') return false;
 
-  const chosen=String(btn.getAttribute('data-static-answer')||'').trim();
-  const correct=String(fb.getAttribute('data-answer')||'').trim();
-  const ok=chosen===correct;
-  q.dataset.answered='1';
+    const norm=v=>String(v??'').replace(/\s+/g,'').trim();
+    const chosen=norm(btn.getAttribute('data-static-answer'));
+    const correct=norm(fb.getAttribute('data-answer'));
+    const ok=(chosen===correct);
 
-  choices.forEach(b=>{
-    b.setAttribute('aria-disabled','true');
-    b.classList.remove('correct','wrong');
-  });
-
-  if(ok){
-    btn.classList.add('correct');
-  }else{
-    btn.classList.add('wrong');
+    item.dataset.answered='1';
     choices.forEach(b=>{
-      if(String(b.getAttribute('data-static-answer')||'').trim()===correct){
-        b.classList.add('correct');
-      }
+      b.classList.remove('correct','wrong','answered');
+      b.removeAttribute('disabled');
+      b.setAttribute('aria-disabled','true');
     });
-  }
 
-  const original=fb.getAttribute('data-explanation') || fb.textContent || '';
-  const explanation=original.replace(/^\s*正解：[^　 ]+　?/, '').trim();
-  fb.className='feedback '+(ok?'ok':'ng');
-  fb.innerHTML=(ok
-    ? '⭕ 正解！<br>'
-    : '❌ 不正解。正解は <strong>'+correct+'</strong>。<br>') + explanation;
-  fb.style.display='block';
-  fb.style.opacity='1';
-  fb.style.color='#172033';
-  fb.style.webkitTextFillColor='#172033';
-  return false;
+    // 正解を必ず緑、不正解を赤にする。正解番号はdata-answerから直接取得。
+    choices.forEach(b=>{
+      const v=norm(b.getAttribute('data-static-answer'));
+      if(v===correct) b.classList.add('correct');
+    });
+    if(!ok) btn.classList.add('wrong');
+    else btn.classList.add('correct');
+
+    const raw=String(fb.getAttribute('data-explanation')||fb.textContent||'');
+    const explanation=raw.replace(/^\s*正解\s*[:：]\s*[①②③④A-DＡ-Ｄ0-9]+\s*/,'').trim();
+    fb.className='feedback '+(ok?'ok':'ng');
+    fb.style.display='block';
+    fb.style.opacity='1';
+    fb.style.color='#172033';
+    fb.style.webkitTextFillColor='#172033';
+    fb.innerHTML=(ok
+      ? '<strong>⭕ 正解！</strong><br>'
+      : '<strong>❌ 不正解</strong><br>正解は <strong>'+correct+'</strong>。<br>') + explanation;
+    return false;
+  }catch(err){
+    console.error('staticMiniAns error',err);
+    return false;
+  }
 }
+
+// V113: インラインonclickがSafariで取りこぼされても確実に動く保険。
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.exam .item .choices .choice[data-static-answer]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      staticMiniAns(btn);
+    },false);
+  });
+});
 
 function renderBankCategoryStats(extraHtml=''){
   const el=document.getElementById('bankCategoryStats');
