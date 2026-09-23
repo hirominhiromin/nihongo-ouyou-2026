@@ -1853,7 +1853,8 @@ shuffleStaticAudioChoices();
 
 
 function staticMiniAns(btn){
-  const exam=btn.closest('.exam');
+  /* V108: 事例問題など .item 内の選択肢にも対応 */
+  const exam=btn.closest('.exam, .item');
   if(!exam || btn.disabled) return false;
   exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
   const chosen=btn.getAttribute('data-static-answer');
