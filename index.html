@@ -1853,14 +1853,15 @@ shuffleStaticAudioChoices();
 
 
 function staticMiniAns(btn){
-  /* V108: 事例問題など .item 内の選択肢にも対応 */
+  /* V109: iPhone/Safariでdisabledにすると文字が薄くなるため、disabledは使わない */
   const exam=btn.closest('.exam, .item');
-  if(!exam || btn.disabled) return false;
-  exam.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+  if(!exam || exam.dataset.answered==='1') return false;
+  exam.dataset.answered='1';
   const chosen=btn.getAttribute('data-static-answer');
   const fb=exam.querySelector('.feedback');
   const correct=fb ? fb.getAttribute('data-answer') : null;
   const ok=chosen===correct;
+  exam.querySelectorAll('.choice').forEach(b=>b.setAttribute('aria-disabled','true'));
   btn.classList.add(ok?'correct':'wrong');
   if(!ok){
     exam.querySelectorAll('.choice').forEach(b=>{
