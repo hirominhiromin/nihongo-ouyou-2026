@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V84 完全対策</title>
+<title>2026 日本語教員試験・応用攻略 V112</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -284,6 +284,12 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
   -webkit-text-fill-color:#b42318 !important;
   opacity:1 !important;
 }
+<style>
+/* V112: static question answer state — always readable on iPhone/Safari */
+.choice[aria-disabled="true"]{opacity:1 !important;}
+.choice[aria-disabled="true"].correct{background:#eefaf4 !important;border:2px solid #18794e !important;color:#18794e !important;-webkit-text-fill-color:#18794e !important;opacity:1 !important;}
+.choice[aria-disabled="true"].wrong{background:#fff1f0 !important;border:2px solid #b42318 !important;color:#b42318 !important;-webkit-text-fill-color:#b42318 !important;opacity:1 !important;}
+.feedback.ok,.feedback.ng{display:block !important;opacity:1 !important;color:#172033 !important;-webkit-text-fill-color:#172033 !important;}
 </style>
 </head>
 <body>
@@ -375,19 +381,19 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <b>教師：</b>「いい質問ですね。『雨が降ったら』と『雨が降るなら』は、いつでも同じではありません。今日は、実際の場面を考えて使い分けてみましょう。」</p>
 <div class="item"><b>第1問　この活動の主なねらいは？</b><br/>
 <div class="choices"><button class="choice" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 条件を表す表現を実際の場面で使えるようにする</button><button class="choice" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 「〜たら」の活用形を何度も暗唱する</button><button class="choice" data-static-answer="③ 「〜たら」と「〜なら」の辞書的な意味を暗記する</button><button class="choice" data-static-answer="④ 文法用語を正確に説明できるようにする</button></div>
-<div class="feedback" data-answer="①">正解：①　教師は実際の場面を設定し、条件を表す表現を使って意味のあるやり取りをさせようとしている。</div></div>
+<div class="feedback" data-answer="①" data-explanation="正解：①　教師は実際の場面を設定し、条件を表す表現を使って意味のあるやり取りをさせようとしている。">正解：①　教師は実際の場面を設定し、条件を表す表現を使って意味のあるやり取りをさせようとしている。</div></div>
 <div class="item"><b>第2問　教師の「そうですか。『雨が降ったら、映画館へ行きません』ですね。」は、どのような対応として読むのが最も適切か？</b><br/>
 <div class="choices"><button class="choice" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 明示的訂正</button><button class="choice" data-static-answer="②" onclick="staticMiniAns(this);return false;">② リキャスト</button><button class="choice" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 明確化要求</button><button class="choice" data-static-answer="④ メタ言語的フィードバック</button></div>
-<div class="feedback" data-answer="②">正解：②　教師は誤りを直接「間違い」と指摘せず、学習者の表現を自然な形で言い換えて返している。</div></div>
+<div class="feedback" data-answer="②" data-explanation="正解：②　教師は誤りを直接「間違い」と指摘せず、学習者の表現を自然な形で言い換えて返している。">正解：②　教師は誤りを直接「間違い」と指摘せず、学習者の表現を自然な形で言い換えて返している。</div></div>
 <div class="item"><b>第3問　Bさんの質問に対する教師の対応から分かることは？</b><br/>
 <div class="choices"><button class="choice" data-static-answer="①" onclick="staticMiniAns(this);return false;">① どちらの表現も必ず同じ意味で使えると教えている</button><button class="choice" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 文法の正誤だけを確認して活動を終えようとしている</button><button class="choice" data-static-answer="③ 文脈・場面による使い分けに学習者の注意を向けている</button><button class="choice" data-static-answer="④ 「〜なら」の使用を禁止している</button></div>
-<div class="feedback" data-answer="③">正解：③　「いつでも同じではありません」「実際の場面を考えて」とあるため、形だけでなく文脈に応じた使い分けへ注意を向けている。</div></div>
+<div class="feedback" data-answer="③" data-explanation="正解：③　「いつでも同じではありません」「実際の場面を考えて」とあるため、形だけでなく文脈に応じた使い分けへ注意を向けている。">正解：③　「いつでも同じではありません」「実際の場面を考えて」とあるため、形だけでなく文脈に応じた使い分けへ注意を向けている。</div></div>
 <div class="item"><b>第4問　この場面で、学習者中心の活動として次に行うなら最も適切なのは？</b><br/>
 <div class="choices"><button class="choice" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 教師が「〜たら」のルールを20分説明する</button><button class="choice" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 学習者が条件のある場面を考え、ペアで質問・応答する</button><button class="choice" data-static-answer="③ 学習者全員に「〜たら」を10回ずつ書かせる</button><button class="choice" data-static-answer="④ 教師が正解文をすべて板書し、学習者は写すだけにする</button></div>
-<div class="feedback" data-answer="②">正解：②　目標が実際の場面での使用なら、学習者自身が条件を考え、相手とやり取りする活動につなげるのが適切。</div></div>
+<div class="feedback" data-answer="②" data-explanation="正解：②　目標が実際の場面での使用なら、学習者自身が条件を考え、相手とやり取りする活動につなげるのが適切。">正解：②　目標が実際の場面での使用なら、学習者自身が条件を考え、相手とやり取りする活動につなげるのが適切。</div></div>
 <div class="item"><b>第5問　この読解で最も重要な読み方は？</b><br/>
 <div class="choices"><button class="choice" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 会話に出てきた文をすべて暗記する</button><button class="choice" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 知らない語を一つずつ辞書で調べてから設問を見る</button><button class="choice" data-static-answer="③ 発話の内容と教師の指導意図を結び付けて読む</button><button class="choice" data-static-answer="④ 最後の教師の発話だけを読んで判断する</button></div>
-<div class="feedback" data-answer="③">正解：③　長い会話では、発話そのものだけでなく「誰が・何を意図して・どう対応したか」を流れで捉えることが重要。</div></div>
+<div class="feedback" data-answer="③" data-explanation="正解：③　長い会話では、発話そのものだけでなく「誰が・何を意図して・どう対応したか」を流れで捉えることが重要。">正解：③　長い会話では、発話そのものだけでなく「誰が・何を意図して・どう対応したか」を流れで捉えることが重要。</div></div>
 </div>
 <div class="typebox"><b>🎯 長い会話の5点セット：</b>「①授業目標 → ②学習者の発話・困りごと → ③教師の対応 → ④対応の意図 → ⑤次の活動」。この5つを線でつなぐように読むと、長文でも迷いにくい。</div>
 <h3>🔎 似ている用語を絶対に区別</h3>
@@ -452,19 +458,19 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <div class="exam miniListenExam"><h3>第1問　教師の意図</h3>
 <p>学習者「先生、昨日映画を見ます。」<br/>教師「昨日……？　じゃあ、もう一度言ってみましょう。」<br/>この教師の対応として最も適切なものは？</p>
 <div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 明示的訂正</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② リキャスト</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 誘導・プロンプト</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 答えを先に提示</button></div>
-<div class="feedback" data-answer="③">正解：③　教師は「見ました」と答えを言わず、学習者自身の修正を促している。これは誘導・プロンプト。</div></div>
+<div class="feedback" data-answer="③" data-explanation="正解：③　教師は「見ました」と答えを言わず、学習者自身の修正を促している。これは誘導・プロンプト。">正解：③　教師は「見ました」と答えを言わず、学習者自身の修正を促している。これは誘導・プロンプト。</div></div>
 <div class="exam miniListenExam"><h3>第2問　要点</h3>
 <p>「今日はグループで発表します。ただ、時間が限られているので、一人3分以内にしてください。」この発話で、聞き取るべき中心的な条件は？</p>
 <div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① 発表はグループで行う</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 一人3分以内</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 今日は授業がある</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 発表をする</button></div>
-<div class="feedback" data-answer="②">正解：②　「ただ」「ので」に続く具体的な制限条件がポイント。数字・時間・条件は聞き取り問題で狙われやすい。</div></div>
+<div class="feedback" data-answer="②" data-explanation="正解：②　「ただ」「ので」に続く具体的な制限条件がポイント。数字・時間・条件は聞き取り問題で狙われやすい。">正解：②　「ただ」「ので」に続く具体的な制限条件がポイント。数字・時間・条件は聞き取り問題で狙われやすい。</div></div>
 <div class="exam miniListenExam"><h3>第3問　明確化要求</h3>
 <p>学習者「駅で先生を……えっと……」<br/>教師「すみません、もう一度お願いします。」<br/>教師の発話は何か。</p>
 <div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① リキャスト</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 明示的訂正</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 明確化要求</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ メタ言語的フィードバック</button></div>
-<div class="feedback" data-answer="③">正解：③　理解できなかったことを示し、もう一度の発話を求めているので明確化要求。</div></div>
+<div class="feedback" data-answer="③" data-explanation="正解：③　理解できなかったことを示し、もう一度の発話を求めているので明確化要求。">正解：③　理解できなかったことを示し、もう一度の発話を求めているので明確化要求。</div></div>
 <div class="exam miniListenExam"><h3>第4問　対比・限定</h3>
 <p>「この教材は初級には使いやすいです。一方、中級では内容が簡単すぎるかもしれません。」最も適切な聞き取りは？</p>
 <div class="choices"><button class="choice" type="button" data-static-answer="①" onclick="staticMiniAns(this);return false;">① どのレベルでも使いやすい</button><button class="choice" type="button" data-static-answer="②" onclick="staticMiniAns(this);return false;">② 初級には使いやすいが、中級には課題がある</button><button class="choice" type="button" data-static-answer="③" onclick="staticMiniAns(this);return false;">③ 中級だけに適している</button><button class="choice" type="button" data-static-answer="④" onclick="staticMiniAns(this);return false;">④ 初級には使えない</button></div>
-<div class="feedback" data-answer="②">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
+<div class="feedback" data-answer="②" data-explanation="正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。">正解：②　「一方」が対比を示す。前半だけで判断せず、後半の限定条件まで聞く。</div></div>
 <button class="primary" onclick="quiz('聴解',listeningQ)">聴解ミニ問題（追加）</button><div id="listeningQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="audioPlus">
 <button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button>
@@ -1887,26 +1893,48 @@ shuffleStaticAudioChoices();
 
 
 function staticMiniAns(btn){
-  /* V109: iPhone/Safariでdisabledにすると文字が薄くなるため、disabledは使わない */
-  const exam=btn.closest('.exam, .item');
-  if(!exam || exam.dataset.answered==='1') return false;
-  exam.dataset.answered='1';
-  const chosen=btn.getAttribute('data-static-answer');
-  const fb=exam.querySelector('.feedback');
-  const correct=fb ? fb.getAttribute('data-answer') : null;
+  /* V112: 問題単位を正しく特定。長文読解は1つの.exam内に複数の.itemがあるため、
+     .examを回答単位にすると第1問の正解を全問で共有してしまう問題を修正。
+     iPhone/Safari対策としてdisabledは使用しない。 */
+  const questionItem=btn.closest('.item');
+  const questionExam=btn.closest('.exam');
+  const q=(questionItem && questionItem.querySelector('.feedback[data-answer]')) ? questionItem : questionExam;
+  if(!q || q.dataset.answered==='1') return false;
+  const fb=q.querySelector('.feedback[data-answer]');
+  const choices=[...q.querySelectorAll('.choice')];
+  if(!fb || !choices.length) return false;
+
+  const chosen=String(btn.getAttribute('data-static-answer')||'').trim();
+  const correct=String(fb.getAttribute('data-answer')||'').trim();
   const ok=chosen===correct;
-  exam.querySelectorAll('.choice').forEach(b=>b.setAttribute('aria-disabled','true'));
-  btn.classList.add(ok?'correct':'wrong');
-  if(!ok){
-    exam.querySelectorAll('.choice').forEach(b=>{
-      if(b.getAttribute('data-static-answer')===correct) b.classList.add('correct');
+  q.dataset.answered='1';
+
+  choices.forEach(b=>{
+    b.setAttribute('aria-disabled','true');
+    b.classList.remove('correct','wrong');
+  });
+
+  if(ok){
+    btn.classList.add('correct');
+  }else{
+    btn.classList.add('wrong');
+    choices.forEach(b=>{
+      if(String(b.getAttribute('data-static-answer')||'').trim()===correct){
+        b.classList.add('correct');
+      }
     });
   }
-  if(fb){
-    fb.className='feedback '+(ok?'ok':'ng');
-    const explanation=fb.textContent.replace(/^正解：[^　 ]+　?/, '');
-    fb.innerHTML=(ok?'⭕ 正解！<br>':'❌ 不正解。正解は '+correct+'。<br>')+explanation;
-  }
+
+  const original=fb.getAttribute('data-explanation') || fb.textContent || '';
+  const explanation=original.replace(/^\s*正解：[^　 ]+　?/, '').trim();
+  fb.className='feedback '+(ok?'ok':'ng');
+  fb.innerHTML=(ok
+    ? '⭕ 正解！<br>'
+    : '❌ 不正解。正解は <strong>'+correct+'</strong>。<br>') + explanation;
+  fb.style.display='block';
+  fb.style.opacity='1';
+  fb.style.color='#172033';
+  fb.style.webkitTextFillColor='#172033';
   return false;
 }
 
