@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V121</title>
+<title>2026 日本語教員試験・応用攻略 V122</title>
 
 
 
@@ -295,6 +295,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 .feedback.ok,.feedback.ng{display:block !important;opacity:1 !important;color:#172033 !important;-webkit-text-fill-color:#172033 !important;}
 </style>
 
+<style id="v122-score-sync-marker">/* V122: latest mock score sync to TOP */</style>
 <style id="v121-mobile-display-fix">
 /* V121: iPhone/Safari — hide the TOP when a section is opened; keep the approved artwork intact. */
 @media(max-width:600px){
@@ -2284,6 +2285,9 @@ window.renderMockQuestion=v85RenderMockQuestion;
 
 function v85ScoreMock(){
  const s=window.mockState;if(!s)return; s.readingScore=s.questions.reduce((n,q,i)=>n+(s.selected.reading[i]===q.c?1:0),0); s.listeningScore=s.all.slice(60).reduce((n,q,i)=>n+(s.selected.listening[i]===q.c?1:0),0); s.answers=s.readingScore+s.listeningScore; try{localStorage.setItem('ntLastMockScore',JSON.stringify({score:s.answers,date:Date.now(),setNo:s.setNo||null}));}catch(e){}
+ // V122: immediately sync the saved mock score to the TOP in the same tab.
+ // The storage event does not fire in the tab that performed localStorage.setItem().
+ try{if(typeof updateV107TopScore==='function')updateV107TopScore();}catch(e){}
  const cats={};s.all.forEach((q,idx)=>{const st=idx<60?'reading':'listening',i=idx<60?idx:idx-60,cat=q.cat||'その他';if(!cats[cat])cats[cat]={correct:0,total:0};cats[cat].total++;if(s.selected[st][i]===q.c)cats[cat].correct++;});
  const rows=Object.entries(cats).sort((a,b)=>a[0].localeCompare(b[0],'ja')).map(([cat,v])=>`<tr><td style="padding:5px;border-top:1px solid #e5e7eb">${cat}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.correct}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${v.total}</td><td style="text-align:center;border-top:1px solid #e5e7eb">${Math.round(v.correct/v.total*1000)/10}%</td></tr>`).join('');
  const res=document.getElementById('mockResult');if(res){res.style.display='block';const mockRate=Math.round(s.answers/110*1000)/10;const mockLevel=s.answers>=85?'🌟 安定して合格圏内！この調子！':s.answers>=80?'🎉 合格圏内！目標80点をクリア！':s.answers>=75?'🟡 もう少し！あと'+(80-s.answers)+'点で目標80点。':s.answers>=70?'🟠 あと一歩！弱点を復習すれば伸びる！':'🔴 ここから頑張ろう！間違えた問題を復習して伸ばそう！';res.innerHTML=`<h3>🏁 模試${s.setNo} 終了</h3><b>総合：${s.answers} / 110（${mockRate}%）</b><br><b style="font-size:1.12em">${mockLevel}</b><br>読解：${s.readingScore} / 60　聴解：${s.listeningScore} / 50<br><b>80点まで：${Math.max(0,80-s.answers)}点</b><div style="overflow:auto;margin-top:10px"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:5px">カテゴリー</th><th>正解</th><th>問題</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table></div><span class="mini">※「合格圏内」は、このアプリの目標80点を基準にした学習目安です。完全新作のオリジナル模試で、公式問題そのものではありません。</span><br><button type="button" class="primary" onclick="v85MockStart(${s.setNo===1?2:1})">🔄 別の完全新作模試へ</button>`;}
@@ -2521,6 +2525,9 @@ function updateV107TopScore(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateV107TopScore);else updateV107TopScore();
 window.addEventListener('storage',updateV107TopScore);
+// V122: refresh when the SPA returns to TOP or becomes visible again.
+window.addEventListener('hashchange',function(){setTimeout(updateV107TopScore,0);});
+document.addEventListener('visibilitychange',function(){if(!document.hidden)setTimeout(updateV107TopScore,0);});
 
 window.printA4Summary=function(){
     var summary=document.getElementById('a4Summary');
