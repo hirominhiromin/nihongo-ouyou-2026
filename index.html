@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V126.1</title>
+<title>2026 日本語教員試験・応用攻略 V128</title>
 
 
 
@@ -308,6 +308,15 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
   #v107PrintSheet h3{font-size:15px!important;margin:0 0 2px!important;}
 }
 </style>
+
+<style id="v128-methods">
+.method-card{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:13px;margin:12px 0;line-height:1.65}
+.method-card h3{margin:0 0 9px;font-size:16px}
+.method-card .term{background:#f8fafc;border-radius:10px;padding:9px 10px;margin:7px 0}
+.method-card .v126-table{font-size:12px}
+.method-card .v126-table th,.method-card .v126-table td{vertical-align:top}
+@media(max-width:560px){.method-card{padding:10px}.method-card .v126-table{font-size:11px}.method-card .v126-table th,.method-card .v126-table td{padding:6px 5px}}
+</style>
 </head>
 <body>
 <main>
@@ -332,7 +341,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <button class="v100-hotspot v100-hs-grammar" aria-label="文法トレーニング" onclick="location.hash='#tavmPractice'; return false;"></button>
     <button class="v100-hotspot v100-hs-reading" aria-label="読解・授業記録・事例" onclick="location.hash='#reading'; return false;"></button>
     <button class="v100-hotspot v100-hs-law" aria-label="法令・制度" onclick="location.hash='#law'; return false;"></button>
-    <button class="v100-hotspot v100-hs-last10" aria-label="直前チェック" onclick="location.hash='#last10'; return false;"></button>
+    <button class="v100-hotspot v100-hs-last10" aria-label="教授法・理論・人物" onclick="location.hash='#methods'; return false;"></button>
     <button class="v100-hotspot v100-hs-master" aria-label="よく出る用語" onclick="location.hash='#master'; return false;"></button>
     <button class="v100-hotspot v100-hs-wrong" aria-label="苦手・お気に入り" onclick="location.hash='#wrong'; return false;"></button>
     <button class="v100-hotspot v100-hs-eval" aria-label="評価・統計" onclick="location.hash='#eval'; return false;"></button>
@@ -340,7 +349,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
     <button class="v100-hotspot v100-hs-verb" aria-label="動詞のグループ" onclick="location.hash='#grammar'; return false;"></button>
     <button class="v100-hotspot v100-hs-settings" aria-label="設定" onclick="event.preventDefault();event.stopPropagation();window.openSettings(); return false;"></button>
   </div>
-<div class="v126-navgrid" aria-label="V126.1追加攻略">
+<div class="v126-navgrid" aria-label="V128追加攻略">
   <button type="button" class="v126-nav" data-open-hash="#last10"><span>🔥</span><b>試験直前30分</b><small>最後に見るところだけ</small></button>
   <button type="button" class="v126-nav" data-open-hash="#bridge"><span>🟡</span><b>基礎→応用ブリッジ</b><small>知識→判断→教育</small></button>
   <button type="button" class="v126-nav" data-open-hash="#listenAsk"><span>🎧</span><b>聴解「何を聞く？」</b><small>設問→証拠→選択肢</small></button>
@@ -1066,6 +1075,60 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <div class="last10"><h3>📖 読解</h3><div class="check"><b>①設問の条件 → ②本文の根拠 → ③選択肢</b>の順。</div><div class="check">「最も適切」「適切でない」「まず」「本文から」などの指示を見落とさない。</div><div class="check">長い会話・授業記録は、<b>目的→学習者の問題→教師の対応→対応の目的→次の一手</b>を拾う。</div></div>
 <div class="last10"><h3>🧑‍🏫 教育実践・評価</h3><div class="check"><b>目標→活動→評価</b>がつながっているか確認。</div><div class="check">フィードバックは、<b>何を直させたいか／学習者自身に気づかせるか／教師が直接示すか</b>で判断。</div><div class="check">Can-doは「何を知っているか」より、<b>何ができるか</b>を具体的に表す。</div></div>
 <div class="last10"><h3>🧠 最後の一言</h3><div class="notice" style="margin:8px 0 0"><b>迷ったら、選択肢の「それっぽさ」ではなく、問題文の条件に戻る。</b><br/>取れる問題を落とさない。迷う問題に時間を使いすぎない。最後まで答案を確認する。</div></div>
+</section>
+
+
+<section class="panel" id="methods">
+<button class="back" type="button" data-open-hash="#home">← トップへ戻る</button>
+<h2>👨‍🏫 教授法・理論・人物</h2>
+<div class="notice"><b>「名前だけ」ではなく、人物・用語・中身・授業場面をセットで。</b><br/>応用試験では教授法を実際の教師・学習者のやり取りから判断する設問があるため、「どんな活動・教師行動が出たら何か」を見抜けるようにします。</div>
+<div class="v126-step"><b>🎯 見分け方の4点セット</b><br/>①何を重視？　②教師は何をする？　③学習者は何をする？　④問題文にどんな活動・フィードバックが出る？</div>
+
+<div class="method-card"><h3>🔤 教授法・アプローチ</h3>
+<table class="v126-table"><thead><tr><th>教授法・考え方</th><th>中身</th><th>問題で見るポイント</th></tr></thead><tbody>
+<tr><td><b>文法訳読法</b></td><td>文法規則、翻訳、読解などを重視。</td><td>文法説明・母語訳・読解中心。</td></tr>
+<tr><td><b>直接法</b></td><td>媒介語に頼らず、目標言語を使って意味を理解させる。日本語教育では意味を推測させる帰納的な教え方として用いられる場合もある。</td><td>目標言語だけで導入、実物・動作・絵などで意味を示す。</td></tr>
+<tr><td><b>オーディオリンガル法</b></td><td>モデルの模倣・反復、パターンプラクティスなどを重視。言語形式の習慣化を重視する。</td><td>教師のモデル→学習者の反復、置換練習、ドリル。</td></tr>
+<tr><td><b>コミュニカティブ・アプローチ</b></td><td>実際のコミュニケーションに必要な能力、意味のあるやり取りを重視。</td><td>目的のあるやり取り、情報交換、流暢さ・機能。</td></tr>
+<tr><td><b>ナチュラル・アプローチ</b></td><td>理解可能なインプットを重視し、産出を急がせない考え方。クラッシェン／テレルと関連。</td><td>理解優先、学習者に無理な発話を要求しない。</td></tr>
+<tr><td><b>TPR（全身反応教授法）</b></td><td>指示を聞いて身体を動かすなど、理解と身体反応を結び付ける。</td><td>「立つ・取る・開ける」など、聞いて動く。</td></tr>
+<tr><td><b>サイレント・ウェイ</b></td><td>教師の発話を抑え、学習者自身の発見・自己修正・自律性を重視。</td><td>教師が答えを言い過ぎない、色棒などを使う活動。</td></tr>
+<tr><td><b>コミュニティ・ランゲージ・ラーニング（CLL）</b></td><td>学習者を支えるカウンセラー的な教師の役割と、グループでの学習を重視。</td><td>教師が支援者・相談相手として関わる。</td></tr>
+<tr><td><b>サジェストペディア</b></td><td>暗示、リラックスした環境などを利用して学習を促す教授法。</td><td>音楽、リラックスした雰囲気、暗示。</td></tr>
+<tr><tr><td><b>フォーカス・オン・フォーム（FonF）</b></td><td>意味中心の活動・やり取りの中で、必要に応じて学習者の注意を言語形式へ向ける。</td><td>タスク中の誤りや形式に、必要なときだけ注意を向ける。</td></tr>
+<tr><td><b>タスク中心の教授法</b></td><td>意味のある課題（タスク）の達成を中心に学習活動を設計する。</td><td>「文型を言う」より「課題を達成する」ことが中心。</td></tr>
+</tbody></table></div>
+
+<div class="method-card"><h3>👤 人物 ↔ 理論・概念</h3>
+<div class="term"><b>ロング</b> → <b>フォーカス・オン・フォーム（FonF）</b><br/><span class="mini">意味中心の活動の中で、必要に応じて形式へ注意を向ける考え方。FonFの研究・普及ではロングが重要人物。※関連文献にはドーティ＆ウィリアムズもある。</span></div>
+<div class="term"><b>クラッシェン</b> → <b>インプット仮説／モニター理論</b><br/><span class="mini">理解可能なインプット、情意フィルターなど。ナチュラル・アプローチと関連。</span></div>
+<div class="term"><b>テレル</b> → <b>ナチュラル・アプローチ</b><br/><span class="mini">クラッシェンとともにナチュラル・アプローチを体系化した人物として押さえる。</span></div>
+<div class="term"><b>スウェイン</b> → <b>アウトプット仮説</b><br/><span class="mini">産出することで、自分の言語と目標言語との差に気づき、言語形式を処理する機会につながる。</span></div>
+<div class="term"><b>シュミット</b> → <b>気づき仮説（Noticing Hypothesis）</b><br/><span class="mini">言語形式への「気づき」を第二言語学習の重要な要素として捉える。</span></div>
+<div class="term"><b>ヴァンパッテン</b> → <b>インプット処理</b><br/><span class="mini">学習者がインプットをどのように処理して意味と形式を結び付けるかを扱う。</span></div>
+<div class="term"><b>セリンカー</b> → <b>中間言語</b><br/><span class="mini">学習者が形成する、体系性を持った発達途中の言語体系。</span></div>
+<div class="term"><b>カミンズ</b> → <b>BICS／CALP</b><br/><span class="mini">日常的な対人的コミュニケーション能力と、学習・認知的に必要な言語能力を区別する枠組み。</span></div>
+<div class="term"><b>ハイムズ</b> → <b>コミュニケーション能力</b><br/><span class="mini">言語を文法的に正しく使うだけでなく、社会的・場面的に適切に使う能力という考え方の基盤。</span></div>
+<div class="term"><b>ヴィゴツキー</b> → <b>ZPD（最近接発達領域）</b><br/><span class="mini">支援があれば達成できる範囲。足場かけ（scaffolding）と関連。</span></div>
+<div class="term"><b>ブルーム</b> → <b>タキソノミー（教育目標分類）</b><br/><span class="mini">教育目標を認知的な段階などから整理する枠組み。</span></div>
+<div class="term"><b>アッシャー</b> → <b>TPR（全身反応教授法）</b><br/><span class="mini">指示を聞いて身体で反応する活動と結び付けて覚える。</span></div>
+<div class="term"><b>ガッテーニョ</b> → <b>サイレント・ウェイ</b><br/><span class="mini">教師が発話を控え、学習者の発見・自己修正を促す。</span></div>
+<div class="term"><b>カラン</b> → <b>コミュニティ・ランゲージ・ラーニング（CLL）</b><br/><span class="mini">学習者を支えるカウンセラー的教師の役割。</span></div>
+<div class="term"><b>ロザノフ</b> → <b>サジェストペディア</b><br/><span class="mini">暗示・リラックスした環境などを利用する教授法。</span></div>
+</div>
+
+<div class="v126-question" data-qid="methods1"><span class="v126-tag">人物→理論</span><b>「フォーカス・オン・フォーム」と関連が深い人物は？</b>
+<div class="choices"><button type="button" class="choice" data-correct="1">A. ロング</button><button type="button" class="choice" data-correct="0">B. アッシャー</button><button type="button" class="choice" data-correct="0">C. セリンカー</button><button type="button" class="choice" data-correct="0">D. ブルーム</button></div><div class="v126-feedback" hidden>ロング。FonFは意味中心の活動の中で、必要に応じて言語形式へ注意を向ける考え方。</div></div>
+<div class="v126-question" data-qid="methods2"><span class="v126-tag">特徴→教授法</span><b>教師がモデルを示し、学習者が文型を何度も反復・置換する。最も関連が深いのは？</b>
+<div class="choices"><button type="button" class="choice" data-correct="1">A. オーディオリンガル法</button><button type="button" class="choice" data-correct="0">B. サイレント・ウェイ</button><button type="button" class="choice" data-correct="0">C. サジェストペディア</button><button type="button" class="choice" data-correct="0">D. フォーカス・オン・フォーム</button></div><div class="v126-feedback" hidden>模倣・反復・パターンプラクティスが手掛かり。</div></div>
+<div class="v126-question" data-qid="methods3"><span class="v126-tag">理論→授業</span><b>意味中心のタスク中に、必要なときだけ学習者の注意を文法形式へ向ける。これは？</b>
+<div class="choices"><button type="button" class="choice" data-correct="0">A. 文法訳読法</button><button type="button" class="choice" data-correct="1">B. フォーカス・オン・フォーム</button><button type="button" class="choice" data-correct="0">C. オーディオリンガル法</button><button type="button" class="choice" data-correct="0">D. サイレント・ウェイ</button></div><div class="v126-feedback" hidden>意味中心の活動を維持しつつ、必要に応じて形式へ注意を向ける。</div></div>
+<div class="v126-question" data-qid="methods4"><span class="v126-tag">人物→教授法</span><b>「指示を聞いて身体を動かす」活動と関連が深い人物は？</b>
+<div class="choices"><button type="button" class="choice" data-correct="0">A. クラッシェン</button><button type="button" class="choice" data-correct="1">B. アッシャー</button><button type="button" class="choice" data-correct="0">C. ロザノフ</button><button type="button" class="choice" data-correct="0">D. ガッテーニョ</button></div><div class="v126-feedback" hidden>アッシャー。TPR（全身反応教授法）と結び付けて覚える。</div></div>
+<div class="v126-question" data-qid="methods5"><span class="v126-tag">人物→理論</span><b>「中間言語」と関連が深い人物は？</b>
+<div class="choices"><button type="button" class="choice" data-correct="0">A. スウェイン</button><button type="button" class="choice" data-correct="0">B. シュミット</button><button type="button" class="choice" data-correct="1">C. セリンカー</button><button type="button" class="choice" data-correct="0">D. ハイムズ</button></div><div class="v126-feedback" hidden>セリンカー。学習者の言語を単なる誤りの集合ではなく、体系を持つ中間言語として捉える。</div></div>
+<div class="notice"><b>⚠️ 人物問題の注意</b><br/>すべての教授法に「唯一の発明者」がいるわけではありません。コミュニカティブ・アプローチなどは複数の研究者・研究の流れから形成されています。人物名を無理に1人へ固定しない。</div>
+<div class="v126-muted">主な確認資料：文部科学省「日本語教員試験 令和7年度サンプル問題・出題内容」／国際交流基金「教授法オンデマンド教材」「日本語教授法シリーズ」「Focus on Form」関連解説。公式サンプルでは教授法を音声の教師・学習者のやり取りから判断する設問がある。</div>
 </section>
 
 <section class="panel" id="bridge">
