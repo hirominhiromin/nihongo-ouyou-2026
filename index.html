@@ -1142,7 +1142,7 @@ N5が最もやさしく、N1が最も難しい。<br/>
 <h2>🟡 基礎→応用ブリッジ</h2>
 <div class="notice"><b>基礎試験の暗記ページではありません。</b><br/>応用試験で必要になる基礎知識を、<b>知識 → 判断 → 教育的対応</b>の3段階で使います。</div>
 <div class="v126-question" data-qid="bridge1"><span class="v126-tag">統計</span><b>母語統計を使うとき、最初に確認すべきなのは？</b>
-<div class="choices"><button class="choice" data-correct="1" type="button">A. 前年の順位だけ</button><button class="choice" data-correct="0" type="button">B. 年度・対象集団・調査条件</button><button class="choice" data-correct="0" type="button">C. 一度覚えた順位を固定する</button><button class="choice" data-correct="0" type="button">D. 言語名だけ</button></div><div class="v126-feedback" hidden="">統計は「誰の、いつの、どの調査か」を先に確認する。年度や対象が変われば人数・順位も変わり得る。</div></div>
+<div class="choices"><button class="choice" data-correct="0" type="button">A. 前年の順位だけ</button><button class="choice" data-correct="1" type="button">B. 年度・対象集団・調査条件</button><button class="choice" data-correct="0" type="button">C. 一度覚えた順位を固定する</button><button class="choice" data-correct="0" type="button">D. 言語名だけ</button></div><div class="v126-feedback" hidden="">統計は「誰の、いつの、どの調査か」を先に確認する。年度や対象が変われば人数・順位も変わり得る。</div></div>
 <div class="v126-question" data-qid="bridge2"><span class="v126-tag">教育判断</span><b>「Can-do」を授業設計に使うとき、次につなげる考え方は？</b>
 <div class="choices"><button class="choice" data-correct="0" type="button">A. 用語暗記の量を増やす</button><button class="choice" data-correct="0" type="button">B. 教師の説明時間を増やす</button><button class="choice" data-correct="1" type="button">C. 目標となる言語行為→評価→活動を対応させる</button><button class="choice" data-correct="0" type="button">D. JLPTの級だけで活動を決める</button></div><div class="v126-feedback" hidden="">Can-doは「何ができるか」を具体化し、目標・評価・活動の整合性につなげる。</div></div>
 <div class="v126-question" data-qid="bridge3"><span class="v126-tag">音声</span><b>口腔断面図を見たあと、応用問題でさらに必要になる判断は？</b>
@@ -2705,7 +2705,13 @@ window.addEventListener('storage',updateV107TopScore);
       var correct=choice.getAttribute('data-correct')==='1';
       choice.classList.add(correct?'correct':'wrong');
       var fb=q.querySelector('.v126-feedback');
-      if(fb){fb.hidden=false;fb.classList.add(correct?'v126-ok':'v126-ng');fb.insertAdjacentHTML('afterbegin',correct?'⭕ 正解！<br>':'❌ ここは確認。<br>');}
+      if(fb){
+        fb.hidden=false;
+        fb.classList.add(correct?'v126-ok':'v126-ng');
+        var correctBtn=q.querySelector('.choice[data-correct="1"]');
+        var correctText=correctBtn ? correctBtn.textContent.trim() : '';
+        fb.innerHTML=(correct?'⭕ 正解！':'❌ 不正解')+'<br>'+(correct?'':'<b>正解：'+correctText+'</b><br>')+fb.textContent;
+      }
       q.dataset.done='1';
     }
   },false);
