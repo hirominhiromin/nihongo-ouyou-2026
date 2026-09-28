@@ -95,6 +95,7 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 #audioPlus .audioBtn{border:0;background:#edf5ff;border-radius:12px;padding:12px 16px;font-weight:800;font-size:15px;margin:6px 0 12px}
 #audioPlus .choices{display:grid;gap:8px}
 #audioPlus .choice{text-align:left;border:1px solid #d7dee9;background:#fff;border-radius:10px;padding:11px;font-size:15px}
+#audioPlus .choice{pointer-events:auto;touch-action:manipulation;cursor:pointer}
 #audioPlus .choice.correct{outline:2px solid #45a36b;background:#effaf3}
 #audioPlus .choice.wrong{outline:2px solid #d96b6b}
 #audioPlus .feedback{display:none;background:#f5f7fa;border-radius:10px;padding:12px;margin-top:10px;line-height:1.65}
@@ -1580,7 +1581,7 @@ function renderAudioDrill(){
   root.innerHTML=selected.map((x,i)=>{
     const choices=x.a.map((text,j)=>({text,correct:j===x.c}));
     const correctIndex=x.c;
-    const audioKey="drill-"+i+"-"+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[audioKey]=x.script; return `<div class="exam"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn ntAudioButton" type="button" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" onclick="audioAns(this,'${String.fromCharCode(65+j)}','${String.fromCharCode(65+correctIndex)}',${JSON.stringify(x.e)})">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
+    const audioKey="drill-"+i+"-"+Date.now(); window.ntAudioTexts=window.ntAudioTexts||{}; window.ntAudioTexts[audioKey]=x.script; return `<div class="exam" data-explanation="${String(x.e||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}"><h3>第${i+1}問　ランダム出題</h3><p>${x.q}</p><button class="audioBtn ntAudioButton" type="button" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="choices">${choices.map((o,j)=>`<button class="choice" type="button" data-answer="${String.fromCharCode(65+j)}" data-correct-answer="${String.fromCharCode(65+correctIndex)}">${String.fromCharCode(65+j)}. ${o.text}</button>`).join('')}</div><div class="feedback"></div></div>`;
   }).join('');
   const meta=document.getElementById('audioDrillMeta');
   if(meta) meta.innerHTML='<b>今回の出題：</b>10問（全'+audioDrillPool.length+'問からランダム）　<span class="mini">※問題の順番＋選択肢の順番を毎回シャッフル</span>';
@@ -1983,6 +1984,30 @@ document.addEventListener('click',function(e){
   const text=(window.ntAudioTexts||{})[key];
   if(!text){alert('音声データが見つかりません。');return false;}
   speakDialogue(text,btn);
+},true);
+
+document.addEventListener('click',function(e){
+  const a=e.target.closest && e.target.closest('#audioPlus .exam .choice');
+  if(a && !a.disabled){
+    e.preventDefault();
+    e.stopPropagation();
+    const exam=a.closest('.exam');
+    if(exam && !exam.dataset.audioAnswered){
+      exam.dataset.audioAnswered='1';
+      const correct=String(a.getAttribute('data-correct-answer')||'');
+      const answer=String(a.getAttribute('data-answer')||'');
+      const explanation=(window.audioDrillPool||[]);
+      let text='';
+      /* The explanation is stored on the question card by renderAudioDrill below. */
+      text=exam.getAttribute('data-explanation')||'';
+      exam.querySelectorAll('.choice').forEach(function(b){ b.disabled=true; });
+      const ok=answer===correct;
+      a.classList.add(ok?'correct':'wrong');
+      if(!ok){ const cb=exam.querySelector('.choice[data-answer="'+CSS.escape(correct)+'"]'); if(cb) cb.classList.add('correct'); }
+      const fb=exam.querySelector('.feedback');
+      if(fb){ fb.className='feedback '+(ok?'ok':'ng'); fb.style.display='block'; fb.innerHTML=(ok?'⭕ 正解！<br>':'❌ 不正解<br>正解は <strong>'+correct+'</strong>。<br>')+text; }
+    }
+  }
 },true);
 
 document.addEventListener('click',function(e){
