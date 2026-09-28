@@ -151,7 +151,9 @@ h1{font-size:20px;margin:0 0 4px}.sub{font-size:12px;color:#667085}main{max-widt
 <style>.mouth-chart-img{display:block;width:100%;height:auto;max-width:100%;image-rendering:auto}.mouth-exact-panel{background:#fff}</style>
 <style>/* V80: 発音問題の選択肢は、タップで回答するまで操作可能。 */
 .pronChoices .choice{pointer-events:auto;touch-action:manipulation}
-.pronChoices .choice:disabled{pointer-events:none}</style>
+.pronChoices .choice:disabled{pointer-events:none}
+.choice:disabled.correct{opacity:1 !important;background:#eefaf4 !important;border:2px solid #18794e !important;outline:2px solid #18794e !important;color:#18794e !important;-webkit-text-fill-color:#18794e !important;}
+.choice:disabled.wrong{opacity:1 !important;background:#fff1f0 !important;border:2px solid #b42318 !important;outline:2px solid #b42318 !important;color:#b42318 !important;-webkit-text-fill-color:#b42318 !important;}</style>
 <style>
 /* V95: 攻略・復習導線 */
 .strategybox{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:14px;margin:12px 0;line-height:1.65}
@@ -464,7 +466,7 @@ body{padding-top:env(safe-area-inset-top);}
 <div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br/>音声・発音の識別は「音声・発音」へ。聴解では、話の要点・意図・条件・教師の対応を聞き取る。</div>
 <div class="notice" style="background:#f5fbf7;border-color:#b8ddc5">
 <b>🎧 選択肢を先に見る｜「何を聞けば決まる？」</b><br/>
-こせんだ先生の聴解解説で示されている考え方を整理。<br/>
+選択肢を先に見て、必要な音声の証拠を絞る考え方を整理。<br/>
 <b>① 選択肢を見る</b> → <b>② 何を比較しているか決める</b> → <b>③ 音声で必要な証拠を拾う</b> → <b>④ 選択肢と照合する</b>。<br/>
 全部を覚えようとせず、<b>「どの発話が選択肢を分けるか」</b>を意識する。
 </div>
@@ -527,13 +529,13 @@ body{padding-top:env(safe-area-inset-top);}
 </div>
 <div class="notice" style="background:#fff7fb;border-color:#f0c5d8">
 <b>🪄 シ・ジ・チ・ヂ・ニの魔法の言葉</b><br/>
-こせんだ先生の解説で紹介されている覚え方を、国試用に短く整理。<br/>
+「シ・ジ・チ・ヂ・ニ」を手がかりに、国試用に短く整理。<br/>
 <b>シ・ジ・チ・ヂ・ニ</b> → イ段の音に注目 → <b>口蓋化</b> → 舌が硬口蓋側へ寄る → <b>歯茎硬口蓋付近</b>を意識する。<br/>
 「し・ち」などを単独暗記するのではなく、<b>音を聞く → 舌の位置 → 調音点</b>につなげて覚える。
 </div>
 <div class="item" style="background:#f8fbff;border-left:5px solid #8bb8ee">
 <b>👀 口腔断面図は、まず3か所を見る</b><br/>
-ももこ先生の解説で示されている見方を、試験用に整理：<br/>
+口腔断面図を見るときのポイントを、試験用に整理：<br/>
 <b>① 口蓋垂　② 舌　③ 唇</b><br/>
 この3か所の状態と組み合わせを見て、音を絞る。さらに必要に応じて<b>鼻腔への通路・調音点・調音法</b>を確認する。
 </div>
@@ -548,7 +550,6 @@ body{padding-top:env(safe-area-inset-top);}
 「シ→スィ」「チ→ティ」「ジ→ズィ」のように、口蓋化が関係する音と比較すると、<b>舌の寄り方の違い</b>をイメージしやすい。<br/>
 ※「シ・ジ・チ・ヂ・ニ」の5音を、音声・舌の位置・調音点を結び付けるための学習整理。
 </div>
-<div class="mini" style="margin:8px 4px 14px">参考：こせんだ先生・ももこ先生の解説動画で示された学習上のポイントを、画像や動画そのものではなく、試験対策用に再構成。</div>
 <h3>🔍 まず覚える「調音の見方」</h3>
 <div class="item"><b>① どこ？＝調音点</b> → 唇・歯茎・硬口蓋・軟口蓋など<br/>
 <b>② どうやって？＝調音法</b> → 破裂・摩擦・破擦・鼻・弾きなど<br/>
