@@ -2820,4 +2820,142 @@ window.addEventListener('storage',updateV107TopScore);
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){if(location.hash==='#v126diag')renderDiag();}); else if(location.hash==='#v126diag') renderDiag();
 })();
 </script>
+
+<style id="v161-top-tap-repair-css">
+/* V161: iPhone/Safari TOP tap repair — artwork/content unchanged */
+.v100-exact-top{
+  position:relative !important;
+  isolation:isolate;
+}
+.v100-hotspot,
+.v159-oral-hotspot{
+  pointer-events:auto !important;
+  z-index:100000 !important;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.v143-top-overlay{
+  pointer-events:none !important;
+}
+.v159-oral-hotspot{
+  pointer-events:auto !important;
+}
+</style>
+
+<script id="v161-top-tap-repair">
+/* V161: robust TOP navigation for iPhone/Safari.
+   Does not change question data or learning content.
+   Existing visible artwork remains untouched. */
+(function(){
+  'use strict';
+
+  var routes = {
+    'v100-hs-today':'boost',
+    'v100-hs-mock':'mock',
+    'v100-hs-bank':'bank',
+    'v100-hs-hard':'fifty',
+    'v100-hs-listening':'listening',
+    'v100-hs-grammar':'tavmPractice',
+    'v100-hs-reading':'reading',
+    'v100-hs-law':'law',
+    'v100-hs-last10':'methods',
+    'v100-hs-master':'master',
+    'v100-hs-wrong':'wrong',
+    'v100-hs-eval':'eval',
+    'v100-hs-cefr':'cefr',
+    'v128-hs-last30':'last10',
+    'v128-hs-bridge':'bridge',
+    'v128-hs-listenAsk':'listenAsk',
+    'v128-hs-wrongdiag':'v126diag',
+    'v159-oral-hotspot':'oral'
+  };
+
+  function go(id){
+    if(!id) return;
+    if(id === 'settings'){
+      if(typeof window.openSettings === 'function') window.openSettings();
+      return;
+    }
+    location.hash = '#' + id;
+  }
+
+  function bind(){
+    var home = document.getElementById('home');
+    var top = home && home.querySelector('.v100-exact-top');
+    if(!home || !top || top.dataset.v161Bound === '1') return;
+    top.dataset.v161Bound = '1';
+
+    /* First: bind every transparent hotspot explicitly. */
+    Object.keys(routes).forEach(function(cls){
+      top.querySelectorAll('.' + cls).forEach(function(btn){
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          go(routes[cls]);
+          if(cls === 'v100-hs-today'){
+            setTimeout(function(){
+              if(typeof window.runBoost === 'function') window.runBoost();
+            },80);
+          }
+        }, true);
+      });
+    });
+
+    var settings = top.querySelector('.v100-hs-settings');
+    if(settings){
+      settings.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        go('settings');
+      }, true);
+    }
+
+    /* Fallback: if Safari delivers the tap to the artwork instead of a hotspot,
+       map the tap position directly to the visible TOP cards. */
+    top.addEventListener('click', function(e){
+      if(e.defaultPrevented) return;
+      if(e.target && e.target.closest && e.target.closest('.v100-hotspot,.v159-oral-hotspot')) return;
+
+      var r = top.getBoundingClientRect();
+      if(!r.width || !r.height) return;
+      var x = (e.clientX - r.left) / r.width * 100;
+      var y = (e.clientY - r.top) / r.height * 100;
+      var id = null;
+
+      if(y >= 1 && y <= 12 && x >= 85.5) id = 'settings';
+      else if(y >= 16.0 && y < 20.8) id = 'boost';
+      else if(y >= 21.0 && y < 30.7) id = x < 50 ? 'mock' : 'bank';
+      else if(y >= 30.7 && y < 40.5) id = x < 50 ? 'fifty' : 'listening';
+      else if(y >= 40.5 && y < 50.4) id = x < 50 ? 'tavmPractice' : 'reading';
+      else if(y >= 50.4 && y < 60.3) id = x < 50 ? 'law' : 'methods';
+      else if(y >= 60.8 && y < 70.8){
+        if(x < 19.5) id = 'master';
+        else if(x < 36.3) id = 'wrong';
+        else if(x < 53.0) id = 'eval';
+        else if(x < 69.5) id = 'cefr';
+        else if(x < 99.0) id = 'oral';
+      }
+      else if(y >= 82.5 && y < 91.0) id = x < 50 ? 'last10' : 'bridge';
+      else if(y >= 91.0 && y < 99.5) id = x < 50 ? 'listenAsk' : 'v126diag';
+
+      if(id){
+        e.preventDefault();
+        go(id);
+        if(id === 'boost'){
+          setTimeout(function(){
+            if(typeof window.runBoost === 'function') window.runBoost();
+          },80);
+        }
+      }
+    }, true);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  }else{
+    bind();
+  }
+})();
+</script>
+
 </body></html>
