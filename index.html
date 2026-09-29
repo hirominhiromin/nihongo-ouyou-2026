@@ -368,6 +368,42 @@ body{padding-top:env(safe-area-inset-top);}
 @media(max-width:600px){.v164-mascot-space img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;}}
 </style>
 
+
+<style id="v167-disable-wrongdiag">
+/* V167: 「間違い方診断」はTOPから完全に入口を無効化 */
+.v100-hs-wrongdiag,
+.v128-hs-wrongdiag,
+.v143-bottom .b4,
+.v163-hide-wrongdiag{
+  pointer-events:none !important;
+}
+</style>
+
+<script id="v167-disable-wrongdiag-js">
+(function(){
+  function disableWrongDiag(){
+    ['.v100-hs-wrongdiag','.v128-hs-wrongdiag','.v163-hide-wrongdiag'].forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){
+        el.style.pointerEvents='none';
+        el.setAttribute('aria-hidden','true');
+      });
+    });
+    /* Remove any old click handlers from the hidden right-bottom hotspot
+       by placing a non-interactive layer over that exact card area. */
+    var top=document.querySelector('.v100-exact-top');
+    if(!top || top.querySelector('.v167-dead-zone')) return;
+    var z=document.createElement('div');
+    z.className='v167-dead-zone';
+    z.setAttribute('aria-hidden','true');
+    z.style.cssText='position:absolute;left:50.7%;top:91.0%;width:46.8%;height:8.5%;z-index:999999;pointer-events:auto;background:transparent;';
+    z.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();},true);
+    top.appendChild(z);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',disableWrongDiag);
+  else disableWrongDiag();
+})();
+</script>
+
 </head>
 <body><!-- V145 FIX: TOP artwork already contains the approved utility/bottom cards. Removed duplicate HTML overlays only; all hotspots and learning content remain unchanged. -->
 <main>
