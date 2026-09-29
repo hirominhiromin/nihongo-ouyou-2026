@@ -2958,4 +2958,66 @@ window.addEventListener('storage',updateV107TopScore);
 })();
 </script>
 
+
+<script id="v162-question-tap-fix">
+/* V162: fix answer buttons inside all v126-question cards.
+   The CEFR→教案判断 cards were rendered correctly but the old click handler
+   only listened to bridge/listenAsk/methods. Content is unchanged. */
+(function(){
+  'use strict';
+  function bindQuestionTap(){
+    if(document.documentElement.dataset.v162QuestionTap==='1') return;
+    document.documentElement.dataset.v162QuestionTap='1';
+
+    document.addEventListener('click', function(e){
+      var choice = e.target.closest('.v126-question .choice');
+      if(!choice) return;
+
+      var q = choice.closest('.v126-question');
+      if(!q || q.dataset.done==='1') return;
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      var choices = q.querySelectorAll('.choice');
+      var correct = choice.getAttribute('data-correct') === '1';
+
+      choices.forEach(function(b){
+        b.disabled = true;
+        b.setAttribute('aria-disabled','true');
+      });
+
+      choice.classList.add(correct ? 'correct' : 'wrong');
+
+      var correctBtn = q.querySelector('.choice[data-correct="1"]');
+      if(!correct && correctBtn) correctBtn.classList.add('correct');
+
+      var fb = q.querySelector('.v126-feedback');
+      if(fb){
+        var explanation = fb.textContent.trim();
+        fb.hidden = false;
+        fb.className = 'v126-feedback ' + (correct ? 'v126-ok' : 'v126-ng');
+        fb.innerHTML =
+          (correct ? '⭕ 正解！' : '❌ 不正解') +
+          '<br>' +
+          (correct && correctBtn
+            ? ''
+            : (!correct && correctBtn
+              ? '<b>正解：' + correctBtn.textContent.trim() + '</b><br>'
+              : '')) +
+          explanation;
+      }
+
+      q.dataset.done='1';
+    }, true);
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', bindQuestionTap, {once:true});
+  }else{
+    bindQuestionTap();
+  }
+})();
+</script>
+
 </body></html>
