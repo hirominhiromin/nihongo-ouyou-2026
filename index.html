@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V128</title>
+<title>2026 日本語教員試験・応用攻略 V151</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -339,6 +339,14 @@ body{padding-top:env(safe-area-inset-top);}
 .v147-oral-slot:focus-visible{outline:3px solid rgba(49,94,251,.85);outline-offset:2px;}
 @media(max-width:600px){.v147-oral-slot{border-radius:13px;padding:3px 2px}.v147-oral-slot .oral-ico{font-size:20px;margin-bottom:1px}.v147-oral-slot .oral-title{font-size:9.5px}.v147-oral-slot .oral-sub{font-size:7.5px;margin-top:2px;}}
 </style>
+
+<style id="v151-exact-mouth-gallery">
+.mouth-exact-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}
+.mouth-exact-gallery .exact-mouth-card{background:#fff;border:1px solid #dbe2ea;border-radius:14px;padding:8px;overflow:hidden}
+.mouth-exact-gallery .exact-mouth-card img{display:block;width:100%;height:auto;border-radius:9px;background:#fff}
+.mouth-exact-gallery .exact-mouth-label{font-size:12px;font-weight:800;line-height:1.35;margin:7px 3px 2px;color:#25334d}
+@media(max-width:560px){.mouth-exact-gallery{grid-template-columns:1fr}.mouth-exact-gallery .exact-mouth-label{font-size:13px}}
+</style>
 </head>
 <body><!-- V145 FIX: TOP artwork already contains the approved utility/bottom cards. Removed duplicate HTML overlays only; all hotspots and learning content remain unchanged. -->
 <main>
@@ -496,11 +504,6 @@ body{padding-top:env(safe-area-inset-top);}
 <button class="primary" onclick="quiz('読解',readingQ)">読解ミニ問題を解く</button><div id="readingQuiz"></div><button class="back" onclick="location.hash='#home'; return false;" type="button">↑ トップへ戻る</button></section>
 <section class="panel" id="listening"><button class="back" onclick="location.hash='#home'; return false;" type="button">← トップへ戻る</button><h2>🎧 聴解・完全攻略</h2>
 <div class="notice"><b>ここは「会話・説明・授業場面を聞いて判断する」練習。</b><br/>音声・発音の識別は「音声・発音」へ。聴解では、話の要点・意図・条件・教師の対応を聞き取る。</div>
-<div class="notice" style="background:#f5fbf7;border-color:#b8ddc5;text-align:center">
-  <b>👄 音声・発音／口腔断面図</b><br/>
-  調音点・調音法・「シ・ジ・チ・ヂ・ニ」の口蓋化、口腔断面図の見方と国試型問題をまとめて確認できます。<br/>
-  <button class="primary" type="button" onclick="location.hash='#oral'; return false;">👄 口腔断面図・発音攻略を開く</button>
-</div>
 <div class="notice" style="background:#f5fbf7;border-color:#b8ddc5">
 <b>🎧 選択肢を先に見る｜「何を聞けば決まる？」</b><br/>
 選択肢を先に見て、必要な音声の証拠を絞る考え方を整理。<br/>
@@ -593,91 +596,12 @@ body{padding-top:env(safe-area-inset-top);}
 <b>③ 声帯は？</b> → 振動する／しない<br/>
 <b>④ 何拍？</b> → モーラ、長音、促音、撥音、拗音<br/>
 <b>⑤ 高低は？</b> → アクセント・イントネーション</div>
-<div class="v128-oral-original" style="margin:16px 0 20px;background:#fff;border:1px solid #dbe2ea;border-radius:16px;padding:10px;overflow:hidden;box-shadow:0 4px 14px rgba(20,30,50,.06);">
-<h3 style="margin:4px 4px 10px;">🗺️ 調音点をひと目で整理</h3>
-<div style="text-align:center;background:#fff;border-radius:12px;overflow:hidden;">
-
-<svg viewBox="0 0 900 500" role="img" aria-label="白黒シンプルな口腔断面図と調音点のオリジナル整理図" style="display:block;width:100%;height:auto;background:#fff">
-  <defs>
-    <style>
-      .a{fill:none;stroke:#20252b;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-      .b{fill:#f3f3f3;stroke:#20252b;stroke-width:5}
-      .lab{font:700 22px sans-serif;fill:#20252b}
-      .sm{font:700 18px sans-serif;fill:#20252b}
-      .dot{stroke:#fff;stroke-width:4}
-    </style>
-  </defs>
-  <!-- simple sagittal outline -->
-  <path class="a" d="M92 78 C135 42 200 32 280 38 C390 46 530 38 670 80 C730 98 778 142 790 202 L792 350 C790 408 760 444 705 454 L310 454 C245 448 200 418 180 382 L166 330 C160 298 155 265 143 238 C130 210 106 192 88 174 C72 157 73 112 92 78Z"/>
-  <path class="b" d="M175 114 C250 75 390 77 548 86 C660 92 722 122 744 166 C750 178 748 188 735 194 C700 183 660 170 612 166 L470 163 L348 165 L252 177 L190 193 L160 179 C151 157 156 132 175 114Z"/>
-  <!-- nasal passage -->
-  <path class="a" d="M185 116 C310 86 515 93 650 112 C700 120 728 137 744 164"/>
-  <text class="lab" x="410" y="118">鼻腔</text>
-  <!-- oral cavity / tongue -->
-  <path class="a" d="M170 210 C235 194 330 188 425 195 C520 202 612 215 670 245 C690 256 690 279 674 292 C625 329 530 354 405 360 C305 365 224 348 188 318 C170 303 162 278 166 248Z"/>
-  <path d="M205 300 C285 264 365 252 468 259 C555 265 615 282 653 300 C598 345 505 365 400 362 C307 360 242 340 205 300Z" fill="#d9d9d9" stroke="#20252b" stroke-width="5"/>
-  <text class="lab" x="410" y="326">舌</text>
-  <!-- lips -->
-  <path class="a" d="M166 245 C144 239 126 245 111 258 C101 268 103 282 118 288 C137 296 156 291 173 281"/>
-  <text class="sm" x="70" y="320">唇</text>
-  <!-- soft palate / uvula -->
-  <path class="a" d="M725 176 C716 190 713 202 716 214 C719 224 725 229 732 224 C738 219 738 207 736 194"/>
-  <circle cx="731" cy="220" r="10" fill="#555"/>
-  <text class="sm" x="748" y="236">口蓋垂</text>
-  <!-- glottis -->
-  <path class="a" d="M735 294 C751 300 762 300 776 294"/>
-  <text class="sm" x="755" y="327">声門</text>
-  <!-- articulation points as a colored route -->
-  <path d="M160 205 L255 188 L370 178 L500 180 L625 190 L706 205" fill="none" stroke="#e6e6e6" stroke-width="22" stroke-linecap="round"/>
-  <circle class="dot" cx="166" cy="205" r="13" fill="#e85b9b"/>
-  <circle class="dot" cx="255" cy="188" r="13" fill="#f0a329"/>
-  <circle class="dot" cx="370" cy="178" r="13" fill="#3478d5"/>
-  <circle class="dot" cx="500" cy="180" r="13" fill="#55ad5b"/>
-  <circle class="dot" cx="625" cy="190" r="13" fill="#8b61c9"/>
-  <circle class="dot" cx="706" cy="205" r="13" fill="#777"/>
-  <!-- labels -->
-  <g>
-    <rect x="82" y="350" width="128" height="54" rx="12" fill="#fff0f7" stroke="#e85b9b" stroke-width="3"/>
-    <text class="sm" x="98" y="374">両唇音</text><text class="sm" x="98" y="396">ぱ・ま・ふ・ば</text>
-    <rect x="220" y="355" width="128" height="54" rx="12" fill="#fff6e8" stroke="#f0a329" stroke-width="3"/>
-    <text class="sm" x="236" y="379">歯茎音</text><text class="sm" x="236" y="401">さ・た・な・ら</text>
-    <rect x="360" y="350" width="190" height="60" rx="12" fill="#eef5ff" stroke="#3478d5" stroke-width="3"/>
-    <text class="sm" x="375" y="375">歯茎硬口蓋音</text><text class="sm" x="375" y="399">シ・ジ・チ・ヂ・ニ</text>
-    <rect x="560" y="350" width="142" height="54" rx="12" fill="#eef9ef" stroke="#55ad5b" stroke-width="3"/>
-    <text class="sm" x="576" y="374">硬口蓋音</text><text class="sm" x="576" y="396">ひ・き・ぎ</text>
-    <rect x="712" y="350" width="132" height="54" rx="12" fill="#f4effb" stroke="#8b61c9" stroke-width="3"/>
-    <text class="sm" x="728" y="374">軟口蓋音</text><text class="sm" x="728" y="396">か・が・わ</text>
-  </g>
-  <text class="sm" x="315" y="438">白黒＝口腔断面図　　カラー＝調音点の目印</text>
-</svg>
+<h3>🖼️ 本番型の口腔断面図をそのまま確認</h3>
+<div class="notice">
+<b>ここでは新しい模式図を作りません。</b><br/>
+これまでに入れていた<strong>口腔断面図の実物画像</strong>を、そのまま一覧で確認できます。図を見て、調音点・調音法・鼻腔への通路などを読み取る練習に使います。
 </div>
-<div class="item" style="margin-top:12px;background:#fffdf6;border:1px solid #eadb9a;border-radius:14px;padding:12px;overflow-x:auto;">
-  <h3 style="margin:2px 0 10px;color:#6b5200;">📋 口蓋垂・舌・唇から音を絞る【基本表】</h3>
-  <div class="mini">図を見て「どこがどうなっているか」→音へつなげる。さらに<strong>声帯振動の有無</strong>を別軸で確認。</div>
-  <table style="width:100%;border-collapse:collapse;min-width:620px;font-size:14px;line-height:1.45;margin-top:10px;">
-    <thead><tr style="background:#f5edf4;">
-      <th style="border:1px solid #cfd6df;padding:8px;">口蓋垂<br><span class="mini">（鼻腔への通路）</span></th>
-      <th style="border:1px solid #cfd6df;padding:8px;">舌</th>
-      <th style="border:1px solid #cfd6df;padding:8px;">唇</th>
-      <th style="border:1px solid #cfd6df;padding:8px;">音</th>
-      <th style="border:1px solid #cfd6df;padding:8px;">声帯振動</th>
-    </tr></thead>
-    <tbody>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">×</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じる</td><td style="border:1px solid #cfd6df;padding:8px;"><b>マ行</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">歯茎</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;"><b>ナ行</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">軟口蓋</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;"><b>鼻濁音</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">×</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じる</td><td style="border:1px solid #cfd6df;padding:8px;"><b>パ行</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>なし</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">×</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じる</td><td style="border:1px solid #cfd6df;padding:8px;"><b>バ行</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">硬口蓋盛り上がり</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じる</td><td style="border:1px solid #cfd6df;padding:8px;"><b>ピ・ピャ・ピュ・ピョ</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>なし</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">硬口蓋盛り上がり</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じる</td><td style="border:1px solid #cfd6df;padding:8px;"><b>ビ・ビャ・ビュ・ビョ</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">歯茎</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;"><b>タ行（ちを除く）</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>なし</b></td></tr>
-      <tr><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">閉じ</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">歯茎</td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;">あき</td><td style="border:1px solid #cfd6df;padding:8px;"><b>ダ行</b></td><td style="border:1px solid #cfd6df;padding:8px;text-align:center;"><b>あり</b></td></tr>
-    </tbody>
-  </table>
-  <div class="diagram-tip" style="margin-top:10px;"><b>🎯 試験での使い方：</b>「鼻腔への通路 → 舌 → 唇 → 音」を見たあと、<strong>有声／無声は声帯振動の情報として別に確認</strong>する。</div>
-</div>
-<div style="font-size:12px;line-height:1.65;color:#5b6575;margin:9px 4px 2px;">※この図はアプリ用に作成したオリジナル整理図。口腔断面図は白黒、かな・調音点・ポイントは色分けして、舌の位置と音を結びつけて覚えるための学習用です。</div>
-</div>
+<div id="mouthExactGallery" class="mouth-exact-gallery"></div>
 <h3>🧭 口腔断面図の「最初の見方」</h3>
 <div class="notice">
 <b>本番では、いきなり音声記号を読まない！</b><br/>
@@ -1655,6 +1579,26 @@ function mouthSvg(kind){
   return `<img class="mouth-exact-panel" src="data:image/png;base64,${img}" alt="${labels[kind]||'口腔断面図'}" loading="lazy">`;
 }
 
+function renderMouthGallery(){
+  const root=document.getElementById('mouthExactGallery');
+  if(!root || root.dataset.rendered==='1') return;
+  const labels={
+    'bilabial-nasal':'両唇・鼻音',
+    'alveolar-nasal':'歯茎・鼻音',
+    'velar-nasal':'軟口蓋・鼻音',
+    'bilabial-stop':'両唇・破裂音',
+    'alveolar-stop':'歯茎・破裂音',
+    'velar-stop':'軟口蓋・破裂音',
+    'alveolar-fricative':'歯茎・摩擦音',
+    'postalveolar-fricative':'歯茎硬口蓋・摩擦音',
+    'postalveolar-affricate':'歯茎硬口蓋・破擦音',
+    'alveolar-tap':'歯茎・弾き音'
+  };
+  const order=Object.keys(labels).filter(k=>mouthPanelImages[k]);
+  root.innerHTML=order.map(k=>`<div class="exact-mouth-card"><img src="${mouthSvg(k).match(/src="([^"]+)"/)[1]}" alt="${labels[k]}の口腔断面図"><div class="exact-mouth-label">${labels[k]}</div></div>`).join('');
+  root.dataset.rendered='1';
+}
+
 function renderMouthExamQuiz(){
   const root=document.getElementById('mouthExamQuiz'); if(!root)return;
   const selected=mouthExamPool.slice();
@@ -1714,7 +1658,7 @@ function showPageFromHash(){
     target=document.getElementById(id);
     if(target){target.style.display='block';target.classList.add('active');}
     if(id==='audioPlus'){ renderAudioDrill(); }
-   if(id==='oral'){ renderPronunciationDiagnosisQuiz(); renderPronunciationTeachingQuiz(); renderMouthExamQuiz(); }
+   if(id==='oral'){ renderMouthGallery(); renderPronunciationDiagnosisQuiz(); renderPronunciationTeachingQuiz(); renderMouthExamQuiz(); }
   }
   var detail=document.getElementById('fiftyDetail');
   var fiftyPanel=document.getElementById('fifty');
