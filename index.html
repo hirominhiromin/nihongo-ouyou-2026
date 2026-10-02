@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V171</title>
+<title>2026 日本語教員試験・応用攻略 V176</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -3171,7 +3171,8 @@ function v171AnswerReading(btn){
 function v171RenderListening(){
  const root=document.getElementById('listeningWeakQuiz'); if(!root)return;
  const qs=v171ListeningWeak.map(v171ShuffleQuestion);
- root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn one-play" onclick="speakAddedOnce(${JSON.stringify(x.script)},this);return false;">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
+ root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn one-play v171-audio" data-v171-audio="${v171Esc(x.script)}">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
+ root.querySelectorAll('.v171-lq .v171-audio').forEach(btn=>btn.addEventListener('click',function(e){e.preventDefault();speakAddedOnce(this.dataset.v171Audio,this);}));
  root.querySelectorAll('.v171-lq .choice').forEach(btn=>btn.addEventListener('click',function(){v171AnswerListening(this);}));
 }
 function v171AnswerListening(btn){
