@@ -7,7 +7,7 @@
 <meta content="#315efb" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
 <!-- V78: oral/pronunciation audit -->
-<title>2026 日本語教員試験・応用攻略 V176</title>
+<title>2026 日本語教員試験・応用攻略 V178</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
 header{background:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e7eb}
@@ -1904,32 +1904,71 @@ function speakDialogue(text,btn){
   const parts=parseDialogue(text);
   if(!parts) return speakOnce(text,btn);
   if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
-    alert('このブラウザでは音声再生に対応していません。'); return false;
+    if(btn){delete btn.dataset.playing; btn.disabled=false;}
+    alert('このブラウザでは音声再生に対応していません。');
+    return false;
+  }
+  if(btn && btn.classList.contains('one-play')){
+    if(btn.dataset.played==='1' || btn.dataset.playing==='1') return false;
+    btn.dataset.playing='1';
   }
   const synth=window.speechSynthesis;
   let i=0, stopped=false;
   try{
     synth.cancel();
+    if(typeof synth.resume==='function') synth.resume();
     if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
     function next(){
       if(stopped || i>=parts.length){
-        if(btn){btn.disabled=false;btn.textContent='🔊 もう一度聞く';}
-        currentUtterance2=null; return;
+        currentUtterance2=null;
+        if(btn){
+          delete btn.dataset.playing;
+          if(btn.classList.contains('one-play')){
+            btn.disabled=true;
+            btn.textContent='🔊 再生済み';
+          }else{
+            btn.disabled=false;
+            btn.textContent='🔊 もう一度聞く';
+          }
+        }
+        return;
       }
       const p=parts[i++];
       const u=new SpeechSynthesisUtterance(p.text);
-      u.lang='ja-JP'; u.rate=speechRate||0.82; u.volume=1;
+      u.lang='ja-JP';
+      u.rate=(Number.isFinite(speechRate) && speechRate>0) ? speechRate : 0.82;
+      u.volume=1;
       if(p.role){
-        const v=roleVoice(p.role);
-        if(v) u.voice=v;
-        /* iOSで男女音声名が取得できない場合の補助。 */
+        try{
+          const v=roleVoice(p.role);
+          if(v) u.voice=v;
+        }catch(voiceErr){
+          console.warn('役割音声の取得をスキップ:',voiceErr);
+        }
         u.pitch=p.role==='teacher'?0.82:1.12;
       }else{
-        const v=pickVoice(); if(v) u.voice=v; u.pitch=1;
+        try{
+          const v=pickVoice(); if(v) u.voice=v;
+        }catch(voiceErr){
+          console.warn('音声候補の取得をスキップ:',voiceErr);
+        }
+        u.pitch=1;
       }
-      u.onstart=function(){if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}};
+      u.onstart=function(){
+        if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+      };
       u.onend=function(){setTimeout(next,80);};
-      u.onerror=function(){stopped=true;currentUtterance2=null;if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}};
+      u.onerror=function(ev){
+        stopped=true;
+        currentUtterance2=null;
+        if(btn){
+          delete btn.dataset.played;
+          delete btn.dataset.playing;
+          btn.disabled=false;
+          btn.textContent='🔊 音声を聞く';
+        }
+        console.warn('音声再生エラー:',ev && ev.error ? ev.error : ev);
+      };
       currentUtterance2=u;
       synth.speak(u);
     }
@@ -1937,10 +1976,17 @@ function speakDialogue(text,btn){
     return true;
   }catch(e){
     currentUtterance2=null;
-    if(btn){btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    if(btn){
+      delete btn.dataset.played;
+      delete btn.dataset.playing;
+      btn.disabled=false;
+      btn.textContent='🔊 音声を聞く';
+    }
+    console.warn('音声再生例外:',e);
     return false;
   }
 }
+
 function setVoiceMode(mode){
   voiceMode=mode;localStorage.setItem('ntVoiceMode',mode);
   document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
@@ -2052,8 +2098,7 @@ document.addEventListener('click',function(e){
   if(!btn) return;
   e.preventDefault();
   e.stopPropagation();
-  if(btn.classList.contains('one-play') && btn.dataset.played==='1') return false;
-  if(btn.classList.contains('one-play')) btn.dataset.played='1';
+  if(btn.classList.contains('one-play') && (btn.dataset.played==='1' || btn.dataset.playing==='1')) return false;
   const key=btn.getAttribute('data-audio-key');
   const text=(window.ntAudioTexts||{})[key];
   if(!text){alert('音声データが見つかりません。');return false;}
@@ -2094,51 +2139,79 @@ document.addEventListener('click',function(e){
 },false);
 
 function speakAddedOnce(text,btn){
-  // 追加した「聴解弱点攻略25問」は、既存の音声ボタンとは別系統で
-  // 直接タップ→SpeechSynthesisを開始する。iPhone/Safariで失敗しやすい
-  // cancel()/resume()や音声オブジェクトの強制指定はここでは行わない。
+  // 追加25問：既存音声と同じく、iPhone/Safariでキューが詰まった場合も
+  // タップ直後に cancel → resume → speak までを同期的に実行する。
+  // 「再生済み」は実際に onstart が発火した後だけ確定する。
   if(btn && btn.classList.contains('one-play')){
     if(btn.dataset.played==='1' || btn.dataset.playing==='1') return false;
     btn.dataset.playing='1';
   }
   if(!text){
-    if(btn){delete btn.dataset.playing; btn.disabled=false;}
+    if(btn){delete btn.dataset.playing; btn.disabled=false; btn.textContent='🔊 音声を聞く';}
     alert('音声データがありません。');
     return false;
   }
   if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
-    if(btn){delete btn.dataset.playing; btn.disabled=false;}
+    if(btn){delete btn.dataset.playing; btn.disabled=false; btn.textContent='🔊 音声を聞く';}
     alert('このブラウザでは音声再生に対応していません。');
     return false;
   }
   const synth=window.speechSynthesis;
   try{
+    synth.cancel();
+    if(typeof synth.resume==='function') synth.resume();
+
     const u=new SpeechSynthesisUtterance(String(text));
-    // 端末側の日本語音声選択に任せる。voiceオブジェクトを固定しない。
     u.lang='ja-JP';
     u.rate=(Number.isFinite(speechRate) && speechRate>0) ? speechRate : 0.82;
     u.pitch=1;
     u.volume=1;
+    // iPhoneでは音声一覧がまだ初期化されていない場合がある。
+    // voice取得に失敗しても発話自体は止めない。
     if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    try{
+      const ja=pickVoice();
+      if(ja) u.voice=ja;
+    }catch(voiceErr){
+      console.warn('音声候補の取得をスキップ:',voiceErr);
+    }
     u.onstart=function(){
-      if(btn){btn.dataset.played='1';delete btn.dataset.playing;btn.disabled=true;btn.textContent='🔊 再生中…';}
+      if(btn){
+        btn.dataset.played='1';
+        delete btn.dataset.playing;
+        btn.disabled=true;
+        btn.textContent='🔊 再生中…';
+      }
     };
     u.onend=function(){
       currentUtterance2=null;
-      if(btn){delete btn.dataset.playing;btn.disabled=true;btn.textContent='🔊 再生済み';}
+      if(btn){
+        delete btn.dataset.playing;
+        btn.disabled=true;
+        btn.textContent='🔊 再生済み';
+      }
     };
     u.onerror=function(ev){
       currentUtterance2=null;
-      if(btn){delete btn.dataset.played;delete btn.dataset.playing;btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+      if(btn){
+        delete btn.dataset.played;
+        delete btn.dataset.playing;
+        btn.disabled=false;
+        btn.textContent='🔊 音声を聞く';
+      }
       console.warn('追加問題の音声再生エラー:', ev && ev.error ? ev.error : ev);
     };
     currentUtterance2=u;
-    // ユーザーのタップ処理中に、そのまま発話キューへ追加する。
     synth.speak(u);
     return true;
   }catch(e){
     currentUtterance2=null;
-    if(btn){delete btn.dataset.played;delete btn.dataset.playing;btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    if(btn){
+      delete btn.dataset.played;
+      delete btn.dataset.playing;
+      btn.disabled=false;
+      btn.textContent='🔊 音声を聞く';
+    }
     console.warn('追加問題の音声再生例外:',e);
     return false;
   }
@@ -2170,12 +2243,16 @@ function speakOnce(text,btn){
     if(typeof synth.resume==='function') synth.resume();
     const u=new SpeechSynthesisUtterance(String(text));
     u.lang='ja-JP';
-    u.rate=speechRate || 0.82;
+    u.rate=(Number.isFinite(speechRate) && speechRate>0) ? speechRate : 0.82;
     u.pitch=1;
     u.volume=1;
-    const ja=pickVoice();
-    if(ja) u.voice=ja;
     if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    try{
+      const ja=pickVoice();
+      if(ja) u.voice=ja;
+    }catch(voiceErr){
+      console.warn('音声候補の取得をスキップ:',voiceErr);
+    }
     u.onstart=function(){
       if(btn){
         btn.dataset.played='1';
