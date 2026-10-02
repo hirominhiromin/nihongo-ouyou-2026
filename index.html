@@ -2093,6 +2093,57 @@ document.addEventListener('click',function(e){
   if(m && !m.disabled){ const exam=m.closest('.mouth-exam'); if(exam && !((window.mouthExamState||{})[Number(exam.dataset.mouthIndex)]?.answered)){ mouthChoice(m,Number(exam.dataset.mouthIndex),m.dataset.kind); } }
 },false);
 
+function speakAddedOnce(text,btn){
+  // 追加した「聴解弱点攻略25問」は、既存の音声ボタンとは別系統で
+  // 直接タップ→SpeechSynthesisを開始する。iPhone/Safariで失敗しやすい
+  // cancel()/resume()や音声オブジェクトの強制指定はここでは行わない。
+  if(btn && btn.classList.contains('one-play')){
+    if(btn.dataset.played==='1' || btn.dataset.playing==='1') return false;
+    btn.dataset.playing='1';
+  }
+  if(!text){
+    if(btn){delete btn.dataset.playing; btn.disabled=false;}
+    alert('音声データがありません。');
+    return false;
+  }
+  if(!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance==='undefined'){
+    if(btn){delete btn.dataset.playing; btn.disabled=false;}
+    alert('このブラウザでは音声再生に対応していません。');
+    return false;
+  }
+  const synth=window.speechSynthesis;
+  try{
+    const u=new SpeechSynthesisUtterance(String(text));
+    // 端末側の日本語音声選択に任せる。voiceオブジェクトを固定しない。
+    u.lang='ja-JP';
+    u.rate=(Number.isFinite(speechRate) && speechRate>0) ? speechRate : 0.82;
+    u.pitch=1;
+    u.volume=1;
+    if(btn){btn.disabled=true;btn.textContent='🔊 再生中…';}
+    u.onstart=function(){
+      if(btn){btn.dataset.played='1';delete btn.dataset.playing;btn.disabled=true;btn.textContent='🔊 再生中…';}
+    };
+    u.onend=function(){
+      currentUtterance2=null;
+      if(btn){delete btn.dataset.playing;btn.disabled=true;btn.textContent='🔊 再生済み';}
+    };
+    u.onerror=function(ev){
+      currentUtterance2=null;
+      if(btn){delete btn.dataset.played;delete btn.dataset.playing;btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+      console.warn('追加問題の音声再生エラー:', ev && ev.error ? ev.error : ev);
+    };
+    currentUtterance2=u;
+    // ユーザーのタップ処理中に、そのまま発話キューへ追加する。
+    synth.speak(u);
+    return true;
+  }catch(e){
+    currentUtterance2=null;
+    if(btn){delete btn.dataset.played;delete btn.dataset.playing;btn.disabled=false;btn.textContent='🔊 音声を聞く';}
+    console.warn('追加問題の音声再生例外:',e);
+    return false;
+  }
+}
+
 function speakOnce(text,btn){
   // iPhone/Safari対策：再生開始に成功する前に「1回再生済み」に固定しない。
   // 失敗した場合は必ず再試行できるようにする。
@@ -3120,7 +3171,7 @@ function v171AnswerReading(btn){
 function v171RenderListening(){
  const root=document.getElementById('listeningWeakQuiz'); if(!root)return;
  const qs=v171ListeningWeak.map(v171ShuffleQuestion);
- root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn one-play" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
+ root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn one-play" onclick="speakAddedOnce(${JSON.stringify(x.script)},this);return false;">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
  root.querySelectorAll('.v171-lq .choice').forEach(btn=>btn.addEventListener('click',function(){v171AnswerListening(this);}));
 }
 function v171AnswerListening(btn){
