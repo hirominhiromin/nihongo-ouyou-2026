@@ -3352,7 +3352,7 @@ function renderListening(){
     const text=(window.v179AudioTexts&&window.v179AudioTexts[key])||'';
     if(this.dataset.played==='1'||this.dataset.playing==='1')return;
     if(!text){console.warn('V179 audio text missing:',key);return;}
-    speakV179Audio(text,this);
+    speakAddedOnce(text,this);
   }));
   root.querySelectorAll('.v179-lq .choice').forEach(b=>b.addEventListener('click',function(){answerMini(this,true);}));
 }
