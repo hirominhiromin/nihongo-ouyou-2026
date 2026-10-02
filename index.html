@@ -2302,7 +2302,7 @@ function renderMockQuestion(){
   area.innerHTML=`<div class="exam mockq">
     <div class="item"><b>${isL?'🎧 聴解':'📖 読解'} ${s.index+1} / ${isL?50:60}</b> <span class="badge">${q.cat||''}</span><span style="float:right;font-weight:800" id="mockTimer">--:--</span></div>
     <p>${q.q}</p>
-    ${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${key}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}
+    ${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}
     <div class="choices">${q.a.map((a,j)=>`<button type="button" class="choice ${selected===j?'selected':''}" data-mock-choice="${j}" onclick="selectMock(${j});return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div>
     <div class="mini">※本番モードでは正解・解説は試験終了まで表示しません。${isL?'聴解は次へ進んだ後、前の問題には戻れません。':'読解は前後に移動できます。'}</div>
     ${nav}
@@ -2503,7 +2503,7 @@ function v85RenderMockQuestion(){
     ? `<div class="mockNav"><button type="button" class="secondary" onclick="mockMove(-1)" ${s.index===0?'disabled':''}>← 前へ</button><button type="button" class="secondary" onclick="mockMove(1)">${s.index===59?'読解を終了 →':'次へ →'}</button></div>`
     : `<div class="mockNav"><button type="button" class="primary" onclick="mockMove(1)">${s.index===49?'聴解を終了 →':'次の問題 →'}</button></div>`;
   area.dataset.answered='0';
-  area.innerHTML=`<div class="exam mockq"><div class="item"><b>${isL?'🎧 聴解':'📖 読解'} ${s.index+1} / ${isL?50:60}</b> <span class="badge">${q.cat||''}</span><span style="float:right;font-weight:800" id="mockTimer">--:--</span></div><p>${q.q}</p>${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${key}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}<div class="choices">${q.a.map((a,j)=>`<button type="button" class="choice ${selected===j?'selected':''}" data-mock-choice="${j}" onclick="selectMock(${j});return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="mini">※試験中は正解・解説を表示しません。${isL?'聴解は前の問題に戻れません。':'読解は前後に移動できます。'}</div>${nav}</div>`;
+  area.innerHTML=`<div class="exam mockq"><div class="item"><b>${isL?'🎧 聴解':'📖 読解'} ${s.index+1} / ${isL?50:60}</b> <span class="badge">${q.cat||''}</span><span style="float:right;font-weight:800" id="mockTimer">--:--</span></div><p>${q.q}</p>${isL?`<button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${audioKey}">🔊 音声を1回聞く</button><div class="mini">※音声は1回。聞き直し不可。</div>`:''}<div class="choices">${q.a.map((a,j)=>`<button type="button" class="choice ${selected===j?'selected':''}" data-mock-choice="${j}" onclick="selectMock(${j});return false;">${String.fromCharCode(65+j)}. ${a}</button>`).join('')}</div><div class="mini">※試験中は正解・解説を表示しません。${isL?'聴解は前の問題に戻れません。':'読解は前後に移動できます。'}</div>${nav}</div>`;
   updateMockTimer();
 }
 window.renderMockQuestion=v85RenderMockQuestion;
@@ -3082,7 +3082,7 @@ function v171AnswerReading(btn){
 function v171RenderListening(){
  const root=document.getElementById('listeningWeakQuiz'); if(!root)return;
  const qs=v171ListeningWeak.map(v171ShuffleQuestion);
- root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn ntAudioButton one-play" data-audio-key="${key}">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
+ root.innerHTML=qs.map((x,i)=>{const key='v171-listen-'+i;window.ntAudioTexts=window.ntAudioTexts||{};window.ntAudioTexts[key]=x.script;return `<div class="exam v171-lq" data-i="${i}"><h3>第${i+1}問 <span class="badge">${v171Esc(x.cat)}</span></h3><p>${v171Esc(x.q)}</p><button type="button" class="audioBtn one-play" onclick="speakOnce(${JSON.stringify(x.script)},this)">🔊 音声を1回聞く</button><div class="mini">※まず音声だけを聞いてから選択。解答後にスクリプトを表示します。</div><div class="choices">${x.a.map((a,j)=>`<button type="button" class="choice" data-v171-c="${j}">${String.fromCharCode(65+j)}. ${v171Esc(a)}</button>`).join('')}</div><div class="feedback" data-correct="${x.c}" data-expl="${v171Esc(x.e)}"></div></div>`}).join('');
  root.querySelectorAll('.v171-lq .choice').forEach(btn=>btn.addEventListener('click',function(){v171AnswerListening(this);}));
 }
 function v171AnswerListening(btn){
